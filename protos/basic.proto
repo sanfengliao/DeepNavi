@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message MagneticMsg {
+    double magnetic_x = 1;
+    double magnetic_y = 2;
+    double magnetic_z = 3;
+}
+
+message DeepNaviMsg {
+    bytes image = 1;
+    MagneticMsg magnetic = 2;
+}

@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='basic.proto',
   package='',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"I\n\x0bMagneticMsg\x12\x12\n\nmagnetic_x\x18\x01 \x01(\x01\x12\x12\n\nmagnetic_y\x18\x02 \x01(\x01\x12\x12\n\nmagnetic_z\x18\x03 \x01(\x01\"<\n\x0b\x44\x65\x65pNaviMsg\x12\r\n\x05image\x18\x01 \x01(\x0c\x12\x1e\n\x08magnetic\x18\x02 \x01(\x0b\x32\x0c.MagneticMsgb\x06proto3')
+  serialized_options=_b('\n\027com.sysu.deepnavi.protoB\005Basic'),
+  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"I\n\x0bMagneticMsg\x12\x12\n\nmagnetic_x\x18\x01 \x01(\x01\x12\x12\n\nmagnetic_y\x18\x02 \x01(\x01\x12\x12\n\nmagnetic_z\x18\x03 \x01(\x01\"J\n\x0b\x44\x65\x65pNaviMsg\x12\x0c\n\x04time\x18\x01 \x01(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12\x1e\n\x08magnetic\x18\x03 \x01(\x0b\x32\x0c.MagneticMsgB \n\x17\x63om.sysu.deepnavi.protoB\x05\x42\x61sicb\x06proto3')
 )
 
 
@@ -79,15 +79,22 @@ _DEEPNAVIMSG = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='image', full_name='DeepNaviMsg.image', index=0,
-      number=1, type=12, cpp_type=9, label=1,
+      name='time', full_name='DeepNaviMsg.time', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='image', full_name='DeepNaviMsg.image', index=1,
+      number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='magnetic', full_name='DeepNaviMsg.magnetic', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='magnetic', full_name='DeepNaviMsg.magnetic', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -105,7 +112,7 @@ _DEEPNAVIMSG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=90,
-  serialized_end=150,
+  serialized_end=164,
 )
 
 _DEEPNAVIMSG.fields_by_name['magnetic'].message_type = _MAGNETICMSG
@@ -128,4 +135,5 @@ DeepNaviMsg = _reflection.GeneratedProtocolMessageType('DeepNaviMsg', (_message.
 _sym_db.RegisterMessage(DeepNaviMsg)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

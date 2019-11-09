@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+option java_package = "com.sysu.deepnavi.proto";
+option java_outer_classname = "Basic";
+
 message MagneticMsg {
     double magnetic_x = 1;
     double magnetic_y = 2;
@@ -7,6 +10,7 @@ message MagneticMsg {
 }
 
 message DeepNaviMsg {
-    bytes image = 1;
-    MagneticMsg magnetic = 2;
+	int64 time = 1;
+    bytes image = 2;
+    MagneticMsg magnetic = 3;
 }

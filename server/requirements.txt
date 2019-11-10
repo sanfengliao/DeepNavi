@@ -1,2 +1,3 @@
-Flask==1.0.2
-Flask-Socketio== 4.2.1
+Flask==1.1.1
+Flask-Socketio==4.2.1
+python-socketio==4.3.1

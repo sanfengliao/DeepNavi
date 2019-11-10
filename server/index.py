@@ -3,8 +3,8 @@
 # 文件名: index.py
 
 
-from app import socket_io, app
-import controllers.user
+from app import socketIO, app
+import controllers.socket_controller
 
 if __name__ == '__main__':
-    socket_io.run(app,port=3000,debug=True)
+    socketIO.run(app,port=5000, debug=True)

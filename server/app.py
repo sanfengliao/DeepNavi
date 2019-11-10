@@ -5,6 +5,10 @@ from config import SECRET_KEY
 app = Flask('DeepNavi')
 app.config['SECRET_KEY'] = SECRET_KEY
 
-socket_io = SocketIO(app)
+socketIO = SocketIO(app, binary=True)
+
+@app.route('/')
+def helloworld():
+    return 'hello world'
 
 

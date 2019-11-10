@@ -1616,7 +1616,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         java.util.List<CoorSensorReq>
         getLinearAccelerationListList();
@@ -1626,7 +1626,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         CoorSensorReq getLinearAccelerationList(int index);
 
@@ -1635,7 +1635,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         int getLinearAccelerationListCount();
 
@@ -1644,7 +1644,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
         getLinearAccelerationListOrBuilderList();
@@ -1654,7 +1654,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                 int index);
@@ -1664,7 +1664,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         java.util.List<FeelSensorReq>
         getAmbientTemperatureListList();
@@ -1674,7 +1674,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         FeelSensorReq getAmbientTemperatureList(int index);
 
@@ -1683,7 +1683,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         int getAmbientTemperatureListCount();
 
@@ -1692,7 +1692,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         java.util.List<? extends FeelSensorReqOrBuilder>
         getAmbientTemperatureListOrBuilderList();
@@ -1702,7 +1702,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                 int index);
@@ -2412,7 +2412,7 @@ public final class Basic {
             return gravityList_.get(index);
         }
 
-        public static final int LINEAR_ACCELERATIONLIST_FIELD_NUMBER = 8;
+        public static final int LINEARACCELERATIONLIST_FIELD_NUMBER = 8;
         private java.util.List<CoorSensorReq> linearAccelerationList_;
 
         /**
@@ -2420,7 +2420,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
             return linearAccelerationList_;
@@ -2431,7 +2431,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         public java.util.List<? extends CoorSensorReqOrBuilder>
         getLinearAccelerationListOrBuilderList() {
@@ -2443,7 +2443,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         public int getLinearAccelerationListCount() {
             return linearAccelerationList_.size();
@@ -2454,7 +2454,7 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         public CoorSensorReq getLinearAccelerationList(int index) {
             return linearAccelerationList_.get(index);
@@ -2465,14 +2465,14 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
          */
         public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                 int index) {
             return linearAccelerationList_.get(index);
         }
 
-        public static final int AMBIENT_TEMPERATURELIST_FIELD_NUMBER = 9;
+        public static final int AMBIENTTEMPERATURELIST_FIELD_NUMBER = 9;
         private java.util.List<FeelSensorReq> ambientTemperatureList_;
 
         /**
@@ -2480,7 +2480,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
             return ambientTemperatureList_;
@@ -2491,7 +2491,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         public java.util.List<? extends FeelSensorReqOrBuilder>
         getAmbientTemperatureListOrBuilderList() {
@@ -2503,7 +2503,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         public int getAmbientTemperatureListCount() {
             return ambientTemperatureList_.size();
@@ -2514,7 +2514,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         public FeelSensorReq getAmbientTemperatureList(int index) {
             return ambientTemperatureList_.get(index);
@@ -2525,7 +2525,7 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
          */
         public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                 int index) {
@@ -2971,11 +2971,11 @@ public final class Basic {
                 hash = (53 * hash) + getGravityListList().hashCode();
             }
             if (getLinearAccelerationListCount() > 0) {
-                hash = (37 * hash) + LINEAR_ACCELERATIONLIST_FIELD_NUMBER;
+                hash = (37 * hash) + LINEARACCELERATIONLIST_FIELD_NUMBER;
                 hash = (53 * hash) + getLinearAccelerationListList().hashCode();
             }
             if (getAmbientTemperatureListCount() > 0) {
-                hash = (37 * hash) + AMBIENT_TEMPERATURELIST_FIELD_NUMBER;
+                hash = (37 * hash) + AMBIENTTEMPERATURELIST_FIELD_NUMBER;
                 hash = (53 * hash) + getAmbientTemperatureListList().hashCode();
             }
             if (getLightListCount() > 0) {
@@ -5516,7 +5516,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5531,7 +5531,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public int getLinearAccelerationListCount() {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5546,7 +5546,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public CoorSensorReq getLinearAccelerationList(int index) {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5561,7 +5561,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder setLinearAccelerationList(
                     int index, CoorSensorReq value) {
@@ -5583,7 +5583,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder setLinearAccelerationList(
                     int index, CoorSensorReq.Builder builderForValue) {
@@ -5602,7 +5602,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder addLinearAccelerationList(CoorSensorReq value) {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5623,7 +5623,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder addLinearAccelerationList(
                     int index, CoorSensorReq value) {
@@ -5645,7 +5645,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder addLinearAccelerationList(
                     CoorSensorReq.Builder builderForValue) {
@@ -5664,7 +5664,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder addLinearAccelerationList(
                     int index, CoorSensorReq.Builder builderForValue) {
@@ -5683,7 +5683,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder addAllLinearAccelerationList(
                     Iterable<? extends CoorSensorReq> values) {
@@ -5703,7 +5703,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder clearLinearAccelerationList() {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5721,7 +5721,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public Builder removeLinearAccelerationList(int index) {
                 if (linearAccelerationListBuilder_ == null) {
@@ -5739,7 +5739,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public CoorSensorReq.Builder getLinearAccelerationListBuilder(
                     int index) {
@@ -5751,7 +5751,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                     int index) {
@@ -5767,7 +5767,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
             getLinearAccelerationListOrBuilderList() {
@@ -5783,7 +5783,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public CoorSensorReq.Builder addLinearAccelerationListBuilder() {
                 return getLinearAccelerationListFieldBuilder().addBuilder(
@@ -5795,7 +5795,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public CoorSensorReq.Builder addLinearAccelerationListBuilder(
                     int index) {
@@ -5808,7 +5808,7 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
+             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
             getLinearAccelerationListBuilderList() {
@@ -5848,7 +5848,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -5863,7 +5863,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public int getAmbientTemperatureListCount() {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -5878,7 +5878,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public FeelSensorReq getAmbientTemperatureList(int index) {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -5893,7 +5893,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder setAmbientTemperatureList(
                     int index, FeelSensorReq value) {
@@ -5915,7 +5915,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder setAmbientTemperatureList(
                     int index, FeelSensorReq.Builder builderForValue) {
@@ -5934,7 +5934,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder addAmbientTemperatureList(FeelSensorReq value) {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -5955,7 +5955,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder addAmbientTemperatureList(
                     int index, FeelSensorReq value) {
@@ -5977,7 +5977,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder addAmbientTemperatureList(
                     FeelSensorReq.Builder builderForValue) {
@@ -5996,7 +5996,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder addAmbientTemperatureList(
                     int index, FeelSensorReq.Builder builderForValue) {
@@ -6015,7 +6015,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder addAllAmbientTemperatureList(
                     Iterable<? extends FeelSensorReq> values) {
@@ -6035,7 +6035,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder clearAmbientTemperatureList() {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -6053,7 +6053,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public Builder removeAmbientTemperatureList(int index) {
                 if (ambientTemperatureListBuilder_ == null) {
@@ -6071,7 +6071,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public FeelSensorReq.Builder getAmbientTemperatureListBuilder(
                     int index) {
@@ -6083,7 +6083,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                     int index) {
@@ -6099,7 +6099,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public java.util.List<? extends FeelSensorReqOrBuilder>
             getAmbientTemperatureListOrBuilderList() {
@@ -6115,7 +6115,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public FeelSensorReq.Builder addAmbientTemperatureListBuilder() {
                 return getAmbientTemperatureListFieldBuilder().addBuilder(
@@ -6127,7 +6127,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public FeelSensorReq.Builder addAmbientTemperatureListBuilder(
                     int index) {
@@ -6140,7 +6140,7 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
+             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
              */
             public java.util.List<FeelSensorReq.Builder>
             getAmbientTemperatureListBuilderList() {
@@ -7882,20 +7882,20 @@ public final class Basic {
         String[] descriptorData = {
                 "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
                         "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\302\003\n\013DeepNaviReq\022\014\n\004time\030" +
+                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\300\003\n\013DeepNaviReq\022\014\n\004time\030" +
                         "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022$\n\014magneticList\030\003 \003" +
                         "(\0132\016.CoorSensorReq\022)\n\021accelerometerList\030" +
                         "\004 \003(\0132\016.CoorSensorReq\022\'\n\017orientationList" +
                         "\030\005 \003(\0132\016.CoorSensorReq\022%\n\rgyroscopeList\030" +
                         "\006 \003(\0132\016.CoorSensorReq\022#\n\013gravityList\030\007 \003" +
-                        "(\0132\016.CoorSensorReq\022/\n\027linear_acceleratio" +
-                        "nList\030\010 \003(\0132\016.CoorSensorReq\022/\n\027ambient_t" +
-                        "emperatureList\030\t \003(\0132\016.FeelSensorReq\022!\n\t" +
-                        "lightList\030\n \003(\0132\016.FeelSensorReq\022$\n\014press" +
-                        "ureList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximi" +
-                        "tyList\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNavi" +
-                        "Res\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi" +
-                        ".beanB\005Basic"
+                        "(\0132\016.CoorSensorReq\022.\n\026linearAcceleration" +
+                        "List\030\010 \003(\0132\016.CoorSensorReq\022.\n\026ambientTem" +
+                        "peratureList\030\t \003(\0132\016.FeelSensorReq\022!\n\tli" +
+                        "ghtList\030\n \003(\0132\016.FeelSensorReq\022$\n\014pressur" +
+                        "eList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximity" +
+                        "List\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNaviRe" +
+                        "s\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi.b" +
+                        "eanB\005Basic"
         };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
                 new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

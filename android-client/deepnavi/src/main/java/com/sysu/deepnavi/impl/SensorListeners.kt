@@ -30,10 +30,10 @@ class SensorListeners {
     val gravityListener = SensorListener2(Sensor.TYPE_GRAVITY, "gravityList")
     { event -> createCoorSensorReq(event) }
 
-    val linear_accelerationListener = SensorListener2(Sensor.TYPE_LINEAR_ACCELERATION, "linear_accelerationList")
+    val linearAccelerationListener = SensorListener2(Sensor.TYPE_LINEAR_ACCELERATION, "linearAccelerationList")
     { event -> createCoorSensorReq(event) }
 
-    val ambient_temperatureListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_AMBIENT_TEMPERATURE, "ambient_temperatureList")
+    val ambientTemperatureListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_AMBIENT_TEMPERATURE, "ambientTemperatureList")
     { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     val lightListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_LIGHT, "lightList")
@@ -51,8 +51,8 @@ class SensorListeners {
         orientationListener.init(rate)
         gyroscopeListener.init(rate)
         gravityListener.init(rate)
-        linear_accelerationListener.init(rate)
-        ambient_temperatureListener.init(rate)
+        linearAccelerationListener.init(rate)
+        ambientTemperatureListener.init(rate)
         lightListener.init(rate)
         pressureListener.init(rate)
         proximityListener.init(rate)

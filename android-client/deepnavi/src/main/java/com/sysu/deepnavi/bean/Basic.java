@@ -1376,47 +1376,47 @@ public final class Basic {
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
         java.util.List<CoorSensorReq>
-        getMagneticList();
+        getMagneticListList();
 
         /**
          * <pre>
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        CoorSensorReq getMagnetic(int index);
+        CoorSensorReq getMagneticList(int index);
 
         /**
          * <pre>
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        int getMagneticCount();
+        int getMagneticListCount();
 
         /**
          * <pre>
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getMagneticOrBuilderList();
+        getMagneticListOrBuilderList();
 
         /**
          * <pre>
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        CoorSensorReqOrBuilder getMagneticOrBuilder(
+        CoorSensorReqOrBuilder getMagneticListOrBuilder(
                 int index);
 
         /**
@@ -1424,47 +1424,47 @@ public final class Basic {
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
         java.util.List<CoorSensorReq>
-        getAccelerometerList();
+        getAccelerometerListList();
 
         /**
          * <pre>
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        CoorSensorReq getAccelerometer(int index);
+        CoorSensorReq getAccelerometerList(int index);
 
         /**
          * <pre>
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        int getAccelerometerCount();
+        int getAccelerometerListCount();
 
         /**
          * <pre>
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getAccelerometerOrBuilderList();
+        getAccelerometerListOrBuilderList();
 
         /**
          * <pre>
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+        CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
                 int index);
 
         /**
@@ -1472,47 +1472,47 @@ public final class Basic {
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
         java.util.List<CoorSensorReq>
-        getOrientationList();
+        getOrientationListList();
 
         /**
          * <pre>
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        CoorSensorReq getOrientation(int index);
+        CoorSensorReq getOrientationList(int index);
 
         /**
          * <pre>
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        int getOrientationCount();
+        int getOrientationListCount();
 
         /**
          * <pre>
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getOrientationOrBuilderList();
+        getOrientationListOrBuilderList();
 
         /**
          * <pre>
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        CoorSensorReqOrBuilder getOrientationOrBuilder(
+        CoorSensorReqOrBuilder getOrientationListOrBuilder(
                 int index);
 
         /**
@@ -1520,47 +1520,47 @@ public final class Basic {
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
         java.util.List<CoorSensorReq>
-        getGyroscopeList();
+        getGyroscopeListList();
 
         /**
          * <pre>
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        CoorSensorReq getGyroscope(int index);
+        CoorSensorReq getGyroscopeList(int index);
 
         /**
          * <pre>
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        int getGyroscopeCount();
+        int getGyroscopeListCount();
 
         /**
          * <pre>
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getGyroscopeOrBuilderList();
+        getGyroscopeListOrBuilderList();
 
         /**
          * <pre>
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+        CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
                 int index);
 
         /**
@@ -1568,47 +1568,47 @@ public final class Basic {
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
         java.util.List<CoorSensorReq>
-        getGravityList();
+        getGravityListList();
 
         /**
          * <pre>
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        CoorSensorReq getGravity(int index);
+        CoorSensorReq getGravityList(int index);
 
         /**
          * <pre>
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        int getGravityCount();
+        int getGravityListCount();
 
         /**
          * <pre>
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getGravityOrBuilderList();
+        getGravityListOrBuilderList();
 
         /**
          * <pre>
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        CoorSensorReqOrBuilder getGravityOrBuilder(
+        CoorSensorReqOrBuilder getGravityListOrBuilder(
                 int index);
 
         /**
@@ -1616,47 +1616,47 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
         java.util.List<CoorSensorReq>
-        getLinearAccelerationList();
+        getLinearAccelerationListList();
 
         /**
          * <pre>
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        CoorSensorReq getLinearAcceleration(int index);
+        CoorSensorReq getLinearAccelerationList(int index);
 
         /**
          * <pre>
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        int getLinearAccelerationCount();
+        int getLinearAccelerationListCount();
 
         /**
          * <pre>
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
         java.util.List<? extends CoorSensorReqOrBuilder>
-        getLinearAccelerationOrBuilderList();
+        getLinearAccelerationListOrBuilderList();
 
         /**
          * <pre>
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+        CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                 int index);
 
         /**
@@ -1664,47 +1664,47 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
         java.util.List<FeelSensorReq>
-        getAmbientTemperatureList();
+        getAmbientTemperatureListList();
 
         /**
          * <pre>
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        FeelSensorReq getAmbientTemperature(int index);
+        FeelSensorReq getAmbientTemperatureList(int index);
 
         /**
          * <pre>
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        int getAmbientTemperatureCount();
+        int getAmbientTemperatureListCount();
 
         /**
          * <pre>
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
         java.util.List<? extends FeelSensorReqOrBuilder>
-        getAmbientTemperatureOrBuilderList();
+        getAmbientTemperatureListOrBuilderList();
 
         /**
          * <pre>
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+        FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                 int index);
 
         /**
@@ -1712,47 +1712,47 @@ public final class Basic {
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
         java.util.List<FeelSensorReq>
-        getLightList();
+        getLightListList();
 
         /**
          * <pre>
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        FeelSensorReq getLight(int index);
+        FeelSensorReq getLightList(int index);
 
         /**
          * <pre>
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        int getLightCount();
+        int getLightListCount();
 
         /**
          * <pre>
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
         java.util.List<? extends FeelSensorReqOrBuilder>
-        getLightOrBuilderList();
+        getLightListOrBuilderList();
 
         /**
          * <pre>
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        FeelSensorReqOrBuilder getLightOrBuilder(
+        FeelSensorReqOrBuilder getLightListOrBuilder(
                 int index);
 
         /**
@@ -1760,47 +1760,47 @@ public final class Basic {
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
         java.util.List<FeelSensorReq>
-        getPressureList();
+        getPressureListList();
 
         /**
          * <pre>
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        FeelSensorReq getPressure(int index);
+        FeelSensorReq getPressureList(int index);
 
         /**
          * <pre>
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        int getPressureCount();
+        int getPressureListCount();
 
         /**
          * <pre>
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
         java.util.List<? extends FeelSensorReqOrBuilder>
-        getPressureOrBuilderList();
+        getPressureListOrBuilderList();
 
         /**
          * <pre>
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        FeelSensorReqOrBuilder getPressureOrBuilder(
+        FeelSensorReqOrBuilder getPressureListOrBuilder(
                 int index);
 
         /**
@@ -1808,47 +1808,47 @@ public final class Basic {
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
         java.util.List<FeelSensorReq>
-        getProximityList();
+        getProximityListList();
 
         /**
          * <pre>
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        FeelSensorReq getProximity(int index);
+        FeelSensorReq getProximityList(int index);
 
         /**
          * <pre>
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        int getProximityCount();
+        int getProximityListCount();
 
         /**
          * <pre>
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
         java.util.List<? extends FeelSensorReqOrBuilder>
-        getProximityOrBuilderList();
+        getProximityListOrBuilderList();
 
         /**
          * <pre>
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        FeelSensorReqOrBuilder getProximityOrBuilder(
+        FeelSensorReqOrBuilder getProximityListOrBuilder(
                 int index);
     }
 
@@ -1869,16 +1869,16 @@ public final class Basic {
         private DeepNaviReq() {
             time_ = 0L;
             image_ = com.google.protobuf.ByteString.EMPTY;
-            magnetic_ = java.util.Collections.emptyList();
-            accelerometer_ = java.util.Collections.emptyList();
-            orientation_ = java.util.Collections.emptyList();
-            gyroscope_ = java.util.Collections.emptyList();
-            gravity_ = java.util.Collections.emptyList();
-            linearAcceleration_ = java.util.Collections.emptyList();
-            ambientTemperature_ = java.util.Collections.emptyList();
-            light_ = java.util.Collections.emptyList();
-            pressure_ = java.util.Collections.emptyList();
-            proximity_ = java.util.Collections.emptyList();
+            magneticList_ = java.util.Collections.emptyList();
+            accelerometerList_ = java.util.Collections.emptyList();
+            orientationList_ = java.util.Collections.emptyList();
+            gyroscopeList_ = java.util.Collections.emptyList();
+            gravityList_ = java.util.Collections.emptyList();
+            linearAccelerationList_ = java.util.Collections.emptyList();
+            ambientTemperatureList_ = java.util.Collections.emptyList();
+            lightList_ = java.util.Collections.emptyList();
+            pressureList_ = java.util.Collections.emptyList();
+            proximityList_ = java.util.Collections.emptyList();
         }
 
         @Override
@@ -1918,91 +1918,91 @@ public final class Basic {
                         }
                         case 26: {
                             if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                                magnetic_ = new java.util.ArrayList<CoorSensorReq>();
+                                magneticList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000004;
                             }
-                            magnetic_.add(
+                            magneticList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 34: {
                             if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                                accelerometer_ = new java.util.ArrayList<CoorSensorReq>();
+                                accelerometerList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000008;
                             }
-                            accelerometer_.add(
+                            accelerometerList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 42: {
                             if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                                orientation_ = new java.util.ArrayList<CoorSensorReq>();
+                                orientationList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000010;
                             }
-                            orientation_.add(
+                            orientationList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 50: {
                             if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                                gyroscope_ = new java.util.ArrayList<CoorSensorReq>();
+                                gyroscopeList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000020;
                             }
-                            gyroscope_.add(
+                            gyroscopeList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 58: {
                             if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                                gravity_ = new java.util.ArrayList<CoorSensorReq>();
+                                gravityList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000040;
                             }
-                            gravity_.add(
+                            gravityList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 66: {
                             if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                                linearAcceleration_ = new java.util.ArrayList<CoorSensorReq>();
+                                linearAccelerationList_ = new java.util.ArrayList<CoorSensorReq>();
                                 mutable_bitField0_ |= 0x00000080;
                             }
-                            linearAcceleration_.add(
+                            linearAccelerationList_.add(
                                     input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 74: {
                             if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                                ambientTemperature_ = new java.util.ArrayList<FeelSensorReq>();
+                                ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>();
                                 mutable_bitField0_ |= 0x00000100;
                             }
-                            ambientTemperature_.add(
+                            ambientTemperatureList_.add(
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 82: {
                             if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                                light_ = new java.util.ArrayList<FeelSensorReq>();
+                                lightList_ = new java.util.ArrayList<FeelSensorReq>();
                                 mutable_bitField0_ |= 0x00000200;
                             }
-                            light_.add(
+                            lightList_.add(
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 90: {
                             if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                                pressure_ = new java.util.ArrayList<FeelSensorReq>();
+                                pressureList_ = new java.util.ArrayList<FeelSensorReq>();
                                 mutable_bitField0_ |= 0x00000400;
                             }
-                            pressure_.add(
+                            pressureList_.add(
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
                         case 98: {
                             if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                                proximity_ = new java.util.ArrayList<FeelSensorReq>();
+                                proximityList_ = new java.util.ArrayList<FeelSensorReq>();
                                 mutable_bitField0_ |= 0x00000800;
                             }
-                            proximity_.add(
+                            proximityList_.add(
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
@@ -2022,34 +2022,34 @@ public final class Basic {
                         e).setUnfinishedMessage(this);
             } finally {
                 if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                    magnetic_ = java.util.Collections.unmodifiableList(magnetic_);
+                    magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
                 }
                 if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                    accelerometer_ = java.util.Collections.unmodifiableList(accelerometer_);
+                    accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
                 }
                 if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                    orientation_ = java.util.Collections.unmodifiableList(orientation_);
+                    orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
                 }
                 if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                    gyroscope_ = java.util.Collections.unmodifiableList(gyroscope_);
+                    gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
                 }
                 if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                    gravity_ = java.util.Collections.unmodifiableList(gravity_);
+                    gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
                 }
                 if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                    linearAcceleration_ = java.util.Collections.unmodifiableList(linearAcceleration_);
+                    linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
                 }
                 if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                    ambientTemperature_ = java.util.Collections.unmodifiableList(ambientTemperature_);
+                    ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
                 }
                 if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                    light_ = java.util.Collections.unmodifiableList(light_);
+                    lightList_ = java.util.Collections.unmodifiableList(lightList_);
                 }
                 if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                    pressure_ = java.util.Collections.unmodifiableList(pressure_);
+                    pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
                 }
                 if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                    proximity_ = java.util.Collections.unmodifiableList(proximity_);
+                    proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -2112,30 +2112,18 @@ public final class Basic {
             return image_;
         }
 
-        public static final int MAGNETIC_FIELD_NUMBER = 3;
-        private java.util.List<CoorSensorReq> magnetic_;
+        public static final int MAGNETICLIST_FIELD_NUMBER = 3;
+        private java.util.List<CoorSensorReq> magneticList_;
 
         /**
          * <pre>
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        public java.util.List<CoorSensorReq> getMagneticList() {
-            return magnetic_;
-        }
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getMagneticOrBuilderList() {
-            return magnetic_;
+        public java.util.List<CoorSensorReq> getMagneticListList() {
+            return magneticList_;
         }
 
         /**
@@ -2143,10 +2131,11 @@ public final class Basic {
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        public int getMagneticCount() {
-            return magnetic_.size();
+        public java.util.List<? extends CoorSensorReqOrBuilder>
+        getMagneticListOrBuilderList() {
+            return magneticList_;
         }
 
         /**
@@ -2154,10 +2143,10 @@ public final class Basic {
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        public CoorSensorReq getMagnetic(int index) {
-            return magnetic_.get(index);
+        public int getMagneticListCount() {
+            return magneticList_.size();
         }
 
         /**
@@ -2165,48 +2154,36 @@ public final class Basic {
          * 磁场
          * </pre>
          *
-         * <code>repeated .CoorSensorReq magnetic = 3;</code>
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
          */
-        public CoorSensorReqOrBuilder getMagneticOrBuilder(
+        public CoorSensorReq getMagneticList(int index) {
+            return magneticList_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 磁场
+         * </pre>
+         *
+         * <code>repeated .CoorSensorReq magneticList = 3;</code>
+         */
+        public CoorSensorReqOrBuilder getMagneticListOrBuilder(
                 int index) {
-            return magnetic_.get(index);
+            return magneticList_.get(index);
         }
 
-        public static final int ACCELEROMETER_FIELD_NUMBER = 4;
-        private java.util.List<CoorSensorReq> accelerometer_;
+        public static final int ACCELEROMETERLIST_FIELD_NUMBER = 4;
+        private java.util.List<CoorSensorReq> accelerometerList_;
 
         /**
          * <pre>
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        public java.util.List<CoorSensorReq> getAccelerometerList() {
-            return accelerometer_;
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getAccelerometerOrBuilderList() {
-            return accelerometer_;
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
-         */
-        public int getAccelerometerCount() {
-            return accelerometer_.size();
+        public java.util.List<CoorSensorReq> getAccelerometerListList() {
+            return accelerometerList_;
         }
 
         /**
@@ -2214,10 +2191,11 @@ public final class Basic {
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        public CoorSensorReq getAccelerometer(int index) {
-            return accelerometer_.get(index);
+        public java.util.List<? extends CoorSensorReqOrBuilder>
+        getAccelerometerListOrBuilderList() {
+            return accelerometerList_;
         }
 
         /**
@@ -2225,25 +2203,47 @@ public final class Basic {
          * 加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
          */
-        public CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+        public int getAccelerometerListCount() {
+            return accelerometerList_.size();
+        }
+
+        /**
+         * <pre>
+         * 加速度
+         * </pre>
+         *
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+         */
+        public CoorSensorReq getAccelerometerList(int index) {
+            return accelerometerList_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 加速度
+         * </pre>
+         *
+         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+         */
+        public CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
                 int index) {
-            return accelerometer_.get(index);
+            return accelerometerList_.get(index);
         }
 
-        public static final int ORIENTATION_FIELD_NUMBER = 5;
-        private java.util.List<CoorSensorReq> orientation_;
+        public static final int ORIENTATIONLIST_FIELD_NUMBER = 5;
+        private java.util.List<CoorSensorReq> orientationList_;
 
         /**
          * <pre>
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        public java.util.List<CoorSensorReq> getOrientationList() {
-            return orientation_;
+        public java.util.List<CoorSensorReq> getOrientationListList() {
+            return orientationList_;
         }
 
         /**
@@ -2251,11 +2251,11 @@ public final class Basic {
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
         public java.util.List<? extends CoorSensorReqOrBuilder>
-        getOrientationOrBuilderList() {
-            return orientation_;
+        getOrientationListOrBuilderList() {
+            return orientationList_;
         }
 
         /**
@@ -2263,10 +2263,10 @@ public final class Basic {
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        public int getOrientationCount() {
-            return orientation_.size();
+        public int getOrientationListCount() {
+            return orientationList_.size();
         }
 
         /**
@@ -2274,10 +2274,10 @@ public final class Basic {
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        public CoorSensorReq getOrientation(int index) {
-            return orientation_.get(index);
+        public CoorSensorReq getOrientationList(int index) {
+            return orientationList_.get(index);
         }
 
         /**
@@ -2285,25 +2285,25 @@ public final class Basic {
          * 方向
          * </pre>
          *
-         * <code>repeated .CoorSensorReq orientation = 5;</code>
+         * <code>repeated .CoorSensorReq orientationList = 5;</code>
          */
-        public CoorSensorReqOrBuilder getOrientationOrBuilder(
+        public CoorSensorReqOrBuilder getOrientationListOrBuilder(
                 int index) {
-            return orientation_.get(index);
+            return orientationList_.get(index);
         }
 
-        public static final int GYROSCOPE_FIELD_NUMBER = 6;
-        private java.util.List<CoorSensorReq> gyroscope_;
+        public static final int GYROSCOPELIST_FIELD_NUMBER = 6;
+        private java.util.List<CoorSensorReq> gyroscopeList_;
 
         /**
          * <pre>
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        public java.util.List<CoorSensorReq> getGyroscopeList() {
-            return gyroscope_;
+        public java.util.List<CoorSensorReq> getGyroscopeListList() {
+            return gyroscopeList_;
         }
 
         /**
@@ -2311,11 +2311,11 @@ public final class Basic {
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
         public java.util.List<? extends CoorSensorReqOrBuilder>
-        getGyroscopeOrBuilderList() {
-            return gyroscope_;
+        getGyroscopeListOrBuilderList() {
+            return gyroscopeList_;
         }
 
         /**
@@ -2323,10 +2323,10 @@ public final class Basic {
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        public int getGyroscopeCount() {
-            return gyroscope_.size();
+        public int getGyroscopeListCount() {
+            return gyroscopeList_.size();
         }
 
         /**
@@ -2334,10 +2334,10 @@ public final class Basic {
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        public CoorSensorReq getGyroscope(int index) {
-            return gyroscope_.get(index);
+        public CoorSensorReq getGyroscopeList(int index) {
+            return gyroscopeList_.get(index);
         }
 
         /**
@@ -2345,25 +2345,25 @@ public final class Basic {
          * 陀螺仪
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
          */
-        public CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+        public CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
                 int index) {
-            return gyroscope_.get(index);
+            return gyroscopeList_.get(index);
         }
 
-        public static final int GRAVITY_FIELD_NUMBER = 7;
-        private java.util.List<CoorSensorReq> gravity_;
+        public static final int GRAVITYLIST_FIELD_NUMBER = 7;
+        private java.util.List<CoorSensorReq> gravityList_;
 
         /**
          * <pre>
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        public java.util.List<CoorSensorReq> getGravityList() {
-            return gravity_;
+        public java.util.List<CoorSensorReq> getGravityListList() {
+            return gravityList_;
         }
 
         /**
@@ -2371,11 +2371,11 @@ public final class Basic {
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
         public java.util.List<? extends CoorSensorReqOrBuilder>
-        getGravityOrBuilderList() {
-            return gravity_;
+        getGravityListOrBuilderList() {
+            return gravityList_;
         }
 
         /**
@@ -2383,10 +2383,10 @@ public final class Basic {
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        public int getGravityCount() {
-            return gravity_.size();
+        public int getGravityListCount() {
+            return gravityList_.size();
         }
 
         /**
@@ -2394,10 +2394,10 @@ public final class Basic {
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        public CoorSensorReq getGravity(int index) {
-            return gravity_.get(index);
+        public CoorSensorReq getGravityList(int index) {
+            return gravityList_.get(index);
         }
 
         /**
@@ -2405,25 +2405,25 @@ public final class Basic {
          * 重力
          * </pre>
          *
-         * <code>repeated .CoorSensorReq gravity = 7;</code>
+         * <code>repeated .CoorSensorReq gravityList = 7;</code>
          */
-        public CoorSensorReqOrBuilder getGravityOrBuilder(
+        public CoorSensorReqOrBuilder getGravityListOrBuilder(
                 int index) {
-            return gravity_.get(index);
+            return gravityList_.get(index);
         }
 
-        public static final int LINEAR_ACCELERATION_FIELD_NUMBER = 8;
-        private java.util.List<CoorSensorReq> linearAcceleration_;
+        public static final int LINEAR_ACCELERATIONLIST_FIELD_NUMBER = 8;
+        private java.util.List<CoorSensorReq> linearAccelerationList_;
 
         /**
          * <pre>
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        public java.util.List<CoorSensorReq> getLinearAccelerationList() {
-            return linearAcceleration_;
+        public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
+            return linearAccelerationList_;
         }
 
         /**
@@ -2431,11 +2431,11 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
         public java.util.List<? extends CoorSensorReqOrBuilder>
-        getLinearAccelerationOrBuilderList() {
-            return linearAcceleration_;
+        getLinearAccelerationListOrBuilderList() {
+            return linearAccelerationList_;
         }
 
         /**
@@ -2443,10 +2443,10 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        public int getLinearAccelerationCount() {
-            return linearAcceleration_.size();
+        public int getLinearAccelerationListCount() {
+            return linearAccelerationList_.size();
         }
 
         /**
@@ -2454,10 +2454,10 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        public CoorSensorReq getLinearAcceleration(int index) {
-            return linearAcceleration_.get(index);
+        public CoorSensorReq getLinearAccelerationList(int index) {
+            return linearAccelerationList_.get(index);
         }
 
         /**
@@ -2465,25 +2465,25 @@ public final class Basic {
          * 线性加速度
          * </pre>
          *
-         * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+         * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
          */
-        public CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+        public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                 int index) {
-            return linearAcceleration_.get(index);
+            return linearAccelerationList_.get(index);
         }
 
-        public static final int AMBIENT_TEMPERATURE_FIELD_NUMBER = 9;
-        private java.util.List<FeelSensorReq> ambientTemperature_;
+        public static final int AMBIENT_TEMPERATURELIST_FIELD_NUMBER = 9;
+        private java.util.List<FeelSensorReq> ambientTemperatureList_;
 
         /**
          * <pre>
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        public java.util.List<FeelSensorReq> getAmbientTemperatureList() {
-            return ambientTemperature_;
+        public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
+            return ambientTemperatureList_;
         }
 
         /**
@@ -2491,11 +2491,11 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
         public java.util.List<? extends FeelSensorReqOrBuilder>
-        getAmbientTemperatureOrBuilderList() {
-            return ambientTemperature_;
+        getAmbientTemperatureListOrBuilderList() {
+            return ambientTemperatureList_;
         }
 
         /**
@@ -2503,10 +2503,10 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        public int getAmbientTemperatureCount() {
-            return ambientTemperature_.size();
+        public int getAmbientTemperatureListCount() {
+            return ambientTemperatureList_.size();
         }
 
         /**
@@ -2514,10 +2514,10 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        public FeelSensorReq getAmbientTemperature(int index) {
-            return ambientTemperature_.get(index);
+        public FeelSensorReq getAmbientTemperatureList(int index) {
+            return ambientTemperatureList_.get(index);
         }
 
         /**
@@ -2525,25 +2525,25 @@ public final class Basic {
          * 温度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+         * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
          */
-        public FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+        public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                 int index) {
-            return ambientTemperature_.get(index);
+            return ambientTemperatureList_.get(index);
         }
 
-        public static final int LIGHT_FIELD_NUMBER = 10;
-        private java.util.List<FeelSensorReq> light_;
+        public static final int LIGHTLIST_FIELD_NUMBER = 10;
+        private java.util.List<FeelSensorReq> lightList_;
 
         /**
          * <pre>
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        public java.util.List<FeelSensorReq> getLightList() {
-            return light_;
+        public java.util.List<FeelSensorReq> getLightListList() {
+            return lightList_;
         }
 
         /**
@@ -2551,11 +2551,11 @@ public final class Basic {
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
         public java.util.List<? extends FeelSensorReqOrBuilder>
-        getLightOrBuilderList() {
-            return light_;
+        getLightListOrBuilderList() {
+            return lightList_;
         }
 
         /**
@@ -2563,10 +2563,10 @@ public final class Basic {
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        public int getLightCount() {
-            return light_.size();
+        public int getLightListCount() {
+            return lightList_.size();
         }
 
         /**
@@ -2574,10 +2574,10 @@ public final class Basic {
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        public FeelSensorReq getLight(int index) {
-            return light_.get(index);
+        public FeelSensorReq getLightList(int index) {
+            return lightList_.get(index);
         }
 
         /**
@@ -2585,25 +2585,25 @@ public final class Basic {
          * 亮度
          * </pre>
          *
-         * <code>repeated .FeelSensorReq light = 10;</code>
+         * <code>repeated .FeelSensorReq lightList = 10;</code>
          */
-        public FeelSensorReqOrBuilder getLightOrBuilder(
+        public FeelSensorReqOrBuilder getLightListOrBuilder(
                 int index) {
-            return light_.get(index);
+            return lightList_.get(index);
         }
 
-        public static final int PRESSURE_FIELD_NUMBER = 11;
-        private java.util.List<FeelSensorReq> pressure_;
+        public static final int PRESSURELIST_FIELD_NUMBER = 11;
+        private java.util.List<FeelSensorReq> pressureList_;
 
         /**
          * <pre>
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        public java.util.List<FeelSensorReq> getPressureList() {
-            return pressure_;
+        public java.util.List<FeelSensorReq> getPressureListList() {
+            return pressureList_;
         }
 
         /**
@@ -2611,11 +2611,11 @@ public final class Basic {
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
         public java.util.List<? extends FeelSensorReqOrBuilder>
-        getPressureOrBuilderList() {
-            return pressure_;
+        getPressureListOrBuilderList() {
+            return pressureList_;
         }
 
         /**
@@ -2623,10 +2623,10 @@ public final class Basic {
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        public int getPressureCount() {
-            return pressure_.size();
+        public int getPressureListCount() {
+            return pressureList_.size();
         }
 
         /**
@@ -2634,10 +2634,10 @@ public final class Basic {
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        public FeelSensorReq getPressure(int index) {
-            return pressure_.get(index);
+        public FeelSensorReq getPressureList(int index) {
+            return pressureList_.get(index);
         }
 
         /**
@@ -2645,25 +2645,25 @@ public final class Basic {
          * 压力
          * </pre>
          *
-         * <code>repeated .FeelSensorReq pressure = 11;</code>
+         * <code>repeated .FeelSensorReq pressureList = 11;</code>
          */
-        public FeelSensorReqOrBuilder getPressureOrBuilder(
+        public FeelSensorReqOrBuilder getPressureListOrBuilder(
                 int index) {
-            return pressure_.get(index);
+            return pressureList_.get(index);
         }
 
-        public static final int PROXIMITY_FIELD_NUMBER = 12;
-        private java.util.List<FeelSensorReq> proximity_;
+        public static final int PROXIMITYLIST_FIELD_NUMBER = 12;
+        private java.util.List<FeelSensorReq> proximityList_;
 
         /**
          * <pre>
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        public java.util.List<FeelSensorReq> getProximityList() {
-            return proximity_;
+        public java.util.List<FeelSensorReq> getProximityListList() {
+            return proximityList_;
         }
 
         /**
@@ -2671,11 +2671,11 @@ public final class Basic {
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
         public java.util.List<? extends FeelSensorReqOrBuilder>
-        getProximityOrBuilderList() {
-            return proximity_;
+        getProximityListOrBuilderList() {
+            return proximityList_;
         }
 
         /**
@@ -2683,10 +2683,10 @@ public final class Basic {
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        public int getProximityCount() {
-            return proximity_.size();
+        public int getProximityListCount() {
+            return proximityList_.size();
         }
 
         /**
@@ -2694,10 +2694,10 @@ public final class Basic {
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        public FeelSensorReq getProximity(int index) {
-            return proximity_.get(index);
+        public FeelSensorReq getProximityList(int index) {
+            return proximityList_.get(index);
         }
 
         /**
@@ -2705,11 +2705,11 @@ public final class Basic {
          * 近距离
          * </pre>
          *
-         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         * <code>repeated .FeelSensorReq proximityList = 12;</code>
          */
-        public FeelSensorReqOrBuilder getProximityOrBuilder(
+        public FeelSensorReqOrBuilder getProximityListOrBuilder(
                 int index) {
-            return proximity_.get(index);
+            return proximityList_.get(index);
         }
 
         private byte memoizedIsInitialized = -1;
@@ -2724,62 +2724,62 @@ public final class Basic {
                 memoizedIsInitialized = 0;
                 return false;
             }
-            for (int i = 0; i < getMagneticCount(); i++) {
-                if (!getMagnetic(i).isInitialized()) {
+            for (int i = 0; i < getMagneticListCount(); i++) {
+                if (!getMagneticList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getAccelerometerCount(); i++) {
-                if (!getAccelerometer(i).isInitialized()) {
+            for (int i = 0; i < getAccelerometerListCount(); i++) {
+                if (!getAccelerometerList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getOrientationCount(); i++) {
-                if (!getOrientation(i).isInitialized()) {
+            for (int i = 0; i < getOrientationListCount(); i++) {
+                if (!getOrientationList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getGyroscopeCount(); i++) {
-                if (!getGyroscope(i).isInitialized()) {
+            for (int i = 0; i < getGyroscopeListCount(); i++) {
+                if (!getGyroscopeList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getGravityCount(); i++) {
-                if (!getGravity(i).isInitialized()) {
+            for (int i = 0; i < getGravityListCount(); i++) {
+                if (!getGravityList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getLinearAccelerationCount(); i++) {
-                if (!getLinearAcceleration(i).isInitialized()) {
+            for (int i = 0; i < getLinearAccelerationListCount(); i++) {
+                if (!getLinearAccelerationList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getAmbientTemperatureCount(); i++) {
-                if (!getAmbientTemperature(i).isInitialized()) {
+            for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
+                if (!getAmbientTemperatureList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getLightCount(); i++) {
-                if (!getLight(i).isInitialized()) {
+            for (int i = 0; i < getLightListCount(); i++) {
+                if (!getLightList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getPressureCount(); i++) {
-                if (!getPressure(i).isInitialized()) {
+            for (int i = 0; i < getPressureListCount(); i++) {
+                if (!getPressureList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
             }
-            for (int i = 0; i < getProximityCount(); i++) {
-                if (!getProximity(i).isInitialized()) {
+            for (int i = 0; i < getProximityListCount(); i++) {
+                if (!getProximityList(i).isInitialized()) {
                     memoizedIsInitialized = 0;
                     return false;
                 }
@@ -2797,35 +2797,35 @@ public final class Basic {
             if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 output.writeBytes(2, image_);
             }
-            for (int i = 0; i < magnetic_.size(); i++) {
-                output.writeMessage(3, magnetic_.get(i));
+            for (int i = 0; i < magneticList_.size(); i++) {
+                output.writeMessage(3, magneticList_.get(i));
             }
-            for (int i = 0; i < accelerometer_.size(); i++) {
-                output.writeMessage(4, accelerometer_.get(i));
+            for (int i = 0; i < accelerometerList_.size(); i++) {
+                output.writeMessage(4, accelerometerList_.get(i));
             }
-            for (int i = 0; i < orientation_.size(); i++) {
-                output.writeMessage(5, orientation_.get(i));
+            for (int i = 0; i < orientationList_.size(); i++) {
+                output.writeMessage(5, orientationList_.get(i));
             }
-            for (int i = 0; i < gyroscope_.size(); i++) {
-                output.writeMessage(6, gyroscope_.get(i));
+            for (int i = 0; i < gyroscopeList_.size(); i++) {
+                output.writeMessage(6, gyroscopeList_.get(i));
             }
-            for (int i = 0; i < gravity_.size(); i++) {
-                output.writeMessage(7, gravity_.get(i));
+            for (int i = 0; i < gravityList_.size(); i++) {
+                output.writeMessage(7, gravityList_.get(i));
             }
-            for (int i = 0; i < linearAcceleration_.size(); i++) {
-                output.writeMessage(8, linearAcceleration_.get(i));
+            for (int i = 0; i < linearAccelerationList_.size(); i++) {
+                output.writeMessage(8, linearAccelerationList_.get(i));
             }
-            for (int i = 0; i < ambientTemperature_.size(); i++) {
-                output.writeMessage(9, ambientTemperature_.get(i));
+            for (int i = 0; i < ambientTemperatureList_.size(); i++) {
+                output.writeMessage(9, ambientTemperatureList_.get(i));
             }
-            for (int i = 0; i < light_.size(); i++) {
-                output.writeMessage(10, light_.get(i));
+            for (int i = 0; i < lightList_.size(); i++) {
+                output.writeMessage(10, lightList_.get(i));
             }
-            for (int i = 0; i < pressure_.size(); i++) {
-                output.writeMessage(11, pressure_.get(i));
+            for (int i = 0; i < pressureList_.size(); i++) {
+                output.writeMessage(11, pressureList_.get(i));
             }
-            for (int i = 0; i < proximity_.size(); i++) {
-                output.writeMessage(12, proximity_.get(i));
+            for (int i = 0; i < proximityList_.size(); i++) {
+                output.writeMessage(12, proximityList_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -2844,45 +2844,45 @@ public final class Basic {
                 size += com.google.protobuf.CodedOutputStream
                         .computeBytesSize(2, image_);
             }
-            for (int i = 0; i < magnetic_.size(); i++) {
+            for (int i = 0; i < magneticList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, magnetic_.get(i));
+                        .computeMessageSize(3, magneticList_.get(i));
             }
-            for (int i = 0; i < accelerometer_.size(); i++) {
+            for (int i = 0; i < accelerometerList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(4, accelerometer_.get(i));
+                        .computeMessageSize(4, accelerometerList_.get(i));
             }
-            for (int i = 0; i < orientation_.size(); i++) {
+            for (int i = 0; i < orientationList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(5, orientation_.get(i));
+                        .computeMessageSize(5, orientationList_.get(i));
             }
-            for (int i = 0; i < gyroscope_.size(); i++) {
+            for (int i = 0; i < gyroscopeList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(6, gyroscope_.get(i));
+                        .computeMessageSize(6, gyroscopeList_.get(i));
             }
-            for (int i = 0; i < gravity_.size(); i++) {
+            for (int i = 0; i < gravityList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(7, gravity_.get(i));
+                        .computeMessageSize(7, gravityList_.get(i));
             }
-            for (int i = 0; i < linearAcceleration_.size(); i++) {
+            for (int i = 0; i < linearAccelerationList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(8, linearAcceleration_.get(i));
+                        .computeMessageSize(8, linearAccelerationList_.get(i));
             }
-            for (int i = 0; i < ambientTemperature_.size(); i++) {
+            for (int i = 0; i < ambientTemperatureList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(9, ambientTemperature_.get(i));
+                        .computeMessageSize(9, ambientTemperatureList_.get(i));
             }
-            for (int i = 0; i < light_.size(); i++) {
+            for (int i = 0; i < lightList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(10, light_.get(i));
+                        .computeMessageSize(10, lightList_.get(i));
             }
-            for (int i = 0; i < pressure_.size(); i++) {
+            for (int i = 0; i < pressureList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(11, pressure_.get(i));
+                        .computeMessageSize(11, pressureList_.get(i));
             }
-            for (int i = 0; i < proximity_.size(); i++) {
+            for (int i = 0; i < proximityList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(12, proximity_.get(i));
+                        .computeMessageSize(12, proximityList_.get(i));
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -2910,26 +2910,26 @@ public final class Basic {
                 result = result && getImage()
                         .equals(other.getImage());
             }
-            result = result && getMagneticList()
-                    .equals(other.getMagneticList());
-            result = result && getAccelerometerList()
-                    .equals(other.getAccelerometerList());
-            result = result && getOrientationList()
-                    .equals(other.getOrientationList());
-            result = result && getGyroscopeList()
-                    .equals(other.getGyroscopeList());
-            result = result && getGravityList()
-                    .equals(other.getGravityList());
-            result = result && getLinearAccelerationList()
-                    .equals(other.getLinearAccelerationList());
-            result = result && getAmbientTemperatureList()
-                    .equals(other.getAmbientTemperatureList());
-            result = result && getLightList()
-                    .equals(other.getLightList());
-            result = result && getPressureList()
-                    .equals(other.getPressureList());
-            result = result && getProximityList()
-                    .equals(other.getProximityList());
+            result = result && getMagneticListList()
+                    .equals(other.getMagneticListList());
+            result = result && getAccelerometerListList()
+                    .equals(other.getAccelerometerListList());
+            result = result && getOrientationListList()
+                    .equals(other.getOrientationListList());
+            result = result && getGyroscopeListList()
+                    .equals(other.getGyroscopeListList());
+            result = result && getGravityListList()
+                    .equals(other.getGravityListList());
+            result = result && getLinearAccelerationListList()
+                    .equals(other.getLinearAccelerationListList());
+            result = result && getAmbientTemperatureListList()
+                    .equals(other.getAmbientTemperatureListList());
+            result = result && getLightListList()
+                    .equals(other.getLightListList());
+            result = result && getPressureListList()
+                    .equals(other.getPressureListList());
+            result = result && getProximityListList()
+                    .equals(other.getProximityListList());
             result = result && unknownFields.equals(other.unknownFields);
             return result;
         }
@@ -2950,45 +2950,45 @@ public final class Basic {
                 hash = (37 * hash) + IMAGE_FIELD_NUMBER;
                 hash = (53 * hash) + getImage().hashCode();
             }
-            if (getMagneticCount() > 0) {
-                hash = (37 * hash) + MAGNETIC_FIELD_NUMBER;
-                hash = (53 * hash) + getMagneticList().hashCode();
+            if (getMagneticListCount() > 0) {
+                hash = (37 * hash) + MAGNETICLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getMagneticListList().hashCode();
             }
-            if (getAccelerometerCount() > 0) {
-                hash = (37 * hash) + ACCELEROMETER_FIELD_NUMBER;
-                hash = (53 * hash) + getAccelerometerList().hashCode();
+            if (getAccelerometerListCount() > 0) {
+                hash = (37 * hash) + ACCELEROMETERLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getAccelerometerListList().hashCode();
             }
-            if (getOrientationCount() > 0) {
-                hash = (37 * hash) + ORIENTATION_FIELD_NUMBER;
-                hash = (53 * hash) + getOrientationList().hashCode();
+            if (getOrientationListCount() > 0) {
+                hash = (37 * hash) + ORIENTATIONLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getOrientationListList().hashCode();
             }
-            if (getGyroscopeCount() > 0) {
-                hash = (37 * hash) + GYROSCOPE_FIELD_NUMBER;
-                hash = (53 * hash) + getGyroscopeList().hashCode();
+            if (getGyroscopeListCount() > 0) {
+                hash = (37 * hash) + GYROSCOPELIST_FIELD_NUMBER;
+                hash = (53 * hash) + getGyroscopeListList().hashCode();
             }
-            if (getGravityCount() > 0) {
-                hash = (37 * hash) + GRAVITY_FIELD_NUMBER;
-                hash = (53 * hash) + getGravityList().hashCode();
+            if (getGravityListCount() > 0) {
+                hash = (37 * hash) + GRAVITYLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getGravityListList().hashCode();
             }
-            if (getLinearAccelerationCount() > 0) {
-                hash = (37 * hash) + LINEAR_ACCELERATION_FIELD_NUMBER;
-                hash = (53 * hash) + getLinearAccelerationList().hashCode();
+            if (getLinearAccelerationListCount() > 0) {
+                hash = (37 * hash) + LINEAR_ACCELERATIONLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getLinearAccelerationListList().hashCode();
             }
-            if (getAmbientTemperatureCount() > 0) {
-                hash = (37 * hash) + AMBIENT_TEMPERATURE_FIELD_NUMBER;
-                hash = (53 * hash) + getAmbientTemperatureList().hashCode();
+            if (getAmbientTemperatureListCount() > 0) {
+                hash = (37 * hash) + AMBIENT_TEMPERATURELIST_FIELD_NUMBER;
+                hash = (53 * hash) + getAmbientTemperatureListList().hashCode();
             }
-            if (getLightCount() > 0) {
-                hash = (37 * hash) + LIGHT_FIELD_NUMBER;
-                hash = (53 * hash) + getLightList().hashCode();
+            if (getLightListCount() > 0) {
+                hash = (37 * hash) + LIGHTLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getLightListList().hashCode();
             }
-            if (getPressureCount() > 0) {
-                hash = (37 * hash) + PRESSURE_FIELD_NUMBER;
-                hash = (53 * hash) + getPressureList().hashCode();
+            if (getPressureListCount() > 0) {
+                hash = (37 * hash) + PRESSURELIST_FIELD_NUMBER;
+                hash = (53 * hash) + getPressureListList().hashCode();
             }
-            if (getProximityCount() > 0) {
-                hash = (37 * hash) + PROXIMITY_FIELD_NUMBER;
-                hash = (53 * hash) + getProximityList().hashCode();
+            if (getProximityListCount() > 0) {
+                hash = (37 * hash) + PROXIMITYLIST_FIELD_NUMBER;
+                hash = (53 * hash) + getProximityListList().hashCode();
             }
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
@@ -3136,16 +3136,16 @@ public final class Basic {
             private void maybeForceBuilderInitialization() {
                 if (com.google.protobuf.GeneratedMessageV3
                         .alwaysUseFieldBuilders) {
-                    getMagneticFieldBuilder();
-                    getAccelerometerFieldBuilder();
-                    getOrientationFieldBuilder();
-                    getGyroscopeFieldBuilder();
-                    getGravityFieldBuilder();
-                    getLinearAccelerationFieldBuilder();
-                    getAmbientTemperatureFieldBuilder();
-                    getLightFieldBuilder();
-                    getPressureFieldBuilder();
-                    getProximityFieldBuilder();
+                    getMagneticListFieldBuilder();
+                    getAccelerometerListFieldBuilder();
+                    getOrientationListFieldBuilder();
+                    getGyroscopeListFieldBuilder();
+                    getGravityListFieldBuilder();
+                    getLinearAccelerationListFieldBuilder();
+                    getAmbientTemperatureListFieldBuilder();
+                    getLightListFieldBuilder();
+                    getPressureListFieldBuilder();
+                    getProximityListFieldBuilder();
                 }
             }
 
@@ -3156,65 +3156,65 @@ public final class Basic {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 image_ = com.google.protobuf.ByteString.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000002);
-                if (magneticBuilder_ == null) {
-                    magnetic_ = java.util.Collections.emptyList();
+                if (magneticListBuilder_ == null) {
+                    magneticList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000004);
                 } else {
-                    magneticBuilder_.clear();
+                    magneticListBuilder_.clear();
                 }
-                if (accelerometerBuilder_ == null) {
-                    accelerometer_ = java.util.Collections.emptyList();
+                if (accelerometerListBuilder_ == null) {
+                    accelerometerList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000008);
                 } else {
-                    accelerometerBuilder_.clear();
+                    accelerometerListBuilder_.clear();
                 }
-                if (orientationBuilder_ == null) {
-                    orientation_ = java.util.Collections.emptyList();
+                if (orientationListBuilder_ == null) {
+                    orientationList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000010);
                 } else {
-                    orientationBuilder_.clear();
+                    orientationListBuilder_.clear();
                 }
-                if (gyroscopeBuilder_ == null) {
-                    gyroscope_ = java.util.Collections.emptyList();
+                if (gyroscopeListBuilder_ == null) {
+                    gyroscopeList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000020);
                 } else {
-                    gyroscopeBuilder_.clear();
+                    gyroscopeListBuilder_.clear();
                 }
-                if (gravityBuilder_ == null) {
-                    gravity_ = java.util.Collections.emptyList();
+                if (gravityListBuilder_ == null) {
+                    gravityList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000040);
                 } else {
-                    gravityBuilder_.clear();
+                    gravityListBuilder_.clear();
                 }
-                if (linearAccelerationBuilder_ == null) {
-                    linearAcceleration_ = java.util.Collections.emptyList();
+                if (linearAccelerationListBuilder_ == null) {
+                    linearAccelerationList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000080);
                 } else {
-                    linearAccelerationBuilder_.clear();
+                    linearAccelerationListBuilder_.clear();
                 }
-                if (ambientTemperatureBuilder_ == null) {
-                    ambientTemperature_ = java.util.Collections.emptyList();
+                if (ambientTemperatureListBuilder_ == null) {
+                    ambientTemperatureList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000100);
                 } else {
-                    ambientTemperatureBuilder_.clear();
+                    ambientTemperatureListBuilder_.clear();
                 }
-                if (lightBuilder_ == null) {
-                    light_ = java.util.Collections.emptyList();
+                if (lightListBuilder_ == null) {
+                    lightList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000200);
                 } else {
-                    lightBuilder_.clear();
+                    lightListBuilder_.clear();
                 }
-                if (pressureBuilder_ == null) {
-                    pressure_ = java.util.Collections.emptyList();
+                if (pressureListBuilder_ == null) {
+                    pressureList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000400);
                 } else {
-                    pressureBuilder_.clear();
+                    pressureListBuilder_.clear();
                 }
-                if (proximityBuilder_ == null) {
-                    proximity_ = java.util.Collections.emptyList();
+                if (proximityListBuilder_ == null) {
+                    proximityList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000800);
                 } else {
-                    proximityBuilder_.clear();
+                    proximityListBuilder_.clear();
                 }
                 return this;
             }
@@ -3252,95 +3252,95 @@ public final class Basic {
                     to_bitField0_ |= 0x00000002;
                 }
                 result.image_ = image_;
-                if (magneticBuilder_ == null) {
+                if (magneticListBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                        magnetic_ = java.util.Collections.unmodifiableList(magnetic_);
+                        magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
                         bitField0_ = (bitField0_ & ~0x00000004);
                     }
-                    result.magnetic_ = magnetic_;
+                    result.magneticList_ = magneticList_;
                 } else {
-                    result.magnetic_ = magneticBuilder_.build();
+                    result.magneticList_ = magneticListBuilder_.build();
                 }
-                if (accelerometerBuilder_ == null) {
+                if (accelerometerListBuilder_ == null) {
                     if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                        accelerometer_ = java.util.Collections.unmodifiableList(accelerometer_);
+                        accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
                         bitField0_ = (bitField0_ & ~0x00000008);
                     }
-                    result.accelerometer_ = accelerometer_;
+                    result.accelerometerList_ = accelerometerList_;
                 } else {
-                    result.accelerometer_ = accelerometerBuilder_.build();
+                    result.accelerometerList_ = accelerometerListBuilder_.build();
                 }
-                if (orientationBuilder_ == null) {
+                if (orientationListBuilder_ == null) {
                     if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                        orientation_ = java.util.Collections.unmodifiableList(orientation_);
+                        orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
                         bitField0_ = (bitField0_ & ~0x00000010);
                     }
-                    result.orientation_ = orientation_;
+                    result.orientationList_ = orientationList_;
                 } else {
-                    result.orientation_ = orientationBuilder_.build();
+                    result.orientationList_ = orientationListBuilder_.build();
                 }
-                if (gyroscopeBuilder_ == null) {
+                if (gyroscopeListBuilder_ == null) {
                     if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                        gyroscope_ = java.util.Collections.unmodifiableList(gyroscope_);
+                        gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
                         bitField0_ = (bitField0_ & ~0x00000020);
                     }
-                    result.gyroscope_ = gyroscope_;
+                    result.gyroscopeList_ = gyroscopeList_;
                 } else {
-                    result.gyroscope_ = gyroscopeBuilder_.build();
+                    result.gyroscopeList_ = gyroscopeListBuilder_.build();
                 }
-                if (gravityBuilder_ == null) {
+                if (gravityListBuilder_ == null) {
                     if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                        gravity_ = java.util.Collections.unmodifiableList(gravity_);
+                        gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
                         bitField0_ = (bitField0_ & ~0x00000040);
                     }
-                    result.gravity_ = gravity_;
+                    result.gravityList_ = gravityList_;
                 } else {
-                    result.gravity_ = gravityBuilder_.build();
+                    result.gravityList_ = gravityListBuilder_.build();
                 }
-                if (linearAccelerationBuilder_ == null) {
+                if (linearAccelerationListBuilder_ == null) {
                     if (((bitField0_ & 0x00000080) == 0x00000080)) {
-                        linearAcceleration_ = java.util.Collections.unmodifiableList(linearAcceleration_);
+                        linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
                         bitField0_ = (bitField0_ & ~0x00000080);
                     }
-                    result.linearAcceleration_ = linearAcceleration_;
+                    result.linearAccelerationList_ = linearAccelerationList_;
                 } else {
-                    result.linearAcceleration_ = linearAccelerationBuilder_.build();
+                    result.linearAccelerationList_ = linearAccelerationListBuilder_.build();
                 }
-                if (ambientTemperatureBuilder_ == null) {
+                if (ambientTemperatureListBuilder_ == null) {
                     if (((bitField0_ & 0x00000100) == 0x00000100)) {
-                        ambientTemperature_ = java.util.Collections.unmodifiableList(ambientTemperature_);
+                        ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
                         bitField0_ = (bitField0_ & ~0x00000100);
                     }
-                    result.ambientTemperature_ = ambientTemperature_;
+                    result.ambientTemperatureList_ = ambientTemperatureList_;
                 } else {
-                    result.ambientTemperature_ = ambientTemperatureBuilder_.build();
+                    result.ambientTemperatureList_ = ambientTemperatureListBuilder_.build();
                 }
-                if (lightBuilder_ == null) {
+                if (lightListBuilder_ == null) {
                     if (((bitField0_ & 0x00000200) == 0x00000200)) {
-                        light_ = java.util.Collections.unmodifiableList(light_);
+                        lightList_ = java.util.Collections.unmodifiableList(lightList_);
                         bitField0_ = (bitField0_ & ~0x00000200);
                     }
-                    result.light_ = light_;
+                    result.lightList_ = lightList_;
                 } else {
-                    result.light_ = lightBuilder_.build();
+                    result.lightList_ = lightListBuilder_.build();
                 }
-                if (pressureBuilder_ == null) {
+                if (pressureListBuilder_ == null) {
                     if (((bitField0_ & 0x00000400) == 0x00000400)) {
-                        pressure_ = java.util.Collections.unmodifiableList(pressure_);
+                        pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
                         bitField0_ = (bitField0_ & ~0x00000400);
                     }
-                    result.pressure_ = pressure_;
+                    result.pressureList_ = pressureList_;
                 } else {
-                    result.pressure_ = pressureBuilder_.build();
+                    result.pressureList_ = pressureListBuilder_.build();
                 }
-                if (proximityBuilder_ == null) {
+                if (proximityListBuilder_ == null) {
                     if (((bitField0_ & 0x00000800) == 0x00000800)) {
-                        proximity_ = java.util.Collections.unmodifiableList(proximity_);
+                        proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
                         bitField0_ = (bitField0_ & ~0x00000800);
                     }
-                    result.proximity_ = proximity_;
+                    result.proximityList_ = proximityList_;
                 } else {
-                    result.proximity_ = proximityBuilder_.build();
+                    result.proximityList_ = proximityListBuilder_.build();
                 }
                 result.bitField0_ = to_bitField0_;
                 onBuilt();
@@ -3403,263 +3403,263 @@ public final class Basic {
                 if (other.hasImage()) {
                     setImage(other.getImage());
                 }
-                if (magneticBuilder_ == null) {
-                    if (!other.magnetic_.isEmpty()) {
-                        if (magnetic_.isEmpty()) {
-                            magnetic_ = other.magnetic_;
+                if (magneticListBuilder_ == null) {
+                    if (!other.magneticList_.isEmpty()) {
+                        if (magneticList_.isEmpty()) {
+                            magneticList_ = other.magneticList_;
                             bitField0_ = (bitField0_ & ~0x00000004);
                         } else {
-                            ensureMagneticIsMutable();
-                            magnetic_.addAll(other.magnetic_);
+                            ensureMagneticListIsMutable();
+                            magneticList_.addAll(other.magneticList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.magnetic_.isEmpty()) {
-                        if (magneticBuilder_.isEmpty()) {
-                            magneticBuilder_.dispose();
-                            magneticBuilder_ = null;
-                            magnetic_ = other.magnetic_;
+                    if (!other.magneticList_.isEmpty()) {
+                        if (magneticListBuilder_.isEmpty()) {
+                            magneticListBuilder_.dispose();
+                            magneticListBuilder_ = null;
+                            magneticList_ = other.magneticList_;
                             bitField0_ = (bitField0_ & ~0x00000004);
-                            magneticBuilder_ =
+                            magneticListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getMagneticFieldBuilder() : null;
+                                            getMagneticListFieldBuilder() : null;
                         } else {
-                            magneticBuilder_.addAllMessages(other.magnetic_);
+                            magneticListBuilder_.addAllMessages(other.magneticList_);
                         }
                     }
                 }
-                if (accelerometerBuilder_ == null) {
-                    if (!other.accelerometer_.isEmpty()) {
-                        if (accelerometer_.isEmpty()) {
-                            accelerometer_ = other.accelerometer_;
+                if (accelerometerListBuilder_ == null) {
+                    if (!other.accelerometerList_.isEmpty()) {
+                        if (accelerometerList_.isEmpty()) {
+                            accelerometerList_ = other.accelerometerList_;
                             bitField0_ = (bitField0_ & ~0x00000008);
                         } else {
-                            ensureAccelerometerIsMutable();
-                            accelerometer_.addAll(other.accelerometer_);
+                            ensureAccelerometerListIsMutable();
+                            accelerometerList_.addAll(other.accelerometerList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.accelerometer_.isEmpty()) {
-                        if (accelerometerBuilder_.isEmpty()) {
-                            accelerometerBuilder_.dispose();
-                            accelerometerBuilder_ = null;
-                            accelerometer_ = other.accelerometer_;
+                    if (!other.accelerometerList_.isEmpty()) {
+                        if (accelerometerListBuilder_.isEmpty()) {
+                            accelerometerListBuilder_.dispose();
+                            accelerometerListBuilder_ = null;
+                            accelerometerList_ = other.accelerometerList_;
                             bitField0_ = (bitField0_ & ~0x00000008);
-                            accelerometerBuilder_ =
+                            accelerometerListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getAccelerometerFieldBuilder() : null;
+                                            getAccelerometerListFieldBuilder() : null;
                         } else {
-                            accelerometerBuilder_.addAllMessages(other.accelerometer_);
+                            accelerometerListBuilder_.addAllMessages(other.accelerometerList_);
                         }
                     }
                 }
-                if (orientationBuilder_ == null) {
-                    if (!other.orientation_.isEmpty()) {
-                        if (orientation_.isEmpty()) {
-                            orientation_ = other.orientation_;
+                if (orientationListBuilder_ == null) {
+                    if (!other.orientationList_.isEmpty()) {
+                        if (orientationList_.isEmpty()) {
+                            orientationList_ = other.orientationList_;
                             bitField0_ = (bitField0_ & ~0x00000010);
                         } else {
-                            ensureOrientationIsMutable();
-                            orientation_.addAll(other.orientation_);
+                            ensureOrientationListIsMutable();
+                            orientationList_.addAll(other.orientationList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.orientation_.isEmpty()) {
-                        if (orientationBuilder_.isEmpty()) {
-                            orientationBuilder_.dispose();
-                            orientationBuilder_ = null;
-                            orientation_ = other.orientation_;
+                    if (!other.orientationList_.isEmpty()) {
+                        if (orientationListBuilder_.isEmpty()) {
+                            orientationListBuilder_.dispose();
+                            orientationListBuilder_ = null;
+                            orientationList_ = other.orientationList_;
                             bitField0_ = (bitField0_ & ~0x00000010);
-                            orientationBuilder_ =
+                            orientationListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getOrientationFieldBuilder() : null;
+                                            getOrientationListFieldBuilder() : null;
                         } else {
-                            orientationBuilder_.addAllMessages(other.orientation_);
+                            orientationListBuilder_.addAllMessages(other.orientationList_);
                         }
                     }
                 }
-                if (gyroscopeBuilder_ == null) {
-                    if (!other.gyroscope_.isEmpty()) {
-                        if (gyroscope_.isEmpty()) {
-                            gyroscope_ = other.gyroscope_;
+                if (gyroscopeListBuilder_ == null) {
+                    if (!other.gyroscopeList_.isEmpty()) {
+                        if (gyroscopeList_.isEmpty()) {
+                            gyroscopeList_ = other.gyroscopeList_;
                             bitField0_ = (bitField0_ & ~0x00000020);
                         } else {
-                            ensureGyroscopeIsMutable();
-                            gyroscope_.addAll(other.gyroscope_);
+                            ensureGyroscopeListIsMutable();
+                            gyroscopeList_.addAll(other.gyroscopeList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.gyroscope_.isEmpty()) {
-                        if (gyroscopeBuilder_.isEmpty()) {
-                            gyroscopeBuilder_.dispose();
-                            gyroscopeBuilder_ = null;
-                            gyroscope_ = other.gyroscope_;
+                    if (!other.gyroscopeList_.isEmpty()) {
+                        if (gyroscopeListBuilder_.isEmpty()) {
+                            gyroscopeListBuilder_.dispose();
+                            gyroscopeListBuilder_ = null;
+                            gyroscopeList_ = other.gyroscopeList_;
                             bitField0_ = (bitField0_ & ~0x00000020);
-                            gyroscopeBuilder_ =
+                            gyroscopeListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getGyroscopeFieldBuilder() : null;
+                                            getGyroscopeListFieldBuilder() : null;
                         } else {
-                            gyroscopeBuilder_.addAllMessages(other.gyroscope_);
+                            gyroscopeListBuilder_.addAllMessages(other.gyroscopeList_);
                         }
                     }
                 }
-                if (gravityBuilder_ == null) {
-                    if (!other.gravity_.isEmpty()) {
-                        if (gravity_.isEmpty()) {
-                            gravity_ = other.gravity_;
+                if (gravityListBuilder_ == null) {
+                    if (!other.gravityList_.isEmpty()) {
+                        if (gravityList_.isEmpty()) {
+                            gravityList_ = other.gravityList_;
                             bitField0_ = (bitField0_ & ~0x00000040);
                         } else {
-                            ensureGravityIsMutable();
-                            gravity_.addAll(other.gravity_);
+                            ensureGravityListIsMutable();
+                            gravityList_.addAll(other.gravityList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.gravity_.isEmpty()) {
-                        if (gravityBuilder_.isEmpty()) {
-                            gravityBuilder_.dispose();
-                            gravityBuilder_ = null;
-                            gravity_ = other.gravity_;
+                    if (!other.gravityList_.isEmpty()) {
+                        if (gravityListBuilder_.isEmpty()) {
+                            gravityListBuilder_.dispose();
+                            gravityListBuilder_ = null;
+                            gravityList_ = other.gravityList_;
                             bitField0_ = (bitField0_ & ~0x00000040);
-                            gravityBuilder_ =
+                            gravityListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getGravityFieldBuilder() : null;
+                                            getGravityListFieldBuilder() : null;
                         } else {
-                            gravityBuilder_.addAllMessages(other.gravity_);
+                            gravityListBuilder_.addAllMessages(other.gravityList_);
                         }
                     }
                 }
-                if (linearAccelerationBuilder_ == null) {
-                    if (!other.linearAcceleration_.isEmpty()) {
-                        if (linearAcceleration_.isEmpty()) {
-                            linearAcceleration_ = other.linearAcceleration_;
+                if (linearAccelerationListBuilder_ == null) {
+                    if (!other.linearAccelerationList_.isEmpty()) {
+                        if (linearAccelerationList_.isEmpty()) {
+                            linearAccelerationList_ = other.linearAccelerationList_;
                             bitField0_ = (bitField0_ & ~0x00000080);
                         } else {
-                            ensureLinearAccelerationIsMutable();
-                            linearAcceleration_.addAll(other.linearAcceleration_);
+                            ensureLinearAccelerationListIsMutable();
+                            linearAccelerationList_.addAll(other.linearAccelerationList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.linearAcceleration_.isEmpty()) {
-                        if (linearAccelerationBuilder_.isEmpty()) {
-                            linearAccelerationBuilder_.dispose();
-                            linearAccelerationBuilder_ = null;
-                            linearAcceleration_ = other.linearAcceleration_;
+                    if (!other.linearAccelerationList_.isEmpty()) {
+                        if (linearAccelerationListBuilder_.isEmpty()) {
+                            linearAccelerationListBuilder_.dispose();
+                            linearAccelerationListBuilder_ = null;
+                            linearAccelerationList_ = other.linearAccelerationList_;
                             bitField0_ = (bitField0_ & ~0x00000080);
-                            linearAccelerationBuilder_ =
+                            linearAccelerationListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getLinearAccelerationFieldBuilder() : null;
+                                            getLinearAccelerationListFieldBuilder() : null;
                         } else {
-                            linearAccelerationBuilder_.addAllMessages(other.linearAcceleration_);
+                            linearAccelerationListBuilder_.addAllMessages(other.linearAccelerationList_);
                         }
                     }
                 }
-                if (ambientTemperatureBuilder_ == null) {
-                    if (!other.ambientTemperature_.isEmpty()) {
-                        if (ambientTemperature_.isEmpty()) {
-                            ambientTemperature_ = other.ambientTemperature_;
+                if (ambientTemperatureListBuilder_ == null) {
+                    if (!other.ambientTemperatureList_.isEmpty()) {
+                        if (ambientTemperatureList_.isEmpty()) {
+                            ambientTemperatureList_ = other.ambientTemperatureList_;
                             bitField0_ = (bitField0_ & ~0x00000100);
                         } else {
-                            ensureAmbientTemperatureIsMutable();
-                            ambientTemperature_.addAll(other.ambientTemperature_);
+                            ensureAmbientTemperatureListIsMutable();
+                            ambientTemperatureList_.addAll(other.ambientTemperatureList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.ambientTemperature_.isEmpty()) {
-                        if (ambientTemperatureBuilder_.isEmpty()) {
-                            ambientTemperatureBuilder_.dispose();
-                            ambientTemperatureBuilder_ = null;
-                            ambientTemperature_ = other.ambientTemperature_;
+                    if (!other.ambientTemperatureList_.isEmpty()) {
+                        if (ambientTemperatureListBuilder_.isEmpty()) {
+                            ambientTemperatureListBuilder_.dispose();
+                            ambientTemperatureListBuilder_ = null;
+                            ambientTemperatureList_ = other.ambientTemperatureList_;
                             bitField0_ = (bitField0_ & ~0x00000100);
-                            ambientTemperatureBuilder_ =
+                            ambientTemperatureListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getAmbientTemperatureFieldBuilder() : null;
+                                            getAmbientTemperatureListFieldBuilder() : null;
                         } else {
-                            ambientTemperatureBuilder_.addAllMessages(other.ambientTemperature_);
+                            ambientTemperatureListBuilder_.addAllMessages(other.ambientTemperatureList_);
                         }
                     }
                 }
-                if (lightBuilder_ == null) {
-                    if (!other.light_.isEmpty()) {
-                        if (light_.isEmpty()) {
-                            light_ = other.light_;
+                if (lightListBuilder_ == null) {
+                    if (!other.lightList_.isEmpty()) {
+                        if (lightList_.isEmpty()) {
+                            lightList_ = other.lightList_;
                             bitField0_ = (bitField0_ & ~0x00000200);
                         } else {
-                            ensureLightIsMutable();
-                            light_.addAll(other.light_);
+                            ensureLightListIsMutable();
+                            lightList_.addAll(other.lightList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.light_.isEmpty()) {
-                        if (lightBuilder_.isEmpty()) {
-                            lightBuilder_.dispose();
-                            lightBuilder_ = null;
-                            light_ = other.light_;
+                    if (!other.lightList_.isEmpty()) {
+                        if (lightListBuilder_.isEmpty()) {
+                            lightListBuilder_.dispose();
+                            lightListBuilder_ = null;
+                            lightList_ = other.lightList_;
                             bitField0_ = (bitField0_ & ~0x00000200);
-                            lightBuilder_ =
+                            lightListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getLightFieldBuilder() : null;
+                                            getLightListFieldBuilder() : null;
                         } else {
-                            lightBuilder_.addAllMessages(other.light_);
+                            lightListBuilder_.addAllMessages(other.lightList_);
                         }
                     }
                 }
-                if (pressureBuilder_ == null) {
-                    if (!other.pressure_.isEmpty()) {
-                        if (pressure_.isEmpty()) {
-                            pressure_ = other.pressure_;
+                if (pressureListBuilder_ == null) {
+                    if (!other.pressureList_.isEmpty()) {
+                        if (pressureList_.isEmpty()) {
+                            pressureList_ = other.pressureList_;
                             bitField0_ = (bitField0_ & ~0x00000400);
                         } else {
-                            ensurePressureIsMutable();
-                            pressure_.addAll(other.pressure_);
+                            ensurePressureListIsMutable();
+                            pressureList_.addAll(other.pressureList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.pressure_.isEmpty()) {
-                        if (pressureBuilder_.isEmpty()) {
-                            pressureBuilder_.dispose();
-                            pressureBuilder_ = null;
-                            pressure_ = other.pressure_;
+                    if (!other.pressureList_.isEmpty()) {
+                        if (pressureListBuilder_.isEmpty()) {
+                            pressureListBuilder_.dispose();
+                            pressureListBuilder_ = null;
+                            pressureList_ = other.pressureList_;
                             bitField0_ = (bitField0_ & ~0x00000400);
-                            pressureBuilder_ =
+                            pressureListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getPressureFieldBuilder() : null;
+                                            getPressureListFieldBuilder() : null;
                         } else {
-                            pressureBuilder_.addAllMessages(other.pressure_);
+                            pressureListBuilder_.addAllMessages(other.pressureList_);
                         }
                     }
                 }
-                if (proximityBuilder_ == null) {
-                    if (!other.proximity_.isEmpty()) {
-                        if (proximity_.isEmpty()) {
-                            proximity_ = other.proximity_;
+                if (proximityListBuilder_ == null) {
+                    if (!other.proximityList_.isEmpty()) {
+                        if (proximityList_.isEmpty()) {
+                            proximityList_ = other.proximityList_;
                             bitField0_ = (bitField0_ & ~0x00000800);
                         } else {
-                            ensureProximityIsMutable();
-                            proximity_.addAll(other.proximity_);
+                            ensureProximityListIsMutable();
+                            proximityList_.addAll(other.proximityList_);
                         }
                         onChanged();
                     }
                 } else {
-                    if (!other.proximity_.isEmpty()) {
-                        if (proximityBuilder_.isEmpty()) {
-                            proximityBuilder_.dispose();
-                            proximityBuilder_ = null;
-                            proximity_ = other.proximity_;
+                    if (!other.proximityList_.isEmpty()) {
+                        if (proximityListBuilder_.isEmpty()) {
+                            proximityListBuilder_.dispose();
+                            proximityListBuilder_ = null;
+                            proximityList_ = other.proximityList_;
                             bitField0_ = (bitField0_ & ~0x00000800);
-                            proximityBuilder_ =
+                            proximityListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getProximityFieldBuilder() : null;
+                                            getProximityListFieldBuilder() : null;
                         } else {
-                            proximityBuilder_.addAllMessages(other.proximity_);
+                            proximityListBuilder_.addAllMessages(other.proximityList_);
                         }
                     }
                 }
@@ -3673,53 +3673,53 @@ public final class Basic {
                 if (!hasTime()) {
                     return false;
                 }
-                for (int i = 0; i < getMagneticCount(); i++) {
-                    if (!getMagnetic(i).isInitialized()) {
+                for (int i = 0; i < getMagneticListCount(); i++) {
+                    if (!getMagneticList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getAccelerometerCount(); i++) {
-                    if (!getAccelerometer(i).isInitialized()) {
+                for (int i = 0; i < getAccelerometerListCount(); i++) {
+                    if (!getAccelerometerList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getOrientationCount(); i++) {
-                    if (!getOrientation(i).isInitialized()) {
+                for (int i = 0; i < getOrientationListCount(); i++) {
+                    if (!getOrientationList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getGyroscopeCount(); i++) {
-                    if (!getGyroscope(i).isInitialized()) {
+                for (int i = 0; i < getGyroscopeListCount(); i++) {
+                    if (!getGyroscopeList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getGravityCount(); i++) {
-                    if (!getGravity(i).isInitialized()) {
+                for (int i = 0; i < getGravityListCount(); i++) {
+                    if (!getGravityList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getLinearAccelerationCount(); i++) {
-                    if (!getLinearAcceleration(i).isInitialized()) {
+                for (int i = 0; i < getLinearAccelerationListCount(); i++) {
+                    if (!getLinearAccelerationList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getAmbientTemperatureCount(); i++) {
-                    if (!getAmbientTemperature(i).isInitialized()) {
+                for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
+                    if (!getAmbientTemperatureList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getLightCount(); i++) {
-                    if (!getLight(i).isInitialized()) {
+                for (int i = 0; i < getLightListCount(); i++) {
+                    if (!getLightList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getPressureCount(); i++) {
-                    if (!getPressure(i).isInitialized()) {
+                for (int i = 0; i < getPressureListCount(); i++) {
+                    if (!getPressureList(i).isInitialized()) {
                         return false;
                     }
                 }
-                for (int i = 0; i < getProximityCount(); i++) {
-                    if (!getProximity(i).isInitialized()) {
+                for (int i = 0; i < getProximityListCount(); i++) {
+                    if (!getProximityList(i).isInitialized()) {
                         return false;
                     }
                 }
@@ -3838,31 +3838,31 @@ public final class Basic {
                 return this;
             }
 
-            private java.util.List<CoorSensorReq> magnetic_ =
+            private java.util.List<CoorSensorReq> magneticList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureMagneticIsMutable() {
+            private void ensureMagneticListIsMutable() {
                 if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-                    magnetic_ = new java.util.ArrayList<CoorSensorReq>(magnetic_);
+                    magneticList_ = new java.util.ArrayList<CoorSensorReq>(magneticList_);
                     bitField0_ |= 0x00000004;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> magneticBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> magneticListBuilder_;
 
             /**
              * <pre>
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public java.util.List<CoorSensorReq> getMagneticList() {
-                if (magneticBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(magnetic_);
+            public java.util.List<CoorSensorReq> getMagneticListList() {
+                if (magneticListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(magneticList_);
                 } else {
-                    return magneticBuilder_.getMessageList();
+                    return magneticListBuilder_.getMessageList();
                 }
             }
 
@@ -3871,13 +3871,13 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public int getMagneticCount() {
-                if (magneticBuilder_ == null) {
-                    return magnetic_.size();
+            public int getMagneticListCount() {
+                if (magneticListBuilder_ == null) {
+                    return magneticList_.size();
                 } else {
-                    return magneticBuilder_.getCount();
+                    return magneticListBuilder_.getCount();
                 }
             }
 
@@ -3886,13 +3886,13 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public CoorSensorReq getMagnetic(int index) {
-                if (magneticBuilder_ == null) {
-                    return magnetic_.get(index);
+            public CoorSensorReq getMagneticList(int index) {
+                if (magneticListBuilder_ == null) {
+                    return magneticList_.get(index);
                 } else {
-                    return magneticBuilder_.getMessage(index);
+                    return magneticListBuilder_.getMessage(index);
                 }
             }
 
@@ -3901,19 +3901,19 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder setMagnetic(
+            public Builder setMagneticList(
                     int index, CoorSensorReq value) {
-                if (magneticBuilder_ == null) {
+                if (magneticListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureMagneticIsMutable();
-                    magnetic_.set(index, value);
+                    ensureMagneticListIsMutable();
+                    magneticList_.set(index, value);
                     onChanged();
                 } else {
-                    magneticBuilder_.setMessage(index, value);
+                    magneticListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -3923,16 +3923,16 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder setMagnetic(
+            public Builder setMagneticList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (magneticBuilder_ == null) {
-                    ensureMagneticIsMutable();
-                    magnetic_.set(index, builderForValue.build());
+                if (magneticListBuilder_ == null) {
+                    ensureMagneticListIsMutable();
+                    magneticList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    magneticBuilder_.setMessage(index, builderForValue.build());
+                    magneticListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -3942,18 +3942,18 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder addMagnetic(CoorSensorReq value) {
-                if (magneticBuilder_ == null) {
+            public Builder addMagneticList(CoorSensorReq value) {
+                if (magneticListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureMagneticIsMutable();
-                    magnetic_.add(value);
+                    ensureMagneticListIsMutable();
+                    magneticList_.add(value);
                     onChanged();
                 } else {
-                    magneticBuilder_.addMessage(value);
+                    magneticListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -3963,19 +3963,19 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder addMagnetic(
+            public Builder addMagneticList(
                     int index, CoorSensorReq value) {
-                if (magneticBuilder_ == null) {
+                if (magneticListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureMagneticIsMutable();
-                    magnetic_.add(index, value);
+                    ensureMagneticListIsMutable();
+                    magneticList_.add(index, value);
                     onChanged();
                 } else {
-                    magneticBuilder_.addMessage(index, value);
+                    magneticListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -3985,16 +3985,16 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder addMagnetic(
+            public Builder addMagneticList(
                     CoorSensorReq.Builder builderForValue) {
-                if (magneticBuilder_ == null) {
-                    ensureMagneticIsMutable();
-                    magnetic_.add(builderForValue.build());
+                if (magneticListBuilder_ == null) {
+                    ensureMagneticListIsMutable();
+                    magneticList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    magneticBuilder_.addMessage(builderForValue.build());
+                    magneticListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -4004,16 +4004,16 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder addMagnetic(
+            public Builder addMagneticList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (magneticBuilder_ == null) {
-                    ensureMagneticIsMutable();
-                    magnetic_.add(index, builderForValue.build());
+                if (magneticListBuilder_ == null) {
+                    ensureMagneticListIsMutable();
+                    magneticList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    magneticBuilder_.addMessage(index, builderForValue.build());
+                    magneticListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4023,17 +4023,17 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder addAllMagnetic(
+            public Builder addAllMagneticList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (magneticBuilder_ == null) {
-                    ensureMagneticIsMutable();
+                if (magneticListBuilder_ == null) {
+                    ensureMagneticListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, magnetic_);
+                            values, magneticList_);
                     onChanged();
                 } else {
-                    magneticBuilder_.addAllMessages(values);
+                    magneticListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -4043,15 +4043,15 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder clearMagnetic() {
-                if (magneticBuilder_ == null) {
-                    magnetic_ = java.util.Collections.emptyList();
+            public Builder clearMagneticList() {
+                if (magneticListBuilder_ == null) {
+                    magneticList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000004);
                     onChanged();
                 } else {
-                    magneticBuilder_.clear();
+                    magneticListBuilder_.clear();
                 }
                 return this;
             }
@@ -4061,15 +4061,15 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public Builder removeMagnetic(int index) {
-                if (magneticBuilder_ == null) {
-                    ensureMagneticIsMutable();
-                    magnetic_.remove(index);
+            public Builder removeMagneticList(int index) {
+                if (magneticListBuilder_ == null) {
+                    ensureMagneticListIsMutable();
+                    magneticList_.remove(index);
                     onChanged();
                 } else {
-                    magneticBuilder_.remove(index);
+                    magneticListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -4079,11 +4079,11 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public CoorSensorReq.Builder getMagneticBuilder(
+            public CoorSensorReq.Builder getMagneticListBuilder(
                     int index) {
-                return getMagneticFieldBuilder().getBuilder(index);
+                return getMagneticListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -4091,14 +4091,14 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public CoorSensorReqOrBuilder getMagneticOrBuilder(
+            public CoorSensorReqOrBuilder getMagneticListOrBuilder(
                     int index) {
-                if (magneticBuilder_ == null) {
-                    return magnetic_.get(index);
+                if (magneticListBuilder_ == null) {
+                    return magneticList_.get(index);
                 } else {
-                    return magneticBuilder_.getMessageOrBuilder(index);
+                    return magneticListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -4107,14 +4107,14 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getMagneticOrBuilderList() {
-                if (magneticBuilder_ != null) {
-                    return magneticBuilder_.getMessageOrBuilderList();
+            getMagneticListOrBuilderList() {
+                if (magneticListBuilder_ != null) {
+                    return magneticListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(magnetic_);
+                    return java.util.Collections.unmodifiableList(magneticList_);
                 }
             }
 
@@ -4123,10 +4123,10 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public CoorSensorReq.Builder addMagneticBuilder() {
-                return getMagneticFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addMagneticListBuilder() {
+                return getMagneticListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -4135,11 +4135,11 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
-            public CoorSensorReq.Builder addMagneticBuilder(
+            public CoorSensorReq.Builder addMagneticListBuilder(
                     int index) {
-                return getMagneticFieldBuilder().addBuilder(
+                return getMagneticListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -4148,53 +4148,53 @@ public final class Basic {
              * 磁场
              * </pre>
              *
-             * <code>repeated .CoorSensorReq magnetic = 3;</code>
+             * <code>repeated .CoorSensorReq magneticList = 3;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getMagneticBuilderList() {
-                return getMagneticFieldBuilder().getBuilderList();
+            getMagneticListBuilderList() {
+                return getMagneticListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getMagneticFieldBuilder() {
-                if (magneticBuilder_ == null) {
-                    magneticBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getMagneticListFieldBuilder() {
+                if (magneticListBuilder_ == null) {
+                    magneticListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            magnetic_,
+                            magneticList_,
                             ((bitField0_ & 0x00000004) == 0x00000004),
                             getParentForChildren(),
                             isClean());
-                    magnetic_ = null;
+                    magneticList_ = null;
                 }
-                return magneticBuilder_;
+                return magneticListBuilder_;
             }
 
-            private java.util.List<CoorSensorReq> accelerometer_ =
+            private java.util.List<CoorSensorReq> accelerometerList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureAccelerometerIsMutable() {
+            private void ensureAccelerometerListIsMutable() {
                 if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-                    accelerometer_ = new java.util.ArrayList<CoorSensorReq>(accelerometer_);
+                    accelerometerList_ = new java.util.ArrayList<CoorSensorReq>(accelerometerList_);
                     bitField0_ |= 0x00000008;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> accelerometerBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> accelerometerListBuilder_;
 
             /**
              * <pre>
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public java.util.List<CoorSensorReq> getAccelerometerList() {
-                if (accelerometerBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(accelerometer_);
+            public java.util.List<CoorSensorReq> getAccelerometerListList() {
+                if (accelerometerListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(accelerometerList_);
                 } else {
-                    return accelerometerBuilder_.getMessageList();
+                    return accelerometerListBuilder_.getMessageList();
                 }
             }
 
@@ -4203,13 +4203,13 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public int getAccelerometerCount() {
-                if (accelerometerBuilder_ == null) {
-                    return accelerometer_.size();
+            public int getAccelerometerListCount() {
+                if (accelerometerListBuilder_ == null) {
+                    return accelerometerList_.size();
                 } else {
-                    return accelerometerBuilder_.getCount();
+                    return accelerometerListBuilder_.getCount();
                 }
             }
 
@@ -4218,13 +4218,13 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public CoorSensorReq getAccelerometer(int index) {
-                if (accelerometerBuilder_ == null) {
-                    return accelerometer_.get(index);
+            public CoorSensorReq getAccelerometerList(int index) {
+                if (accelerometerListBuilder_ == null) {
+                    return accelerometerList_.get(index);
                 } else {
-                    return accelerometerBuilder_.getMessage(index);
+                    return accelerometerListBuilder_.getMessage(index);
                 }
             }
 
@@ -4233,19 +4233,19 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder setAccelerometer(
+            public Builder setAccelerometerList(
                     int index, CoorSensorReq value) {
-                if (accelerometerBuilder_ == null) {
+                if (accelerometerListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.set(index, value);
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.set(index, value);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.setMessage(index, value);
+                    accelerometerListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -4255,16 +4255,16 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder setAccelerometer(
+            public Builder setAccelerometerList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (accelerometerBuilder_ == null) {
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.set(index, builderForValue.build());
+                if (accelerometerListBuilder_ == null) {
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    accelerometerBuilder_.setMessage(index, builderForValue.build());
+                    accelerometerListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4274,18 +4274,18 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder addAccelerometer(CoorSensorReq value) {
-                if (accelerometerBuilder_ == null) {
+            public Builder addAccelerometerList(CoorSensorReq value) {
+                if (accelerometerListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.add(value);
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.add(value);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.addMessage(value);
+                    accelerometerListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -4295,19 +4295,19 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder addAccelerometer(
+            public Builder addAccelerometerList(
                     int index, CoorSensorReq value) {
-                if (accelerometerBuilder_ == null) {
+                if (accelerometerListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.add(index, value);
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.add(index, value);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.addMessage(index, value);
+                    accelerometerListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -4317,16 +4317,16 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder addAccelerometer(
+            public Builder addAccelerometerList(
                     CoorSensorReq.Builder builderForValue) {
-                if (accelerometerBuilder_ == null) {
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.add(builderForValue.build());
+                if (accelerometerListBuilder_ == null) {
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    accelerometerBuilder_.addMessage(builderForValue.build());
+                    accelerometerListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -4336,16 +4336,16 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder addAccelerometer(
+            public Builder addAccelerometerList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (accelerometerBuilder_ == null) {
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.add(index, builderForValue.build());
+                if (accelerometerListBuilder_ == null) {
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    accelerometerBuilder_.addMessage(index, builderForValue.build());
+                    accelerometerListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4355,17 +4355,17 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder addAllAccelerometer(
+            public Builder addAllAccelerometerList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (accelerometerBuilder_ == null) {
-                    ensureAccelerometerIsMutable();
+                if (accelerometerListBuilder_ == null) {
+                    ensureAccelerometerListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, accelerometer_);
+                            values, accelerometerList_);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.addAllMessages(values);
+                    accelerometerListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -4375,15 +4375,15 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder clearAccelerometer() {
-                if (accelerometerBuilder_ == null) {
-                    accelerometer_ = java.util.Collections.emptyList();
+            public Builder clearAccelerometerList() {
+                if (accelerometerListBuilder_ == null) {
+                    accelerometerList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000008);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.clear();
+                    accelerometerListBuilder_.clear();
                 }
                 return this;
             }
@@ -4393,15 +4393,15 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public Builder removeAccelerometer(int index) {
-                if (accelerometerBuilder_ == null) {
-                    ensureAccelerometerIsMutable();
-                    accelerometer_.remove(index);
+            public Builder removeAccelerometerList(int index) {
+                if (accelerometerListBuilder_ == null) {
+                    ensureAccelerometerListIsMutable();
+                    accelerometerList_.remove(index);
                     onChanged();
                 } else {
-                    accelerometerBuilder_.remove(index);
+                    accelerometerListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -4411,11 +4411,11 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public CoorSensorReq.Builder getAccelerometerBuilder(
+            public CoorSensorReq.Builder getAccelerometerListBuilder(
                     int index) {
-                return getAccelerometerFieldBuilder().getBuilder(index);
+                return getAccelerometerListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -4423,14 +4423,14 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+            public CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
                     int index) {
-                if (accelerometerBuilder_ == null) {
-                    return accelerometer_.get(index);
+                if (accelerometerListBuilder_ == null) {
+                    return accelerometerList_.get(index);
                 } else {
-                    return accelerometerBuilder_.getMessageOrBuilder(index);
+                    return accelerometerListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -4439,14 +4439,14 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getAccelerometerOrBuilderList() {
-                if (accelerometerBuilder_ != null) {
-                    return accelerometerBuilder_.getMessageOrBuilderList();
+            getAccelerometerListOrBuilderList() {
+                if (accelerometerListBuilder_ != null) {
+                    return accelerometerListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(accelerometer_);
+                    return java.util.Collections.unmodifiableList(accelerometerList_);
                 }
             }
 
@@ -4455,10 +4455,10 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public CoorSensorReq.Builder addAccelerometerBuilder() {
-                return getAccelerometerFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addAccelerometerListBuilder() {
+                return getAccelerometerListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -4467,11 +4467,11 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
-            public CoorSensorReq.Builder addAccelerometerBuilder(
+            public CoorSensorReq.Builder addAccelerometerListBuilder(
                     int index) {
-                return getAccelerometerFieldBuilder().addBuilder(
+                return getAccelerometerListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -4480,53 +4480,53 @@ public final class Basic {
              * 加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getAccelerometerBuilderList() {
-                return getAccelerometerFieldBuilder().getBuilderList();
+            getAccelerometerListBuilderList() {
+                return getAccelerometerListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getAccelerometerFieldBuilder() {
-                if (accelerometerBuilder_ == null) {
-                    accelerometerBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getAccelerometerListFieldBuilder() {
+                if (accelerometerListBuilder_ == null) {
+                    accelerometerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            accelerometer_,
+                            accelerometerList_,
                             ((bitField0_ & 0x00000008) == 0x00000008),
                             getParentForChildren(),
                             isClean());
-                    accelerometer_ = null;
+                    accelerometerList_ = null;
                 }
-                return accelerometerBuilder_;
+                return accelerometerListBuilder_;
             }
 
-            private java.util.List<CoorSensorReq> orientation_ =
+            private java.util.List<CoorSensorReq> orientationList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureOrientationIsMutable() {
+            private void ensureOrientationListIsMutable() {
                 if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-                    orientation_ = new java.util.ArrayList<CoorSensorReq>(orientation_);
+                    orientationList_ = new java.util.ArrayList<CoorSensorReq>(orientationList_);
                     bitField0_ |= 0x00000010;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> orientationBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> orientationListBuilder_;
 
             /**
              * <pre>
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public java.util.List<CoorSensorReq> getOrientationList() {
-                if (orientationBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(orientation_);
+            public java.util.List<CoorSensorReq> getOrientationListList() {
+                if (orientationListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(orientationList_);
                 } else {
-                    return orientationBuilder_.getMessageList();
+                    return orientationListBuilder_.getMessageList();
                 }
             }
 
@@ -4535,13 +4535,13 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public int getOrientationCount() {
-                if (orientationBuilder_ == null) {
-                    return orientation_.size();
+            public int getOrientationListCount() {
+                if (orientationListBuilder_ == null) {
+                    return orientationList_.size();
                 } else {
-                    return orientationBuilder_.getCount();
+                    return orientationListBuilder_.getCount();
                 }
             }
 
@@ -4550,13 +4550,13 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public CoorSensorReq getOrientation(int index) {
-                if (orientationBuilder_ == null) {
-                    return orientation_.get(index);
+            public CoorSensorReq getOrientationList(int index) {
+                if (orientationListBuilder_ == null) {
+                    return orientationList_.get(index);
                 } else {
-                    return orientationBuilder_.getMessage(index);
+                    return orientationListBuilder_.getMessage(index);
                 }
             }
 
@@ -4565,19 +4565,19 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder setOrientation(
+            public Builder setOrientationList(
                     int index, CoorSensorReq value) {
-                if (orientationBuilder_ == null) {
+                if (orientationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureOrientationIsMutable();
-                    orientation_.set(index, value);
+                    ensureOrientationListIsMutable();
+                    orientationList_.set(index, value);
                     onChanged();
                 } else {
-                    orientationBuilder_.setMessage(index, value);
+                    orientationListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -4587,16 +4587,16 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder setOrientation(
+            public Builder setOrientationList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (orientationBuilder_ == null) {
-                    ensureOrientationIsMutable();
-                    orientation_.set(index, builderForValue.build());
+                if (orientationListBuilder_ == null) {
+                    ensureOrientationListIsMutable();
+                    orientationList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    orientationBuilder_.setMessage(index, builderForValue.build());
+                    orientationListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4606,18 +4606,18 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder addOrientation(CoorSensorReq value) {
-                if (orientationBuilder_ == null) {
+            public Builder addOrientationList(CoorSensorReq value) {
+                if (orientationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureOrientationIsMutable();
-                    orientation_.add(value);
+                    ensureOrientationListIsMutable();
+                    orientationList_.add(value);
                     onChanged();
                 } else {
-                    orientationBuilder_.addMessage(value);
+                    orientationListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -4627,19 +4627,19 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder addOrientation(
+            public Builder addOrientationList(
                     int index, CoorSensorReq value) {
-                if (orientationBuilder_ == null) {
+                if (orientationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureOrientationIsMutable();
-                    orientation_.add(index, value);
+                    ensureOrientationListIsMutable();
+                    orientationList_.add(index, value);
                     onChanged();
                 } else {
-                    orientationBuilder_.addMessage(index, value);
+                    orientationListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -4649,16 +4649,16 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder addOrientation(
+            public Builder addOrientationList(
                     CoorSensorReq.Builder builderForValue) {
-                if (orientationBuilder_ == null) {
-                    ensureOrientationIsMutable();
-                    orientation_.add(builderForValue.build());
+                if (orientationListBuilder_ == null) {
+                    ensureOrientationListIsMutable();
+                    orientationList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    orientationBuilder_.addMessage(builderForValue.build());
+                    orientationListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -4668,16 +4668,16 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder addOrientation(
+            public Builder addOrientationList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (orientationBuilder_ == null) {
-                    ensureOrientationIsMutable();
-                    orientation_.add(index, builderForValue.build());
+                if (orientationListBuilder_ == null) {
+                    ensureOrientationListIsMutable();
+                    orientationList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    orientationBuilder_.addMessage(index, builderForValue.build());
+                    orientationListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4687,17 +4687,17 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder addAllOrientation(
+            public Builder addAllOrientationList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (orientationBuilder_ == null) {
-                    ensureOrientationIsMutable();
+                if (orientationListBuilder_ == null) {
+                    ensureOrientationListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, orientation_);
+                            values, orientationList_);
                     onChanged();
                 } else {
-                    orientationBuilder_.addAllMessages(values);
+                    orientationListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -4707,15 +4707,15 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder clearOrientation() {
-                if (orientationBuilder_ == null) {
-                    orientation_ = java.util.Collections.emptyList();
+            public Builder clearOrientationList() {
+                if (orientationListBuilder_ == null) {
+                    orientationList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000010);
                     onChanged();
                 } else {
-                    orientationBuilder_.clear();
+                    orientationListBuilder_.clear();
                 }
                 return this;
             }
@@ -4725,15 +4725,15 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public Builder removeOrientation(int index) {
-                if (orientationBuilder_ == null) {
-                    ensureOrientationIsMutable();
-                    orientation_.remove(index);
+            public Builder removeOrientationList(int index) {
+                if (orientationListBuilder_ == null) {
+                    ensureOrientationListIsMutable();
+                    orientationList_.remove(index);
                     onChanged();
                 } else {
-                    orientationBuilder_.remove(index);
+                    orientationListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -4743,11 +4743,11 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public CoorSensorReq.Builder getOrientationBuilder(
+            public CoorSensorReq.Builder getOrientationListBuilder(
                     int index) {
-                return getOrientationFieldBuilder().getBuilder(index);
+                return getOrientationListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -4755,14 +4755,14 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public CoorSensorReqOrBuilder getOrientationOrBuilder(
+            public CoorSensorReqOrBuilder getOrientationListOrBuilder(
                     int index) {
-                if (orientationBuilder_ == null) {
-                    return orientation_.get(index);
+                if (orientationListBuilder_ == null) {
+                    return orientationList_.get(index);
                 } else {
-                    return orientationBuilder_.getMessageOrBuilder(index);
+                    return orientationListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -4771,14 +4771,14 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getOrientationOrBuilderList() {
-                if (orientationBuilder_ != null) {
-                    return orientationBuilder_.getMessageOrBuilderList();
+            getOrientationListOrBuilderList() {
+                if (orientationListBuilder_ != null) {
+                    return orientationListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(orientation_);
+                    return java.util.Collections.unmodifiableList(orientationList_);
                 }
             }
 
@@ -4787,10 +4787,10 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public CoorSensorReq.Builder addOrientationBuilder() {
-                return getOrientationFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addOrientationListBuilder() {
+                return getOrientationListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -4799,11 +4799,11 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
-            public CoorSensorReq.Builder addOrientationBuilder(
+            public CoorSensorReq.Builder addOrientationListBuilder(
                     int index) {
-                return getOrientationFieldBuilder().addBuilder(
+                return getOrientationListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -4812,53 +4812,53 @@ public final class Basic {
              * 方向
              * </pre>
              *
-             * <code>repeated .CoorSensorReq orientation = 5;</code>
+             * <code>repeated .CoorSensorReq orientationList = 5;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getOrientationBuilderList() {
-                return getOrientationFieldBuilder().getBuilderList();
+            getOrientationListBuilderList() {
+                return getOrientationListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getOrientationFieldBuilder() {
-                if (orientationBuilder_ == null) {
-                    orientationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getOrientationListFieldBuilder() {
+                if (orientationListBuilder_ == null) {
+                    orientationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            orientation_,
+                            orientationList_,
                             ((bitField0_ & 0x00000010) == 0x00000010),
                             getParentForChildren(),
                             isClean());
-                    orientation_ = null;
+                    orientationList_ = null;
                 }
-                return orientationBuilder_;
+                return orientationListBuilder_;
             }
 
-            private java.util.List<CoorSensorReq> gyroscope_ =
+            private java.util.List<CoorSensorReq> gyroscopeList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureGyroscopeIsMutable() {
+            private void ensureGyroscopeListIsMutable() {
                 if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-                    gyroscope_ = new java.util.ArrayList<CoorSensorReq>(gyroscope_);
+                    gyroscopeList_ = new java.util.ArrayList<CoorSensorReq>(gyroscopeList_);
                     bitField0_ |= 0x00000020;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gyroscopeBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gyroscopeListBuilder_;
 
             /**
              * <pre>
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public java.util.List<CoorSensorReq> getGyroscopeList() {
-                if (gyroscopeBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(gyroscope_);
+            public java.util.List<CoorSensorReq> getGyroscopeListList() {
+                if (gyroscopeListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(gyroscopeList_);
                 } else {
-                    return gyroscopeBuilder_.getMessageList();
+                    return gyroscopeListBuilder_.getMessageList();
                 }
             }
 
@@ -4867,13 +4867,13 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public int getGyroscopeCount() {
-                if (gyroscopeBuilder_ == null) {
-                    return gyroscope_.size();
+            public int getGyroscopeListCount() {
+                if (gyroscopeListBuilder_ == null) {
+                    return gyroscopeList_.size();
                 } else {
-                    return gyroscopeBuilder_.getCount();
+                    return gyroscopeListBuilder_.getCount();
                 }
             }
 
@@ -4882,13 +4882,13 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public CoorSensorReq getGyroscope(int index) {
-                if (gyroscopeBuilder_ == null) {
-                    return gyroscope_.get(index);
+            public CoorSensorReq getGyroscopeList(int index) {
+                if (gyroscopeListBuilder_ == null) {
+                    return gyroscopeList_.get(index);
                 } else {
-                    return gyroscopeBuilder_.getMessage(index);
+                    return gyroscopeListBuilder_.getMessage(index);
                 }
             }
 
@@ -4897,19 +4897,19 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder setGyroscope(
+            public Builder setGyroscopeList(
                     int index, CoorSensorReq value) {
-                if (gyroscopeBuilder_ == null) {
+                if (gyroscopeListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.set(index, value);
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.set(index, value);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.setMessage(index, value);
+                    gyroscopeListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -4919,16 +4919,16 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder setGyroscope(
+            public Builder setGyroscopeList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeBuilder_ == null) {
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.set(index, builderForValue.build());
+                if (gyroscopeListBuilder_ == null) {
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.setMessage(index, builderForValue.build());
+                    gyroscopeListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -4938,18 +4938,18 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder addGyroscope(CoorSensorReq value) {
-                if (gyroscopeBuilder_ == null) {
+            public Builder addGyroscopeList(CoorSensorReq value) {
+                if (gyroscopeListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.add(value);
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.add(value);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.addMessage(value);
+                    gyroscopeListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -4959,19 +4959,19 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder addGyroscope(
+            public Builder addGyroscopeList(
                     int index, CoorSensorReq value) {
-                if (gyroscopeBuilder_ == null) {
+                if (gyroscopeListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.add(index, value);
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.add(index, value);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.addMessage(index, value);
+                    gyroscopeListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -4981,16 +4981,16 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder addGyroscope(
+            public Builder addGyroscopeList(
                     CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeBuilder_ == null) {
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.add(builderForValue.build());
+                if (gyroscopeListBuilder_ == null) {
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.addMessage(builderForValue.build());
+                    gyroscopeListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -5000,16 +5000,16 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder addGyroscope(
+            public Builder addGyroscopeList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeBuilder_ == null) {
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.add(index, builderForValue.build());
+                if (gyroscopeListBuilder_ == null) {
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.addMessage(index, builderForValue.build());
+                    gyroscopeListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5019,17 +5019,17 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder addAllGyroscope(
+            public Builder addAllGyroscopeList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (gyroscopeBuilder_ == null) {
-                    ensureGyroscopeIsMutable();
+                if (gyroscopeListBuilder_ == null) {
+                    ensureGyroscopeListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, gyroscope_);
+                            values, gyroscopeList_);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.addAllMessages(values);
+                    gyroscopeListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -5039,15 +5039,15 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder clearGyroscope() {
-                if (gyroscopeBuilder_ == null) {
-                    gyroscope_ = java.util.Collections.emptyList();
+            public Builder clearGyroscopeList() {
+                if (gyroscopeListBuilder_ == null) {
+                    gyroscopeList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000020);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.clear();
+                    gyroscopeListBuilder_.clear();
                 }
                 return this;
             }
@@ -5057,15 +5057,15 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public Builder removeGyroscope(int index) {
-                if (gyroscopeBuilder_ == null) {
-                    ensureGyroscopeIsMutable();
-                    gyroscope_.remove(index);
+            public Builder removeGyroscopeList(int index) {
+                if (gyroscopeListBuilder_ == null) {
+                    ensureGyroscopeListIsMutable();
+                    gyroscopeList_.remove(index);
                     onChanged();
                 } else {
-                    gyroscopeBuilder_.remove(index);
+                    gyroscopeListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -5075,11 +5075,11 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public CoorSensorReq.Builder getGyroscopeBuilder(
+            public CoorSensorReq.Builder getGyroscopeListBuilder(
                     int index) {
-                return getGyroscopeFieldBuilder().getBuilder(index);
+                return getGyroscopeListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -5087,14 +5087,14 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+            public CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
                     int index) {
-                if (gyroscopeBuilder_ == null) {
-                    return gyroscope_.get(index);
+                if (gyroscopeListBuilder_ == null) {
+                    return gyroscopeList_.get(index);
                 } else {
-                    return gyroscopeBuilder_.getMessageOrBuilder(index);
+                    return gyroscopeListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -5103,14 +5103,14 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getGyroscopeOrBuilderList() {
-                if (gyroscopeBuilder_ != null) {
-                    return gyroscopeBuilder_.getMessageOrBuilderList();
+            getGyroscopeListOrBuilderList() {
+                if (gyroscopeListBuilder_ != null) {
+                    return gyroscopeListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(gyroscope_);
+                    return java.util.Collections.unmodifiableList(gyroscopeList_);
                 }
             }
 
@@ -5119,10 +5119,10 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public CoorSensorReq.Builder addGyroscopeBuilder() {
-                return getGyroscopeFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addGyroscopeListBuilder() {
+                return getGyroscopeListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -5131,11 +5131,11 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
-            public CoorSensorReq.Builder addGyroscopeBuilder(
+            public CoorSensorReq.Builder addGyroscopeListBuilder(
                     int index) {
-                return getGyroscopeFieldBuilder().addBuilder(
+                return getGyroscopeListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -5144,53 +5144,53 @@ public final class Basic {
              * 陀螺仪
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getGyroscopeBuilderList() {
-                return getGyroscopeFieldBuilder().getBuilderList();
+            getGyroscopeListBuilderList() {
+                return getGyroscopeListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getGyroscopeFieldBuilder() {
-                if (gyroscopeBuilder_ == null) {
-                    gyroscopeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getGyroscopeListFieldBuilder() {
+                if (gyroscopeListBuilder_ == null) {
+                    gyroscopeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            gyroscope_,
+                            gyroscopeList_,
                             ((bitField0_ & 0x00000020) == 0x00000020),
                             getParentForChildren(),
                             isClean());
-                    gyroscope_ = null;
+                    gyroscopeList_ = null;
                 }
-                return gyroscopeBuilder_;
+                return gyroscopeListBuilder_;
             }
 
-            private java.util.List<CoorSensorReq> gravity_ =
+            private java.util.List<CoorSensorReq> gravityList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureGravityIsMutable() {
+            private void ensureGravityListIsMutable() {
                 if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-                    gravity_ = new java.util.ArrayList<CoorSensorReq>(gravity_);
+                    gravityList_ = new java.util.ArrayList<CoorSensorReq>(gravityList_);
                     bitField0_ |= 0x00000040;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gravityBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gravityListBuilder_;
 
             /**
              * <pre>
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public java.util.List<CoorSensorReq> getGravityList() {
-                if (gravityBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(gravity_);
+            public java.util.List<CoorSensorReq> getGravityListList() {
+                if (gravityListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(gravityList_);
                 } else {
-                    return gravityBuilder_.getMessageList();
+                    return gravityListBuilder_.getMessageList();
                 }
             }
 
@@ -5199,13 +5199,13 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public int getGravityCount() {
-                if (gravityBuilder_ == null) {
-                    return gravity_.size();
+            public int getGravityListCount() {
+                if (gravityListBuilder_ == null) {
+                    return gravityList_.size();
                 } else {
-                    return gravityBuilder_.getCount();
+                    return gravityListBuilder_.getCount();
                 }
             }
 
@@ -5214,13 +5214,13 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public CoorSensorReq getGravity(int index) {
-                if (gravityBuilder_ == null) {
-                    return gravity_.get(index);
+            public CoorSensorReq getGravityList(int index) {
+                if (gravityListBuilder_ == null) {
+                    return gravityList_.get(index);
                 } else {
-                    return gravityBuilder_.getMessage(index);
+                    return gravityListBuilder_.getMessage(index);
                 }
             }
 
@@ -5229,19 +5229,19 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder setGravity(
+            public Builder setGravityList(
                     int index, CoorSensorReq value) {
-                if (gravityBuilder_ == null) {
+                if (gravityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGravityIsMutable();
-                    gravity_.set(index, value);
+                    ensureGravityListIsMutable();
+                    gravityList_.set(index, value);
                     onChanged();
                 } else {
-                    gravityBuilder_.setMessage(index, value);
+                    gravityListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -5251,16 +5251,16 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder setGravity(
+            public Builder setGravityList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (gravityBuilder_ == null) {
-                    ensureGravityIsMutable();
-                    gravity_.set(index, builderForValue.build());
+                if (gravityListBuilder_ == null) {
+                    ensureGravityListIsMutable();
+                    gravityList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    gravityBuilder_.setMessage(index, builderForValue.build());
+                    gravityListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5270,18 +5270,18 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder addGravity(CoorSensorReq value) {
-                if (gravityBuilder_ == null) {
+            public Builder addGravityList(CoorSensorReq value) {
+                if (gravityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGravityIsMutable();
-                    gravity_.add(value);
+                    ensureGravityListIsMutable();
+                    gravityList_.add(value);
                     onChanged();
                 } else {
-                    gravityBuilder_.addMessage(value);
+                    gravityListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -5291,19 +5291,19 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder addGravity(
+            public Builder addGravityList(
                     int index, CoorSensorReq value) {
-                if (gravityBuilder_ == null) {
+                if (gravityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureGravityIsMutable();
-                    gravity_.add(index, value);
+                    ensureGravityListIsMutable();
+                    gravityList_.add(index, value);
                     onChanged();
                 } else {
-                    gravityBuilder_.addMessage(index, value);
+                    gravityListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -5313,16 +5313,16 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder addGravity(
+            public Builder addGravityList(
                     CoorSensorReq.Builder builderForValue) {
-                if (gravityBuilder_ == null) {
-                    ensureGravityIsMutable();
-                    gravity_.add(builderForValue.build());
+                if (gravityListBuilder_ == null) {
+                    ensureGravityListIsMutable();
+                    gravityList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    gravityBuilder_.addMessage(builderForValue.build());
+                    gravityListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -5332,16 +5332,16 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder addGravity(
+            public Builder addGravityList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (gravityBuilder_ == null) {
-                    ensureGravityIsMutable();
-                    gravity_.add(index, builderForValue.build());
+                if (gravityListBuilder_ == null) {
+                    ensureGravityListIsMutable();
+                    gravityList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    gravityBuilder_.addMessage(index, builderForValue.build());
+                    gravityListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5351,17 +5351,17 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder addAllGravity(
+            public Builder addAllGravityList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (gravityBuilder_ == null) {
-                    ensureGravityIsMutable();
+                if (gravityListBuilder_ == null) {
+                    ensureGravityListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, gravity_);
+                            values, gravityList_);
                     onChanged();
                 } else {
-                    gravityBuilder_.addAllMessages(values);
+                    gravityListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -5371,15 +5371,15 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder clearGravity() {
-                if (gravityBuilder_ == null) {
-                    gravity_ = java.util.Collections.emptyList();
+            public Builder clearGravityList() {
+                if (gravityListBuilder_ == null) {
+                    gravityList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000040);
                     onChanged();
                 } else {
-                    gravityBuilder_.clear();
+                    gravityListBuilder_.clear();
                 }
                 return this;
             }
@@ -5389,15 +5389,15 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public Builder removeGravity(int index) {
-                if (gravityBuilder_ == null) {
-                    ensureGravityIsMutable();
-                    gravity_.remove(index);
+            public Builder removeGravityList(int index) {
+                if (gravityListBuilder_ == null) {
+                    ensureGravityListIsMutable();
+                    gravityList_.remove(index);
                     onChanged();
                 } else {
-                    gravityBuilder_.remove(index);
+                    gravityListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -5407,11 +5407,11 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public CoorSensorReq.Builder getGravityBuilder(
+            public CoorSensorReq.Builder getGravityListBuilder(
                     int index) {
-                return getGravityFieldBuilder().getBuilder(index);
+                return getGravityListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -5419,14 +5419,14 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public CoorSensorReqOrBuilder getGravityOrBuilder(
+            public CoorSensorReqOrBuilder getGravityListOrBuilder(
                     int index) {
-                if (gravityBuilder_ == null) {
-                    return gravity_.get(index);
+                if (gravityListBuilder_ == null) {
+                    return gravityList_.get(index);
                 } else {
-                    return gravityBuilder_.getMessageOrBuilder(index);
+                    return gravityListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -5435,14 +5435,14 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getGravityOrBuilderList() {
-                if (gravityBuilder_ != null) {
-                    return gravityBuilder_.getMessageOrBuilderList();
+            getGravityListOrBuilderList() {
+                if (gravityListBuilder_ != null) {
+                    return gravityListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(gravity_);
+                    return java.util.Collections.unmodifiableList(gravityList_);
                 }
             }
 
@@ -5451,10 +5451,10 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public CoorSensorReq.Builder addGravityBuilder() {
-                return getGravityFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addGravityListBuilder() {
+                return getGravityListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -5463,11 +5463,11 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
-            public CoorSensorReq.Builder addGravityBuilder(
+            public CoorSensorReq.Builder addGravityListBuilder(
                     int index) {
-                return getGravityFieldBuilder().addBuilder(
+                return getGravityListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -5476,53 +5476,53 @@ public final class Basic {
              * 重力
              * </pre>
              *
-             * <code>repeated .CoorSensorReq gravity = 7;</code>
+             * <code>repeated .CoorSensorReq gravityList = 7;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getGravityBuilderList() {
-                return getGravityFieldBuilder().getBuilderList();
+            getGravityListBuilderList() {
+                return getGravityListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getGravityFieldBuilder() {
-                if (gravityBuilder_ == null) {
-                    gravityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getGravityListFieldBuilder() {
+                if (gravityListBuilder_ == null) {
+                    gravityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            gravity_,
+                            gravityList_,
                             ((bitField0_ & 0x00000040) == 0x00000040),
                             getParentForChildren(),
                             isClean());
-                    gravity_ = null;
+                    gravityList_ = null;
                 }
-                return gravityBuilder_;
+                return gravityListBuilder_;
             }
 
-            private java.util.List<CoorSensorReq> linearAcceleration_ =
+            private java.util.List<CoorSensorReq> linearAccelerationList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureLinearAccelerationIsMutable() {
+            private void ensureLinearAccelerationListIsMutable() {
                 if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-                    linearAcceleration_ = new java.util.ArrayList<CoorSensorReq>(linearAcceleration_);
+                    linearAccelerationList_ = new java.util.ArrayList<CoorSensorReq>(linearAccelerationList_);
                     bitField0_ |= 0x00000080;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> linearAccelerationBuilder_;
+                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> linearAccelerationListBuilder_;
 
             /**
              * <pre>
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public java.util.List<CoorSensorReq> getLinearAccelerationList() {
-                if (linearAccelerationBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(linearAcceleration_);
+            public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
+                if (linearAccelerationListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(linearAccelerationList_);
                 } else {
-                    return linearAccelerationBuilder_.getMessageList();
+                    return linearAccelerationListBuilder_.getMessageList();
                 }
             }
 
@@ -5531,13 +5531,13 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public int getLinearAccelerationCount() {
-                if (linearAccelerationBuilder_ == null) {
-                    return linearAcceleration_.size();
+            public int getLinearAccelerationListCount() {
+                if (linearAccelerationListBuilder_ == null) {
+                    return linearAccelerationList_.size();
                 } else {
-                    return linearAccelerationBuilder_.getCount();
+                    return linearAccelerationListBuilder_.getCount();
                 }
             }
 
@@ -5546,13 +5546,13 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public CoorSensorReq getLinearAcceleration(int index) {
-                if (linearAccelerationBuilder_ == null) {
-                    return linearAcceleration_.get(index);
+            public CoorSensorReq getLinearAccelerationList(int index) {
+                if (linearAccelerationListBuilder_ == null) {
+                    return linearAccelerationList_.get(index);
                 } else {
-                    return linearAccelerationBuilder_.getMessage(index);
+                    return linearAccelerationListBuilder_.getMessage(index);
                 }
             }
 
@@ -5561,19 +5561,19 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder setLinearAcceleration(
+            public Builder setLinearAccelerationList(
                     int index, CoorSensorReq value) {
-                if (linearAccelerationBuilder_ == null) {
+                if (linearAccelerationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.set(index, value);
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.set(index, value);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.setMessage(index, value);
+                    linearAccelerationListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -5583,16 +5583,16 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder setLinearAcceleration(
+            public Builder setLinearAccelerationList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationBuilder_ == null) {
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.set(index, builderForValue.build());
+                if (linearAccelerationListBuilder_ == null) {
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.setMessage(index, builderForValue.build());
+                    linearAccelerationListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5602,18 +5602,18 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder addLinearAcceleration(CoorSensorReq value) {
-                if (linearAccelerationBuilder_ == null) {
+            public Builder addLinearAccelerationList(CoorSensorReq value) {
+                if (linearAccelerationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.add(value);
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.add(value);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.addMessage(value);
+                    linearAccelerationListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -5623,19 +5623,19 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder addLinearAcceleration(
+            public Builder addLinearAccelerationList(
                     int index, CoorSensorReq value) {
-                if (linearAccelerationBuilder_ == null) {
+                if (linearAccelerationListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.add(index, value);
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.add(index, value);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.addMessage(index, value);
+                    linearAccelerationListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -5645,16 +5645,16 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder addLinearAcceleration(
+            public Builder addLinearAccelerationList(
                     CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationBuilder_ == null) {
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.add(builderForValue.build());
+                if (linearAccelerationListBuilder_ == null) {
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.addMessage(builderForValue.build());
+                    linearAccelerationListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -5664,16 +5664,16 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder addLinearAcceleration(
+            public Builder addLinearAccelerationList(
                     int index, CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationBuilder_ == null) {
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.add(index, builderForValue.build());
+                if (linearAccelerationListBuilder_ == null) {
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.addMessage(index, builderForValue.build());
+                    linearAccelerationListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5683,17 +5683,17 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder addAllLinearAcceleration(
+            public Builder addAllLinearAccelerationList(
                     Iterable<? extends CoorSensorReq> values) {
-                if (linearAccelerationBuilder_ == null) {
-                    ensureLinearAccelerationIsMutable();
+                if (linearAccelerationListBuilder_ == null) {
+                    ensureLinearAccelerationListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, linearAcceleration_);
+                            values, linearAccelerationList_);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.addAllMessages(values);
+                    linearAccelerationListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -5703,15 +5703,15 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder clearLinearAcceleration() {
-                if (linearAccelerationBuilder_ == null) {
-                    linearAcceleration_ = java.util.Collections.emptyList();
+            public Builder clearLinearAccelerationList() {
+                if (linearAccelerationListBuilder_ == null) {
+                    linearAccelerationList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000080);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.clear();
+                    linearAccelerationListBuilder_.clear();
                 }
                 return this;
             }
@@ -5721,15 +5721,15 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public Builder removeLinearAcceleration(int index) {
-                if (linearAccelerationBuilder_ == null) {
-                    ensureLinearAccelerationIsMutable();
-                    linearAcceleration_.remove(index);
+            public Builder removeLinearAccelerationList(int index) {
+                if (linearAccelerationListBuilder_ == null) {
+                    ensureLinearAccelerationListIsMutable();
+                    linearAccelerationList_.remove(index);
                     onChanged();
                 } else {
-                    linearAccelerationBuilder_.remove(index);
+                    linearAccelerationListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -5739,11 +5739,11 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public CoorSensorReq.Builder getLinearAccelerationBuilder(
+            public CoorSensorReq.Builder getLinearAccelerationListBuilder(
                     int index) {
-                return getLinearAccelerationFieldBuilder().getBuilder(index);
+                return getLinearAccelerationListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -5751,14 +5751,14 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+            public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
                     int index) {
-                if (linearAccelerationBuilder_ == null) {
-                    return linearAcceleration_.get(index);
+                if (linearAccelerationListBuilder_ == null) {
+                    return linearAccelerationList_.get(index);
                 } else {
-                    return linearAccelerationBuilder_.getMessageOrBuilder(index);
+                    return linearAccelerationListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -5767,14 +5767,14 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
             public java.util.List<? extends CoorSensorReqOrBuilder>
-            getLinearAccelerationOrBuilderList() {
-                if (linearAccelerationBuilder_ != null) {
-                    return linearAccelerationBuilder_.getMessageOrBuilderList();
+            getLinearAccelerationListOrBuilderList() {
+                if (linearAccelerationListBuilder_ != null) {
+                    return linearAccelerationListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(linearAcceleration_);
+                    return java.util.Collections.unmodifiableList(linearAccelerationList_);
                 }
             }
 
@@ -5783,10 +5783,10 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public CoorSensorReq.Builder addLinearAccelerationBuilder() {
-                return getLinearAccelerationFieldBuilder().addBuilder(
+            public CoorSensorReq.Builder addLinearAccelerationListBuilder() {
+                return getLinearAccelerationListFieldBuilder().addBuilder(
                         CoorSensorReq.getDefaultInstance());
             }
 
@@ -5795,11 +5795,11 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
-            public CoorSensorReq.Builder addLinearAccelerationBuilder(
+            public CoorSensorReq.Builder addLinearAccelerationListBuilder(
                     int index) {
-                return getLinearAccelerationFieldBuilder().addBuilder(
+                return getLinearAccelerationListFieldBuilder().addBuilder(
                         index, CoorSensorReq.getDefaultInstance());
             }
 
@@ -5808,53 +5808,53 @@ public final class Basic {
              * 线性加速度
              * </pre>
              *
-             * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+             * <code>repeated .CoorSensorReq linear_accelerationList = 8;</code>
              */
             public java.util.List<CoorSensorReq.Builder>
-            getLinearAccelerationBuilderList() {
-                return getLinearAccelerationFieldBuilder().getBuilderList();
+            getLinearAccelerationListBuilderList() {
+                return getLinearAccelerationListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getLinearAccelerationFieldBuilder() {
-                if (linearAccelerationBuilder_ == null) {
-                    linearAccelerationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getLinearAccelerationListFieldBuilder() {
+                if (linearAccelerationListBuilder_ == null) {
+                    linearAccelerationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            linearAcceleration_,
+                            linearAccelerationList_,
                             ((bitField0_ & 0x00000080) == 0x00000080),
                             getParentForChildren(),
                             isClean());
-                    linearAcceleration_ = null;
+                    linearAccelerationList_ = null;
                 }
-                return linearAccelerationBuilder_;
+                return linearAccelerationListBuilder_;
             }
 
-            private java.util.List<FeelSensorReq> ambientTemperature_ =
+            private java.util.List<FeelSensorReq> ambientTemperatureList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureAmbientTemperatureIsMutable() {
+            private void ensureAmbientTemperatureListIsMutable() {
                 if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-                    ambientTemperature_ = new java.util.ArrayList<FeelSensorReq>(ambientTemperature_);
+                    ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>(ambientTemperatureList_);
                     bitField0_ |= 0x00000100;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> ambientTemperatureBuilder_;
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> ambientTemperatureListBuilder_;
 
             /**
              * <pre>
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public java.util.List<FeelSensorReq> getAmbientTemperatureList() {
-                if (ambientTemperatureBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(ambientTemperature_);
+            public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
+                if (ambientTemperatureListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(ambientTemperatureList_);
                 } else {
-                    return ambientTemperatureBuilder_.getMessageList();
+                    return ambientTemperatureListBuilder_.getMessageList();
                 }
             }
 
@@ -5863,13 +5863,13 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public int getAmbientTemperatureCount() {
-                if (ambientTemperatureBuilder_ == null) {
-                    return ambientTemperature_.size();
+            public int getAmbientTemperatureListCount() {
+                if (ambientTemperatureListBuilder_ == null) {
+                    return ambientTemperatureList_.size();
                 } else {
-                    return ambientTemperatureBuilder_.getCount();
+                    return ambientTemperatureListBuilder_.getCount();
                 }
             }
 
@@ -5878,13 +5878,13 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public FeelSensorReq getAmbientTemperature(int index) {
-                if (ambientTemperatureBuilder_ == null) {
-                    return ambientTemperature_.get(index);
+            public FeelSensorReq getAmbientTemperatureList(int index) {
+                if (ambientTemperatureListBuilder_ == null) {
+                    return ambientTemperatureList_.get(index);
                 } else {
-                    return ambientTemperatureBuilder_.getMessage(index);
+                    return ambientTemperatureListBuilder_.getMessage(index);
                 }
             }
 
@@ -5893,19 +5893,19 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder setAmbientTemperature(
+            public Builder setAmbientTemperatureList(
                     int index, FeelSensorReq value) {
-                if (ambientTemperatureBuilder_ == null) {
+                if (ambientTemperatureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.set(index, value);
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.set(index, value);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.setMessage(index, value);
+                    ambientTemperatureListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -5915,16 +5915,16 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder setAmbientTemperature(
+            public Builder setAmbientTemperatureList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureBuilder_ == null) {
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.set(index, builderForValue.build());
+                if (ambientTemperatureListBuilder_ == null) {
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.setMessage(index, builderForValue.build());
+                    ambientTemperatureListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -5934,18 +5934,18 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder addAmbientTemperature(FeelSensorReq value) {
-                if (ambientTemperatureBuilder_ == null) {
+            public Builder addAmbientTemperatureList(FeelSensorReq value) {
+                if (ambientTemperatureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.add(value);
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.add(value);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.addMessage(value);
+                    ambientTemperatureListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -5955,19 +5955,19 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder addAmbientTemperature(
+            public Builder addAmbientTemperatureList(
                     int index, FeelSensorReq value) {
-                if (ambientTemperatureBuilder_ == null) {
+                if (ambientTemperatureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.add(index, value);
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.add(index, value);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.addMessage(index, value);
+                    ambientTemperatureListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -5977,16 +5977,16 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder addAmbientTemperature(
+            public Builder addAmbientTemperatureList(
                     FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureBuilder_ == null) {
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.add(builderForValue.build());
+                if (ambientTemperatureListBuilder_ == null) {
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.addMessage(builderForValue.build());
+                    ambientTemperatureListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -5996,16 +5996,16 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder addAmbientTemperature(
+            public Builder addAmbientTemperatureList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureBuilder_ == null) {
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.add(index, builderForValue.build());
+                if (ambientTemperatureListBuilder_ == null) {
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.addMessage(index, builderForValue.build());
+                    ambientTemperatureListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6015,17 +6015,17 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder addAllAmbientTemperature(
+            public Builder addAllAmbientTemperatureList(
                     Iterable<? extends FeelSensorReq> values) {
-                if (ambientTemperatureBuilder_ == null) {
-                    ensureAmbientTemperatureIsMutable();
+                if (ambientTemperatureListBuilder_ == null) {
+                    ensureAmbientTemperatureListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, ambientTemperature_);
+                            values, ambientTemperatureList_);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.addAllMessages(values);
+                    ambientTemperatureListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -6035,15 +6035,15 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder clearAmbientTemperature() {
-                if (ambientTemperatureBuilder_ == null) {
-                    ambientTemperature_ = java.util.Collections.emptyList();
+            public Builder clearAmbientTemperatureList() {
+                if (ambientTemperatureListBuilder_ == null) {
+                    ambientTemperatureList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000100);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.clear();
+                    ambientTemperatureListBuilder_.clear();
                 }
                 return this;
             }
@@ -6053,15 +6053,15 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public Builder removeAmbientTemperature(int index) {
-                if (ambientTemperatureBuilder_ == null) {
-                    ensureAmbientTemperatureIsMutable();
-                    ambientTemperature_.remove(index);
+            public Builder removeAmbientTemperatureList(int index) {
+                if (ambientTemperatureListBuilder_ == null) {
+                    ensureAmbientTemperatureListIsMutable();
+                    ambientTemperatureList_.remove(index);
                     onChanged();
                 } else {
-                    ambientTemperatureBuilder_.remove(index);
+                    ambientTemperatureListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -6071,11 +6071,11 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public FeelSensorReq.Builder getAmbientTemperatureBuilder(
+            public FeelSensorReq.Builder getAmbientTemperatureListBuilder(
                     int index) {
-                return getAmbientTemperatureFieldBuilder().getBuilder(index);
+                return getAmbientTemperatureListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -6083,14 +6083,14 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+            public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
                     int index) {
-                if (ambientTemperatureBuilder_ == null) {
-                    return ambientTemperature_.get(index);
+                if (ambientTemperatureListBuilder_ == null) {
+                    return ambientTemperatureList_.get(index);
                 } else {
-                    return ambientTemperatureBuilder_.getMessageOrBuilder(index);
+                    return ambientTemperatureListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -6099,14 +6099,14 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
             public java.util.List<? extends FeelSensorReqOrBuilder>
-            getAmbientTemperatureOrBuilderList() {
-                if (ambientTemperatureBuilder_ != null) {
-                    return ambientTemperatureBuilder_.getMessageOrBuilderList();
+            getAmbientTemperatureListOrBuilderList() {
+                if (ambientTemperatureListBuilder_ != null) {
+                    return ambientTemperatureListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(ambientTemperature_);
+                    return java.util.Collections.unmodifiableList(ambientTemperatureList_);
                 }
             }
 
@@ -6115,10 +6115,10 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public FeelSensorReq.Builder addAmbientTemperatureBuilder() {
-                return getAmbientTemperatureFieldBuilder().addBuilder(
+            public FeelSensorReq.Builder addAmbientTemperatureListBuilder() {
+                return getAmbientTemperatureListFieldBuilder().addBuilder(
                         FeelSensorReq.getDefaultInstance());
             }
 
@@ -6127,11 +6127,11 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
-            public FeelSensorReq.Builder addAmbientTemperatureBuilder(
+            public FeelSensorReq.Builder addAmbientTemperatureListBuilder(
                     int index) {
-                return getAmbientTemperatureFieldBuilder().addBuilder(
+                return getAmbientTemperatureListFieldBuilder().addBuilder(
                         index, FeelSensorReq.getDefaultInstance());
             }
 
@@ -6140,53 +6140,53 @@ public final class Basic {
              * 温度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+             * <code>repeated .FeelSensorReq ambient_temperatureList = 9;</code>
              */
             public java.util.List<FeelSensorReq.Builder>
-            getAmbientTemperatureBuilderList() {
-                return getAmbientTemperatureFieldBuilder().getBuilderList();
+            getAmbientTemperatureListBuilderList() {
+                return getAmbientTemperatureListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getAmbientTemperatureFieldBuilder() {
-                if (ambientTemperatureBuilder_ == null) {
-                    ambientTemperatureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getAmbientTemperatureListFieldBuilder() {
+                if (ambientTemperatureListBuilder_ == null) {
+                    ambientTemperatureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            ambientTemperature_,
+                            ambientTemperatureList_,
                             ((bitField0_ & 0x00000100) == 0x00000100),
                             getParentForChildren(),
                             isClean());
-                    ambientTemperature_ = null;
+                    ambientTemperatureList_ = null;
                 }
-                return ambientTemperatureBuilder_;
+                return ambientTemperatureListBuilder_;
             }
 
-            private java.util.List<FeelSensorReq> light_ =
+            private java.util.List<FeelSensorReq> lightList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureLightIsMutable() {
+            private void ensureLightListIsMutable() {
                 if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-                    light_ = new java.util.ArrayList<FeelSensorReq>(light_);
+                    lightList_ = new java.util.ArrayList<FeelSensorReq>(lightList_);
                     bitField0_ |= 0x00000200;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> lightBuilder_;
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> lightListBuilder_;
 
             /**
              * <pre>
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public java.util.List<FeelSensorReq> getLightList() {
-                if (lightBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(light_);
+            public java.util.List<FeelSensorReq> getLightListList() {
+                if (lightListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(lightList_);
                 } else {
-                    return lightBuilder_.getMessageList();
+                    return lightListBuilder_.getMessageList();
                 }
             }
 
@@ -6195,13 +6195,13 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public int getLightCount() {
-                if (lightBuilder_ == null) {
-                    return light_.size();
+            public int getLightListCount() {
+                if (lightListBuilder_ == null) {
+                    return lightList_.size();
                 } else {
-                    return lightBuilder_.getCount();
+                    return lightListBuilder_.getCount();
                 }
             }
 
@@ -6210,13 +6210,13 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public FeelSensorReq getLight(int index) {
-                if (lightBuilder_ == null) {
-                    return light_.get(index);
+            public FeelSensorReq getLightList(int index) {
+                if (lightListBuilder_ == null) {
+                    return lightList_.get(index);
                 } else {
-                    return lightBuilder_.getMessage(index);
+                    return lightListBuilder_.getMessage(index);
                 }
             }
 
@@ -6225,19 +6225,19 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder setLight(
+            public Builder setLightList(
                     int index, FeelSensorReq value) {
-                if (lightBuilder_ == null) {
+                if (lightListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLightIsMutable();
-                    light_.set(index, value);
+                    ensureLightListIsMutable();
+                    lightList_.set(index, value);
                     onChanged();
                 } else {
-                    lightBuilder_.setMessage(index, value);
+                    lightListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -6247,16 +6247,16 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder setLight(
+            public Builder setLightList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (lightBuilder_ == null) {
-                    ensureLightIsMutable();
-                    light_.set(index, builderForValue.build());
+                if (lightListBuilder_ == null) {
+                    ensureLightListIsMutable();
+                    lightList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    lightBuilder_.setMessage(index, builderForValue.build());
+                    lightListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6266,18 +6266,18 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder addLight(FeelSensorReq value) {
-                if (lightBuilder_ == null) {
+            public Builder addLightList(FeelSensorReq value) {
+                if (lightListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLightIsMutable();
-                    light_.add(value);
+                    ensureLightListIsMutable();
+                    lightList_.add(value);
                     onChanged();
                 } else {
-                    lightBuilder_.addMessage(value);
+                    lightListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -6287,19 +6287,19 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder addLight(
+            public Builder addLightList(
                     int index, FeelSensorReq value) {
-                if (lightBuilder_ == null) {
+                if (lightListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureLightIsMutable();
-                    light_.add(index, value);
+                    ensureLightListIsMutable();
+                    lightList_.add(index, value);
                     onChanged();
                 } else {
-                    lightBuilder_.addMessage(index, value);
+                    lightListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -6309,16 +6309,16 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder addLight(
+            public Builder addLightList(
                     FeelSensorReq.Builder builderForValue) {
-                if (lightBuilder_ == null) {
-                    ensureLightIsMutable();
-                    light_.add(builderForValue.build());
+                if (lightListBuilder_ == null) {
+                    ensureLightListIsMutable();
+                    lightList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    lightBuilder_.addMessage(builderForValue.build());
+                    lightListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -6328,16 +6328,16 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder addLight(
+            public Builder addLightList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (lightBuilder_ == null) {
-                    ensureLightIsMutable();
-                    light_.add(index, builderForValue.build());
+                if (lightListBuilder_ == null) {
+                    ensureLightListIsMutable();
+                    lightList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    lightBuilder_.addMessage(index, builderForValue.build());
+                    lightListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6347,17 +6347,17 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder addAllLight(
+            public Builder addAllLightList(
                     Iterable<? extends FeelSensorReq> values) {
-                if (lightBuilder_ == null) {
-                    ensureLightIsMutable();
+                if (lightListBuilder_ == null) {
+                    ensureLightListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, light_);
+                            values, lightList_);
                     onChanged();
                 } else {
-                    lightBuilder_.addAllMessages(values);
+                    lightListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -6367,15 +6367,15 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder clearLight() {
-                if (lightBuilder_ == null) {
-                    light_ = java.util.Collections.emptyList();
+            public Builder clearLightList() {
+                if (lightListBuilder_ == null) {
+                    lightList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000200);
                     onChanged();
                 } else {
-                    lightBuilder_.clear();
+                    lightListBuilder_.clear();
                 }
                 return this;
             }
@@ -6385,15 +6385,15 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public Builder removeLight(int index) {
-                if (lightBuilder_ == null) {
-                    ensureLightIsMutable();
-                    light_.remove(index);
+            public Builder removeLightList(int index) {
+                if (lightListBuilder_ == null) {
+                    ensureLightListIsMutable();
+                    lightList_.remove(index);
                     onChanged();
                 } else {
-                    lightBuilder_.remove(index);
+                    lightListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -6403,11 +6403,11 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public FeelSensorReq.Builder getLightBuilder(
+            public FeelSensorReq.Builder getLightListBuilder(
                     int index) {
-                return getLightFieldBuilder().getBuilder(index);
+                return getLightListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -6415,14 +6415,14 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public FeelSensorReqOrBuilder getLightOrBuilder(
+            public FeelSensorReqOrBuilder getLightListOrBuilder(
                     int index) {
-                if (lightBuilder_ == null) {
-                    return light_.get(index);
+                if (lightListBuilder_ == null) {
+                    return lightList_.get(index);
                 } else {
-                    return lightBuilder_.getMessageOrBuilder(index);
+                    return lightListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -6431,14 +6431,14 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
             public java.util.List<? extends FeelSensorReqOrBuilder>
-            getLightOrBuilderList() {
-                if (lightBuilder_ != null) {
-                    return lightBuilder_.getMessageOrBuilderList();
+            getLightListOrBuilderList() {
+                if (lightListBuilder_ != null) {
+                    return lightListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(light_);
+                    return java.util.Collections.unmodifiableList(lightList_);
                 }
             }
 
@@ -6447,10 +6447,10 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public FeelSensorReq.Builder addLightBuilder() {
-                return getLightFieldBuilder().addBuilder(
+            public FeelSensorReq.Builder addLightListBuilder() {
+                return getLightListFieldBuilder().addBuilder(
                         FeelSensorReq.getDefaultInstance());
             }
 
@@ -6459,11 +6459,11 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
-            public FeelSensorReq.Builder addLightBuilder(
+            public FeelSensorReq.Builder addLightListBuilder(
                     int index) {
-                return getLightFieldBuilder().addBuilder(
+                return getLightListFieldBuilder().addBuilder(
                         index, FeelSensorReq.getDefaultInstance());
             }
 
@@ -6472,53 +6472,53 @@ public final class Basic {
              * 亮度
              * </pre>
              *
-             * <code>repeated .FeelSensorReq light = 10;</code>
+             * <code>repeated .FeelSensorReq lightList = 10;</code>
              */
             public java.util.List<FeelSensorReq.Builder>
-            getLightBuilderList() {
-                return getLightFieldBuilder().getBuilderList();
+            getLightListBuilderList() {
+                return getLightListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getLightFieldBuilder() {
-                if (lightBuilder_ == null) {
-                    lightBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getLightListFieldBuilder() {
+                if (lightListBuilder_ == null) {
+                    lightListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            light_,
+                            lightList_,
                             ((bitField0_ & 0x00000200) == 0x00000200),
                             getParentForChildren(),
                             isClean());
-                    light_ = null;
+                    lightList_ = null;
                 }
-                return lightBuilder_;
+                return lightListBuilder_;
             }
 
-            private java.util.List<FeelSensorReq> pressure_ =
+            private java.util.List<FeelSensorReq> pressureList_ =
                     java.util.Collections.emptyList();
 
-            private void ensurePressureIsMutable() {
+            private void ensurePressureListIsMutable() {
                 if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-                    pressure_ = new java.util.ArrayList<FeelSensorReq>(pressure_);
+                    pressureList_ = new java.util.ArrayList<FeelSensorReq>(pressureList_);
                     bitField0_ |= 0x00000400;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> pressureBuilder_;
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> pressureListBuilder_;
 
             /**
              * <pre>
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public java.util.List<FeelSensorReq> getPressureList() {
-                if (pressureBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(pressure_);
+            public java.util.List<FeelSensorReq> getPressureListList() {
+                if (pressureListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(pressureList_);
                 } else {
-                    return pressureBuilder_.getMessageList();
+                    return pressureListBuilder_.getMessageList();
                 }
             }
 
@@ -6527,13 +6527,13 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public int getPressureCount() {
-                if (pressureBuilder_ == null) {
-                    return pressure_.size();
+            public int getPressureListCount() {
+                if (pressureListBuilder_ == null) {
+                    return pressureList_.size();
                 } else {
-                    return pressureBuilder_.getCount();
+                    return pressureListBuilder_.getCount();
                 }
             }
 
@@ -6542,13 +6542,13 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public FeelSensorReq getPressure(int index) {
-                if (pressureBuilder_ == null) {
-                    return pressure_.get(index);
+            public FeelSensorReq getPressureList(int index) {
+                if (pressureListBuilder_ == null) {
+                    return pressureList_.get(index);
                 } else {
-                    return pressureBuilder_.getMessage(index);
+                    return pressureListBuilder_.getMessage(index);
                 }
             }
 
@@ -6557,19 +6557,19 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder setPressure(
+            public Builder setPressureList(
                     int index, FeelSensorReq value) {
-                if (pressureBuilder_ == null) {
+                if (pressureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensurePressureIsMutable();
-                    pressure_.set(index, value);
+                    ensurePressureListIsMutable();
+                    pressureList_.set(index, value);
                     onChanged();
                 } else {
-                    pressureBuilder_.setMessage(index, value);
+                    pressureListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -6579,16 +6579,16 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder setPressure(
+            public Builder setPressureList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (pressureBuilder_ == null) {
-                    ensurePressureIsMutable();
-                    pressure_.set(index, builderForValue.build());
+                if (pressureListBuilder_ == null) {
+                    ensurePressureListIsMutable();
+                    pressureList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    pressureBuilder_.setMessage(index, builderForValue.build());
+                    pressureListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6598,18 +6598,18 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder addPressure(FeelSensorReq value) {
-                if (pressureBuilder_ == null) {
+            public Builder addPressureList(FeelSensorReq value) {
+                if (pressureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensurePressureIsMutable();
-                    pressure_.add(value);
+                    ensurePressureListIsMutable();
+                    pressureList_.add(value);
                     onChanged();
                 } else {
-                    pressureBuilder_.addMessage(value);
+                    pressureListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -6619,19 +6619,19 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder addPressure(
+            public Builder addPressureList(
                     int index, FeelSensorReq value) {
-                if (pressureBuilder_ == null) {
+                if (pressureListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensurePressureIsMutable();
-                    pressure_.add(index, value);
+                    ensurePressureListIsMutable();
+                    pressureList_.add(index, value);
                     onChanged();
                 } else {
-                    pressureBuilder_.addMessage(index, value);
+                    pressureListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -6641,16 +6641,16 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder addPressure(
+            public Builder addPressureList(
                     FeelSensorReq.Builder builderForValue) {
-                if (pressureBuilder_ == null) {
-                    ensurePressureIsMutable();
-                    pressure_.add(builderForValue.build());
+                if (pressureListBuilder_ == null) {
+                    ensurePressureListIsMutable();
+                    pressureList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    pressureBuilder_.addMessage(builderForValue.build());
+                    pressureListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -6660,16 +6660,16 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder addPressure(
+            public Builder addPressureList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (pressureBuilder_ == null) {
-                    ensurePressureIsMutable();
-                    pressure_.add(index, builderForValue.build());
+                if (pressureListBuilder_ == null) {
+                    ensurePressureListIsMutable();
+                    pressureList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    pressureBuilder_.addMessage(index, builderForValue.build());
+                    pressureListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6679,17 +6679,17 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder addAllPressure(
+            public Builder addAllPressureList(
                     Iterable<? extends FeelSensorReq> values) {
-                if (pressureBuilder_ == null) {
-                    ensurePressureIsMutable();
+                if (pressureListBuilder_ == null) {
+                    ensurePressureListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, pressure_);
+                            values, pressureList_);
                     onChanged();
                 } else {
-                    pressureBuilder_.addAllMessages(values);
+                    pressureListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -6699,15 +6699,15 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder clearPressure() {
-                if (pressureBuilder_ == null) {
-                    pressure_ = java.util.Collections.emptyList();
+            public Builder clearPressureList() {
+                if (pressureListBuilder_ == null) {
+                    pressureList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000400);
                     onChanged();
                 } else {
-                    pressureBuilder_.clear();
+                    pressureListBuilder_.clear();
                 }
                 return this;
             }
@@ -6717,15 +6717,15 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public Builder removePressure(int index) {
-                if (pressureBuilder_ == null) {
-                    ensurePressureIsMutable();
-                    pressure_.remove(index);
+            public Builder removePressureList(int index) {
+                if (pressureListBuilder_ == null) {
+                    ensurePressureListIsMutable();
+                    pressureList_.remove(index);
                     onChanged();
                 } else {
-                    pressureBuilder_.remove(index);
+                    pressureListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -6735,11 +6735,11 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public FeelSensorReq.Builder getPressureBuilder(
+            public FeelSensorReq.Builder getPressureListBuilder(
                     int index) {
-                return getPressureFieldBuilder().getBuilder(index);
+                return getPressureListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -6747,14 +6747,14 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public FeelSensorReqOrBuilder getPressureOrBuilder(
+            public FeelSensorReqOrBuilder getPressureListOrBuilder(
                     int index) {
-                if (pressureBuilder_ == null) {
-                    return pressure_.get(index);
+                if (pressureListBuilder_ == null) {
+                    return pressureList_.get(index);
                 } else {
-                    return pressureBuilder_.getMessageOrBuilder(index);
+                    return pressureListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -6763,14 +6763,14 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
             public java.util.List<? extends FeelSensorReqOrBuilder>
-            getPressureOrBuilderList() {
-                if (pressureBuilder_ != null) {
-                    return pressureBuilder_.getMessageOrBuilderList();
+            getPressureListOrBuilderList() {
+                if (pressureListBuilder_ != null) {
+                    return pressureListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(pressure_);
+                    return java.util.Collections.unmodifiableList(pressureList_);
                 }
             }
 
@@ -6779,10 +6779,10 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public FeelSensorReq.Builder addPressureBuilder() {
-                return getPressureFieldBuilder().addBuilder(
+            public FeelSensorReq.Builder addPressureListBuilder() {
+                return getPressureListFieldBuilder().addBuilder(
                         FeelSensorReq.getDefaultInstance());
             }
 
@@ -6791,11 +6791,11 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
-            public FeelSensorReq.Builder addPressureBuilder(
+            public FeelSensorReq.Builder addPressureListBuilder(
                     int index) {
-                return getPressureFieldBuilder().addBuilder(
+                return getPressureListFieldBuilder().addBuilder(
                         index, FeelSensorReq.getDefaultInstance());
             }
 
@@ -6804,53 +6804,53 @@ public final class Basic {
              * 压力
              * </pre>
              *
-             * <code>repeated .FeelSensorReq pressure = 11;</code>
+             * <code>repeated .FeelSensorReq pressureList = 11;</code>
              */
             public java.util.List<FeelSensorReq.Builder>
-            getPressureBuilderList() {
-                return getPressureFieldBuilder().getBuilderList();
+            getPressureListBuilderList() {
+                return getPressureListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getPressureFieldBuilder() {
-                if (pressureBuilder_ == null) {
-                    pressureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getPressureListFieldBuilder() {
+                if (pressureListBuilder_ == null) {
+                    pressureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            pressure_,
+                            pressureList_,
                             ((bitField0_ & 0x00000400) == 0x00000400),
                             getParentForChildren(),
                             isClean());
-                    pressure_ = null;
+                    pressureList_ = null;
                 }
-                return pressureBuilder_;
+                return pressureListBuilder_;
             }
 
-            private java.util.List<FeelSensorReq> proximity_ =
+            private java.util.List<FeelSensorReq> proximityList_ =
                     java.util.Collections.emptyList();
 
-            private void ensureProximityIsMutable() {
+            private void ensureProximityListIsMutable() {
                 if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-                    proximity_ = new java.util.ArrayList<FeelSensorReq>(proximity_);
+                    proximityList_ = new java.util.ArrayList<FeelSensorReq>(proximityList_);
                     bitField0_ |= 0x00000800;
                 }
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> proximityBuilder_;
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> proximityListBuilder_;
 
             /**
              * <pre>
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public java.util.List<FeelSensorReq> getProximityList() {
-                if (proximityBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(proximity_);
+            public java.util.List<FeelSensorReq> getProximityListList() {
+                if (proximityListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(proximityList_);
                 } else {
-                    return proximityBuilder_.getMessageList();
+                    return proximityListBuilder_.getMessageList();
                 }
             }
 
@@ -6859,13 +6859,13 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public int getProximityCount() {
-                if (proximityBuilder_ == null) {
-                    return proximity_.size();
+            public int getProximityListCount() {
+                if (proximityListBuilder_ == null) {
+                    return proximityList_.size();
                 } else {
-                    return proximityBuilder_.getCount();
+                    return proximityListBuilder_.getCount();
                 }
             }
 
@@ -6874,13 +6874,13 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public FeelSensorReq getProximity(int index) {
-                if (proximityBuilder_ == null) {
-                    return proximity_.get(index);
+            public FeelSensorReq getProximityList(int index) {
+                if (proximityListBuilder_ == null) {
+                    return proximityList_.get(index);
                 } else {
-                    return proximityBuilder_.getMessage(index);
+                    return proximityListBuilder_.getMessage(index);
                 }
             }
 
@@ -6889,19 +6889,19 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder setProximity(
+            public Builder setProximityList(
                     int index, FeelSensorReq value) {
-                if (proximityBuilder_ == null) {
+                if (proximityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureProximityIsMutable();
-                    proximity_.set(index, value);
+                    ensureProximityListIsMutable();
+                    proximityList_.set(index, value);
                     onChanged();
                 } else {
-                    proximityBuilder_.setMessage(index, value);
+                    proximityListBuilder_.setMessage(index, value);
                 }
                 return this;
             }
@@ -6911,16 +6911,16 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder setProximity(
+            public Builder setProximityList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (proximityBuilder_ == null) {
-                    ensureProximityIsMutable();
-                    proximity_.set(index, builderForValue.build());
+                if (proximityListBuilder_ == null) {
+                    ensureProximityListIsMutable();
+                    proximityList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    proximityBuilder_.setMessage(index, builderForValue.build());
+                    proximityListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -6930,18 +6930,18 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder addProximity(FeelSensorReq value) {
-                if (proximityBuilder_ == null) {
+            public Builder addProximityList(FeelSensorReq value) {
+                if (proximityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureProximityIsMutable();
-                    proximity_.add(value);
+                    ensureProximityListIsMutable();
+                    proximityList_.add(value);
                     onChanged();
                 } else {
-                    proximityBuilder_.addMessage(value);
+                    proximityListBuilder_.addMessage(value);
                 }
                 return this;
             }
@@ -6951,19 +6951,19 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder addProximity(
+            public Builder addProximityList(
                     int index, FeelSensorReq value) {
-                if (proximityBuilder_ == null) {
+                if (proximityListBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    ensureProximityIsMutable();
-                    proximity_.add(index, value);
+                    ensureProximityListIsMutable();
+                    proximityList_.add(index, value);
                     onChanged();
                 } else {
-                    proximityBuilder_.addMessage(index, value);
+                    proximityListBuilder_.addMessage(index, value);
                 }
                 return this;
             }
@@ -6973,16 +6973,16 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder addProximity(
+            public Builder addProximityList(
                     FeelSensorReq.Builder builderForValue) {
-                if (proximityBuilder_ == null) {
-                    ensureProximityIsMutable();
-                    proximity_.add(builderForValue.build());
+                if (proximityListBuilder_ == null) {
+                    ensureProximityListIsMutable();
+                    proximityList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    proximityBuilder_.addMessage(builderForValue.build());
+                    proximityListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
@@ -6992,16 +6992,16 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder addProximity(
+            public Builder addProximityList(
                     int index, FeelSensorReq.Builder builderForValue) {
-                if (proximityBuilder_ == null) {
-                    ensureProximityIsMutable();
-                    proximity_.add(index, builderForValue.build());
+                if (proximityListBuilder_ == null) {
+                    ensureProximityListIsMutable();
+                    proximityList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    proximityBuilder_.addMessage(index, builderForValue.build());
+                    proximityListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
@@ -7011,17 +7011,17 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder addAllProximity(
+            public Builder addAllProximityList(
                     Iterable<? extends FeelSensorReq> values) {
-                if (proximityBuilder_ == null) {
-                    ensureProximityIsMutable();
+                if (proximityListBuilder_ == null) {
+                    ensureProximityListIsMutable();
                     com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, proximity_);
+                            values, proximityList_);
                     onChanged();
                 } else {
-                    proximityBuilder_.addAllMessages(values);
+                    proximityListBuilder_.addAllMessages(values);
                 }
                 return this;
             }
@@ -7031,15 +7031,15 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder clearProximity() {
-                if (proximityBuilder_ == null) {
-                    proximity_ = java.util.Collections.emptyList();
+            public Builder clearProximityList() {
+                if (proximityListBuilder_ == null) {
+                    proximityList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000800);
                     onChanged();
                 } else {
-                    proximityBuilder_.clear();
+                    proximityListBuilder_.clear();
                 }
                 return this;
             }
@@ -7049,15 +7049,15 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public Builder removeProximity(int index) {
-                if (proximityBuilder_ == null) {
-                    ensureProximityIsMutable();
-                    proximity_.remove(index);
+            public Builder removeProximityList(int index) {
+                if (proximityListBuilder_ == null) {
+                    ensureProximityListIsMutable();
+                    proximityList_.remove(index);
                     onChanged();
                 } else {
-                    proximityBuilder_.remove(index);
+                    proximityListBuilder_.remove(index);
                 }
                 return this;
             }
@@ -7067,11 +7067,11 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public FeelSensorReq.Builder getProximityBuilder(
+            public FeelSensorReq.Builder getProximityListBuilder(
                     int index) {
-                return getProximityFieldBuilder().getBuilder(index);
+                return getProximityListFieldBuilder().getBuilder(index);
             }
 
             /**
@@ -7079,14 +7079,14 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public FeelSensorReqOrBuilder getProximityOrBuilder(
+            public FeelSensorReqOrBuilder getProximityListOrBuilder(
                     int index) {
-                if (proximityBuilder_ == null) {
-                    return proximity_.get(index);
+                if (proximityListBuilder_ == null) {
+                    return proximityList_.get(index);
                 } else {
-                    return proximityBuilder_.getMessageOrBuilder(index);
+                    return proximityListBuilder_.getMessageOrBuilder(index);
                 }
             }
 
@@ -7095,14 +7095,14 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
             public java.util.List<? extends FeelSensorReqOrBuilder>
-            getProximityOrBuilderList() {
-                if (proximityBuilder_ != null) {
-                    return proximityBuilder_.getMessageOrBuilderList();
+            getProximityListOrBuilderList() {
+                if (proximityListBuilder_ != null) {
+                    return proximityListBuilder_.getMessageOrBuilderList();
                 } else {
-                    return java.util.Collections.unmodifiableList(proximity_);
+                    return java.util.Collections.unmodifiableList(proximityList_);
                 }
             }
 
@@ -7111,10 +7111,10 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public FeelSensorReq.Builder addProximityBuilder() {
-                return getProximityFieldBuilder().addBuilder(
+            public FeelSensorReq.Builder addProximityListBuilder() {
+                return getProximityListFieldBuilder().addBuilder(
                         FeelSensorReq.getDefaultInstance());
             }
 
@@ -7123,11 +7123,11 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
-            public FeelSensorReq.Builder addProximityBuilder(
+            public FeelSensorReq.Builder addProximityListBuilder(
                     int index) {
-                return getProximityFieldBuilder().addBuilder(
+                return getProximityListFieldBuilder().addBuilder(
                         index, FeelSensorReq.getDefaultInstance());
             }
 
@@ -7136,26 +7136,26 @@ public final class Basic {
              * 近距离
              * </pre>
              *
-             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             * <code>repeated .FeelSensorReq proximityList = 12;</code>
              */
             public java.util.List<FeelSensorReq.Builder>
-            getProximityBuilderList() {
-                return getProximityFieldBuilder().getBuilderList();
+            getProximityListBuilderList() {
+                return getProximityListFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilderV3<
                     FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getProximityFieldBuilder() {
-                if (proximityBuilder_ == null) {
-                    proximityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getProximityListFieldBuilder() {
+                if (proximityListBuilder_ == null) {
+                    proximityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                             FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            proximity_,
+                            proximityList_,
                             ((bitField0_ & 0x00000800) == 0x00000800),
                             getParentForChildren(),
                             isClean());
-                    proximity_ = null;
+                    proximityList_ = null;
                 }
-                return proximityBuilder_;
+                return proximityListBuilder_;
             }
 
             @Override
@@ -7882,17 +7882,18 @@ public final class Basic {
         String[] descriptorData = {
                 "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
                         "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\232\003\n\013DeepNaviReq\022\014\n\004time\030" +
-                        "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022 \n\010magnetic\030\003 \003(\0132\016" +
-                        ".CoorSensorReq\022%\n\raccelerometer\030\004 \003(\0132\016." +
-                        "CoorSensorReq\022#\n\013orientation\030\005 \003(\0132\016.Coo" +
-                        "rSensorReq\022!\n\tgyroscope\030\006 \003(\0132\016.CoorSens" +
-                        "orReq\022\037\n\007gravity\030\007 \003(\0132\016.CoorSensorReq\022+" +
-                        "\n\023linear_acceleration\030\010 \003(\0132\016.CoorSensor" +
-                        "Req\022+\n\023ambient_temperature\030\t \003(\0132\016.FeelS" +
-                        "ensorReq\022\035\n\005light\030\n \003(\0132\016.FeelSensorReq\022" +
-                        " \n\010pressure\030\013 \003(\0132\016.FeelSensorReq\022!\n\tpro" +
-                        "ximity\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNavi" +
+                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\302\003\n\013DeepNaviReq\022\014\n\004time\030" +
+                        "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022$\n\014magneticList\030\003 \003" +
+                        "(\0132\016.CoorSensorReq\022)\n\021accelerometerList\030" +
+                        "\004 \003(\0132\016.CoorSensorReq\022\'\n\017orientationList" +
+                        "\030\005 \003(\0132\016.CoorSensorReq\022%\n\rgyroscopeList\030" +
+                        "\006 \003(\0132\016.CoorSensorReq\022#\n\013gravityList\030\007 \003" +
+                        "(\0132\016.CoorSensorReq\022/\n\027linear_acceleratio" +
+                        "nList\030\010 \003(\0132\016.CoorSensorReq\022/\n\027ambient_t" +
+                        "emperatureList\030\t \003(\0132\016.FeelSensorReq\022!\n\t" +
+                        "lightList\030\n \003(\0132\016.FeelSensorReq\022$\n\014press" +
+                        "ureList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximi" +
+                        "tyList\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNavi" +
                         "Res\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi" +
                         ".beanB\005Basic"
         };
@@ -7925,7 +7926,7 @@ public final class Basic {
         internal_static_DeepNaviReq_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                 internal_static_DeepNaviReq_descriptor,
-                new String[]{"Time", "Image", "Magnetic", "Accelerometer", "Orientation", "Gyroscope", "Gravity", "LinearAcceleration", "AmbientTemperature", "Light", "Pressure", "Proximity",});
+                new String[]{"Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList",});
         internal_static_DeepNaviRes_descriptor =
                 getDescriptor().getMessageTypes().get(3);
         internal_static_DeepNaviRes_fieldAccessorTable = new

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=_b('\n\026com.sysu.deepnavi.beanB\005Basic'),
-  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\x9a\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12 \n\x08magnetic\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\raccelerometer\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0borientation\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12!\n\tgyroscope\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12\x1f\n\x07gravity\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12+\n\x13linear_acceleration\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12+\n\x13\x61mbient_temperature\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12\x1d\n\x05light\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12 \n\x08pressure\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tproximity\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
+  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xc2\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12/\n\x17linear_accelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12/\n\x17\x61mbient_temperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
 )
 
 
@@ -123,70 +123,70 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='magnetic', full_name='DeepNaviReq.magnetic', index=2,
+      name='magneticList', full_name='DeepNaviReq.magneticList', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='accelerometer', full_name='DeepNaviReq.accelerometer', index=3,
+      name='accelerometerList', full_name='DeepNaviReq.accelerometerList', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='orientation', full_name='DeepNaviReq.orientation', index=4,
+      name='orientationList', full_name='DeepNaviReq.orientationList', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gyroscope', full_name='DeepNaviReq.gyroscope', index=5,
+      name='gyroscopeList', full_name='DeepNaviReq.gyroscopeList', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gravity', full_name='DeepNaviReq.gravity', index=6,
+      name='gravityList', full_name='DeepNaviReq.gravityList', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='linear_acceleration', full_name='DeepNaviReq.linear_acceleration', index=7,
+      name='linear_accelerationList', full_name='DeepNaviReq.linear_accelerationList', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ambient_temperature', full_name='DeepNaviReq.ambient_temperature', index=8,
+      name='ambient_temperatureList', full_name='DeepNaviReq.ambient_temperatureList', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='light', full_name='DeepNaviReq.light', index=9,
+      name='lightList', full_name='DeepNaviReq.lightList', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pressure', full_name='DeepNaviReq.pressure', index=10,
+      name='pressureList', full_name='DeepNaviReq.pressureList', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='proximity', full_name='DeepNaviReq.proximity', index=11,
+      name='proximityList', full_name='DeepNaviReq.proximityList', index=11,
       number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -205,7 +205,7 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=98,
-  serialized_end=508,
+  serialized_end=548,
 )
 
 
@@ -235,20 +235,20 @@ _DEEPNAVIRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=510,
-  serialized_end=539,
+  serialized_start=550,
+  serialized_end=579,
 )
 
-_DEEPNAVIREQ.fields_by_name['magnetic'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['accelerometer'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['orientation'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['gyroscope'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['gravity'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['linear_acceleration'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['ambient_temperature'].message_type = _FEELSENSORREQ
-_DEEPNAVIREQ.fields_by_name['light'].message_type = _FEELSENSORREQ
-_DEEPNAVIREQ.fields_by_name['pressure'].message_type = _FEELSENSORREQ
-_DEEPNAVIREQ.fields_by_name['proximity'].message_type = _FEELSENSORREQ
+_DEEPNAVIREQ.fields_by_name['magneticList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['accelerometerList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['orientationList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['gyroscopeList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['gravityList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['linear_accelerationList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['ambient_temperatureList'].message_type = _FEELSENSORREQ
+_DEEPNAVIREQ.fields_by_name['lightList'].message_type = _FEELSENSORREQ
+_DEEPNAVIREQ.fields_by_name['pressureList'].message_type = _FEELSENSORREQ
+_DEEPNAVIREQ.fields_by_name['proximityList'].message_type = _FEELSENSORREQ
 DESCRIPTOR.message_types_by_name['FeelSensorReq'] = _FEELSENSORREQ
 DESCRIPTOR.message_types_by_name['CoorSensorReq'] = _COORSENSORREQ
 DESCRIPTOR.message_types_by_name['DeepNaviReq'] = _DEEPNAVIREQ

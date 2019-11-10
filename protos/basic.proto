@@ -16,16 +16,16 @@ message CoorSensorReq {
 message DeepNaviReq {
 	required int64 time = 1;
     optional bytes image = 2;  // audio
-    repeated CoorSensorReq magnetic = 3;  // 磁场
-    repeated CoorSensorReq accelerometer = 4;  // 加速度
-    repeated CoorSensorReq orientation = 5;  // 方向
-    repeated CoorSensorReq gyroscope = 6;  // 陀螺仪
-    repeated CoorSensorReq gravity = 7;  // 重力
-    repeated CoorSensorReq linear_acceleration = 8;  // 线性加速度
-    repeated FeelSensorReq ambient_temperature = 9;  // 温度
-    repeated FeelSensorReq light = 10;  // 亮度
-    repeated FeelSensorReq pressure = 11;  // 压力
-    repeated FeelSensorReq proximity = 12;  // 近距离
+    repeated CoorSensorReq magneticList = 3;  // 磁场
+    repeated CoorSensorReq accelerometerList = 4;  // 加速度
+    repeated CoorSensorReq orientationList = 5;  // 方向
+    repeated CoorSensorReq gyroscopeList = 6;  // 陀螺仪
+    repeated CoorSensorReq gravityList = 7;  // 重力
+    repeated CoorSensorReq linear_accelerationList = 8;  // 线性加速度
+    repeated FeelSensorReq ambient_temperatureList = 9;  // 温度
+    repeated FeelSensorReq lightList = 10;  // 亮度
+    repeated FeelSensorReq pressureList = 11;  // 压力
+    repeated FeelSensorReq proximityList = 12;  // 近距离
 }
 
 message DeepNaviRes {

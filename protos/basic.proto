@@ -21,8 +21,8 @@ message DeepNaviReq {
     repeated CoorSensorReq orientationList = 5;  // 方向
     repeated CoorSensorReq gyroscopeList = 6;  // 陀螺仪
     repeated CoorSensorReq gravityList = 7;  // 重力
-    repeated CoorSensorReq linear_accelerationList = 8;  // 线性加速度
-    repeated FeelSensorReq ambient_temperatureList = 9;  // 温度
+    repeated CoorSensorReq linearAccelerationList = 8;  // 线性加速度
+    repeated FeelSensorReq ambientTemperatureList = 9;  // 温度
     repeated FeelSensorReq lightList = 10;  // 亮度
     repeated FeelSensorReq pressureList = 11;  // 压力
     repeated FeelSensorReq proximityList = 12;  // 近距离

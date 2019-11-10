@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=_b('\n\026com.sysu.deepnavi.beanB\005Basic'),
-  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xc2\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12/\n\x17linear_accelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12/\n\x17\x61mbient_temperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
+  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xc0\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16linearAccelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16\x61mbientTemperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
 )
 
 
@@ -158,14 +158,14 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='linear_accelerationList', full_name='DeepNaviReq.linear_accelerationList', index=7,
+      name='linearAccelerationList', full_name='DeepNaviReq.linearAccelerationList', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ambient_temperatureList', full_name='DeepNaviReq.ambient_temperatureList', index=8,
+      name='ambientTemperatureList', full_name='DeepNaviReq.ambientTemperatureList', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -205,7 +205,7 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=98,
-  serialized_end=548,
+  serialized_end=546,
 )
 
 
@@ -235,8 +235,8 @@ _DEEPNAVIRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=550,
-  serialized_end=579,
+  serialized_start=548,
+  serialized_end=577,
 )
 
 _DEEPNAVIREQ.fields_by_name['magneticList'].message_type = _COORSENSORREQ
@@ -244,8 +244,8 @@ _DEEPNAVIREQ.fields_by_name['accelerometerList'].message_type = _COORSENSORREQ
 _DEEPNAVIREQ.fields_by_name['orientationList'].message_type = _COORSENSORREQ
 _DEEPNAVIREQ.fields_by_name['gyroscopeList'].message_type = _COORSENSORREQ
 _DEEPNAVIREQ.fields_by_name['gravityList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['linear_accelerationList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['ambient_temperatureList'].message_type = _FEELSENSORREQ
+_DEEPNAVIREQ.fields_by_name['linearAccelerationList'].message_type = _COORSENSORREQ
+_DEEPNAVIREQ.fields_by_name['ambientTemperatureList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['lightList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['pressureList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['proximityList'].message_type = _FEELSENSORREQ

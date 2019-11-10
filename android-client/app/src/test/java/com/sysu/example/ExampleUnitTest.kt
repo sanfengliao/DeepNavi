@@ -1,4 +1,4 @@
-package com.sysu.deepnavi
+package com.sysu.example
 
 import org.junit.Test
 

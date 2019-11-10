@@ -44,11 +44,12 @@ class DeepNaviManager private constructor() : SensorEventListener {
         var logger: LoggerInter? = null
     }
 
-    fun init(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long = defaultInterval) {
+    fun init(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long = defaultInterval): DeepNaviManager {
         sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         this.socket = socket
         this.interval = interval
         logger?.d(DEFAULT_TAG, "DeepNaviManager.init(interval: %d)", interval)
+        return this
     }
 
     fun getSensorManager() = sensorManager!!
@@ -106,6 +107,10 @@ class DeepNaviManager private constructor() : SensorEventListener {
         socket!!.close()
         thread = null
         logger?.d(DEFAULT_TAG, "DeepNaviManager.stop at %d", System.currentTimeMillis())
+    }
+
+    fun onMessage(res: Basic.DeepNaviRes) {
+        TODO()
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int): Unit {

@@ -3,6 +3,7 @@ package com.sysu.deepnavi.impl
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import com.sysu.deepnavi.DeepNaviManager
+import com.sysu.deepnavi.inter.DataCollectorInter
 import com.sysu.deepnavi.util.DEFAULT_TAG
 import java.util.*
 
@@ -19,6 +20,7 @@ class SensorListener2<Data>(override val type: Int, override val field: String, 
 
     fun init(rate: Int): SensorListener2<Data> {
         val result: Boolean = DeepNaviManager.get().registerListener(DeepNaviManager.get().getSensorManager().getDefaultSensor(type), rate) ?: false
+        DeepNaviManager.get().addDataCollector(this as DataCollectorInter<Any>)
         DeepNaviManager.logger?.d(DEFAULT_TAG, "SensorListener2.init(rate: %d) -- result: %s", rate, result.toString())
         return this
     }

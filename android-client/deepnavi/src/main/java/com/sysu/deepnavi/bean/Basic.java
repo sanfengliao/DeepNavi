@@ -1802,6 +1802,54 @@ public final class Basic {
          */
         FeelSensorReqOrBuilder getPressureOrBuilder(
                 int index);
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        java.util.List<FeelSensorReq>
+        getProximityList();
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        FeelSensorReq getProximity(int index);
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        int getProximityCount();
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        java.util.List<? extends FeelSensorReqOrBuilder>
+        getProximityOrBuilderList();
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        FeelSensorReqOrBuilder getProximityOrBuilder(
+                int index);
     }
 
     /**
@@ -1830,6 +1878,7 @@ public final class Basic {
             ambientTemperature_ = java.util.Collections.emptyList();
             light_ = java.util.Collections.emptyList();
             pressure_ = java.util.Collections.emptyList();
+            proximity_ = java.util.Collections.emptyList();
         }
 
         @Override
@@ -1948,6 +1997,15 @@ public final class Basic {
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
+                        case 98: {
+                            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                                proximity_ = new java.util.ArrayList<FeelSensorReq>();
+                                mutable_bitField0_ |= 0x00000800;
+                            }
+                            proximity_.add(
+                                    input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
+                            break;
+                        }
                         default: {
                             if (!parseUnknownField(
                                     input, unknownFields, extensionRegistry, tag)) {
@@ -1989,6 +2047,9 @@ public final class Basic {
                 }
                 if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                     pressure_ = java.util.Collections.unmodifiableList(pressure_);
+                }
+                if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                    proximity_ = java.util.Collections.unmodifiableList(proximity_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -2591,6 +2652,66 @@ public final class Basic {
             return pressure_.get(index);
         }
 
+        public static final int PROXIMITY_FIELD_NUMBER = 12;
+        private java.util.List<FeelSensorReq> proximity_;
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        public java.util.List<FeelSensorReq> getProximityList() {
+            return proximity_;
+        }
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        public java.util.List<? extends FeelSensorReqOrBuilder>
+        getProximityOrBuilderList() {
+            return proximity_;
+        }
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        public int getProximityCount() {
+            return proximity_.size();
+        }
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        public FeelSensorReq getProximity(int index) {
+            return proximity_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 近距离
+         * </pre>
+         *
+         * <code>repeated .FeelSensorReq proximity = 12;</code>
+         */
+        public FeelSensorReqOrBuilder getProximityOrBuilder(
+                int index) {
+            return proximity_.get(index);
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @Override
@@ -2657,6 +2778,12 @@ public final class Basic {
                     return false;
                 }
             }
+            for (int i = 0; i < getProximityCount(); i++) {
+                if (!getProximity(i).isInitialized()) {
+                    memoizedIsInitialized = 0;
+                    return false;
+                }
+            }
             memoizedIsInitialized = 1;
             return true;
         }
@@ -2696,6 +2823,9 @@ public final class Basic {
             }
             for (int i = 0; i < pressure_.size(); i++) {
                 output.writeMessage(11, pressure_.get(i));
+            }
+            for (int i = 0; i < proximity_.size(); i++) {
+                output.writeMessage(12, proximity_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -2750,6 +2880,10 @@ public final class Basic {
                 size += com.google.protobuf.CodedOutputStream
                         .computeMessageSize(11, pressure_.get(i));
             }
+            for (int i = 0; i < proximity_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(12, proximity_.get(i));
+            }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
             return size;
@@ -2794,6 +2928,8 @@ public final class Basic {
                     .equals(other.getLightList());
             result = result && getPressureList()
                     .equals(other.getPressureList());
+            result = result && getProximityList()
+                    .equals(other.getProximityList());
             result = result && unknownFields.equals(other.unknownFields);
             return result;
         }
@@ -2849,6 +2985,10 @@ public final class Basic {
             if (getPressureCount() > 0) {
                 hash = (37 * hash) + PRESSURE_FIELD_NUMBER;
                 hash = (53 * hash) + getPressureList().hashCode();
+            }
+            if (getProximityCount() > 0) {
+                hash = (37 * hash) + PROXIMITY_FIELD_NUMBER;
+                hash = (53 * hash) + getProximityList().hashCode();
             }
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
@@ -3005,6 +3145,7 @@ public final class Basic {
                     getAmbientTemperatureFieldBuilder();
                     getLightFieldBuilder();
                     getPressureFieldBuilder();
+                    getProximityFieldBuilder();
                 }
             }
 
@@ -3068,6 +3209,12 @@ public final class Basic {
                     bitField0_ = (bitField0_ & ~0x00000400);
                 } else {
                     pressureBuilder_.clear();
+                }
+                if (proximityBuilder_ == null) {
+                    proximity_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000800);
+                } else {
+                    proximityBuilder_.clear();
                 }
                 return this;
             }
@@ -3185,6 +3332,15 @@ public final class Basic {
                     result.pressure_ = pressure_;
                 } else {
                     result.pressure_ = pressureBuilder_.build();
+                }
+                if (proximityBuilder_ == null) {
+                    if (((bitField0_ & 0x00000800) == 0x00000800)) {
+                        proximity_ = java.util.Collections.unmodifiableList(proximity_);
+                        bitField0_ = (bitField0_ & ~0x00000800);
+                    }
+                    result.proximity_ = proximity_;
+                } else {
+                    result.proximity_ = proximityBuilder_.build();
                 }
                 result.bitField0_ = to_bitField0_;
                 onBuilt();
@@ -3481,6 +3637,32 @@ public final class Basic {
                         }
                     }
                 }
+                if (proximityBuilder_ == null) {
+                    if (!other.proximity_.isEmpty()) {
+                        if (proximity_.isEmpty()) {
+                            proximity_ = other.proximity_;
+                            bitField0_ = (bitField0_ & ~0x00000800);
+                        } else {
+                            ensureProximityIsMutable();
+                            proximity_.addAll(other.proximity_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.proximity_.isEmpty()) {
+                        if (proximityBuilder_.isEmpty()) {
+                            proximityBuilder_.dispose();
+                            proximityBuilder_ = null;
+                            proximity_ = other.proximity_;
+                            bitField0_ = (bitField0_ & ~0x00000800);
+                            proximityBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getProximityFieldBuilder() : null;
+                        } else {
+                            proximityBuilder_.addAllMessages(other.proximity_);
+                        }
+                    }
+                }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -3533,6 +3715,11 @@ public final class Basic {
                 }
                 for (int i = 0; i < getPressureCount(); i++) {
                     if (!getPressure(i).isInitialized()) {
+                        return false;
+                    }
+                }
+                for (int i = 0; i < getProximityCount(); i++) {
+                    if (!getProximity(i).isInitialized()) {
                         return false;
                     }
                 }
@@ -6639,6 +6826,338 @@ public final class Basic {
                 return pressureBuilder_;
             }
 
+            private java.util.List<FeelSensorReq> proximity_ =
+                    java.util.Collections.emptyList();
+
+            private void ensureProximityIsMutable() {
+                if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+                    proximity_ = new java.util.ArrayList<FeelSensorReq>(proximity_);
+                    bitField0_ |= 0x00000800;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> proximityBuilder_;
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public java.util.List<FeelSensorReq> getProximityList() {
+                if (proximityBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(proximity_);
+                } else {
+                    return proximityBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public int getProximityCount() {
+                if (proximityBuilder_ == null) {
+                    return proximity_.size();
+                } else {
+                    return proximityBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public FeelSensorReq getProximity(int index) {
+                if (proximityBuilder_ == null) {
+                    return proximity_.get(index);
+                } else {
+                    return proximityBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder setProximity(
+                    int index, FeelSensorReq value) {
+                if (proximityBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureProximityIsMutable();
+                    proximity_.set(index, value);
+                    onChanged();
+                } else {
+                    proximityBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder setProximity(
+                    int index, FeelSensorReq.Builder builderForValue) {
+                if (proximityBuilder_ == null) {
+                    ensureProximityIsMutable();
+                    proximity_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    proximityBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder addProximity(FeelSensorReq value) {
+                if (proximityBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureProximityIsMutable();
+                    proximity_.add(value);
+                    onChanged();
+                } else {
+                    proximityBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder addProximity(
+                    int index, FeelSensorReq value) {
+                if (proximityBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureProximityIsMutable();
+                    proximity_.add(index, value);
+                    onChanged();
+                } else {
+                    proximityBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder addProximity(
+                    FeelSensorReq.Builder builderForValue) {
+                if (proximityBuilder_ == null) {
+                    ensureProximityIsMutable();
+                    proximity_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    proximityBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder addProximity(
+                    int index, FeelSensorReq.Builder builderForValue) {
+                if (proximityBuilder_ == null) {
+                    ensureProximityIsMutable();
+                    proximity_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    proximityBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder addAllProximity(
+                    Iterable<? extends FeelSensorReq> values) {
+                if (proximityBuilder_ == null) {
+                    ensureProximityIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, proximity_);
+                    onChanged();
+                } else {
+                    proximityBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder clearProximity() {
+                if (proximityBuilder_ == null) {
+                    proximity_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000800);
+                    onChanged();
+                } else {
+                    proximityBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public Builder removeProximity(int index) {
+                if (proximityBuilder_ == null) {
+                    ensureProximityIsMutable();
+                    proximity_.remove(index);
+                    onChanged();
+                } else {
+                    proximityBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public FeelSensorReq.Builder getProximityBuilder(
+                    int index) {
+                return getProximityFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public FeelSensorReqOrBuilder getProximityOrBuilder(
+                    int index) {
+                if (proximityBuilder_ == null) {
+                    return proximity_.get(index);
+                } else {
+                    return proximityBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public java.util.List<? extends FeelSensorReqOrBuilder>
+            getProximityOrBuilderList() {
+                if (proximityBuilder_ != null) {
+                    return proximityBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(proximity_);
+                }
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public FeelSensorReq.Builder addProximityBuilder() {
+                return getProximityFieldBuilder().addBuilder(
+                        FeelSensorReq.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public FeelSensorReq.Builder addProximityBuilder(
+                    int index) {
+                return getProximityFieldBuilder().addBuilder(
+                        index, FeelSensorReq.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 近距离
+             * </pre>
+             *
+             * <code>repeated .FeelSensorReq proximity = 12;</code>
+             */
+            public java.util.List<FeelSensorReq.Builder>
+            getProximityBuilderList() {
+                return getProximityFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
+            getProximityFieldBuilder() {
+                if (proximityBuilder_ == null) {
+                    proximityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
+                            proximity_,
+                            ((bitField0_ & 0x00000800) == 0x00000800),
+                            getParentForChildren(),
+                            isClean());
+                    proximity_ = null;
+                }
+                return proximityBuilder_;
+            }
+
             @Override
             public final Builder setUnknownFields(
                     final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7363,7 +7882,7 @@ public final class Basic {
         String[] descriptorData = {
                 "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
                         "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\367\002\n\013DeepNaviReq\022\014\n\004time\030" +
+                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\232\003\n\013DeepNaviReq\022\014\n\004time\030" +
                         "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022 \n\010magnetic\030\003 \003(\0132\016" +
                         ".CoorSensorReq\022%\n\raccelerometer\030\004 \003(\0132\016." +
                         "CoorSensorReq\022#\n\013orientation\030\005 \003(\0132\016.Coo" +
@@ -7372,9 +7891,10 @@ public final class Basic {
                         "\n\023linear_acceleration\030\010 \003(\0132\016.CoorSensor" +
                         "Req\022+\n\023ambient_temperature\030\t \003(\0132\016.FeelS" +
                         "ensorReq\022\035\n\005light\030\n \003(\0132\016.FeelSensorReq\022" +
-                        " \n\010pressure\030\013 \003(\0132\016.FeelSensorReq\"\035\n\013Dee" +
-                        "pNaviRes\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.dee" +
-                        "pnavi.beanB\005Basic"
+                        " \n\010pressure\030\013 \003(\0132\016.FeelSensorReq\022!\n\tpro" +
+                        "ximity\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNavi" +
+                        "Res\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi" +
+                        ".beanB\005Basic"
         };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
                 new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -7405,7 +7925,7 @@ public final class Basic {
         internal_static_DeepNaviReq_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                 internal_static_DeepNaviReq_descriptor,
-                new String[]{"Time", "Image", "Magnetic", "Accelerometer", "Orientation", "Gyroscope", "Gravity", "LinearAcceleration", "AmbientTemperature", "Light", "Pressure",});
+                new String[]{"Time", "Image", "Magnetic", "Accelerometer", "Orientation", "Gyroscope", "Gravity", "LinearAcceleration", "AmbientTemperature", "Light", "Pressure", "Proximity",});
         internal_static_DeepNaviRes_descriptor =
                 getDescriptor().getMessageTypes().get(3);
         internal_static_DeepNaviRes_fieldAccessorTable = new

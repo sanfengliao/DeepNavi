@@ -16,35 +16,47 @@ class SensorListeners {
     }
 
     val magneticListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_MAGNETIC_FIELD, "magnetic")
-    { event -> createCoorSensorReq(event) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event) }
 
     val accelerometerListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_ACCELEROMETER, "accelerometer")
-    { event -> createCoorSensorReq(event) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event) }
 
     val orientationListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_ORIENTATION, "orientation")
-    { event -> createCoorSensorReq(event, 1, 2, 0) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event, 1, 2, 0) }
 
     val gyroscopeListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_GYROSCOPE, "gyroscope")
-    { event -> createCoorSensorReq(event) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event) }
 
     val gravityListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_GRAVITY, "gravity")
-    { event -> createCoorSensorReq(event) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event) }
 
     val linear_accelerationListener = SensorListener2<Basic.CoorSensorReq>(Sensor.TYPE_LINEAR_ACCELERATION, "linear_acceleration")
-    { event -> createCoorSensorReq(event) }.init(1000000 / 50)
+    { event -> createCoorSensorReq(event) }
 
     val ambient_temperatureListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_AMBIENT_TEMPERATURE, "ambient_temperature")
-    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }.init(1000000 / 50)
+    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     val lightListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_LIGHT, "light")
-    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }.init(1000000 / 50)
+    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     val pressureListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_PRESSURE, "pressure")
-    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }.init(1000000 / 50)
+    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     val proximityListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_PRESSURE, "proximity")
-    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }.init(1000000 / 50)
+    { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
+    fun initAll(rate: Int = 1000000 / 50) {
+        magneticListener.init(rate)
+        accelerometerListener.init(rate)
+        orientationListener.init(rate)
+        gyroscopeListener.init(rate)
+        gravityListener.init(rate)
+        linear_accelerationListener.init(rate)
+        ambient_temperatureListener.init(rate)
+        lightListener.init(rate)
+        pressureListener.init(rate)
+        proximityListener.init(rate)
+    }
 }
 
 // Sensor.TYPE_TEMPERATURE  // 内部温度

@@ -14,48 +14,33 @@ public final class Basic {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MagneticMsgOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MagneticMsg)
+  public interface FeelSensorReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:FeelSensorReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>double magnetic_x = 1;</code>
-     * @return The magneticX.
+     * <code>required float value = 1;</code>
      */
-    double getMagneticX();
-
+    boolean hasValue();
     /**
-     * <code>double magnetic_y = 2;</code>
-     * @return The magneticY.
+     * <code>required float value = 1;</code>
      */
-    double getMagneticY();
-
-    /**
-     * <code>double magnetic_z = 3;</code>
-     * @return The magneticZ.
-     */
-    double getMagneticZ();
+    float getValue();
   }
   /**
-   * Protobuf type {@code MagneticMsg}
+   * Protobuf type {@code FeelSensorReq}
    */
-  public  static final class MagneticMsg extends
+  public  static final class FeelSensorReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MagneticMsg)
-      MagneticMsgOrBuilder {
+      // @@protoc_insertion_point(message_implements:FeelSensorReq)
+      FeelSensorReqOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MagneticMsg.newBuilder() to construct.
-    private MagneticMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use FeelSensorReq.newBuilder() to construct.
+    private FeelSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MagneticMsg() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MagneticMsg();
+    private FeelSensorReq() {
+      value_ = 0F;
     }
 
     @java.lang.Override
@@ -63,7 +48,7 @@ public final class Basic {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MagneticMsg(
+    private FeelSensorReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -71,6 +56,7 @@ public final class Basic {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -81,19 +67,9 @@ public final class Basic {
             case 0:
               done = true;
               break;
-            case 9: {
-
-              magneticX_ = input.readDouble();
-              break;
-            }
-            case 17: {
-
-              magneticY_ = input.readDouble();
-              break;
-            }
-            case 25: {
-
-              magneticZ_ = input.readDouble();
+            case 13: {
+              bitField0_ |= 0x00000001;
+              value_ = input.readFloat();
               break;
             }
             default: {
@@ -117,45 +93,31 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_MagneticMsg_descriptor;
+      return com.sysu.deepnavi.bean.Basic.internal_static_FeelSensorReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_MagneticMsg_fieldAccessorTable
+      return com.sysu.deepnavi.bean.Basic.internal_static_FeelSensorReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sysu.deepnavi.bean.Basic.MagneticMsg.class, com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder.class);
+              com.sysu.deepnavi.bean.Basic.FeelSensorReq.class, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder.class);
     }
 
-    public static final int MAGNETIC_X_FIELD_NUMBER = 1;
-    private double magneticX_;
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private float value_;
     /**
-     * <code>double magnetic_x = 1;</code>
-     * @return The magneticX.
+     * <code>required float value = 1;</code>
      */
-    public double getMagneticX() {
-      return magneticX_;
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-
-    public static final int MAGNETIC_Y_FIELD_NUMBER = 2;
-    private double magneticY_;
     /**
-     * <code>double magnetic_y = 2;</code>
-     * @return The magneticY.
+     * <code>required float value = 1;</code>
      */
-    public double getMagneticY() {
-      return magneticY_;
-    }
-
-    public static final int MAGNETIC_Z_FIELD_NUMBER = 3;
-    private double magneticZ_;
-    /**
-     * <code>double magnetic_z = 3;</code>
-     * @return The magneticZ.
-     */
-    public double getMagneticZ() {
-      return magneticZ_;
+    public float getValue() {
+      return value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -165,6 +127,10 @@ public final class Basic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -172,14 +138,8 @@ public final class Basic {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (magneticX_ != 0D) {
-        output.writeDouble(1, magneticX_);
-      }
-      if (magneticY_ != 0D) {
-        output.writeDouble(2, magneticY_);
-      }
-      if (magneticZ_ != 0D) {
-        output.writeDouble(3, magneticZ_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFloat(1, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -190,17 +150,9 @@ public final class Basic {
       if (size != -1) return size;
 
       size = 0;
-      if (magneticX_ != 0D) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, magneticX_);
-      }
-      if (magneticY_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, magneticY_);
-      }
-      if (magneticZ_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, magneticZ_);
+          .computeFloatSize(1, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -212,22 +164,21 @@ public final class Basic {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.MagneticMsg)) {
+      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.FeelSensorReq)) {
         return super.equals(obj);
       }
-      com.sysu.deepnavi.bean.Basic.MagneticMsg other = (com.sysu.deepnavi.bean.Basic.MagneticMsg) obj;
+      com.sysu.deepnavi.bean.Basic.FeelSensorReq other = (com.sysu.deepnavi.bean.Basic.FeelSensorReq) obj;
 
-      if (java.lang.Double.doubleToLongBits(getMagneticX())
-          != java.lang.Double.doubleToLongBits(
-              other.getMagneticX())) return false;
-      if (java.lang.Double.doubleToLongBits(getMagneticY())
-          != java.lang.Double.doubleToLongBits(
-              other.getMagneticY())) return false;
-      if (java.lang.Double.doubleToLongBits(getMagneticZ())
-          != java.lang.Double.doubleToLongBits(
-              other.getMagneticZ())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (hasValue() == other.hasValue());
+      if (hasValue()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getValue())
+            == java.lang.Float.floatToIntBits(
+                other.getValue()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -237,83 +188,79 @@ public final class Basic {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAGNETIC_X_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMagneticX()));
-      hash = (37 * hash) + MAGNETIC_Y_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMagneticY()));
-      hash = (37 * hash) + MAGNETIC_Z_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMagneticZ()));
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getValue());
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(byte[] data)
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseDelimitedFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseDelimitedFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -326,7 +273,7 @@ public final class Basic {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.MagneticMsg prototype) {
+    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.FeelSensorReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -342,26 +289,26 @@ public final class Basic {
       return builder;
     }
     /**
-     * Protobuf type {@code MagneticMsg}
+     * Protobuf type {@code FeelSensorReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MagneticMsg)
-        com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder {
+        // @@protoc_insertion_point(builder_implements:FeelSensorReq)
+        com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_MagneticMsg_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_FeelSensorReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_MagneticMsg_fieldAccessorTable
+        return com.sysu.deepnavi.bean.Basic.internal_static_FeelSensorReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sysu.deepnavi.bean.Basic.MagneticMsg.class, com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder.class);
+                com.sysu.deepnavi.bean.Basic.FeelSensorReq.class, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder.class);
       }
 
-      // Construct using com.sysu.deepnavi.bean.Basic.MagneticMsg.newBuilder()
+      // Construct using com.sysu.deepnavi.bean.Basic.FeelSensorReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -379,29 +326,25 @@ public final class Basic {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        magneticX_ = 0D;
-
-        magneticY_ = 0D;
-
-        magneticZ_ = 0D;
-
+        value_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_MagneticMsg_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_FeelSensorReq_descriptor;
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.MagneticMsg getDefaultInstanceForType() {
-        return com.sysu.deepnavi.bean.Basic.MagneticMsg.getDefaultInstance();
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq getDefaultInstanceForType() {
+        return com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.MagneticMsg build() {
-        com.sysu.deepnavi.bean.Basic.MagneticMsg result = buildPartial();
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq build() {
+        com.sysu.deepnavi.bean.Basic.FeelSensorReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -409,67 +352,65 @@ public final class Basic {
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.MagneticMsg buildPartial() {
-        com.sysu.deepnavi.bean.Basic.MagneticMsg result = new com.sysu.deepnavi.bean.Basic.MagneticMsg(this);
-        result.magneticX_ = magneticX_;
-        result.magneticY_ = magneticY_;
-        result.magneticZ_ = magneticZ_;
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq buildPartial() {
+        com.sysu.deepnavi.bean.Basic.FeelSensorReq result = new com.sysu.deepnavi.bean.Basic.FeelSensorReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.value_ = value_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sysu.deepnavi.bean.Basic.MagneticMsg) {
-          return mergeFrom((com.sysu.deepnavi.bean.Basic.MagneticMsg)other);
+        if (other instanceof com.sysu.deepnavi.bean.Basic.FeelSensorReq) {
+          return mergeFrom((com.sysu.deepnavi.bean.Basic.FeelSensorReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.MagneticMsg other) {
-        if (other == com.sysu.deepnavi.bean.Basic.MagneticMsg.getDefaultInstance()) return this;
-        if (other.getMagneticX() != 0D) {
-          setMagneticX(other.getMagneticX());
-        }
-        if (other.getMagneticY() != 0D) {
-          setMagneticY(other.getMagneticY());
-        }
-        if (other.getMagneticZ() != 0D) {
-          setMagneticZ(other.getMagneticZ());
+      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.FeelSensorReq other) {
+        if (other == com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -478,6 +419,9 @@ public final class Basic {
 
       @java.lang.Override
       public final boolean isInitialized() {
+        if (!hasValue()) {
+          return false;
+        }
         return true;
       }
 
@@ -486,11 +430,11 @@ public final class Basic {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sysu.deepnavi.bean.Basic.MagneticMsg parsedMessage = null;
+        com.sysu.deepnavi.bean.Basic.FeelSensorReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sysu.deepnavi.bean.Basic.MagneticMsg) e.getUnfinishedMessage();
+          parsedMessage = (com.sysu.deepnavi.bean.Basic.FeelSensorReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -499,93 +443,36 @@ public final class Basic {
         }
         return this;
       }
+      private int bitField0_;
 
-      private double magneticX_ ;
+      private float value_ ;
       /**
-       * <code>double magnetic_x = 1;</code>
-       * @return The magneticX.
+       * <code>required float value = 1;</code>
        */
-      public double getMagneticX() {
-        return magneticX_;
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>double magnetic_x = 1;</code>
-       * @param value The magneticX to set.
-       * @return This builder for chaining.
+       * <code>required float value = 1;</code>
        */
-      public Builder setMagneticX(double value) {
-        
-        magneticX_ = value;
+      public float getValue() {
+        return value_;
+      }
+      /**
+       * <code>required float value = 1;</code>
+       */
+      public Builder setValue(float value) {
+        bitField0_ |= 0x00000001;
+        value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double magnetic_x = 1;</code>
-       * @return This builder for chaining.
+       * <code>required float value = 1;</code>
        */
-      public Builder clearMagneticX() {
-        
-        magneticX_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double magneticY_ ;
-      /**
-       * <code>double magnetic_y = 2;</code>
-       * @return The magneticY.
-       */
-      public double getMagneticY() {
-        return magneticY_;
-      }
-      /**
-       * <code>double magnetic_y = 2;</code>
-       * @param value The magneticY to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMagneticY(double value) {
-        
-        magneticY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double magnetic_y = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMagneticY() {
-        
-        magneticY_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double magneticZ_ ;
-      /**
-       * <code>double magnetic_z = 3;</code>
-       * @return The magneticZ.
-       */
-      public double getMagneticZ() {
-        return magneticZ_;
-      }
-      /**
-       * <code>double magnetic_z = 3;</code>
-       * @param value The magneticZ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMagneticZ(double value) {
-        
-        magneticZ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double magnetic_z = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMagneticZ() {
-        
-        magneticZ_ = 0D;
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0F;
         onChanged();
         return this;
       }
@@ -602,98 +489,93 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MagneticMsg)
+      // @@protoc_insertion_point(builder_scope:FeelSensorReq)
     }
 
-    // @@protoc_insertion_point(class_scope:MagneticMsg)
-    private static final com.sysu.deepnavi.bean.Basic.MagneticMsg DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:FeelSensorReq)
+    private static final com.sysu.deepnavi.bean.Basic.FeelSensorReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.MagneticMsg();
+      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.FeelSensorReq();
     }
 
-    public static com.sysu.deepnavi.bean.Basic.MagneticMsg getDefaultInstance() {
+    public static com.sysu.deepnavi.bean.Basic.FeelSensorReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MagneticMsg>
-        PARSER = new com.google.protobuf.AbstractParser<MagneticMsg>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<FeelSensorReq>
+        PARSER = new com.google.protobuf.AbstractParser<FeelSensorReq>() {
       @java.lang.Override
-      public MagneticMsg parsePartialFrom(
+      public FeelSensorReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MagneticMsg(input, extensionRegistry);
+        return new FeelSensorReq(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MagneticMsg> parser() {
+    public static com.google.protobuf.Parser<FeelSensorReq> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MagneticMsg> getParserForType() {
+    public com.google.protobuf.Parser<FeelSensorReq> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.sysu.deepnavi.bean.Basic.MagneticMsg getDefaultInstanceForType() {
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DeepNaviMsgOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DeepNaviMsg)
+  public interface CoorSensorReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CoorSensorReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 time = 1;</code>
-     * @return The time.
+     * <code>required float x = 1;</code>
      */
-    long getTime();
+    boolean hasX();
+    /**
+     * <code>required float x = 1;</code>
+     */
+    float getX();
 
     /**
-     * <code>bytes image = 2;</code>
-     * @return The image.
+     * <code>required float y = 2;</code>
      */
-    com.google.protobuf.ByteString getImage();
+    boolean hasY();
+    /**
+     * <code>required float y = 2;</code>
+     */
+    float getY();
 
     /**
-     * <code>.MagneticMsg magnetic = 3;</code>
-     * @return Whether the magnetic field is set.
+     * <code>required float z = 3;</code>
      */
-    boolean hasMagnetic();
+    boolean hasZ();
     /**
-     * <code>.MagneticMsg magnetic = 3;</code>
-     * @return The magnetic.
+     * <code>required float z = 3;</code>
      */
-    com.sysu.deepnavi.bean.Basic.MagneticMsg getMagnetic();
-    /**
-     * <code>.MagneticMsg magnetic = 3;</code>
-     */
-    com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder getMagneticOrBuilder();
+    float getZ();
   }
   /**
-   * Protobuf type {@code DeepNaviMsg}
+   * Protobuf type {@code CoorSensorReq}
    */
-  public  static final class DeepNaviMsg extends
+  public  static final class CoorSensorReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:DeepNaviMsg)
-      DeepNaviMsgOrBuilder {
+      // @@protoc_insertion_point(message_implements:CoorSensorReq)
+      CoorSensorReqOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DeepNaviMsg.newBuilder() to construct.
-    private DeepNaviMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CoorSensorReq.newBuilder() to construct.
+    private CoorSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DeepNaviMsg() {
-      image_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DeepNaviMsg();
+    private CoorSensorReq() {
+      x_ = 0F;
+      y_ = 0F;
+      z_ = 0F;
     }
 
     @java.lang.Override
@@ -701,7 +583,7 @@ public final class Basic {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeepNaviMsg(
+    private CoorSensorReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -709,6 +591,1164 @@ public final class Basic {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              z_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq.class, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int X_FIELD_NUMBER = 1;
+    private float x_;
+    /**
+     * <code>required float x = 1;</code>
+     */
+    public boolean hasX() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required float x = 1;</code>
+     */
+    public float getX() {
+      return x_;
+    }
+
+    public static final int Y_FIELD_NUMBER = 2;
+    private float y_;
+    /**
+     * <code>required float y = 2;</code>
+     */
+    public boolean hasY() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required float y = 2;</code>
+     */
+    public float getY() {
+      return y_;
+    }
+
+    public static final int Z_FIELD_NUMBER = 3;
+    private float z_;
+    /**
+     * <code>required float z = 3;</code>
+     */
+    public boolean hasZ() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required float z = 3;</code>
+     */
+    public float getZ() {
+      return z_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasX()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasY()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZ()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFloat(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, z_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, z_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.CoorSensorReq)) {
+        return super.equals(obj);
+      }
+      com.sysu.deepnavi.bean.Basic.CoorSensorReq other = (com.sysu.deepnavi.bean.Basic.CoorSensorReq) obj;
+
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
+      if (hasX()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
+      }
+      result = result && (hasY() == other.hasY());
+      if (hasY()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
+      }
+      result = result && (hasZ() == other.hasZ());
+      if (hasZ()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getZ())
+            == java.lang.Float.floatToIntBits(
+                other.getZ()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasX()) {
+        hash = (37 * hash) + X_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getX());
+      }
+      if (hasY()) {
+        hash = (37 * hash) + Y_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getY());
+      }
+      if (hasZ()) {
+        hash = (37 * hash) + Z_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getZ());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.CoorSensorReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CoorSensorReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CoorSensorReq)
+        com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.sysu.deepnavi.bean.Basic.CoorSensorReq.class, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.CoorSensorReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        z_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstanceForType() {
+        return com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq build() {
+        com.sysu.deepnavi.bean.Basic.CoorSensorReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq buildPartial() {
+        com.sysu.deepnavi.bean.Basic.CoorSensorReq result = new com.sysu.deepnavi.bean.Basic.CoorSensorReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.z_ = z_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.sysu.deepnavi.bean.Basic.CoorSensorReq) {
+          return mergeFrom((com.sysu.deepnavi.bean.Basic.CoorSensorReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.CoorSensorReq other) {
+        if (other == com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance()) return this;
+        if (other.hasX()) {
+          setX(other.getX());
+        }
+        if (other.hasY()) {
+          setY(other.getY());
+        }
+        if (other.hasZ()) {
+          setZ(other.getZ());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasX()) {
+          return false;
+        }
+        if (!hasY()) {
+          return false;
+        }
+        if (!hasZ()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.sysu.deepnavi.bean.Basic.CoorSensorReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.sysu.deepnavi.bean.Basic.CoorSensorReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private float x_ ;
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public boolean hasX() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public float getX() {
+        return x_;
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public Builder setX(float value) {
+        bitField0_ |= 0x00000001;
+        x_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public Builder clearX() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        x_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float y_ ;
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public boolean hasY() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public float getY() {
+        return y_;
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public Builder setY(float value) {
+        bitField0_ |= 0x00000002;
+        y_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public Builder clearY() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        y_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float z_ ;
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public boolean hasZ() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public float getZ() {
+        return z_;
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public Builder setZ(float value) {
+        bitField0_ |= 0x00000004;
+        z_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public Builder clearZ() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        z_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CoorSensorReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:CoorSensorReq)
+    private static final com.sysu.deepnavi.bean.Basic.CoorSensorReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.CoorSensorReq();
+    }
+
+    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CoorSensorReq>
+        PARSER = new com.google.protobuf.AbstractParser<CoorSensorReq>() {
+      @java.lang.Override
+      public CoorSensorReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CoorSensorReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CoorSensorReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CoorSensorReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeepNaviReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DeepNaviReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    boolean hasTime();
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    long getTime();
+
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    boolean hasImage();
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    com.google.protobuf.ByteString getImage();
+
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getMagneticList();
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagnetic(int index);
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    int getMagneticCount();
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getMagneticOrBuilderList();
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getAccelerometerList();
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometer(int index);
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    int getAccelerometerCount();
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getAccelerometerOrBuilderList();
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getOrientationList();
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientation(int index);
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    int getOrientationCount();
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getOrientationOrBuilderList();
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getGyroscopeList();
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscope(int index);
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    int getGyroscopeCount();
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getGyroscopeOrBuilderList();
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getGravityList();
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravity(int index);
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    int getGravityCount();
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getGravityOrBuilderList();
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+        getLinearAccelerationList();
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAcceleration(int index);
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    int getLinearAccelerationCount();
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getLinearAccelerationOrBuilderList();
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> 
+        getAmbientTemperatureList();
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReq getAmbientTemperature(int index);
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    int getAmbientTemperatureCount();
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getAmbientTemperatureOrBuilderList();
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> 
+        getLightList();
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReq getLight(int index);
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    int getLightCount();
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getLightOrBuilderList();
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getLightOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> 
+        getPressureList();
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReq getPressure(int index);
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    int getPressureCount();
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getPressureOrBuilderList();
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getPressureOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> 
+        getProximityList();
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReq getProximity(int index);
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    int getProximityCount();
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getProximityOrBuilderList();
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getProximityOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code DeepNaviReq}
+   */
+  public  static final class DeepNaviReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:DeepNaviReq)
+      DeepNaviReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeepNaviReq.newBuilder() to construct.
+    private DeepNaviReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeepNaviReq() {
+      time_ = 0L;
+      image_ = com.google.protobuf.ByteString.EMPTY;
+      magnetic_ = java.util.Collections.emptyList();
+      accelerometer_ = java.util.Collections.emptyList();
+      orientation_ = java.util.Collections.emptyList();
+      gyroscope_ = java.util.Collections.emptyList();
+      gravity_ = java.util.Collections.emptyList();
+      linearAcceleration_ = java.util.Collections.emptyList();
+      ambientTemperature_ = java.util.Collections.emptyList();
+      light_ = java.util.Collections.emptyList();
+      pressure_ = java.util.Collections.emptyList();
+      proximity_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeepNaviReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -720,26 +1760,5081 @@ public final class Basic {
               done = true;
               break;
             case 8: {
-
+              bitField0_ |= 0x00000001;
               time_ = input.readInt64();
               break;
             }
             case 18: {
-
+              bitField0_ |= 0x00000002;
               image_ = input.readBytes();
               break;
             }
             case 26: {
-              com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder subBuilder = null;
-              if (magnetic_ != null) {
-                subBuilder = magnetic_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                magnetic_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000004;
               }
-              magnetic_ = input.readMessage(com.sysu.deepnavi.bean.Basic.MagneticMsg.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(magnetic_);
-                magnetic_ = subBuilder.buildPartial();
+              magnetic_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                accelerometer_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000008;
               }
+              accelerometer_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                orientation_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              orientation_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                gyroscope_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              gyroscope_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                gravity_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              gravity_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                linearAcceleration_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              linearAcceleration_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                ambientTemperature_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              ambientTemperature_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                light_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              light_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                pressure_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              pressure_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                proximity_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              proximity_.add(
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          magnetic_ = java.util.Collections.unmodifiableList(magnetic_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          accelerometer_ = java.util.Collections.unmodifiableList(accelerometer_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          orientation_ = java.util.Collections.unmodifiableList(orientation_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          gyroscope_ = java.util.Collections.unmodifiableList(gyroscope_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          gravity_ = java.util.Collections.unmodifiableList(gravity_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          linearAcceleration_ = java.util.Collections.unmodifiableList(linearAcceleration_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          ambientTemperature_ = java.util.Collections.unmodifiableList(ambientTemperature_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          light_ = java.util.Collections.unmodifiableList(light_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          pressure_ = java.util.Collections.unmodifiableList(pressure_);
+        }
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+          proximity_ = java.util.Collections.unmodifiableList(proximity_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviReq_descriptor;
+    }
 
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.sysu.deepnavi.bean.Basic.DeepNaviReq.class, com.sysu.deepnavi.bean.Basic.DeepNaviReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TIME_FIELD_NUMBER = 1;
+    private long time_;
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    public long getTime() {
+      return time_;
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString image_;
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    public boolean hasImage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    public com.google.protobuf.ByteString getImage() {
+      return image_;
+    }
+
+    public static final int MAGNETIC_FIELD_NUMBER = 3;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> magnetic_;
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getMagneticList() {
+      return magnetic_;
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getMagneticOrBuilderList() {
+      return magnetic_;
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    public int getMagneticCount() {
+      return magnetic_.size();
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagnetic(int index) {
+      return magnetic_.get(index);
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq magnetic = 3;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticOrBuilder(
+        int index) {
+      return magnetic_.get(index);
+    }
+
+    public static final int ACCELEROMETER_FIELD_NUMBER = 4;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> accelerometer_;
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getAccelerometerList() {
+      return accelerometer_;
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getAccelerometerOrBuilderList() {
+      return accelerometer_;
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    public int getAccelerometerCount() {
+      return accelerometer_.size();
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometer(int index) {
+      return accelerometer_.get(index);
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+        int index) {
+      return accelerometer_.get(index);
+    }
+
+    public static final int ORIENTATION_FIELD_NUMBER = 5;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> orientation_;
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getOrientationList() {
+      return orientation_;
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getOrientationOrBuilderList() {
+      return orientation_;
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    public int getOrientationCount() {
+      return orientation_.size();
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientation(int index) {
+      return orientation_.get(index);
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq orientation = 5;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationOrBuilder(
+        int index) {
+      return orientation_.get(index);
+    }
+
+    public static final int GYROSCOPE_FIELD_NUMBER = 6;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gyroscope_;
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGyroscopeList() {
+      return gyroscope_;
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getGyroscopeOrBuilderList() {
+      return gyroscope_;
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    public int getGyroscopeCount() {
+      return gyroscope_.size();
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscope(int index) {
+      return gyroscope_.get(index);
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+        int index) {
+      return gyroscope_.get(index);
+    }
+
+    public static final int GRAVITY_FIELD_NUMBER = 7;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gravity_;
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGravityList() {
+      return gravity_;
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getGravityOrBuilderList() {
+      return gravity_;
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    public int getGravityCount() {
+      return gravity_.size();
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravity(int index) {
+      return gravity_.get(index);
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq gravity = 7;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityOrBuilder(
+        int index) {
+      return gravity_.get(index);
+    }
+
+    public static final int LINEAR_ACCELERATION_FIELD_NUMBER = 8;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> linearAcceleration_;
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getLinearAccelerationList() {
+      return linearAcceleration_;
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+        getLinearAccelerationOrBuilderList() {
+      return linearAcceleration_;
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    public int getLinearAccelerationCount() {
+      return linearAcceleration_.size();
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAcceleration(int index) {
+      return linearAcceleration_.get(index);
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+        int index) {
+      return linearAcceleration_.get(index);
+    }
+
+    public static final int AMBIENT_TEMPERATURE_FIELD_NUMBER = 9;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> ambientTemperature_;
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getAmbientTemperatureList() {
+      return ambientTemperature_;
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getAmbientTemperatureOrBuilderList() {
+      return ambientTemperature_;
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    public int getAmbientTemperatureCount() {
+      return ambientTemperature_.size();
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReq getAmbientTemperature(int index) {
+      return ambientTemperature_.get(index);
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+        int index) {
+      return ambientTemperature_.get(index);
+    }
+
+    public static final int LIGHT_FIELD_NUMBER = 10;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> light_;
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getLightList() {
+      return light_;
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getLightOrBuilderList() {
+      return light_;
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    public int getLightCount() {
+      return light_.size();
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReq getLight(int index) {
+      return light_.get(index);
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq light = 10;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getLightOrBuilder(
+        int index) {
+      return light_.get(index);
+    }
+
+    public static final int PRESSURE_FIELD_NUMBER = 11;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> pressure_;
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getPressureList() {
+      return pressure_;
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getPressureOrBuilderList() {
+      return pressure_;
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    public int getPressureCount() {
+      return pressure_.size();
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReq getPressure(int index) {
+      return pressure_.get(index);
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressure = 11;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getPressureOrBuilder(
+        int index) {
+      return pressure_.get(index);
+    }
+
+    public static final int PROXIMITY_FIELD_NUMBER = 12;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> proximity_;
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getProximityList() {
+      return proximity_;
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+        getProximityOrBuilderList() {
+      return proximity_;
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    public int getProximityCount() {
+      return proximity_.size();
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReq getProximity(int index) {
+      return proximity_.get(index);
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximity = 12;</code>
+     */
+    public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getProximityOrBuilder(
+        int index) {
+      return proximity_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getMagneticCount(); i++) {
+        if (!getMagnetic(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAccelerometerCount(); i++) {
+        if (!getAccelerometer(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getOrientationCount(); i++) {
+        if (!getOrientation(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getGyroscopeCount(); i++) {
+        if (!getGyroscope(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getGravityCount(); i++) {
+        if (!getGravity(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getLinearAccelerationCount(); i++) {
+        if (!getLinearAcceleration(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAmbientTemperatureCount(); i++) {
+        if (!getAmbientTemperature(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getLightCount(); i++) {
+        if (!getLight(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getPressureCount(); i++) {
+        if (!getPressure(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getProximityCount(); i++) {
+        if (!getProximity(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, image_);
+      }
+      for (int i = 0; i < magnetic_.size(); i++) {
+        output.writeMessage(3, magnetic_.get(i));
+      }
+      for (int i = 0; i < accelerometer_.size(); i++) {
+        output.writeMessage(4, accelerometer_.get(i));
+      }
+      for (int i = 0; i < orientation_.size(); i++) {
+        output.writeMessage(5, orientation_.get(i));
+      }
+      for (int i = 0; i < gyroscope_.size(); i++) {
+        output.writeMessage(6, gyroscope_.get(i));
+      }
+      for (int i = 0; i < gravity_.size(); i++) {
+        output.writeMessage(7, gravity_.get(i));
+      }
+      for (int i = 0; i < linearAcceleration_.size(); i++) {
+        output.writeMessage(8, linearAcceleration_.get(i));
+      }
+      for (int i = 0; i < ambientTemperature_.size(); i++) {
+        output.writeMessage(9, ambientTemperature_.get(i));
+      }
+      for (int i = 0; i < light_.size(); i++) {
+        output.writeMessage(10, light_.get(i));
+      }
+      for (int i = 0; i < pressure_.size(); i++) {
+        output.writeMessage(11, pressure_.get(i));
+      }
+      for (int i = 0; i < proximity_.size(); i++) {
+        output.writeMessage(12, proximity_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, image_);
+      }
+      for (int i = 0; i < magnetic_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, magnetic_.get(i));
+      }
+      for (int i = 0; i < accelerometer_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, accelerometer_.get(i));
+      }
+      for (int i = 0; i < orientation_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, orientation_.get(i));
+      }
+      for (int i = 0; i < gyroscope_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, gyroscope_.get(i));
+      }
+      for (int i = 0; i < gravity_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, gravity_.get(i));
+      }
+      for (int i = 0; i < linearAcceleration_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, linearAcceleration_.get(i));
+      }
+      for (int i = 0; i < ambientTemperature_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, ambientTemperature_.get(i));
+      }
+      for (int i = 0; i < light_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, light_.get(i));
+      }
+      for (int i = 0; i < pressure_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, pressure_.get(i));
+      }
+      for (int i = 0; i < proximity_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, proximity_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.DeepNaviReq)) {
+        return super.equals(obj);
+      }
+      com.sysu.deepnavi.bean.Basic.DeepNaviReq other = (com.sysu.deepnavi.bean.Basic.DeepNaviReq) obj;
+
+      boolean result = true;
+      result = result && (hasTime() == other.hasTime());
+      if (hasTime()) {
+        result = result && (getTime()
+            == other.getTime());
+      }
+      result = result && (hasImage() == other.hasImage());
+      if (hasImage()) {
+        result = result && getImage()
+            .equals(other.getImage());
+      }
+      result = result && getMagneticList()
+          .equals(other.getMagneticList());
+      result = result && getAccelerometerList()
+          .equals(other.getAccelerometerList());
+      result = result && getOrientationList()
+          .equals(other.getOrientationList());
+      result = result && getGyroscopeList()
+          .equals(other.getGyroscopeList());
+      result = result && getGravityList()
+          .equals(other.getGravityList());
+      result = result && getLinearAccelerationList()
+          .equals(other.getLinearAccelerationList());
+      result = result && getAmbientTemperatureList()
+          .equals(other.getAmbientTemperatureList());
+      result = result && getLightList()
+          .equals(other.getLightList());
+      result = result && getPressureList()
+          .equals(other.getPressureList());
+      result = result && getProximityList()
+          .equals(other.getProximityList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTime()) {
+        hash = (37 * hash) + TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTime());
+      }
+      if (hasImage()) {
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
+      }
+      if (getMagneticCount() > 0) {
+        hash = (37 * hash) + MAGNETIC_FIELD_NUMBER;
+        hash = (53 * hash) + getMagneticList().hashCode();
+      }
+      if (getAccelerometerCount() > 0) {
+        hash = (37 * hash) + ACCELEROMETER_FIELD_NUMBER;
+        hash = (53 * hash) + getAccelerometerList().hashCode();
+      }
+      if (getOrientationCount() > 0) {
+        hash = (37 * hash) + ORIENTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getOrientationList().hashCode();
+      }
+      if (getGyroscopeCount() > 0) {
+        hash = (37 * hash) + GYROSCOPE_FIELD_NUMBER;
+        hash = (53 * hash) + getGyroscopeList().hashCode();
+      }
+      if (getGravityCount() > 0) {
+        hash = (37 * hash) + GRAVITY_FIELD_NUMBER;
+        hash = (53 * hash) + getGravityList().hashCode();
+      }
+      if (getLinearAccelerationCount() > 0) {
+        hash = (37 * hash) + LINEAR_ACCELERATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLinearAccelerationList().hashCode();
+      }
+      if (getAmbientTemperatureCount() > 0) {
+        hash = (37 * hash) + AMBIENT_TEMPERATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAmbientTemperatureList().hashCode();
+      }
+      if (getLightCount() > 0) {
+        hash = (37 * hash) + LIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getLightList().hashCode();
+      }
+      if (getPressureCount() > 0) {
+        hash = (37 * hash) + PRESSURE_FIELD_NUMBER;
+        hash = (53 * hash) + getPressureList().hashCode();
+      }
+      if (getProximityCount() > 0) {
+        hash = (37 * hash) + PROXIMITY_FIELD_NUMBER;
+        hash = (53 * hash) + getProximityList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.DeepNaviReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code DeepNaviReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:DeepNaviReq)
+        com.sysu.deepnavi.bean.Basic.DeepNaviReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.sysu.deepnavi.bean.Basic.DeepNaviReq.class, com.sysu.deepnavi.bean.Basic.DeepNaviReq.Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMagneticFieldBuilder();
+          getAccelerometerFieldBuilder();
+          getOrientationFieldBuilder();
+          getGyroscopeFieldBuilder();
+          getGravityFieldBuilder();
+          getLinearAccelerationFieldBuilder();
+          getAmbientTemperatureFieldBuilder();
+          getLightFieldBuilder();
+          getPressureFieldBuilder();
+          getProximityFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        image_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (magneticBuilder_ == null) {
+          magnetic_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          magneticBuilder_.clear();
+        }
+        if (accelerometerBuilder_ == null) {
+          accelerometer_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          accelerometerBuilder_.clear();
+        }
+        if (orientationBuilder_ == null) {
+          orientation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          orientationBuilder_.clear();
+        }
+        if (gyroscopeBuilder_ == null) {
+          gyroscope_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          gyroscopeBuilder_.clear();
+        }
+        if (gravityBuilder_ == null) {
+          gravity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          gravityBuilder_.clear();
+        }
+        if (linearAccelerationBuilder_ == null) {
+          linearAcceleration_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          linearAccelerationBuilder_.clear();
+        }
+        if (ambientTemperatureBuilder_ == null) {
+          ambientTemperature_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ambientTemperatureBuilder_.clear();
+        }
+        if (lightBuilder_ == null) {
+          light_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          lightBuilder_.clear();
+        }
+        if (pressureBuilder_ == null) {
+          pressure_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          pressureBuilder_.clear();
+        }
+        if (proximityBuilder_ == null) {
+          proximity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          proximityBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.DeepNaviReq getDefaultInstanceForType() {
+        return com.sysu.deepnavi.bean.Basic.DeepNaviReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.DeepNaviReq build() {
+        com.sysu.deepnavi.bean.Basic.DeepNaviReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.sysu.deepnavi.bean.Basic.DeepNaviReq buildPartial() {
+        com.sysu.deepnavi.bean.Basic.DeepNaviReq result = new com.sysu.deepnavi.bean.Basic.DeepNaviReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.image_ = image_;
+        if (magneticBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            magnetic_ = java.util.Collections.unmodifiableList(magnetic_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.magnetic_ = magnetic_;
+        } else {
+          result.magnetic_ = magneticBuilder_.build();
+        }
+        if (accelerometerBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            accelerometer_ = java.util.Collections.unmodifiableList(accelerometer_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.accelerometer_ = accelerometer_;
+        } else {
+          result.accelerometer_ = accelerometerBuilder_.build();
+        }
+        if (orientationBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            orientation_ = java.util.Collections.unmodifiableList(orientation_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.orientation_ = orientation_;
+        } else {
+          result.orientation_ = orientationBuilder_.build();
+        }
+        if (gyroscopeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            gyroscope_ = java.util.Collections.unmodifiableList(gyroscope_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.gyroscope_ = gyroscope_;
+        } else {
+          result.gyroscope_ = gyroscopeBuilder_.build();
+        }
+        if (gravityBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            gravity_ = java.util.Collections.unmodifiableList(gravity_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.gravity_ = gravity_;
+        } else {
+          result.gravity_ = gravityBuilder_.build();
+        }
+        if (linearAccelerationBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+            linearAcceleration_ = java.util.Collections.unmodifiableList(linearAcceleration_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.linearAcceleration_ = linearAcceleration_;
+        } else {
+          result.linearAcceleration_ = linearAccelerationBuilder_.build();
+        }
+        if (ambientTemperatureBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            ambientTemperature_ = java.util.Collections.unmodifiableList(ambientTemperature_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.ambientTemperature_ = ambientTemperature_;
+        } else {
+          result.ambientTemperature_ = ambientTemperatureBuilder_.build();
+        }
+        if (lightBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            light_ = java.util.Collections.unmodifiableList(light_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.light_ = light_;
+        } else {
+          result.light_ = lightBuilder_.build();
+        }
+        if (pressureBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            pressure_ = java.util.Collections.unmodifiableList(pressure_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.pressure_ = pressure_;
+        } else {
+          result.pressure_ = pressureBuilder_.build();
+        }
+        if (proximityBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+            proximity_ = java.util.Collections.unmodifiableList(proximity_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.proximity_ = proximity_;
+        } else {
+          result.proximity_ = proximityBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.sysu.deepnavi.bean.Basic.DeepNaviReq) {
+          return mergeFrom((com.sysu.deepnavi.bean.Basic.DeepNaviReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.DeepNaviReq other) {
+        if (other == com.sysu.deepnavi.bean.Basic.DeepNaviReq.getDefaultInstance()) return this;
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasImage()) {
+          setImage(other.getImage());
+        }
+        if (magneticBuilder_ == null) {
+          if (!other.magnetic_.isEmpty()) {
+            if (magnetic_.isEmpty()) {
+              magnetic_ = other.magnetic_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureMagneticIsMutable();
+              magnetic_.addAll(other.magnetic_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.magnetic_.isEmpty()) {
+            if (magneticBuilder_.isEmpty()) {
+              magneticBuilder_.dispose();
+              magneticBuilder_ = null;
+              magnetic_ = other.magnetic_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              magneticBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMagneticFieldBuilder() : null;
+            } else {
+              magneticBuilder_.addAllMessages(other.magnetic_);
+            }
+          }
+        }
+        if (accelerometerBuilder_ == null) {
+          if (!other.accelerometer_.isEmpty()) {
+            if (accelerometer_.isEmpty()) {
+              accelerometer_ = other.accelerometer_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureAccelerometerIsMutable();
+              accelerometer_.addAll(other.accelerometer_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.accelerometer_.isEmpty()) {
+            if (accelerometerBuilder_.isEmpty()) {
+              accelerometerBuilder_.dispose();
+              accelerometerBuilder_ = null;
+              accelerometer_ = other.accelerometer_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              accelerometerBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAccelerometerFieldBuilder() : null;
+            } else {
+              accelerometerBuilder_.addAllMessages(other.accelerometer_);
+            }
+          }
+        }
+        if (orientationBuilder_ == null) {
+          if (!other.orientation_.isEmpty()) {
+            if (orientation_.isEmpty()) {
+              orientation_ = other.orientation_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureOrientationIsMutable();
+              orientation_.addAll(other.orientation_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.orientation_.isEmpty()) {
+            if (orientationBuilder_.isEmpty()) {
+              orientationBuilder_.dispose();
+              orientationBuilder_ = null;
+              orientation_ = other.orientation_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              orientationBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOrientationFieldBuilder() : null;
+            } else {
+              orientationBuilder_.addAllMessages(other.orientation_);
+            }
+          }
+        }
+        if (gyroscopeBuilder_ == null) {
+          if (!other.gyroscope_.isEmpty()) {
+            if (gyroscope_.isEmpty()) {
+              gyroscope_ = other.gyroscope_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureGyroscopeIsMutable();
+              gyroscope_.addAll(other.gyroscope_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.gyroscope_.isEmpty()) {
+            if (gyroscopeBuilder_.isEmpty()) {
+              gyroscopeBuilder_.dispose();
+              gyroscopeBuilder_ = null;
+              gyroscope_ = other.gyroscope_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              gyroscopeBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGyroscopeFieldBuilder() : null;
+            } else {
+              gyroscopeBuilder_.addAllMessages(other.gyroscope_);
+            }
+          }
+        }
+        if (gravityBuilder_ == null) {
+          if (!other.gravity_.isEmpty()) {
+            if (gravity_.isEmpty()) {
+              gravity_ = other.gravity_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureGravityIsMutable();
+              gravity_.addAll(other.gravity_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.gravity_.isEmpty()) {
+            if (gravityBuilder_.isEmpty()) {
+              gravityBuilder_.dispose();
+              gravityBuilder_ = null;
+              gravity_ = other.gravity_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              gravityBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGravityFieldBuilder() : null;
+            } else {
+              gravityBuilder_.addAllMessages(other.gravity_);
+            }
+          }
+        }
+        if (linearAccelerationBuilder_ == null) {
+          if (!other.linearAcceleration_.isEmpty()) {
+            if (linearAcceleration_.isEmpty()) {
+              linearAcceleration_ = other.linearAcceleration_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureLinearAccelerationIsMutable();
+              linearAcceleration_.addAll(other.linearAcceleration_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.linearAcceleration_.isEmpty()) {
+            if (linearAccelerationBuilder_.isEmpty()) {
+              linearAccelerationBuilder_.dispose();
+              linearAccelerationBuilder_ = null;
+              linearAcceleration_ = other.linearAcceleration_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              linearAccelerationBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLinearAccelerationFieldBuilder() : null;
+            } else {
+              linearAccelerationBuilder_.addAllMessages(other.linearAcceleration_);
+            }
+          }
+        }
+        if (ambientTemperatureBuilder_ == null) {
+          if (!other.ambientTemperature_.isEmpty()) {
+            if (ambientTemperature_.isEmpty()) {
+              ambientTemperature_ = other.ambientTemperature_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureAmbientTemperatureIsMutable();
+              ambientTemperature_.addAll(other.ambientTemperature_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ambientTemperature_.isEmpty()) {
+            if (ambientTemperatureBuilder_.isEmpty()) {
+              ambientTemperatureBuilder_.dispose();
+              ambientTemperatureBuilder_ = null;
+              ambientTemperature_ = other.ambientTemperature_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              ambientTemperatureBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAmbientTemperatureFieldBuilder() : null;
+            } else {
+              ambientTemperatureBuilder_.addAllMessages(other.ambientTemperature_);
+            }
+          }
+        }
+        if (lightBuilder_ == null) {
+          if (!other.light_.isEmpty()) {
+            if (light_.isEmpty()) {
+              light_ = other.light_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureLightIsMutable();
+              light_.addAll(other.light_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.light_.isEmpty()) {
+            if (lightBuilder_.isEmpty()) {
+              lightBuilder_.dispose();
+              lightBuilder_ = null;
+              light_ = other.light_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              lightBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLightFieldBuilder() : null;
+            } else {
+              lightBuilder_.addAllMessages(other.light_);
+            }
+          }
+        }
+        if (pressureBuilder_ == null) {
+          if (!other.pressure_.isEmpty()) {
+            if (pressure_.isEmpty()) {
+              pressure_ = other.pressure_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensurePressureIsMutable();
+              pressure_.addAll(other.pressure_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pressure_.isEmpty()) {
+            if (pressureBuilder_.isEmpty()) {
+              pressureBuilder_.dispose();
+              pressureBuilder_ = null;
+              pressure_ = other.pressure_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              pressureBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPressureFieldBuilder() : null;
+            } else {
+              pressureBuilder_.addAllMessages(other.pressure_);
+            }
+          }
+        }
+        if (proximityBuilder_ == null) {
+          if (!other.proximity_.isEmpty()) {
+            if (proximity_.isEmpty()) {
+              proximity_ = other.proximity_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureProximityIsMutable();
+              proximity_.addAll(other.proximity_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.proximity_.isEmpty()) {
+            if (proximityBuilder_.isEmpty()) {
+              proximityBuilder_.dispose();
+              proximityBuilder_ = null;
+              proximity_ = other.proximity_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              proximityBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProximityFieldBuilder() : null;
+            } else {
+              proximityBuilder_.addAllMessages(other.proximity_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasTime()) {
+          return false;
+        }
+        for (int i = 0; i < getMagneticCount(); i++) {
+          if (!getMagnetic(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAccelerometerCount(); i++) {
+          if (!getAccelerometer(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getOrientationCount(); i++) {
+          if (!getOrientation(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getGyroscopeCount(); i++) {
+          if (!getGyroscope(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getGravityCount(); i++) {
+          if (!getGravity(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getLinearAccelerationCount(); i++) {
+          if (!getLinearAcceleration(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAmbientTemperatureCount(); i++) {
+          if (!getAmbientTemperature(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getLightCount(); i++) {
+          if (!getLight(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getPressureCount(); i++) {
+          if (!getPressure(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getProximityCount(); i++) {
+          if (!getProximity(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.sysu.deepnavi.bean.Basic.DeepNaviReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.sysu.deepnavi.bean.Basic.DeepNaviReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long time_ ;
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000001;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public boolean hasImage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public com.google.protobuf.ByteString getImage() {
+        return image_;
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public Builder setImage(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public Builder clearImage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> magnetic_ =
+        java.util.Collections.emptyList();
+      private void ensureMagneticIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          magnetic_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(magnetic_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> magneticBuilder_;
+
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getMagneticList() {
+        if (magneticBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(magnetic_);
+        } else {
+          return magneticBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public int getMagneticCount() {
+        if (magneticBuilder_ == null) {
+          return magnetic_.size();
+        } else {
+          return magneticBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagnetic(int index) {
+        if (magneticBuilder_ == null) {
+          return magnetic_.get(index);
+        } else {
+          return magneticBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder setMagnetic(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (magneticBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticIsMutable();
+          magnetic_.set(index, value);
+          onChanged();
+        } else {
+          magneticBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder setMagnetic(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (magneticBuilder_ == null) {
+          ensureMagneticIsMutable();
+          magnetic_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          magneticBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder addMagnetic(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (magneticBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticIsMutable();
+          magnetic_.add(value);
+          onChanged();
+        } else {
+          magneticBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder addMagnetic(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (magneticBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticIsMutable();
+          magnetic_.add(index, value);
+          onChanged();
+        } else {
+          magneticBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder addMagnetic(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (magneticBuilder_ == null) {
+          ensureMagneticIsMutable();
+          magnetic_.add(builderForValue.build());
+          onChanged();
+        } else {
+          magneticBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder addMagnetic(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (magneticBuilder_ == null) {
+          ensureMagneticIsMutable();
+          magnetic_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          magneticBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder addAllMagnetic(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (magneticBuilder_ == null) {
+          ensureMagneticIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, magnetic_);
+          onChanged();
+        } else {
+          magneticBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder clearMagnetic() {
+        if (magneticBuilder_ == null) {
+          magnetic_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          magneticBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public Builder removeMagnetic(int index) {
+        if (magneticBuilder_ == null) {
+          ensureMagneticIsMutable();
+          magnetic_.remove(index);
+          onChanged();
+        } else {
+          magneticBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getMagneticBuilder(
+          int index) {
+        return getMagneticFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticOrBuilder(
+          int index) {
+        if (magneticBuilder_ == null) {
+          return magnetic_.get(index);  } else {
+          return magneticBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getMagneticOrBuilderList() {
+        if (magneticBuilder_ != null) {
+          return magneticBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(magnetic_);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addMagneticBuilder() {
+        return getMagneticFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addMagneticBuilder(
+          int index) {
+        return getMagneticFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq magnetic = 3;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getMagneticBuilderList() {
+        return getMagneticFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getMagneticFieldBuilder() {
+        if (magneticBuilder_ == null) {
+          magneticBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  magnetic_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          magnetic_ = null;
+        }
+        return magneticBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> accelerometer_ =
+        java.util.Collections.emptyList();
+      private void ensureAccelerometerIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          accelerometer_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(accelerometer_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> accelerometerBuilder_;
+
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getAccelerometerList() {
+        if (accelerometerBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(accelerometer_);
+        } else {
+          return accelerometerBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public int getAccelerometerCount() {
+        if (accelerometerBuilder_ == null) {
+          return accelerometer_.size();
+        } else {
+          return accelerometerBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometer(int index) {
+        if (accelerometerBuilder_ == null) {
+          return accelerometer_.get(index);
+        } else {
+          return accelerometerBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder setAccelerometer(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (accelerometerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerIsMutable();
+          accelerometer_.set(index, value);
+          onChanged();
+        } else {
+          accelerometerBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder setAccelerometer(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (accelerometerBuilder_ == null) {
+          ensureAccelerometerIsMutable();
+          accelerometer_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder addAccelerometer(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (accelerometerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerIsMutable();
+          accelerometer_.add(value);
+          onChanged();
+        } else {
+          accelerometerBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder addAccelerometer(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (accelerometerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerIsMutable();
+          accelerometer_.add(index, value);
+          onChanged();
+        } else {
+          accelerometerBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder addAccelerometer(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (accelerometerBuilder_ == null) {
+          ensureAccelerometerIsMutable();
+          accelerometer_.add(builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder addAccelerometer(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (accelerometerBuilder_ == null) {
+          ensureAccelerometerIsMutable();
+          accelerometer_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder addAllAccelerometer(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (accelerometerBuilder_ == null) {
+          ensureAccelerometerIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, accelerometer_);
+          onChanged();
+        } else {
+          accelerometerBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder clearAccelerometer() {
+        if (accelerometerBuilder_ == null) {
+          accelerometer_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          accelerometerBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public Builder removeAccelerometer(int index) {
+        if (accelerometerBuilder_ == null) {
+          ensureAccelerometerIsMutable();
+          accelerometer_.remove(index);
+          onChanged();
+        } else {
+          accelerometerBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getAccelerometerBuilder(
+          int index) {
+        return getAccelerometerFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerOrBuilder(
+          int index) {
+        if (accelerometerBuilder_ == null) {
+          return accelerometer_.get(index);  } else {
+          return accelerometerBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getAccelerometerOrBuilderList() {
+        if (accelerometerBuilder_ != null) {
+          return accelerometerBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(accelerometer_);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addAccelerometerBuilder() {
+        return getAccelerometerFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addAccelerometerBuilder(
+          int index) {
+        return getAccelerometerFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq accelerometer = 4;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getAccelerometerBuilderList() {
+        return getAccelerometerFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getAccelerometerFieldBuilder() {
+        if (accelerometerBuilder_ == null) {
+          accelerometerBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  accelerometer_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          accelerometer_ = null;
+        }
+        return accelerometerBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> orientation_ =
+        java.util.Collections.emptyList();
+      private void ensureOrientationIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          orientation_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(orientation_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> orientationBuilder_;
+
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getOrientationList() {
+        if (orientationBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(orientation_);
+        } else {
+          return orientationBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public int getOrientationCount() {
+        if (orientationBuilder_ == null) {
+          return orientation_.size();
+        } else {
+          return orientationBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientation(int index) {
+        if (orientationBuilder_ == null) {
+          return orientation_.get(index);
+        } else {
+          return orientationBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder setOrientation(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (orientationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationIsMutable();
+          orientation_.set(index, value);
+          onChanged();
+        } else {
+          orientationBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder setOrientation(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (orientationBuilder_ == null) {
+          ensureOrientationIsMutable();
+          orientation_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          orientationBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder addOrientation(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (orientationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationIsMutable();
+          orientation_.add(value);
+          onChanged();
+        } else {
+          orientationBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder addOrientation(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (orientationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationIsMutable();
+          orientation_.add(index, value);
+          onChanged();
+        } else {
+          orientationBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder addOrientation(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (orientationBuilder_ == null) {
+          ensureOrientationIsMutable();
+          orientation_.add(builderForValue.build());
+          onChanged();
+        } else {
+          orientationBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder addOrientation(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (orientationBuilder_ == null) {
+          ensureOrientationIsMutable();
+          orientation_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          orientationBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder addAllOrientation(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (orientationBuilder_ == null) {
+          ensureOrientationIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, orientation_);
+          onChanged();
+        } else {
+          orientationBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder clearOrientation() {
+        if (orientationBuilder_ == null) {
+          orientation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          orientationBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public Builder removeOrientation(int index) {
+        if (orientationBuilder_ == null) {
+          ensureOrientationIsMutable();
+          orientation_.remove(index);
+          onChanged();
+        } else {
+          orientationBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getOrientationBuilder(
+          int index) {
+        return getOrientationFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationOrBuilder(
+          int index) {
+        if (orientationBuilder_ == null) {
+          return orientation_.get(index);  } else {
+          return orientationBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getOrientationOrBuilderList() {
+        if (orientationBuilder_ != null) {
+          return orientationBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(orientation_);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addOrientationBuilder() {
+        return getOrientationFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addOrientationBuilder(
+          int index) {
+        return getOrientationFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq orientation = 5;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getOrientationBuilderList() {
+        return getOrientationFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getOrientationFieldBuilder() {
+        if (orientationBuilder_ == null) {
+          orientationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  orientation_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          orientation_ = null;
+        }
+        return orientationBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gyroscope_ =
+        java.util.Collections.emptyList();
+      private void ensureGyroscopeIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          gyroscope_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(gyroscope_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> gyroscopeBuilder_;
+
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGyroscopeList() {
+        if (gyroscopeBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gyroscope_);
+        } else {
+          return gyroscopeBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public int getGyroscopeCount() {
+        if (gyroscopeBuilder_ == null) {
+          return gyroscope_.size();
+        } else {
+          return gyroscopeBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscope(int index) {
+        if (gyroscopeBuilder_ == null) {
+          return gyroscope_.get(index);
+        } else {
+          return gyroscopeBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder setGyroscope(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gyroscopeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeIsMutable();
+          gyroscope_.set(index, value);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder setGyroscope(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gyroscopeBuilder_ == null) {
+          ensureGyroscopeIsMutable();
+          gyroscope_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder addGyroscope(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gyroscopeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeIsMutable();
+          gyroscope_.add(value);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder addGyroscope(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gyroscopeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeIsMutable();
+          gyroscope_.add(index, value);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder addGyroscope(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gyroscopeBuilder_ == null) {
+          ensureGyroscopeIsMutable();
+          gyroscope_.add(builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder addGyroscope(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gyroscopeBuilder_ == null) {
+          ensureGyroscopeIsMutable();
+          gyroscope_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder addAllGyroscope(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (gyroscopeBuilder_ == null) {
+          ensureGyroscopeIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, gyroscope_);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder clearGyroscope() {
+        if (gyroscopeBuilder_ == null) {
+          gyroscope_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public Builder removeGyroscope(int index) {
+        if (gyroscopeBuilder_ == null) {
+          ensureGyroscopeIsMutable();
+          gyroscope_.remove(index);
+          onChanged();
+        } else {
+          gyroscopeBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getGyroscopeBuilder(
+          int index) {
+        return getGyroscopeFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeOrBuilder(
+          int index) {
+        if (gyroscopeBuilder_ == null) {
+          return gyroscope_.get(index);  } else {
+          return gyroscopeBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getGyroscopeOrBuilderList() {
+        if (gyroscopeBuilder_ != null) {
+          return gyroscopeBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(gyroscope_);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGyroscopeBuilder() {
+        return getGyroscopeFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGyroscopeBuilder(
+          int index) {
+        return getGyroscopeFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gyroscope = 6;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getGyroscopeBuilderList() {
+        return getGyroscopeFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getGyroscopeFieldBuilder() {
+        if (gyroscopeBuilder_ == null) {
+          gyroscopeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  gyroscope_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          gyroscope_ = null;
+        }
+        return gyroscopeBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gravity_ =
+        java.util.Collections.emptyList();
+      private void ensureGravityIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          gravity_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(gravity_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> gravityBuilder_;
+
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGravityList() {
+        if (gravityBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gravity_);
+        } else {
+          return gravityBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public int getGravityCount() {
+        if (gravityBuilder_ == null) {
+          return gravity_.size();
+        } else {
+          return gravityBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravity(int index) {
+        if (gravityBuilder_ == null) {
+          return gravity_.get(index);
+        } else {
+          return gravityBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder setGravity(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gravityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityIsMutable();
+          gravity_.set(index, value);
+          onChanged();
+        } else {
+          gravityBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder setGravity(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gravityBuilder_ == null) {
+          ensureGravityIsMutable();
+          gravity_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          gravityBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder addGravity(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gravityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityIsMutable();
+          gravity_.add(value);
+          onChanged();
+        } else {
+          gravityBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder addGravity(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (gravityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityIsMutable();
+          gravity_.add(index, value);
+          onChanged();
+        } else {
+          gravityBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder addGravity(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gravityBuilder_ == null) {
+          ensureGravityIsMutable();
+          gravity_.add(builderForValue.build());
+          onChanged();
+        } else {
+          gravityBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder addGravity(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (gravityBuilder_ == null) {
+          ensureGravityIsMutable();
+          gravity_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          gravityBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder addAllGravity(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (gravityBuilder_ == null) {
+          ensureGravityIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, gravity_);
+          onChanged();
+        } else {
+          gravityBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder clearGravity() {
+        if (gravityBuilder_ == null) {
+          gravity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          gravityBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public Builder removeGravity(int index) {
+        if (gravityBuilder_ == null) {
+          ensureGravityIsMutable();
+          gravity_.remove(index);
+          onChanged();
+        } else {
+          gravityBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getGravityBuilder(
+          int index) {
+        return getGravityFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityOrBuilder(
+          int index) {
+        if (gravityBuilder_ == null) {
+          return gravity_.get(index);  } else {
+          return gravityBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getGravityOrBuilderList() {
+        if (gravityBuilder_ != null) {
+          return gravityBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(gravity_);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGravityBuilder() {
+        return getGravityFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGravityBuilder(
+          int index) {
+        return getGravityFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq gravity = 7;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getGravityBuilderList() {
+        return getGravityFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getGravityFieldBuilder() {
+        if (gravityBuilder_ == null) {
+          gravityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  gravity_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          gravity_ = null;
+        }
+        return gravityBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> linearAcceleration_ =
+        java.util.Collections.emptyList();
+      private void ensureLinearAccelerationIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          linearAcceleration_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(linearAcceleration_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> linearAccelerationBuilder_;
+
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getLinearAccelerationList() {
+        if (linearAccelerationBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(linearAcceleration_);
+        } else {
+          return linearAccelerationBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public int getLinearAccelerationCount() {
+        if (linearAccelerationBuilder_ == null) {
+          return linearAcceleration_.size();
+        } else {
+          return linearAccelerationBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAcceleration(int index) {
+        if (linearAccelerationBuilder_ == null) {
+          return linearAcceleration_.get(index);
+        } else {
+          return linearAccelerationBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder setLinearAcceleration(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (linearAccelerationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.set(index, value);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder setLinearAcceleration(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (linearAccelerationBuilder_ == null) {
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder addLinearAcceleration(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (linearAccelerationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.add(value);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder addLinearAcceleration(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+        if (linearAccelerationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.add(index, value);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder addLinearAcceleration(
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (linearAccelerationBuilder_ == null) {
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.add(builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder addLinearAcceleration(
+          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+        if (linearAccelerationBuilder_ == null) {
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder addAllLinearAcceleration(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+        if (linearAccelerationBuilder_ == null) {
+          ensureLinearAccelerationIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, linearAcceleration_);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder clearLinearAcceleration() {
+        if (linearAccelerationBuilder_ == null) {
+          linearAcceleration_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public Builder removeLinearAcceleration(int index) {
+        if (linearAccelerationBuilder_ == null) {
+          ensureLinearAccelerationIsMutable();
+          linearAcceleration_.remove(index);
+          onChanged();
+        } else {
+          linearAccelerationBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getLinearAccelerationBuilder(
+          int index) {
+        return getLinearAccelerationFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationOrBuilder(
+          int index) {
+        if (linearAccelerationBuilder_ == null) {
+          return linearAcceleration_.get(index);  } else {
+          return linearAccelerationBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+           getLinearAccelerationOrBuilderList() {
+        if (linearAccelerationBuilder_ != null) {
+          return linearAccelerationBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(linearAcceleration_);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addLinearAccelerationBuilder() {
+        return getLinearAccelerationFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addLinearAccelerationBuilder(
+          int index) {
+        return getLinearAccelerationFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .CoorSensorReq linear_acceleration = 8;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+           getLinearAccelerationBuilderList() {
+        return getLinearAccelerationFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          getLinearAccelerationFieldBuilder() {
+        if (linearAccelerationBuilder_ == null) {
+          linearAccelerationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+                  linearAcceleration_,
+                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  getParentForChildren(),
+                  isClean());
+          linearAcceleration_ = null;
+        }
+        return linearAccelerationBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> ambientTemperature_ =
+        java.util.Collections.emptyList();
+      private void ensureAmbientTemperatureIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          ambientTemperature_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>(ambientTemperature_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> ambientTemperatureBuilder_;
+
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getAmbientTemperatureList() {
+        if (ambientTemperatureBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ambientTemperature_);
+        } else {
+          return ambientTemperatureBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public int getAmbientTemperatureCount() {
+        if (ambientTemperatureBuilder_ == null) {
+          return ambientTemperature_.size();
+        } else {
+          return ambientTemperatureBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq getAmbientTemperature(int index) {
+        if (ambientTemperatureBuilder_ == null) {
+          return ambientTemperature_.get(index);
+        } else {
+          return ambientTemperatureBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder setAmbientTemperature(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (ambientTemperatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.set(index, value);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder setAmbientTemperature(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureBuilder_ == null) {
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder addAmbientTemperature(com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (ambientTemperatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.add(value);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder addAmbientTemperature(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (ambientTemperatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.add(index, value);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder addAmbientTemperature(
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureBuilder_ == null) {
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder addAmbientTemperature(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureBuilder_ == null) {
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder addAllAmbientTemperature(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReq> values) {
+        if (ambientTemperatureBuilder_ == null) {
+          ensureAmbientTemperatureIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ambientTemperature_);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder clearAmbientTemperature() {
+        if (ambientTemperatureBuilder_ == null) {
+          ambientTemperature_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public Builder removeAmbientTemperature(int index) {
+        if (ambientTemperatureBuilder_ == null) {
+          ensureAmbientTemperatureIsMutable();
+          ambientTemperature_.remove(index);
+          onChanged();
+        } else {
+          ambientTemperatureBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder getAmbientTemperatureBuilder(
+          int index) {
+        return getAmbientTemperatureFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getAmbientTemperatureOrBuilder(
+          int index) {
+        if (ambientTemperatureBuilder_ == null) {
+          return ambientTemperature_.get(index);  } else {
+          return ambientTemperatureBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+           getAmbientTemperatureOrBuilderList() {
+        if (ambientTemperatureBuilder_ != null) {
+          return ambientTemperatureBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ambientTemperature_);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addAmbientTemperatureBuilder() {
+        return getAmbientTemperatureFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addAmbientTemperatureBuilder(
+          int index) {
+        return getAmbientTemperatureFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambient_temperature = 9;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder> 
+           getAmbientTemperatureBuilderList() {
+        return getAmbientTemperatureFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+          getAmbientTemperatureFieldBuilder() {
+        if (ambientTemperatureBuilder_ == null) {
+          ambientTemperatureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder>(
+                  ambientTemperature_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  getParentForChildren(),
+                  isClean());
+          ambientTemperature_ = null;
+        }
+        return ambientTemperatureBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> light_ =
+        java.util.Collections.emptyList();
+      private void ensureLightIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          light_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>(light_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> lightBuilder_;
+
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getLightList() {
+        if (lightBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(light_);
+        } else {
+          return lightBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public int getLightCount() {
+        if (lightBuilder_ == null) {
+          return light_.size();
+        } else {
+          return lightBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq getLight(int index) {
+        if (lightBuilder_ == null) {
+          return light_.get(index);
+        } else {
+          return lightBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder setLight(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (lightBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightIsMutable();
+          light_.set(index, value);
+          onChanged();
+        } else {
+          lightBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder setLight(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (lightBuilder_ == null) {
+          ensureLightIsMutable();
+          light_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          lightBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder addLight(com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (lightBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightIsMutable();
+          light_.add(value);
+          onChanged();
+        } else {
+          lightBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder addLight(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (lightBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightIsMutable();
+          light_.add(index, value);
+          onChanged();
+        } else {
+          lightBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder addLight(
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (lightBuilder_ == null) {
+          ensureLightIsMutable();
+          light_.add(builderForValue.build());
+          onChanged();
+        } else {
+          lightBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder addLight(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (lightBuilder_ == null) {
+          ensureLightIsMutable();
+          light_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          lightBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder addAllLight(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReq> values) {
+        if (lightBuilder_ == null) {
+          ensureLightIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, light_);
+          onChanged();
+        } else {
+          lightBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder clearLight() {
+        if (lightBuilder_ == null) {
+          light_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          lightBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public Builder removeLight(int index) {
+        if (lightBuilder_ == null) {
+          ensureLightIsMutable();
+          light_.remove(index);
+          onChanged();
+        } else {
+          lightBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder getLightBuilder(
+          int index) {
+        return getLightFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getLightOrBuilder(
+          int index) {
+        if (lightBuilder_ == null) {
+          return light_.get(index);  } else {
+          return lightBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+           getLightOrBuilderList() {
+        if (lightBuilder_ != null) {
+          return lightBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(light_);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addLightBuilder() {
+        return getLightFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addLightBuilder(
+          int index) {
+        return getLightFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq light = 10;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder> 
+           getLightBuilderList() {
+        return getLightFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+          getLightFieldBuilder() {
+        if (lightBuilder_ == null) {
+          lightBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder>(
+                  light_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          light_ = null;
+        }
+        return lightBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> pressure_ =
+        java.util.Collections.emptyList();
+      private void ensurePressureIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          pressure_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>(pressure_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> pressureBuilder_;
+
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getPressureList() {
+        if (pressureBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pressure_);
+        } else {
+          return pressureBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public int getPressureCount() {
+        if (pressureBuilder_ == null) {
+          return pressure_.size();
+        } else {
+          return pressureBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq getPressure(int index) {
+        if (pressureBuilder_ == null) {
+          return pressure_.get(index);
+        } else {
+          return pressureBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder setPressure(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (pressureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureIsMutable();
+          pressure_.set(index, value);
+          onChanged();
+        } else {
+          pressureBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder setPressure(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (pressureBuilder_ == null) {
+          ensurePressureIsMutable();
+          pressure_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pressureBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder addPressure(com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (pressureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureIsMutable();
+          pressure_.add(value);
+          onChanged();
+        } else {
+          pressureBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder addPressure(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (pressureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureIsMutable();
+          pressure_.add(index, value);
+          onChanged();
+        } else {
+          pressureBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder addPressure(
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (pressureBuilder_ == null) {
+          ensurePressureIsMutable();
+          pressure_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pressureBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder addPressure(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (pressureBuilder_ == null) {
+          ensurePressureIsMutable();
+          pressure_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pressureBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder addAllPressure(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReq> values) {
+        if (pressureBuilder_ == null) {
+          ensurePressureIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pressure_);
+          onChanged();
+        } else {
+          pressureBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder clearPressure() {
+        if (pressureBuilder_ == null) {
+          pressure_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          pressureBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public Builder removePressure(int index) {
+        if (pressureBuilder_ == null) {
+          ensurePressureIsMutable();
+          pressure_.remove(index);
+          onChanged();
+        } else {
+          pressureBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder getPressureBuilder(
+          int index) {
+        return getPressureFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getPressureOrBuilder(
+          int index) {
+        if (pressureBuilder_ == null) {
+          return pressure_.get(index);  } else {
+          return pressureBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+           getPressureOrBuilderList() {
+        if (pressureBuilder_ != null) {
+          return pressureBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pressure_);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addPressureBuilder() {
+        return getPressureFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addPressureBuilder(
+          int index) {
+        return getPressureFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressure = 11;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder> 
+           getPressureBuilderList() {
+        return getPressureFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+          getPressureFieldBuilder() {
+        if (pressureBuilder_ == null) {
+          pressureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder>(
+                  pressure_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          pressure_ = null;
+        }
+        return pressureBuilder_;
+      }
+
+      private java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> proximity_ =
+        java.util.Collections.emptyList();
+      private void ensureProximityIsMutable() {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+          proximity_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.FeelSensorReq>(proximity_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> proximityBuilder_;
+
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq> getProximityList() {
+        if (proximityBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(proximity_);
+        } else {
+          return proximityBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public int getProximityCount() {
+        if (proximityBuilder_ == null) {
+          return proximity_.size();
+        } else {
+          return proximityBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq getProximity(int index) {
+        if (proximityBuilder_ == null) {
+          return proximity_.get(index);
+        } else {
+          return proximityBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder setProximity(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (proximityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityIsMutable();
+          proximity_.set(index, value);
+          onChanged();
+        } else {
+          proximityBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder setProximity(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (proximityBuilder_ == null) {
+          ensureProximityIsMutable();
+          proximity_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          proximityBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder addProximity(com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (proximityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityIsMutable();
+          proximity_.add(value);
+          onChanged();
+        } else {
+          proximityBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder addProximity(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq value) {
+        if (proximityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityIsMutable();
+          proximity_.add(index, value);
+          onChanged();
+        } else {
+          proximityBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder addProximity(
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (proximityBuilder_ == null) {
+          ensureProximityIsMutable();
+          proximity_.add(builderForValue.build());
+          onChanged();
+        } else {
+          proximityBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder addProximity(
+          int index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder builderForValue) {
+        if (proximityBuilder_ == null) {
+          ensureProximityIsMutable();
+          proximity_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          proximityBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder addAllProximity(
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReq> values) {
+        if (proximityBuilder_ == null) {
+          ensureProximityIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, proximity_);
+          onChanged();
+        } else {
+          proximityBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder clearProximity() {
+        if (proximityBuilder_ == null) {
+          proximity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          proximityBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public Builder removeProximity(int index) {
+        if (proximityBuilder_ == null) {
+          ensureProximityIsMutable();
+          proximity_.remove(index);
+          onChanged();
+        } else {
+          proximityBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder getProximityBuilder(
+          int index) {
+        return getProximityFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder getProximityOrBuilder(
+          int index) {
+        if (proximityBuilder_ == null) {
+          return proximity_.get(index);  } else {
+          return proximityBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+           getProximityOrBuilderList() {
+        if (proximityBuilder_ != null) {
+          return proximityBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(proximity_);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addProximityBuilder() {
+        return getProximityFieldBuilder().addBuilder(
+            com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder addProximityBuilder(
+          int index) {
+        return getProximityFieldBuilder().addBuilder(
+            index, com.sysu.deepnavi.bean.Basic.FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximity = 12;</code>
+       */
+      public java.util.List<com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder> 
+           getProximityBuilderList() {
+        return getProximityFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder> 
+          getProximityFieldBuilder() {
+        if (proximityBuilder_ == null) {
+          proximityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.FeelSensorReq, com.sysu.deepnavi.bean.Basic.FeelSensorReq.Builder, com.sysu.deepnavi.bean.Basic.FeelSensorReqOrBuilder>(
+                  proximity_,
+                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  getParentForChildren(),
+                  isClean());
+          proximity_ = null;
+        }
+        return proximityBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:DeepNaviReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:DeepNaviReq)
+    private static final com.sysu.deepnavi.bean.Basic.DeepNaviReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.DeepNaviReq();
+    }
+
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<DeepNaviReq>
+        PARSER = new com.google.protobuf.AbstractParser<DeepNaviReq>() {
+      @java.lang.Override
+      public DeepNaviReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeepNaviReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeepNaviReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeepNaviReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.sysu.deepnavi.bean.Basic.DeepNaviReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeepNaviResOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DeepNaviRes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string result = 1;</code>
+     */
+    boolean hasResult();
+    /**
+     * <code>required string result = 1;</code>
+     */
+    java.lang.String getResult();
+    /**
+     * <code>required string result = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
+  }
+  /**
+   * Protobuf type {@code DeepNaviRes}
+   */
+  public  static final class DeepNaviRes extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:DeepNaviRes)
+      DeepNaviResOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeepNaviRes.newBuilder() to construct.
+    private DeepNaviRes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeepNaviRes() {
+      result_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeepNaviRes(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              result_ = bs;
               break;
             }
             default: {
@@ -763,58 +6858,58 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviMsg_descriptor;
+      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviRes_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviMsg_fieldAccessorTable
+      return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sysu.deepnavi.bean.Basic.DeepNaviMsg.class, com.sysu.deepnavi.bean.Basic.DeepNaviMsg.Builder.class);
+              com.sysu.deepnavi.bean.Basic.DeepNaviRes.class, com.sysu.deepnavi.bean.Basic.DeepNaviRes.Builder.class);
     }
 
-    public static final int TIME_FIELD_NUMBER = 1;
-    private long time_;
+    private int bitField0_;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object result_;
     /**
-     * <code>int64 time = 1;</code>
-     * @return The time.
+     * <code>required string result = 1;</code>
      */
-    public long getTime() {
-      return time_;
-    }
-
-    public static final int IMAGE_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString image_;
-    /**
-     * <code>bytes image = 2;</code>
-     * @return The image.
-     */
-    public com.google.protobuf.ByteString getImage() {
-      return image_;
-    }
-
-    public static final int MAGNETIC_FIELD_NUMBER = 3;
-    private com.sysu.deepnavi.bean.Basic.MagneticMsg magnetic_;
-    /**
-     * <code>.MagneticMsg magnetic = 3;</code>
-     * @return Whether the magnetic field is set.
-     */
-    public boolean hasMagnetic() {
-      return magnetic_ != null;
+    public boolean hasResult() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>.MagneticMsg magnetic = 3;</code>
-     * @return The magnetic.
+     * <code>required string result = 1;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.MagneticMsg getMagnetic() {
-      return magnetic_ == null ? com.sysu.deepnavi.bean.Basic.MagneticMsg.getDefaultInstance() : magnetic_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          result_ = s;
+        }
+        return s;
+      }
     }
     /**
-     * <code>.MagneticMsg magnetic = 3;</code>
+     * <code>required string result = 1;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder getMagneticOrBuilder() {
-      return getMagnetic();
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -824,6 +6919,10 @@ public final class Basic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasResult()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -831,14 +6930,8 @@ public final class Basic {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (time_ != 0L) {
-        output.writeInt64(1, time_);
-      }
-      if (!image_.isEmpty()) {
-        output.writeBytes(2, image_);
-      }
-      if (magnetic_ != null) {
-        output.writeMessage(3, getMagnetic());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
       }
       unknownFields.writeTo(output);
     }
@@ -849,17 +6942,8 @@ public final class Basic {
       if (size != -1) return size;
 
       size = 0;
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, time_);
-      }
-      if (!image_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, image_);
-      }
-      if (magnetic_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getMagnetic());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -871,22 +6955,19 @@ public final class Basic {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.DeepNaviMsg)) {
+      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.DeepNaviRes)) {
         return super.equals(obj);
       }
-      com.sysu.deepnavi.bean.Basic.DeepNaviMsg other = (com.sysu.deepnavi.bean.Basic.DeepNaviMsg) obj;
+      com.sysu.deepnavi.bean.Basic.DeepNaviRes other = (com.sysu.deepnavi.bean.Basic.DeepNaviRes) obj;
 
-      if (getTime()
-          != other.getTime()) return false;
-      if (!getImage()
-          .equals(other.getImage())) return false;
-      if (hasMagnetic() != other.hasMagnetic()) return false;
-      if (hasMagnetic()) {
-        if (!getMagnetic()
-            .equals(other.getMagnetic())) return false;
+      boolean result = true;
+      result = result && (hasResult() == other.hasResult());
+      if (hasResult()) {
+        result = result && getResult()
+            .equals(other.getResult());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -896,83 +6977,78 @@ public final class Basic {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
-      if (hasMagnetic()) {
-        hash = (37 * hash) + MAGNETIC_FIELD_NUMBER;
-        hash = (53 * hash) + getMagnetic().hashCode();
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(byte[] data)
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseDelimitedFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseDelimitedFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -985,7 +7061,7 @@ public final class Basic {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.DeepNaviMsg prototype) {
+    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.DeepNaviRes prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1001,26 +7077,26 @@ public final class Basic {
       return builder;
     }
     /**
-     * Protobuf type {@code DeepNaviMsg}
+     * Protobuf type {@code DeepNaviRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:DeepNaviMsg)
-        com.sysu.deepnavi.bean.Basic.DeepNaviMsgOrBuilder {
+        // @@protoc_insertion_point(builder_implements:DeepNaviRes)
+        com.sysu.deepnavi.bean.Basic.DeepNaviResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviMsg_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviRes_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviMsg_fieldAccessorTable
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sysu.deepnavi.bean.Basic.DeepNaviMsg.class, com.sysu.deepnavi.bean.Basic.DeepNaviMsg.Builder.class);
+                com.sysu.deepnavi.bean.Basic.DeepNaviRes.class, com.sysu.deepnavi.bean.Basic.DeepNaviRes.Builder.class);
       }
 
-      // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviMsg.newBuilder()
+      // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviRes.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1038,33 +7114,25 @@ public final class Basic {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        time_ = 0L;
-
-        image_ = com.google.protobuf.ByteString.EMPTY;
-
-        if (magneticBuilder_ == null) {
-          magnetic_ = null;
-        } else {
-          magnetic_ = null;
-          magneticBuilder_ = null;
-        }
+        result_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviMsg_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_DeepNaviRes_descriptor;
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.DeepNaviMsg getDefaultInstanceForType() {
-        return com.sysu.deepnavi.bean.Basic.DeepNaviMsg.getDefaultInstance();
+      public com.sysu.deepnavi.bean.Basic.DeepNaviRes getDefaultInstanceForType() {
+        return com.sysu.deepnavi.bean.Basic.DeepNaviRes.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.DeepNaviMsg build() {
-        com.sysu.deepnavi.bean.Basic.DeepNaviMsg result = buildPartial();
+      public com.sysu.deepnavi.bean.Basic.DeepNaviRes build() {
+        com.sysu.deepnavi.bean.Basic.DeepNaviRes result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1072,71 +7140,67 @@ public final class Basic {
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.DeepNaviMsg buildPartial() {
-        com.sysu.deepnavi.bean.Basic.DeepNaviMsg result = new com.sysu.deepnavi.bean.Basic.DeepNaviMsg(this);
-        result.time_ = time_;
-        result.image_ = image_;
-        if (magneticBuilder_ == null) {
-          result.magnetic_ = magnetic_;
-        } else {
-          result.magnetic_ = magneticBuilder_.build();
+      public com.sysu.deepnavi.bean.Basic.DeepNaviRes buildPartial() {
+        com.sysu.deepnavi.bean.Basic.DeepNaviRes result = new com.sysu.deepnavi.bean.Basic.DeepNaviRes(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
+        result.result_ = result_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sysu.deepnavi.bean.Basic.DeepNaviMsg) {
-          return mergeFrom((com.sysu.deepnavi.bean.Basic.DeepNaviMsg)other);
+        if (other instanceof com.sysu.deepnavi.bean.Basic.DeepNaviRes) {
+          return mergeFrom((com.sysu.deepnavi.bean.Basic.DeepNaviRes)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.DeepNaviMsg other) {
-        if (other == com.sysu.deepnavi.bean.Basic.DeepNaviMsg.getDefaultInstance()) return this;
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
-        }
-        if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
-          setImage(other.getImage());
-        }
-        if (other.hasMagnetic()) {
-          mergeMagnetic(other.getMagnetic());
+      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.DeepNaviRes other) {
+        if (other == com.sysu.deepnavi.bean.Basic.DeepNaviRes.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          bitField0_ |= 0x00000001;
+          result_ = other.result_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1145,6 +7209,9 @@ public final class Basic {
 
       @java.lang.Override
       public final boolean isInitialized() {
+        if (!hasResult()) {
+          return false;
+        }
         return true;
       }
 
@@ -1153,11 +7220,11 @@ public final class Basic {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sysu.deepnavi.bean.Basic.DeepNaviMsg parsedMessage = null;
+        com.sysu.deepnavi.bean.Basic.DeepNaviRes parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sysu.deepnavi.bean.Basic.DeepNaviMsg) e.getUnfinishedMessage();
+          parsedMessage = (com.sysu.deepnavi.bean.Basic.DeepNaviRes) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1166,187 +7233,82 @@ public final class Basic {
         }
         return this;
       }
+      private int bitField0_;
 
-      private long time_ ;
+      private java.lang.Object result_ = "";
       /**
-       * <code>int64 time = 1;</code>
-       * @return The time.
+       * <code>required string result = 1;</code>
        */
-      public long getTime() {
-        return time_;
+      public boolean hasResult() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>int64 time = 1;</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
+       * <code>required string result = 1;</code>
        */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            result_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int64 time = 1;</code>
-       * @return This builder for chaining.
+       * <code>required string result = 1;</code>
        */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes image = 2;</code>
-       * @return The image.
-       */
-      public com.google.protobuf.ByteString getImage() {
-        return image_;
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>bytes image = 2;</code>
-       * @param value The image to set.
-       * @return This builder for chaining.
+       * <code>required string result = 1;</code>
        */
-      public Builder setImage(com.google.protobuf.ByteString value) {
+      public Builder setResult(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        image_ = value;
+  bitField0_ |= 0x00000001;
+        result_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes image = 2;</code>
-       * @return This builder for chaining.
+       * <code>required string result = 1;</code>
        */
-      public Builder clearImage() {
-        
-        image_ = getDefaultInstance().getImage();
+      public Builder clearResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        result_ = getDefaultInstance().getResult();
         onChanged();
         return this;
       }
-
-      private com.sysu.deepnavi.bean.Basic.MagneticMsg magnetic_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.MagneticMsg, com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder, com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder> magneticBuilder_;
       /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       * @return Whether the magnetic field is set.
+       * <code>required string result = 1;</code>
        */
-      public boolean hasMagnetic() {
-        return magneticBuilder_ != null || magnetic_ != null;
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       * @return The magnetic.
-       */
-      public com.sysu.deepnavi.bean.Basic.MagneticMsg getMagnetic() {
-        if (magneticBuilder_ == null) {
-          return magnetic_ == null ? com.sysu.deepnavi.bean.Basic.MagneticMsg.getDefaultInstance() : magnetic_;
-        } else {
-          return magneticBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public Builder setMagnetic(com.sysu.deepnavi.bean.Basic.MagneticMsg value) {
-        if (magneticBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          magnetic_ = value;
-          onChanged();
-        } else {
-          magneticBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public Builder setMagnetic(
-          com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder builderForValue) {
-        if (magneticBuilder_ == null) {
-          magnetic_ = builderForValue.build();
-          onChanged();
-        } else {
-          magneticBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public Builder mergeMagnetic(com.sysu.deepnavi.bean.Basic.MagneticMsg value) {
-        if (magneticBuilder_ == null) {
-          if (magnetic_ != null) {
-            magnetic_ =
-              com.sysu.deepnavi.bean.Basic.MagneticMsg.newBuilder(magnetic_).mergeFrom(value).buildPartial();
-          } else {
-            magnetic_ = value;
-          }
-          onChanged();
-        } else {
-          magneticBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public Builder clearMagnetic() {
-        if (magneticBuilder_ == null) {
-          magnetic_ = null;
-          onChanged();
-        } else {
-          magnetic_ = null;
-          magneticBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder getMagneticBuilder() {
-        
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        result_ = value;
         onChanged();
-        return getMagneticFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      public com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder getMagneticOrBuilder() {
-        if (magneticBuilder_ != null) {
-          return magneticBuilder_.getMessageOrBuilder();
-        } else {
-          return magnetic_ == null ?
-              com.sysu.deepnavi.bean.Basic.MagneticMsg.getDefaultInstance() : magnetic_;
-        }
-      }
-      /**
-       * <code>.MagneticMsg magnetic = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.MagneticMsg, com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder, com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder> 
-          getMagneticFieldBuilder() {
-        if (magneticBuilder_ == null) {
-          magneticBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.MagneticMsg, com.sysu.deepnavi.bean.Basic.MagneticMsg.Builder, com.sysu.deepnavi.bean.Basic.MagneticMsgOrBuilder>(
-                  getMagnetic(),
-                  getParentForChildren(),
-                  isClean());
-          magnetic_ = null;
-        }
-        return magneticBuilder_;
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1361,56 +7323,66 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:DeepNaviMsg)
+      // @@protoc_insertion_point(builder_scope:DeepNaviRes)
     }
 
-    // @@protoc_insertion_point(class_scope:DeepNaviMsg)
-    private static final com.sysu.deepnavi.bean.Basic.DeepNaviMsg DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:DeepNaviRes)
+    private static final com.sysu.deepnavi.bean.Basic.DeepNaviRes DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.DeepNaviMsg();
+      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.DeepNaviRes();
     }
 
-    public static com.sysu.deepnavi.bean.Basic.DeepNaviMsg getDefaultInstance() {
+    public static com.sysu.deepnavi.bean.Basic.DeepNaviRes getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DeepNaviMsg>
-        PARSER = new com.google.protobuf.AbstractParser<DeepNaviMsg>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<DeepNaviRes>
+        PARSER = new com.google.protobuf.AbstractParser<DeepNaviRes>() {
       @java.lang.Override
-      public DeepNaviMsg parsePartialFrom(
+      public DeepNaviRes parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeepNaviMsg(input, extensionRegistry);
+        return new DeepNaviRes(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DeepNaviMsg> parser() {
+    public static com.google.protobuf.Parser<DeepNaviRes> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DeepNaviMsg> getParserForType() {
+    public com.google.protobuf.Parser<DeepNaviRes> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.sysu.deepnavi.bean.Basic.DeepNaviMsg getDefaultInstanceForType() {
+    public com.sysu.deepnavi.bean.Basic.DeepNaviRes getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MagneticMsg_descriptor;
+    internal_static_FeelSensorReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MagneticMsg_fieldAccessorTable;
+      internal_static_FeelSensorReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DeepNaviMsg_descriptor;
+    internal_static_CoorSensorReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DeepNaviMsg_fieldAccessorTable;
+      internal_static_CoorSensorReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeepNaviReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeepNaviReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeepNaviRes_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeepNaviRes_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1420,29 +7392,58 @@ public final class Basic {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013basic.proto\"I\n\013MagneticMsg\022\022\n\nmagnetic" +
-      "_x\030\001 \001(\001\022\022\n\nmagnetic_y\030\002 \001(\001\022\022\n\nmagnetic" +
-      "_z\030\003 \001(\001\"J\n\013DeepNaviMsg\022\014\n\004time\030\001 \001(\003\022\r\n" +
-      "\005image\030\002 \001(\014\022\036\n\010magnetic\030\003 \001(\0132\014.Magneti" +
-      "cMsgB\037\n\026com.sysu.deepnavi.beanB\005Basicb\006p" +
-      "roto3"
+      "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
+      "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
+      " \002(\002\022\t\n\001z\030\003 \002(\002\"\232\003\n\013DeepNaviReq\022\014\n\004time\030" +
+      "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022 \n\010magnetic\030\003 \003(\0132\016" +
+      ".CoorSensorReq\022%\n\raccelerometer\030\004 \003(\0132\016." +
+      "CoorSensorReq\022#\n\013orientation\030\005 \003(\0132\016.Coo" +
+      "rSensorReq\022!\n\tgyroscope\030\006 \003(\0132\016.CoorSens" +
+      "orReq\022\037\n\007gravity\030\007 \003(\0132\016.CoorSensorReq\022+" +
+      "\n\023linear_acceleration\030\010 \003(\0132\016.CoorSensor" +
+      "Req\022+\n\023ambient_temperature\030\t \003(\0132\016.FeelS" +
+      "ensorReq\022\035\n\005light\030\n \003(\0132\016.FeelSensorReq\022" +
+      " \n\010pressure\030\013 \003(\0132\016.FeelSensorReq\022!\n\tpro" +
+      "ximity\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNavi" +
+      "Res\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi" +
+      ".beanB\005Basic"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_MagneticMsg_descriptor =
+        }, assigner);
+    internal_static_FeelSensorReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_MagneticMsg_fieldAccessorTable = new
+    internal_static_FeelSensorReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MagneticMsg_descriptor,
-        new java.lang.String[] { "MagneticX", "MagneticY", "MagneticZ", });
-    internal_static_DeepNaviMsg_descriptor =
+        internal_static_FeelSensorReq_descriptor,
+        new java.lang.String[] { "Value", });
+    internal_static_CoorSensorReq_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_DeepNaviMsg_fieldAccessorTable = new
+    internal_static_CoorSensorReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DeepNaviMsg_descriptor,
-        new java.lang.String[] { "Time", "Image", "Magnetic", });
+        internal_static_CoorSensorReq_descriptor,
+        new java.lang.String[] { "X", "Y", "Z", });
+    internal_static_DeepNaviReq_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_DeepNaviReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeepNaviReq_descriptor,
+        new java.lang.String[] { "Time", "Image", "Magnetic", "Accelerometer", "Orientation", "Gyroscope", "Gravity", "LinearAcceleration", "AmbientTemperature", "Light", "Pressure", "Proximity", });
+    internal_static_DeepNaviRes_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_DeepNaviRes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeepNaviRes_descriptor,
+        new java.lang.String[] { "Result", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

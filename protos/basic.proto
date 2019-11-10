@@ -1,16 +1,33 @@
-syntax = "proto3";
+syntax = "proto2";
 
 option java_package = "com.sysu.deepnavi.bean";
 option java_outer_classname = "Basic";
 
-message MagneticMsg {
-    double magnetic_x = 1;
-    double magnetic_y = 2;
-    double magnetic_z = 3;
+message FeelSensorReq {
+	required float value = 1;
 }
 
-message DeepNaviMsg {
-	int64 time = 1;
-    bytes image = 2;
-    MagneticMsg magnetic = 3;
+message CoorSensorReq {
+    required float x = 1;
+    required float y = 2;
+    required float z = 3;
+}
+
+message DeepNaviReq {
+	required int64 time = 1;
+    optional bytes image = 2;  // audio
+    repeated CoorSensorReq magnetic = 3;  // 磁场
+    repeated CoorSensorReq accelerometer = 4;  // 加速度
+    repeated CoorSensorReq orientation = 5;  // 方向
+    repeated CoorSensorReq gyroscope = 6;  // 陀螺仪
+    repeated CoorSensorReq gravity = 7;  // 重力
+    repeated CoorSensorReq linear_acceleration = 8;  // 线性加速度
+    repeated FeelSensorReq ambient_temperature = 9;  // 温度
+    repeated FeelSensorReq light = 10;  // 亮度
+    repeated FeelSensorReq pressure = 11;  // 压力
+    repeated FeelSensorReq proximity = 12;  // 近距离
+}
+
+message DeepNaviRes {
+	required string result = 1;
 }

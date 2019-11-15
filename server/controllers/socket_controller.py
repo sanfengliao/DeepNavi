@@ -16,3 +16,8 @@ def onDeepNavi(data=b''):
     res = DeepNaviRes()
     res.result = ResponseCode.OK
     emit('deepNavi', res.SerializeToString())
+
+@socketIO.on('hello', )
+def onHello(msg=''):
+    print(msg)
+    emit('world', 'world')

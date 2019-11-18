@@ -11,10 +11,13 @@ import com.sysu.deepnavi.inter.DataCollectorInter
 import com.sysu.deepnavi.inter.SocketInter
 import com.sysu.deepnavi.util.AndroidLogLogger
 import com.sysu.deepnavi.util.DEFAULT_TAG
-import io.socket.client.IO
-import io.socket.client.Socket
+import org.java_websocket.client.WebSocketClient
+import org.java_websocket.handshake.ServerHandshake
+import java.lang.Exception
+import java.net.URI
+import java.nio.ByteBuffer
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     lateinit var deepNaviManager: DeepNaviManager
     lateinit var sensorListeners: SensorListeners
 
@@ -27,25 +30,37 @@ class MainActivity : AppCompatActivity() {
         sensorListeners = SensorListeners()
 
         deepNaviManager.init(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
-            var socket: Socket? = null
+            var socket: WebSocketClient? = null
 
             init {
                 val url = "http://172.26.44.15:5000/"
-                socket = IO.socket(url)
+                socket = object : WebSocketClient(URI.create(url)) {
+                    override fun onOpen(handshakedata: ServerHandshake?) {
+                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
+                    }
+
+                    override fun onClose(code: Int, reason: String?, remote: Boolean) {
+                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_DISCONNECT")
+                    }
+
+                    override fun onMessage(bytes: ByteBuffer?) {
+                        DeepNaviManager.logger?.d(
+                            "MainActivity",
+                            "socket.receive('deepNavi' -- %s) -- onMessage(msg: ByteBuffer)",
+                            String(bytes?.array() ?: byteArrayOf())
+                        )
+                        if (bytes != null) onMessage(Basic.DeepNaviRes.parseFrom(bytes.array()))
+                    }
+
+                    override fun onMessage(message: String?) {
+                        DeepNaviManager.logger?.d("MainActivity", "socket.receive('deepNavi' -- %s) -- onMessage(msg: String)", message)
+                    }
+
+                    override fun onError(ex: Exception?) {
+                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_ERROR")
+                    }
+                }
                 DeepNaviManager.logger?.d("MainActivity", "socket.constructor -- url: %s", url)
-                socket?.on(Socket.EVENT_CONNECT) {
-                    DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
-                }
-                socket?.on(Socket.EVENT_DISCONNECT) {
-                    DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_DISCONNECT")
-                }
-                socket?.on(Socket.EVENT_ERROR) {
-                    DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_ERROR")
-                }
-                socket?.on("deepNavi") {
-                    DeepNaviManager.logger?.d("MainActivity", "socket.receive('deepNavi' -- %s)", String(it[0] as ByteArray))
-                    onMessage(Basic.DeepNaviRes.parseFrom(it[0] as ByteArray))
-                }
             }
 
             override fun connect() {
@@ -53,13 +68,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun close() {
-                socket?.disconnect()
+                socket?.close()
             }
 
             override fun send(req: Basic.DeepNaviReq) {
-                // DeepNaviManager.logger?.d("MainActivity", "socket.send('deepNavi' -- %s)", String(req.toByteArray()))
-                DeepNaviManager.logger?.d(DEFAULT_TAG, "socket.state: ${socket?.connected()}")
-                socket?.emit("deepNavi", req.toByteArray())
+                DeepNaviManager.logger?.d(DEFAULT_TAG, "socket.state: ${socket?.readyState}")
+                socket?.send(req.toByteArray())
             }
 
             override fun onMessage(res: Basic.DeepNaviRes) {

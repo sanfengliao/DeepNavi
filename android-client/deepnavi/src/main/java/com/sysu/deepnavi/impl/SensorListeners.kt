@@ -46,6 +46,19 @@ class SensorListeners {
     { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     fun initAll(rate: Int = 1000000 / 50) {
+        magneticListener.init(rate, true)
+        accelerometerListener.init(rate, true)
+        orientationListener.init(rate, true)
+        gyroscopeListener.init(rate, true)
+        gravityListener.init(rate, true)
+        linearAccelerationListener.init(rate, true)
+        ambientTemperatureListener.init(rate, true)
+        lightListener.init(rate, true)
+        pressureListener.init(rate, true)
+        proximityListener.init(rate, true)
+    }
+
+    fun registerAll(rate: Int = 1000000 / 50) {
         magneticListener.init(rate)
         accelerometerListener.init(rate)
         orientationListener.init(rate)

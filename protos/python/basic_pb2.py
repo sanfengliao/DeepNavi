@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=_b('\n\026com.sysu.deepnavi.beanB\005Basic'),
-  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xc0\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16linearAccelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16\x61mbientTemperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
+  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xd2\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16linearAccelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16\x61mbientTemperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\x12\x10\n\x08wifiList\x18\r \x03(\x05\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
 )
 
 
@@ -192,6 +192,13 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='wifiList', full_name='DeepNaviReq.wifiList', index=12,
+      number=13, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -205,7 +212,7 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=98,
-  serialized_end=546,
+  serialized_end=564,
 )
 
 
@@ -235,8 +242,8 @@ _DEEPNAVIRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=548,
-  serialized_end=577,
+  serialized_start=566,
+  serialized_end=595,
 )
 
 _DEEPNAVIREQ.fields_by_name['magneticList'].message_type = _COORSENSORREQ

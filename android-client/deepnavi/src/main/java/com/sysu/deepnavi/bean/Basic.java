@@ -1850,6 +1850,21 @@ public final class Basic {
          */
         FeelSensorReqOrBuilder getProximityListOrBuilder(
                 int index);
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        java.util.List<Integer> getWifiListList();
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        int getWifiListCount();
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        int getWifiList(int index);
     }
 
     /**
@@ -1879,6 +1894,7 @@ public final class Basic {
             lightList_ = java.util.Collections.emptyList();
             pressureList_ = java.util.Collections.emptyList();
             proximityList_ = java.util.Collections.emptyList();
+            wifiList_ = java.util.Collections.emptyList();
         }
 
         @Override
@@ -2006,6 +2022,27 @@ public final class Basic {
                                     input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
                             break;
                         }
+                        case 104: {
+                            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+                                wifiList_ = new java.util.ArrayList<Integer>();
+                                mutable_bitField0_ |= 0x00001000;
+                            }
+                            wifiList_.add(input.readInt32());
+                            break;
+                        }
+                        case 106: {
+                            int length = input.readRawVarint32();
+                            int limit = input.pushLimit(length);
+                            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000) && input.getBytesUntilLimit() > 0) {
+                                wifiList_ = new java.util.ArrayList<Integer>();
+                                mutable_bitField0_ |= 0x00001000;
+                            }
+                            while (input.getBytesUntilLimit() > 0) {
+                                wifiList_.add(input.readInt32());
+                            }
+                            input.popLimit(limit);
+                            break;
+                        }
                         default: {
                             if (!parseUnknownField(
                                     input, unknownFields, extensionRegistry, tag)) {
@@ -2050,6 +2087,9 @@ public final class Basic {
                 }
                 if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
                     proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
+                }
+                if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+                    wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -2712,6 +2752,31 @@ public final class Basic {
             return proximityList_.get(index);
         }
 
+        public static final int WIFILIST_FIELD_NUMBER = 13;
+        private java.util.List<Integer> wifiList_;
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        public java.util.List<Integer>
+        getWifiListList() {
+            return wifiList_;
+        }
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        public int getWifiListCount() {
+            return wifiList_.size();
+        }
+
+        /**
+         * <code>repeated int32 wifiList = 13;</code>
+         */
+        public int getWifiList(int index) {
+            return wifiList_.get(index);
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @Override
@@ -2827,6 +2892,9 @@ public final class Basic {
             for (int i = 0; i < proximityList_.size(); i++) {
                 output.writeMessage(12, proximityList_.get(i));
             }
+            for (int i = 0; i < wifiList_.size(); i++) {
+                output.writeInt32(13, wifiList_.get(i));
+            }
             unknownFields.writeTo(output);
         }
 
@@ -2884,6 +2952,15 @@ public final class Basic {
                 size += com.google.protobuf.CodedOutputStream
                         .computeMessageSize(12, proximityList_.get(i));
             }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < wifiList_.size(); i++) {
+                    dataSize += com.google.protobuf.CodedOutputStream
+                            .computeInt32SizeNoTag(wifiList_.get(i));
+                }
+                size += dataSize;
+                size += 1 * getWifiListList().size();
+            }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
             return size;
@@ -2930,6 +3007,8 @@ public final class Basic {
                     .equals(other.getPressureListList());
             result = result && getProximityListList()
                     .equals(other.getProximityListList());
+            result = result && getWifiListList()
+                    .equals(other.getWifiListList());
             result = result && unknownFields.equals(other.unknownFields);
             return result;
         }
@@ -2989,6 +3068,10 @@ public final class Basic {
             if (getProximityListCount() > 0) {
                 hash = (37 * hash) + PROXIMITYLIST_FIELD_NUMBER;
                 hash = (53 * hash) + getProximityListList().hashCode();
+            }
+            if (getWifiListCount() > 0) {
+                hash = (37 * hash) + WIFILIST_FIELD_NUMBER;
+                hash = (53 * hash) + getWifiListList().hashCode();
             }
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
@@ -3216,6 +3299,8 @@ public final class Basic {
                 } else {
                     proximityListBuilder_.clear();
                 }
+                wifiList_ = java.util.Collections.emptyList();
+                bitField0_ = (bitField0_ & ~0x00001000);
                 return this;
             }
 
@@ -3342,6 +3427,11 @@ public final class Basic {
                 } else {
                     result.proximityList_ = proximityListBuilder_.build();
                 }
+                if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                    wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
+                    bitField0_ = (bitField0_ & ~0x00001000);
+                }
+                result.wifiList_ = wifiList_;
                 result.bitField0_ = to_bitField0_;
                 onBuilt();
                 return result;
@@ -3662,6 +3752,16 @@ public final class Basic {
                             proximityListBuilder_.addAllMessages(other.proximityList_);
                         }
                     }
+                }
+                if (!other.wifiList_.isEmpty()) {
+                    if (wifiList_.isEmpty()) {
+                        wifiList_ = other.wifiList_;
+                        bitField0_ = (bitField0_ & ~0x00001000);
+                    } else {
+                        ensureWifiListIsMutable();
+                        wifiList_.addAll(other.wifiList_);
+                    }
+                    onChanged();
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -7158,6 +7258,80 @@ public final class Basic {
                 return proximityListBuilder_;
             }
 
+            private java.util.List<Integer> wifiList_ = java.util.Collections.emptyList();
+
+            private void ensureWifiListIsMutable() {
+                if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+                    wifiList_ = new java.util.ArrayList<Integer>(wifiList_);
+                    bitField0_ |= 0x00001000;
+                }
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public java.util.List<Integer>
+            getWifiListList() {
+                return java.util.Collections.unmodifiableList(wifiList_);
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public int getWifiListCount() {
+                return wifiList_.size();
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public int getWifiList(int index) {
+                return wifiList_.get(index);
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public Builder setWifiList(
+                    int index, int value) {
+                ensureWifiListIsMutable();
+                wifiList_.set(index, value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public Builder addWifiList(int value) {
+                ensureWifiListIsMutable();
+                wifiList_.add(value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public Builder addAllWifiList(
+                    Iterable<? extends Integer> values) {
+                ensureWifiListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, wifiList_);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>repeated int32 wifiList = 13;</code>
+             */
+            public Builder clearWifiList() {
+                wifiList_ = java.util.Collections.emptyList();
+                bitField0_ = (bitField0_ & ~0x00001000);
+                onChanged();
+                return this;
+            }
+
             @Override
             public final Builder setUnknownFields(
                     final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7882,7 +8056,7 @@ public final class Basic {
         String[] descriptorData = {
                 "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
                         "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\300\003\n\013DeepNaviReq\022\014\n\004time\030" +
+                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\322\003\n\013DeepNaviReq\022\014\n\004time\030" +
                         "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022$\n\014magneticList\030\003 \003" +
                         "(\0132\016.CoorSensorReq\022)\n\021accelerometerList\030" +
                         "\004 \003(\0132\016.CoorSensorReq\022\'\n\017orientationList" +
@@ -7893,9 +8067,9 @@ public final class Basic {
                         "peratureList\030\t \003(\0132\016.FeelSensorReq\022!\n\tli" +
                         "ghtList\030\n \003(\0132\016.FeelSensorReq\022$\n\014pressur" +
                         "eList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximity" +
-                        "List\030\014 \003(\0132\016.FeelSensorReq\"\035\n\013DeepNaviRe" +
-                        "s\022\016\n\006result\030\001 \002(\tB\037\n\026com.sysu.deepnavi.b" +
-                        "eanB\005Basic"
+                        "List\030\014 \003(\0132\016.FeelSensorReq\022\020\n\010wifiList\030\r" +
+                        " \003(\005\"\035\n\013DeepNaviRes\022\016\n\006result\030\001 \002(\tB\037\n\026c" +
+                        "om.sysu.deepnavi.beanB\005Basic"
         };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
                 new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -7926,7 +8100,7 @@ public final class Basic {
         internal_static_DeepNaviReq_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                 internal_static_DeepNaviReq_descriptor,
-                new String[]{"Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList",});
+                new String[]{"Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList", "WifiList",});
         internal_static_DeepNaviRes_descriptor =
                 getDescriptor().getMessageTypes().get(3);
         internal_static_DeepNaviRes_fieldAccessorTable = new

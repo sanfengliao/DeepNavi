@@ -18,15 +18,16 @@ class SensorListener2<Data>(override val type: Int, override val field: String, 
     private val dataList: LinkedList<Data> = LinkedList()
     var maxSize: Int = 0
 
-    fun init(rate: Int): SensorListener2<Data> {
+    fun init(rate: Int, add: Boolean = false): SensorListener2<Data> {
         val result: Boolean = DeepNaviManager.get().registerListener(DeepNaviManager.get().getSensorManager().getDefaultSensor(type), rate) ?: false
-        DeepNaviManager.get().addDataCollector(this as DataCollectorInter<Any>)
+        if (add) DeepNaviManager.get().addDataCollector(this as DataCollectorInter<Any>)
         DeepNaviManager.logger?.d(DEFAULT_TAG, "SensorListener2.init(rate: %d) -- result: %s", rate, result.toString())
         return this
     }
 
-    fun init(sensor: Sensor, rate: Int): SensorListener2<Data> {
+    fun init(sensor: Sensor, rate: Int, add: Boolean = false): SensorListener2<Data> {
         val result: Boolean = DeepNaviManager.get().registerListener(sensor, rate) ?: false
+        if (add) DeepNaviManager.get().addDataCollector(this as DataCollectorInter<Any>)
         DeepNaviManager.logger?.d(DEFAULT_TAG, "SensorListener2.init(rate: %d) -- result: %s", rate, result.toString())
         return this
     }

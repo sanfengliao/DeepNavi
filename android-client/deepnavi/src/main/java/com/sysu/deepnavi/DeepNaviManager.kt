@@ -5,6 +5,7 @@ package com.sysu.deepnavi
 // [Pro Android学习笔记（一五五）：传感器（5）： 磁场传感器和方位（上）](https://blog.csdn.net/flowingflying/article/details/43233315)
 // [地磁传感器 Pro Android学习笔记（一五五）：传感器（5）： 磁场传感器和方位（上）](http://www.manew.com/blog-166329-34441.html)
 // [Pro Android学习笔记](https://blog.csdn.net/flowingflying/article/details/6212512)
+// [Android wifi属性简介 及 wifi信息获取（wifi列表、配置信息、热点信息）](https://blog.csdn.net/gao_chun/article/details/45891865)
 
 import android.content.Context
 import android.hardware.Sensor
@@ -80,7 +81,7 @@ class DeepNaviManager private constructor() : SensorEventListener {
         dataList.forEach { entry ->
             val field = entry.key
             val dataCollector = entry.value
-            if (field.isRequired) {
+            if (field.isRepeated) {
                 dataCollector.getDataArray()?.forEach { value -> reqBuilder.addRepeatedField(field, value) }
             } else reqBuilder.setField(field, dataCollector.getData())
         }
@@ -94,8 +95,8 @@ class DeepNaviManager private constructor() : SensorEventListener {
             socket!!.connect()
             running = true
             while (running) {
-                send()
                 Thread.sleep(interval)
+                send()
             }
             logger?.d(DEFAULT_TAG, "DeepNaviManager.loop end at %d", System.currentTimeMillis())
         }
@@ -113,7 +114,7 @@ class DeepNaviManager private constructor() : SensorEventListener {
         TODO()
     }
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int): Unit {
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         if (sensor != null) {
             dataList.forEach { entry ->
                 val dataCollector = entry.value
@@ -122,7 +123,7 @@ class DeepNaviManager private constructor() : SensorEventListener {
         }
     }
 
-    override fun onSensorChanged(event: SensorEvent?): Unit {
+    override fun onSensorChanged(event: SensorEvent?) {
         if (event != null) {
             dataList.forEach { entry ->
                 val dataCollector = entry.value

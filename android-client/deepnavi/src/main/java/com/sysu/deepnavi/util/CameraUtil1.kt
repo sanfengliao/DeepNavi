@@ -70,6 +70,24 @@ class CameraUtil1(
             camera.setDisplayOrientation(result)
         }
 
+        fun requestPermissions(activity: Activity) {
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
+                (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                        ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+            ) {
+                ActivityCompat.requestPermissions(
+                    activity,
+                    arrayOf(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA
+                    ),
+                    PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
+                )
+                Log.d(TAG, "requestPermissions")
+            }
+        }
+
         class AutoFocusHandler(private val autoFocusCallback: Camera.AutoFocusCallback) : Handler() {
             var camera: Camera? = null
             override fun handleMessage(msg: Message) {
@@ -103,7 +121,7 @@ class CameraUtil1(
     private var autoFocusCallback: MyAutoFocusCallback? = null
 
     init {
-        requestPermissions()
+        requestPermissions(activity)
         if (view is SurfaceView) {
             view.holder.run {
                 setFormat(PixelFormat.TRANSPARENT)
@@ -115,12 +133,12 @@ class CameraUtil1(
                     override fun surfaceDestroyed(holder: SurfaceHolder?) {
                         Log.d(TAG, "SurfaceHolder -- surfaceDestroyed")
                         stopPreview()
-                        releaseCamera()
+                        closeCamera()
                     }
 
                     override fun surfaceCreated(holder: SurfaceHolder?) {
                         Log.d(TAG, "SurfaceHolder -- surfaceCreated")
-                        createCamera()
+                        openCamera()
                         startPreview()
                     }
                 })
@@ -138,13 +156,13 @@ class CameraUtil1(
                 override fun onSurfaceTextureDestroyed(surface: SurfaceTexture?): Boolean {
                     Log.d(TAG, "SurfaceTexture -- onSurfaceTextureDestroyed")
                     stopPreview()
-                    releaseCamera()
+                    closeCamera()
                     return true
                 }
 
                 override fun onSurfaceTextureAvailable(surface: SurfaceTexture?, width: Int, height: Int) {
                     Log.d(TAG, "SurfaceTexture -- onSurfaceTextureAvailable -- width: $width, height: $height")
-                    createCamera()
+                    openCamera()
                     startPreview()
                 }
             }
@@ -156,25 +174,7 @@ class CameraUtil1(
         }
     }
 
-    fun requestPermissions() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
-            (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        ) {
-            ActivityCompat.requestPermissions(
-                activity,
-                arrayOf(
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA
-                ),
-                PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
-            )
-            Log.d(TAG, "requestPermissions")
-        }
-    }
-
-    fun createCamera() {
+    fun openCamera() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
             (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                     ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
@@ -192,6 +192,7 @@ class CameraUtil1(
         val comparator = Comparator<Camera.Size> { s1, s2 ->
             if (s1.height == s2.height) s2.width - s1.width else s2.height - s1.height
         }
+        val defaultDisplay = activity.windowManager.defaultDisplay
         for (i in 0 until cameraCount) {
             Camera.getCameraInfo(i, cameraInfo)
             if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
@@ -202,8 +203,8 @@ class CameraUtil1(
                     Log.e(TAG, "createCamera -- open camera($i) failed", e)
                     continue
                 }
+
                 val cameraParameters = camera!!.parameters
-                val defaultDisplay = activity.windowManager.defaultDisplay
                 val supportedPreviewSizes = cameraParameters.supportedPreviewSizes
                 val supportedVideoSizes = cameraParameters.supportedVideoSizes
                 val supportedPictureSizes = cameraParameters.supportedPictureSizes
@@ -308,7 +309,7 @@ class CameraUtil1(
         camera?.stopPreview()
     }
 
-    fun releaseCamera() {
+    fun closeCamera() {
         camera?.release()
         camera = null
     }

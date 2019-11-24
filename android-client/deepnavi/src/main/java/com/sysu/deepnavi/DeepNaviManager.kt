@@ -111,7 +111,7 @@ class DeepNaviManager private constructor() : SensorEventListener {
     }
 
     fun onMessage(res: Basic.DeepNaviRes) {
-        TODO()
+        // TODO:
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

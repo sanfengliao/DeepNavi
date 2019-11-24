@@ -14,6 +14,7 @@ import android.view.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlin.math.abs
+import kotlin.math.min
 
 // [Android 摄像头预览](https://www.jianshu.com/p/cf55f42f0cb7)
 // [关于Android使用Camera自定义拍照出现模糊不清的解决方案](https://blog.csdn.net/u012228009/article/details/43450609)
@@ -58,14 +59,14 @@ class CameraUtil1(
                 Surface.ROTATION_180 -> degrees = 180
                 Surface.ROTATION_270 -> degrees = 270
             }
-            val result: Int =
-                if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                    // 前置摄像头
-                    (360 - (info.orientation + degrees) % 360) % 360 // compensate the mirror
-                } else {
-                    // back-facing  后置摄像头
-                    (info.orientation - degrees + 360) % 360
-                }
+            var result: Int
+            if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) { // 前置摄像头
+                result = (info.orientation + degrees) % 360
+                result = (360 - result) % 360 // compensate the mirror
+            } else { // back-facing  后置摄像头
+                result = (info.orientation - degrees + 360) % 360
+            }
+            Log.d(TAG, "camera.setDisplayOrientation($result)")
             camera.setDisplayOrientation(result)
         }
 
@@ -230,7 +231,7 @@ class CameraUtil1(
                 supportedPreviewFrameRates.sort()
                 Log.d(
                     TAG, "createCamera -- cameraId: $i, supportedPreviewFrameRates: ${supportedPreviewFrameRates.joinToString()}" +
-                            "\nsupportedPreviewFpsRange: ${supportedPreviewFpsRange.joinToString { it.joinToString() }}"
+                            "\nsupportedPreviewFpsRange: ${supportedPreviewFpsRange.joinToString { """[${it.joinToString("~")}]""" }}"
                 )
                 val suitableFrameRate = supportedPreviewFrameRates.mapIndexed { j, v -> Pair(abs(v - this.frameRate), j) }.minBy { it.first }
                 if (suitableFrameRate != null) {
@@ -241,13 +242,21 @@ class CameraUtil1(
                     continue
                 }
                 val targetFps = cameraParameters.previewFrameRate * 1000
-                val suitableFpsRange = supportedPreviewFpsRange.find { it[0] < targetFps && targetFps < it[1] }
+                var suitableFpsRange = supportedPreviewFpsRange.find { it[0] < targetFps && targetFps < it[1] }
                 if (suitableFpsRange != null) {
-                    cameraParameters.setPreviewFpsRange(targetFps, suitableFpsRange[1])
-                    Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFpsRange: [$targetFps, ${suitableFpsRange[1]}]")
+                    cameraParameters.setPreviewFpsRange(suitableFpsRange[0], suitableFpsRange[1])
+                    Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFpsRange: [${suitableFpsRange[0]}, ${suitableFpsRange[1]}]")
                 } else {
-                    Log.d(TAG, "createCamera -- cameraId: $i, doesn't have suitableFpsRange")
-                    continue
+                    val suitableFpsRangeTuple =
+                        supportedPreviewFpsRange.mapIndexed { j, v -> Pair(min(abs(v[0] - targetFps), abs(v[1] - targetFps)), j) }.minBy { it.first }
+                    if (suitableFpsRangeTuple != null) {
+                        suitableFpsRange = supportedPreviewFpsRange[suitableFpsRangeTuple.second]
+                        cameraParameters.setPreviewFpsRange(suitableFpsRange[0], suitableFpsRange[1])
+                        Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFpsRange: [${suitableFpsRange[0]}, ${suitableFpsRange[1]}]")
+                    } else {
+                        Log.d(TAG, "createCamera -- cameraId: $i, doesn't have suitableFpsRange")
+                        continue
+                    }
                 }
 
                 // val supportedPreviewFormats = cameraParameters.supportedPreviewFormats

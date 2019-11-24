@@ -14,6 +14,7 @@ import com.sysu.deepnavi.util.DEFAULT_TAG
 import io.socket.client.IO
 import io.socket.client.Socket
 
+@Deprecated(message = "SocketIO isn't a good choice")
 class MainActivity : AppCompatActivity() {
     lateinit var deepNaviManager: DeepNaviManager
     lateinit var sensorListeners: SensorListeners

@@ -1,10 +1,38 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-# 文件名: index.py
+from proto_model.basic_pb2 import DeepNaviReq, DeepNaviRes
+from autobahn.twisted.websocket import WebSocketServerProtocol
 
+class WebSocketServer(WebSocketServerProtocol):
+    def onMessage(self, payload, isBinary):
+        if isBinary:
+            deepNaviReq = DeepNaviReq()
+            deepNaviReq.ParseFromString(payload)
+            f = open('./upload' + '/' + str(deepNaviReq.time) + '.jpg', 'wb+')
+            f.write(deepNaviReq.image)
+            f.close()
 
-from app import socketIO, app
-import controllers.socket_controller
+            deepNaviRes = DeepNaviRes()
+            deepNaviRes.result = 'OK'
+            self.sendMessage(deepNaviRes.SerializeToString(), True)
+        else:
+            pass
+    def onClose(self, wasClean, code, reason):
+        pass
 
-if __name__ == '__main__':
-    socketIO.run(app, host='172.26.44.15', port=5000, debug=True)
+    def onConnect(self, request):
+        return super().onConnect(request)
+
+if __name__ == "__main__":
+    import sys
+
+    from twisted.python import log
+    from twisted.internet import reactor
+    log.startLogging(sys.stdout)
+
+    from autobahn.twisted.websocket import WebSocketServerFactory
+    factory = WebSocketServerFactory()
+    factory.protocol = WebSocketServer
+
+    reactor.listenTCP(5000, factory)
+    reactor.run()
+    
+    

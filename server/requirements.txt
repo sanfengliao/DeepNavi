@@ -1,3 +1,5 @@
 Flask==1.1.1
 Flask-Socketio==4.2.1
 python-socketio==4.3.1
+autobahn==19.11.1
+Twisted==19.10.0 

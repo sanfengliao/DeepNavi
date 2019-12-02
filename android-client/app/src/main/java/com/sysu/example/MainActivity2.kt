@@ -1,5 +1,6 @@
 package com.sysu.example
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,8 @@ import java.lang.Exception
 import java.net.URI
 import java.nio.ByteBuffer
 
+@Suppress("UNCHECKED_CAST")
+@SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
 class MainActivity2 : AppCompatActivity() {
     lateinit var deepNaviManager: DeepNaviManager
     lateinit var sensorListeners: SensorListeners
@@ -35,7 +38,7 @@ class MainActivity2 : AppCompatActivity() {
             var socket: WebSocketClient? = null
 
             override fun connect() {
-                val url = "ws://192.168.124.42:9001/"
+                val url = "ws://" + this@MainActivity2.intent.getStringExtra(ConfigActivity.EXTRA_KEY_URL) ?: ConfigActivity.DEFAULT_VALUE_URL
                 socket = object : WebSocketClient(URI.create(url)) {
                     override fun onOpen(handshakedata: ServerHandshake?) {
                         DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
@@ -80,7 +83,7 @@ class MainActivity2 : AppCompatActivity() {
             override fun onMessage(res: Basic.DeepNaviRes) {
                 deepNaviManager.onMessage(res)
             }
-        }, 1000 / 3)
+        }, 1000 / intent.getIntExtra(ConfigActivity.EXTRA_KEY_FREQUENCY, ConfigActivity.DEFAULT_VALUE_FREQUENCY).toLong())
         deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
         deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
 

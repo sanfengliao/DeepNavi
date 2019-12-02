@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="drawable_select_size">30dp</dimen>
+    <dimen name="drawable_selecrt_inner_stroke">8dp</dimen>
+    <dimen name="drawable_select_outer_stroke">2dp</dimen>
+</resources>

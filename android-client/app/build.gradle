@@ -44,4 +44,5 @@ dependencies {
         exclude group: 'org.json', module: 'json'
     }
     api "org.java-websocket:Java-WebSocket:${java_websocket_version}"
+    api "androidx.recyclerview:recyclerview:${recyclerview_version}"
 }

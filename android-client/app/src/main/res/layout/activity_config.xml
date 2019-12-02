@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <RadioGroup
+        android:id="@+id/camera_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/camera" />
+
+        <RadioButton
+            android:id="@+id/radio_camera2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/camera2" />
+
+        <RadioButton
+            android:id="@+id/radio_media_recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/media_recorder" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/frequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/please_input_frequency"
+        android:inputType="number"
+        android:drawableEnd="@drawable/frequency_select"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/backend_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/please_input_backend_s_url"
+        android:inputType="textUri"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/begin" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deepnavi_config_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<ListView-->
+    <!--    android:id="@+id/deepnavi_config_list"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content" />-->
+</LinearLayout>

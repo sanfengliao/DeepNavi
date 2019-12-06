@@ -4,7 +4,12 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import com.sysu.deepnavi.bean.Basic
 
+@Suppress("MemberVisibilityCanBePrivate", "unused", "DEPRECATION")
 class SensorListeners {
+
+    companion object {
+        val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }
+    }
 
     private fun createCoorSensorReq(event: SensorEvent, xIndex: Int = 0, yIndex: Int = 1, zIndex: Int = 2): Basic.CoorSensorReq {
         val values = event.values
@@ -45,30 +50,41 @@ class SensorListeners {
     val proximityListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_PRESSURE, "proximityList")
     { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
-    fun initAll(rate: Int = 1000000 / 50) {
-        magneticListener.init(rate, true)
-        accelerometerListener.init(rate, true)
-        orientationListener.init(rate, true)
-        gyroscopeListener.init(rate, true)
-        gravityListener.init(rate, true)
-        linearAccelerationListener.init(rate, true)
-        ambientTemperatureListener.init(rate, true)
-        lightListener.init(rate, true)
-        pressureListener.init(rate, true)
-        proximityListener.init(rate, true)
-    }
-
-    fun registerAll(rate: Int = 1000000 / 50) {
-        magneticListener.init(rate)
-        accelerometerListener.init(rate)
-        orientationListener.init(rate)
-        gyroscopeListener.init(rate)
-        gravityListener.init(rate)
-        linearAccelerationListener.init(rate)
-        ambientTemperatureListener.init(rate)
-        lightListener.init(rate)
-        pressureListener.init(rate)
-        proximityListener.init(rate)
+    fun initAll(
+        rate: Int = 1000000 / 50,
+        registerList: List<Boolean> = (0 until 10).map { true },
+        useList: List<String> = DEFAULT_VALUE_SENSOR_CONFIG
+    ) {
+        if (magneticListener.field in useList) {
+            magneticListener.init(rate, registerList[0])
+        }
+        if (accelerometerListener.field in useList) {
+            accelerometerListener.init(rate, registerList[1])
+        }
+        if (orientationListener.field in useList) {
+            orientationListener.init(rate, registerList[2])
+        }
+        if (gyroscopeListener.field in useList) {
+            gyroscopeListener.init(rate, registerList[3])
+        }
+        if (gyroscopeListener.field in useList) {
+            gravityListener.init(rate, registerList[4])
+        }
+        if (linearAccelerationListener.field in useList) {
+            linearAccelerationListener.init(rate, registerList[5])
+        }
+        if (ambientTemperatureListener.field in useList) {
+            ambientTemperatureListener.init(rate, registerList[6])
+        }
+        if (lightListener.field in useList) {
+            lightListener.init(rate, registerList[7])
+        }
+        if (pressureListener.field in useList) {
+            pressureListener.init(rate, registerList[8])
+        }
+        if (proximityListener.field in useList) {
+            proximityListener.init(rate, registerList[9])
+        }
     }
 }
 

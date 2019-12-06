@@ -23,8 +23,8 @@ import java.nio.ByteBuffer
 @Suppress("UNCHECKED_CAST")
 @SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
 class MainActivity2 : AppCompatActivity() {
-    lateinit var deepNaviManager: DeepNaviManager
-    lateinit var sensorListeners: SensorListeners
+    private lateinit var deepNaviManager: DeepNaviManager
+    private lateinit var sensorListeners: SensorListeners
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class MainActivity2 : AppCompatActivity() {
             var socket: WebSocketClient? = null
 
             override fun connect() {
-                val url = "ws://" + this@MainActivity2.intent.getStringExtra(ConfigActivity.EXTRA_KEY_URL) ?: ConfigActivity.DEFAULT_VALUE_URL
+                val url = "ws://" + this@MainActivity2.intent.getStringExtra(ConfigActivity.EXTRA_KEY_URL)
                 socket = object : WebSocketClient(URI.create(url)) {
                     override fun onOpen(handshakedata: ServerHandshake?) {
                         DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
@@ -87,8 +87,9 @@ class MainActivity2 : AppCompatActivity() {
         deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
         deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
 
+        val useList = intent.getStringExtra(ConfigActivity.EXTRA_KEY_SIGNAL_CONFIG)?.split(", ") ?: SensorListeners.DEFAULT_VALUE_SENSOR_CONFIG
         findViewById<Button>(R.id.start_preview).setOnClickListener {
-            sensorListeners.initAll()
+            sensorListeners.initAll(useList = useList)
             deepNaviManager.loop()
         }
         findViewById<Button>(R.id.stop_preview).setOnClickListener {

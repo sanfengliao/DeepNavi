@@ -7,6 +7,7 @@ import com.sysu.deepnavi.inter.DataCollectorInter
 import com.sysu.deepnavi.util.DEFAULT_TAG
 import java.util.*
 
+@Suppress("UNCHECKED_CAST", "unused")
 class SensorListener2<Data>(override val type: Int, override val field: String, val action: (event: SensorEvent) -> Data) :
     DeepNaviManager.SensorListener<Data> {
     init {
@@ -16,7 +17,7 @@ class SensorListener2<Data>(override val type: Int, override val field: String, 
     @Volatile
     private var data: Data? = null
     private val dataList: LinkedList<Data> = LinkedList()
-    var maxSize: Int = 0
+    private var maxSize: Int = 0
 
     fun init(rate: Int, add: Boolean = false): SensorListener2<Data> {
         val result: Boolean = DeepNaviManager.get().registerListener(DeepNaviManager.get().getSensorManager().getDefaultSensor(type), rate) ?: false

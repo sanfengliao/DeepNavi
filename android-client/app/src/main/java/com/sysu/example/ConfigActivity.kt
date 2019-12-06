@@ -12,7 +12,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sysu.deepnavi.bean.Basic
+import com.sysu.deepnavi.impl.SensorListeners
+import java.util.*
 
+// [SharedPerference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
+
+@Suppress("DEPRECATION")
 @SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
 class ConfigActivity : AppCompatActivity() {
     companion object {
@@ -22,6 +27,7 @@ class ConfigActivity : AppCompatActivity() {
 
         const val DEFAULT_VALUE_FREQUENCY = 3
         const val DEFAULT_VALUE_URL = "10.95.40.1:5000"
+        val DEFAULT_VALUE_SENSOR_CONFIG = SensorListeners.DEFAULT_VALUE_SENSOR_CONFIG
 
         const val EXTRA_KEY_URL = "url"
         const val EXTRA_KEY_FREQUENCY = "frequency"
@@ -53,7 +59,7 @@ class ConfigActivity : AppCompatActivity() {
 
         sp = getSharedPreferences(SP_NAME_CONFIG, Context.MODE_PRIVATE)
         val signalConfigSet = sp.getStringSet(SP_KEY_SIGNAL_CONFIG, mutableSetOf()) ?: mutableSetOf()
-        val configListData = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }.toMutableList()
+        val configListData = DEFAULT_VALUE_SENSOR_CONFIG.toMutableList()
 
         findViewById<RecyclerView>(R.id.deepnavi_config_list).run {
             val baseAdapter = BaseRecyclerAdapter<String>(
@@ -121,55 +127,5 @@ class ConfigActivity : AppCompatActivity() {
                     .putExtra(EXTRA_KEY_SIGNAL_CONFIG, signalConfigSet.joinToString())
             )
         }
-
-        // setListView()
-    }
-
-    private fun setListView() {
-        //     sp = applicationContext.getSharedPreferences(SP_NAME_CONFIG, Context.MODE_PRIVATE)
-        //     val signalConfigSet = sp.getStringSet(SP_KEY_SIGNAL_CONFIG, mutableSetOf()) ?: mutableSetOf()
-        //     val configListData = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map {
-        //         mapOf(Pair("item_select", it.name))
-        //     }.toMutableList()
-        //
-        //     val configList = findViewById<ListView>(R.id.deepnavi_config_list)
-        //     configList.adapter = SimpleAdapter(this, configListData, R.layout.item_config, arrayOf("item_select"), intArrayOf(R.id.item_select))
-        //     configList.setOnItemClickListener { _, view, _, _ ->
-        //         view.isSelected = !view.isSelected
-        //         if (view is TextView) {
-        //             val text = view.text.toString()
-        //             if (view.isSelected && !signalConfigSet.contains(text)) {
-        //                 signalConfigSet.add(text)
-        //             } else if (!view.isSelected && signalConfigSet.contains(text)) {
-        //                 signalConfigSet.remove(text)
-        //             }
-        //             sp.edit().putStringSet(SP_KEY_SIGNAL_CONFIG, signalConfigSet).commit()
-        //             Log.d(TAG, "ItemClick -- view: ${view.text}, isSelected changed: ${view.isSelected}")
-        //         } else Log.d(TAG, "ItemClick -- view isn't a TextView")
-        //     }
-        //     configList.post { configList.forEach { if (it is TextView && signalConfigSet.contains(it.text)) it.isSelected = true } }
-        //
-        //     Log.d(
-        //         TAG,
-        //         "onCreate -- initial config -- ${configListData.joinToString()} -- ${Basic.DeepNaviReq.getDescriptor().fields.size} -- ${signalConfigSet.joinToString()}"
-        //     )
-        //
-        //     // val listener = object : View.OnTouchListener {
-        //     //     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-        //     //         v?.performClick()
-        //     //         // final int DRAWABLE_LEFT = 0;
-        //     //         // final int DRAWABLE_TOP = 1;
-        //     //         // final int DRAWABLE_RIGHT = 2;
-        //     //         // final int DRAWABLE_BOTTOM = 3;
-        //     //         if (event?.action == MotionEvent.ACTION_UP && v != null && v is TextView) {
-        //     //             if (event.rawX >= (v.right - v.compoundDrawables[2].bounds.width())) {
-        //     //                 v.isSelected = true
-        //     //                 return true
-        //     //             }
-        //     //         }
-        //     //         return false
-        //     //     }
-        //     // }
-        //     // configList.post { configList.forEach { it.setOnTouchListener(listener) } }
     }
 }

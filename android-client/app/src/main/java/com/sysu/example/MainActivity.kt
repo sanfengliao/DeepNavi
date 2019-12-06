@@ -1,5 +1,6 @@
 package com.sysu.example
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sysu.deepnavi.DeepNaviManager
@@ -14,11 +15,13 @@ import com.sysu.deepnavi.util.DEFAULT_TAG
 import io.socket.client.IO
 import io.socket.client.Socket
 
+@Suppress("UNCHECKED_CAST")
 @Deprecated(message = "SocketIO isn't a good choice")
 class MainActivity : AppCompatActivity() {
-    lateinit var deepNaviManager: DeepNaviManager
-    lateinit var sensorListeners: SensorListeners
+    private lateinit var deepNaviManager: DeepNaviManager
+    private lateinit var sensorListeners: SensorListeners
 
+    @SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -67,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                 deepNaviManager.onMessage(res)
             }
         }, 1000 / 3)
-        // deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
+        deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
         deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
     }
 

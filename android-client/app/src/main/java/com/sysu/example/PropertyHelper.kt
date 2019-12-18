@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
 package com.sysu.example
 
@@ -7,7 +7,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import java.lang.reflect.Field
+import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.lang.reflect.Type
 
@@ -145,10 +147,20 @@ open class NetProperty<T : Any> : Property<T> {
     open fun hasOption(option: String): Boolean = this.options?.contains(option) ?: false
 }
 
-open class PropertyHolder {
+open class PropertyHolder : ViewModel() {
     companion object {
-        val filterAction: (Field) -> Boolean =
-            { it.type == Property::class.java && Modifier.isPublic(it.modifiers) && Modifier.isStatic(it.modifiers) && Modifier.isFinal(it.modifiers) }
+        val fieldFilterAction: (Field) -> Boolean = {
+            it.type == Property::class.java &&
+                    Modifier.isPublic(it.modifiers) &&
+                    Modifier.isStatic(it.modifiers) &&
+                    Modifier.isFinal(it.modifiers)
+        }
+        val methodFilterAction: (Method) -> Boolean = {
+            it.returnType == Property::class.java &&
+                    Modifier.isPublic(it.modifiers) &&
+                    Modifier.isStatic(it.modifiers) &&
+                    Modifier.isFinal(it.modifiers)
+        }
     }
 
     private val properties: MutableList<Property<*>> = mutableListOf()
@@ -161,13 +173,16 @@ open class PropertyHolder {
     open fun getPropertyAt(index: Int) = properties[index]
     open fun clearAll() = properties.clear()
 
-    open fun readPropertiesFromClass(cls: Class<*>) = properties.addAll(cls.fields.filter(filterAction).map { it.get(null) as Property<*> })
+    open fun readPropertiesFromClass(cls: Class<*>) =
+        properties.run {
+            addAll(cls.fields.filter(fieldFilterAction).map { it.get(null) as Property<*> }) &&
+                    addAll(cls.methods.filter(methodFilterAction).map { it.invoke(null) as Property<*> })
+        }
 }
 
-class SpPropertyHelper(private val context: Context, private val spName: String) : PropertyHolder() {
-    private var sp: SharedPreferences = context.getSharedPreferences(spName, Context.MODE_PRIVATE)
+open class SpPropertyHelper(protected val mContext: Context, protected val mSpName: String) : PropertyHolder() {
+    private var sp: SharedPreferences = mContext.getSharedPreferences(mSpName, Context.MODE_PRIVATE)
     private val observeAction: (Any) -> Unit = { saveProperty(it as Property<*>) }
-    private val modes = ArrayList<String>()
 
     override fun addProperty(property: Property<*>): Boolean {
         property.observeForever(observeAction)
@@ -180,7 +195,9 @@ class SpPropertyHelper(private val context: Context, private val spName: String)
     }
 
     override fun readPropertiesFromClass(cls: Class<*>): Boolean {
-        val properties = cls.fields.filter(filterAction).map { it.get(null) as Property<*> }
+        val properties = mutableListOf<Property<*>>()
+        properties.addAll(cls.fields.filter(fieldFilterAction).map { it.get(null) as Property<*> })
+        properties.addAll(cls.methods.filter(methodFilterAction).map { it.invoke(null) as Property<*> })
         properties.forEach { it.observeForever(observeAction) }
         return super.addProperties(properties)
     }
@@ -201,11 +218,11 @@ class SpPropertyHelper(private val context: Context, private val spName: String)
         }
     }
 
-    fun getContext() = context
-    fun getSpName() = spName
+    fun getContext() = mContext
+    fun getSpName() = mSpName
 }
 
-class NetPropertyHelper(private val url: String) : PropertyHolder() {
+open class NetPropertyHelper(protected val url: String) : PropertyHolder() {
     init {
         TODO()
     }

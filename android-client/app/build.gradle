@@ -22,10 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    // compileOptions {
-    //     sourceCompatibility = 1.8
-    //     targetCompatibility = 1.8
-    // }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 dependencies {
@@ -66,4 +66,7 @@ dependencies {
 
     // optional - Test helpers for LiveData
     // testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+
+    api "io.reactivex.rxjava2:rxjava:${rxjava_version}"
+    api "io.reactivex.rxjava2:rxandroid:${rxandroid_version}"
 }

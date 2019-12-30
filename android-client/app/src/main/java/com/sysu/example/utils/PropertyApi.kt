@@ -1,6 +1,6 @@
 @file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
-package com.sysu.example
+package com.sysu.example.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,40 +13,42 @@ import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.lang.reflect.Type
 
+// [SharedPerference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
+
 open class Property<T : Any> : MutableLiveData<T> {
-    private var desc: String
-    private var data: T? = null
-    private var type: Type
+    protected var mDesc: String
+    protected var mData: T? = null
+    protected var mType: Type
 
     constructor(desc: String, data: T) : super(data) {
-        this.desc = desc
-        this.data = data
-        this.type = data::class.java
+        this.mDesc = desc
+        this.mData = data
+        this.mType = data::class.java
     }
 
     constructor(desc: String, type: Type) : super() {
-        this.desc = desc
-        this.data = null
-        this.type = type
+        this.mDesc = desc
+        this.mData = null
+        this.mType = type
     }
 
-    open fun getDesc() = desc
-    open fun getData() = data
-    open fun getType() = type
+    open fun getDesc() = mDesc
+    open fun getData() = mData
+    open fun getType() = mType
 
-    override fun postValue(value: T) {
-        data = value
+    override fun postValue(value: T?) {
+        mData = value
         super.postValue(value)
     }
 
     @MainThread
-    override fun setValue(value: T) {
-        data = value
+    override fun setValue(value: T?) {
+        mData = value
         super.setValue(value)
     }
 
-    open fun setData(value: T) {
-        this.data = value
+    open fun setData(value: T?) {
+        this.mData = value
     }
 }
 
@@ -71,74 +73,124 @@ open class SpProperty<T : Any> : Property<T> {
         }
     }
 
-    private val spKey: String
+    protected val mSpKey: String
 
     constructor(desc: String, data: T, spKey: String) : super(desc, data) {
-        this.spKey = spKey
-        getFromSp()
+        this.mSpKey = spKey
     }
 
     constructor(desc: String, type: Type, spKey: String) : super(desc, type) {
-        this.spKey = spKey
-        getFromSp()
+        this.mSpKey = spKey
     }
 
-    open fun getSpKey() = spKey
+    open fun getSpKey() = mSpKey
 
     @Suppress("UNCHECKED_CAST")
     open fun saveInSp(sp: SharedPreferences) {
         val spEdit = sp.edit()
-        val data = getData() ?: return
-        when (getType()) {
-            Boolean::class.java -> spEdit.putBoolean(spKey, data as Boolean)
-            Int::class.java -> spEdit.putInt(spKey, data as Int)
-            Long::class.java -> spEdit.putLong(spKey, data as Long)
-            Float::class.java -> spEdit.putFloat(spKey, data as Float)
-            Double::class.java -> spEdit.putString(spKey, (data as Double).toString())
-            String::class.java -> spEdit.putString(spKey, data as String)
-            Set::class.java -> {
-                val setData = data as Set<*>
-                if (setData.isEmpty()) {
+        val data = mData ?: return
+        val type = mType
+        when {
+            type == Boolean::class.java -> spEdit.putBoolean(mSpKey, data as Boolean)
+            type == Int::class.java -> spEdit.putInt(mSpKey, data as Int)
+            type == Long::class.java -> spEdit.putLong(mSpKey, data as Long)
+            type == Float::class.java -> spEdit.putFloat(mSpKey, data as Float)
+            type == Double::class.java -> spEdit.putString(mSpKey, (data as Double).toString())
+            type == String::class.java -> spEdit.putString(mSpKey, data as String)
+            type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
+                val dataSet = data as Set<*>
+                if (dataSet.isEmpty()) {
                     return
                 }
-                if (setData.first() is String) {
-                    spEdit.putStringSet(spKey, setData as Set<String>)
+                if (dataSet.first() is String) {
+                    spEdit.putStringSet(mSpKey, dataSet as Set<String>)
                 } else {
-                    spEdit.putString(spKey, JsonApi.toJson(setData))
+                    spEdit.putString(mSpKey, JsonApi.toJson(dataSet))
                 }
             }
-            else -> spEdit.putString(spKey, JsonApi.toJson(getData()))
+            else -> spEdit.putString(mSpKey, JsonApi.toJson(data))
         }
-        spEdit.putString("${spKey}_desc", getDesc())
+        spEdit.putString("${mSpKey}_desc", mDesc)
         spEdit.apply()
     }
 
     @Suppress("UNCHECKED_CAST")
     open fun getFromSp(sp: SharedPreferences) {
-        if (sp.contains(spKey)) {
-            setData(
-                when (getType()) {
-                    Boolean::class.java -> sp.getBoolean(spKey, false) as T
-                    Int::class.java -> sp.getInt(spKey, 0) as T
-                    Long::class.java -> sp.getLong(spKey, 0L) as T
-                    Float::class.java -> sp.getFloat(spKey, 0f) as T
-                    Double::class.java -> sp.getString(spKey, "0.0")!!.toDouble() as T
-                    String::class.java -> sp.getString(spKey, "") as T
-                    else -> JsonApi.fromJsonNonNull(sp.getString(spKey, "") ?: "", getType())
+        if (sp.contains(mSpKey)) {
+            val type = getType()
+            mData = when {
+                type == Boolean::class.java -> sp.getBoolean(mSpKey, false) as? T
+                type == Int::class.java -> sp.getInt(mSpKey, 0) as? T
+                type == Long::class.java -> sp.getLong(mSpKey, 0L) as? T
+                type == Float::class.java -> sp.getFloat(mSpKey, 0f) as? T
+                type == Double::class.java -> sp.getString(mSpKey, "0.0")!!.toDouble() as? T
+                type == String::class.java -> sp.getString(mSpKey, "") as? T
+                type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
+                    val stringSet = sp.getStringSet(mSpKey, null)
+                    if (stringSet != null) {
+                        HashSet<String>(stringSet) as? T
+                    } else {
+                        JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
+                    }
                 }
-            )
+                else -> JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
+            }
         }
     }
 
-    override fun postValue(value: T) {
-        saveInSp()
-        super.postValue(value)
+    open fun remove(sp: SharedPreferences) = sp.edit().remove(mSpKey).apply()
+}
+
+open class ContextSpProperty<T : Any> : SpProperty<T> {
+    private val context: Context
+    var mode: Int = Context.MODE_PRIVATE
+
+    constructor(desc: String, data: T, spKey: String, context: Context) : super(desc, data, spKey) {
+        this.context = context
     }
 
-    override fun setValue(value: T) {
-        saveInSp()
-        super.setValue(value)
+    constructor(desc: String, type: Type, spKey: String, context: Context) : super(desc, type, spKey) {
+        this.context = context
     }
+
+    override fun setValue(value: T?) {
+        if (value != mData) {
+            super.setValue(value)
+            saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
+        }
+    }
+
+    override fun setData(value: T?) {
+        if (value != mData) {
+            super.setData(value)
+            saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
+        }
+    }
+
+    override fun getValue(): T? {
+        if (mData == null) {
+            getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
+        }
+        return super.getValue()
+    }
+
+    override fun getData(): T? {
+        if (mData == null) {
+            getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
+        }
+        return super.getData()
+    }
+
+    open fun remove() = context.getSharedPreferences(PROPERTY_SP_NAME, mode).edit().remove(mSpKey).apply()
+
+    companion object {
+        const val PROPERTY_SP_NAME = "PROPERTY_SP_NAME"
+    }
+}
+
+open class AppSpProperty<T : Any> : ContextSpProperty<T> {
+    constructor(desc: String, data: T, spKey: String) : super(desc, data, spKey, ContextApi.appContext)
+    constructor(desc: String, type: Type, spKey: String) : super(desc, type, spKey, ContextApi.appContext)
 }
 
 open class NetProperty<T : Any> : Property<T> {
@@ -249,6 +301,6 @@ open class SpPropertyHelper(protected val mContext: Context, protected val mSpNa
 
 open class NetPropertyHelper(protected val url: String) : PropertyHolder() {
     init {
-        TODO()
+        TODO("NetPropertyHelper hasn't implemented")
     }
 }

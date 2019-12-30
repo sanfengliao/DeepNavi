@@ -146,33 +146,100 @@ fun selectPreviewFpsRange(fpsRanges: List<IntArray?>?, targetFps: Int): Pair<Int
 
 /**
  * 设置 摄像头的角度
- *
  * @param activity 上下文
  * @param cameraId 摄像头ID（假如手机有N个摄像头，cameraId 的值 就是 0 ~ N-1）
  * @param camera   摄像头对象
  */
-fun setCameraDisplayOrientation(activity: Activity, cameraId: Int, camera: Camera) {
-    val info: Camera.CameraInfo = Camera.CameraInfo()
+fun getCameraDisplayOrientation(activity: Activity, cameraId: Int): Int {
+    val info = Camera.CameraInfo()
     // 获取摄像头信息
     Camera.getCameraInfo(cameraId, info)
-    val rotation = activity.windowManager.defaultDisplay.rotation
     // 获取摄像头当前的角度
     var degrees = 0
-    when (rotation) {
+    when (activity.windowManager.defaultDisplay.rotation) {
         Surface.ROTATION_0 -> degrees = 0
         Surface.ROTATION_90 -> degrees = 90
         Surface.ROTATION_180 -> degrees = 180
         Surface.ROTATION_270 -> degrees = 270
     }
-    var result: Int
-    if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) { // 前置摄像头
-        result = (info.orientation + degrees) % 360
-        result = (360 - result) % 360 // compensate the mirror
+    val result: Int = if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) { // 前置摄像头
+        (360 - (info.orientation + degrees) % 360) % 360 // compensate the mirror
     } else { // back-facing  后置摄像头
-        result = (info.orientation - degrees + 360) % 360
+        (info.orientation - degrees + 360) % 360
     }
     Log.d(TAG, "camera.setDisplayOrientation($result)")
-    camera.setDisplayOrientation(result)
+    return result
+}
+
+fun rotateYUV420Degree90(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
+    // prepare
+    val temp = imageWidth * imageHeight
+    val size = temp * 3 / 2
+    val yuv = ByteArray(size)
+    // Rotate the Y luma
+    var i = 0
+    (0 until imageWidth).forEach { x ->
+        ((imageHeight - 1) downTo 0).forEach { y ->
+            yuv[i++] = data[y * imageWidth + x]
+        }
+    }
+    // Rotate the U and V color components
+    i = size - 1
+    IntProgression.fromClosedRange(imageWidth - 1, 0, 2).forEach { x ->
+        (0 until imageHeight.shr(1)).forEach { y ->
+            val temp2 = temp + (y * imageWidth) + x
+            yuv[i--] = data[temp2]
+            yuv[i--] = data[temp2 - 1]
+        }
+    }
+    // result
+    return yuv
+}
+
+fun rotateYUV420Degree180(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
+    // prepare
+    val temp = imageWidth * imageHeight
+    val size = temp * 3 / 2
+    val yuv = ByteArray(size)
+    // transform
+    var count = 0
+    ((temp - 1) downTo 0).forEach { i ->
+        yuv[count++] = data[i]
+    }
+    IntProgression.fromClosedRange(size - 1, temp, 2).forEach { i ->
+        yuv[count++] = data[i - 1]
+        yuv[count++] = data[i]
+    }
+    // result
+    return yuv
+}
+
+fun rotateYUV420Degree270(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
+    // prepare
+    val temp = imageWidth * imageHeight
+    val size = temp * 3 / 2
+    val yuv = ByteArray(size)
+    val uvHeight = imageHeight.shl(1)
+    // transform
+    var k = 0
+    (0 until imageWidth).forEach { i ->
+        var nPos = 0
+        (0 until imageHeight).forEach { j ->
+            yuv[k++] = data[nPos + i]
+            nPos += imageWidth
+        }
+    }
+    IntProgression.fromClosedRange(0, imageWidth - 1, 2).forEach { i ->
+        var nPos = temp
+        (0 until uvHeight).forEach { j ->
+            yuv[k] = data[nPos + i]
+            yuv[k + 1] = data[nPos + i + 1]
+            k += 2
+            nPos += imageWidth
+        }
+    }
+    // result
+    return rotateYUV420Degree180(yuv, imageWidth, imageHeight)
 }
 
 /**

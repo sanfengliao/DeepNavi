@@ -51,36 +51,3 @@ class SensorListener2<Data>(override val type: Int, override val field: String, 
         return data
     }
 }
-
-// class MagneticListener(rate: Int = 1000000 / 50) : DeepNaviManager.SensorListener<Basic.MagneticReq> {
-//     override val type: Int = Sensor.TYPE_MAGNETIC_FIELD  // TYPE_MAGNETIC_FIELD_UNCALIBRATED
-//     override val field: String = "magnetic"
-//     val dataList: MutableList<Basic.MagneticReq> = mutableListOf()
-//
-//     init {
-//         DeepNaviManager.get()
-//             .registerListener(
-//                 DeepNaviManager.get()
-//                     .getSensorManager()
-//                     .getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),
-//                 rate
-//             )
-//     }
-//
-//     override fun onSensorChanged(event: SensorEvent) {
-//         val values = event.values
-//         dataList.add(
-//             Basic.MagneticReq.newBuilder()
-//                 .setMagneticX(values[0])
-//                 .setMagneticY(values[1])
-//                 .setMagneticZ(values[2])
-//                 .build()
-//         )
-//     }
-//
-//     override fun getDataArray(): Array<Basic.MagneticReq>? {
-//         val result: Array<Basic.MagneticReq> = dataList.toTypedArray()
-//         dataList.clear()
-//         return result
-//     }
-// }

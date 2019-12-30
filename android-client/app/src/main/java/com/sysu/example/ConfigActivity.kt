@@ -15,8 +15,6 @@ import com.sysu.deepnavi.bean.Basic
 import com.sysu.deepnavi.impl.SensorListeners
 import java.util.*
 
-// [SharedPerference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
-
 @Suppress("DEPRECATION")
 @SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
 class ConfigActivity : AppCompatActivity() {
@@ -26,7 +24,7 @@ class ConfigActivity : AppCompatActivity() {
         const val SP_KEY_SIGNAL_CONFIG = "deepNavi_signal_config"
 
         const val DEFAULT_VALUE_FREQUENCY = 3
-        const val DEFAULT_VALUE_URL = "10.95.40.1:5000"
+        const val DEFAULT_VALUE_URL = "192.168.43.47:5000"
         val DEFAULT_VALUE_SENSOR_CONFIG = SensorListeners.DEFAULT_VALUE_SENSOR_CONFIG
 
         const val EXTRA_KEY_URL = "url"

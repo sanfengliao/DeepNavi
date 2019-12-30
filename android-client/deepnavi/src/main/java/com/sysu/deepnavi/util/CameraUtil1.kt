@@ -60,6 +60,7 @@ open class CameraUtil1(
     }
 
     private var camera: Camera? = null
+    private var displayOrientation: Int = 0
     private var autoFocusHandler: AutoFocusHandler? = null
     private var autoFocusCallback: MyAutoFocusCallback? = null
 
@@ -162,7 +163,8 @@ open class CameraUtil1(
                 Log.e(TAG, "createCamera -- set parameters for camera($id) is failed", e)
                 continue
             }
-            setCameraDisplayOrientation(activity, id, camera!!)
+            displayOrientation = getCameraDisplayOrientation(activity, id)
+            camera?.setDisplayOrientation(displayOrientation)
             break
         }
         Log.d(
@@ -302,4 +304,6 @@ open class CameraUtil1(
         camera?.release()
         camera = null
     }
+
+    fun getDisplayOrientation() = displayOrientation
 }

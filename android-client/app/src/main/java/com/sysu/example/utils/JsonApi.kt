@@ -1,4 +1,4 @@
-package com.sysu.example
+package com.sysu.example.utils
 
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
@@ -9,7 +9,7 @@ object JsonApi {
 
     fun <T : Any> fromJsonNonNull(data: String, type: Type): T = gson.fromJson<T>(data, type)
 
-    fun <T : Any> fromJsonNullable(data: String, type: Type): T? = try {
+    fun <T : Any> fromJsonOrNull(data: String, type: Type): T? = try {
         gson.fromJson<T>(data, type)
     } catch (e: JsonSyntaxException) {
         null

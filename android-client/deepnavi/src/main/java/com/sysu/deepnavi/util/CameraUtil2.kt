@@ -1,21 +1,23 @@
 package com.sysu.deepnavi.util
 
-import android.Manifest
 import android.app.Activity
 import android.content.Context
-import android.content.pm.PackageManager
 import android.graphics.ImageFormat
 import android.hardware.camera2.*
 import android.media.MediaRecorder
-import android.os.Build
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
 import android.util.Log
 import android.util.Size
 import android.view.View
-import androidx.core.content.ContextCompat
 
+/*[Android Camera2 之 CameraManager 详解](https://blog.csdn.net/afei__/article/details/85342160)
+void registerAvailabilityCallback(AvailabilityCallback callback, Handler handler)
+void unregisterAvailabilityCallback(AvailabilityCallback callback)
+void registerTorchCallback(TorchCallback callback, Handler handler)
+void unregisterTorchCallback(TorchCallback callback)
+void setTorchMode(String cameraId, boolean enabled)*/
 
 class CameraUtil2(private val activity: Activity, private val view: View, private val frameRate: Int = 50, private val background: Boolean = true) {
     companion object {
@@ -33,24 +35,6 @@ class CameraUtil2(private val activity: Activity, private val view: View, privat
             val id = cameraDevice!!.id
             Log.d(TAG, "openCamera -- CameraDevice.StateCallback -- onOpened")
             val characteristics: CameraCharacteristics = cameraManager.getCameraCharacteristics(id)
-            val map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
-            if (map != null) {
-                val pictureSizeList = map.getOutputSizes(ImageFormat.JPEG)
-                val previewSizeList = map.getOutputSizes(view.javaClass)
-                val videoSizeList = map.getOutputSizes(MediaRecorder::class.java)
-                pictureSizeList.sortWith(comparator)
-                previewSizeList.sortWith(comparator)
-                videoSizeList.sortWith(comparator)
-                Log.d(
-                    TAG,
-                    "createCamera -- cameraId: $id, pictureSizeList: " + pictureSizeList.joinToString { "(${it.width}, ${it.height})" } +
-                            "\npreviewSizeList: " + previewSizeList.joinToString { "(${it.width}, ${it.height})" } +
-                            "\nvideoSizeList: " + videoSizeList.joinToString { "(${it.width}, ${it.height})" } +
-                            "\ndefaultDisplay.width: ${defaultDisplay.width}, defaultDisplay.height: ${defaultDisplay.height}")
-                val builder = cameraDevice!!.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
-                builder.set(CaptureRequest.CONTROL_MODE, CaptureRequest.CONTROL_MODE_AUTO)
-                builder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_AUTO)
-            }
             Log.d(TAG, "openCamera -- Successfully! id is $id")
         }
 
@@ -71,7 +55,7 @@ class CameraUtil2(private val activity: Activity, private val view: View, privat
     private var handlerThread: HandlerThread? = null
 
     init {
-        CameraUtil1.requestPermissions(activity)
+        requestCameraPermissions(activity)
         // manager = activity.getSystemService(CameraManager::class.java) as CameraManager  // minApi -- 23
     }
 
@@ -95,10 +79,7 @@ class CameraUtil2(private val activity: Activity, private val view: View, privat
 
 
     fun openCamera(): Boolean {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
-            (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        ) {
+        if (checkCameraPermission(activity)) {
             Log.d(TAG, "openCamera -- failed, because there are not enough permissions")
             return false
         }
@@ -112,6 +93,23 @@ class CameraUtil2(private val activity: Activity, private val view: View, privat
             val internal = characteristics.get(CameraCharacteristics.LENS_FACING) ?: return false
             if (internal == CameraCharacteristics.LENS_FACING_BACK) {
                 backFlag = true
+                // 获取StreamConfigurationMap，它是管理摄像头支持的所有输出格式和尺寸
+                val map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP) ?: continue
+                val pictureSizeList = map.getOutputSizes(ImageFormat.JPEG)
+                val previewSizeList = map.getOutputSizes(view.javaClass)
+                val videoSizeList = map.getOutputSizes(MediaRecorder::class.java)
+                pictureSizeList.sortWith(comparator)
+                previewSizeList.sortWith(comparator)
+                videoSizeList.sortWith(comparator)
+                Log.d(
+                    TAG,
+                    "createCamera -- cameraId: $id, pictureSizeList: " + pictureSizeList.joinToString { "(${it.width}, ${it.height})" } +
+                            "\npreviewSizeList: " + previewSizeList.joinToString { "(${it.width}, ${it.height})" } +
+                            "\nvideoSizeList: " + videoSizeList.joinToString { "(${it.width}, ${it.height})" } +
+                            "\ndefaultDisplay.width: ${defaultDisplay.width}, defaultDisplay.height: ${defaultDisplay.height}")
+                val builder = cameraDevice!!.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
+                builder.set(CaptureRequest.CONTROL_MODE, CaptureRequest.CONTROL_MODE_AUTO)
+                builder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_AUTO)
                 try {
                     cameraManager.openCamera(id, stateCallback, handler)
                 } catch (e: CameraAccessException) {
@@ -130,11 +128,4 @@ class CameraUtil2(private val activity: Activity, private val view: View, privat
 
     fun closeCamera() {
     }
-
-    // [Android Camera2 之 CameraManager 详解](https://blog.csdn.net/afei__/article/details/85342160)
-    // void registerAvailabilityCallback(AvailabilityCallback callback, Handler handler)
-    // void unregisterAvailabilityCallback(AvailabilityCallback callback)
-    // void registerTorchCallback(TorchCallback callback, Handler handler)
-    // void unregisterTorchCallback(TorchCallback callback)
-    // void setTorchMode(String cameraId, boolean enabled)
 }

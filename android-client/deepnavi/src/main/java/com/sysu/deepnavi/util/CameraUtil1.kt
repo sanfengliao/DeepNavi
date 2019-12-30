@@ -1,92 +1,35 @@
 package com.sysu.deepnavi.util
 
-import android.Manifest
 import android.app.Activity
-import android.content.pm.PackageManager
 import android.graphics.PixelFormat
 import android.graphics.SurfaceTexture
 import android.hardware.Camera
-import android.os.Build
 import android.os.Handler
 import android.os.Message
 import android.util.Log
+import android.util.Size
 import android.view.*
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import kotlin.math.abs
-import kotlin.math.min
 
-// [Android 摄像头预览](https://www.jianshu.com/p/cf55f42f0cb7)
-// [关于Android使用Camera自定义拍照出现模糊不清的解决方案](https://blog.csdn.net/u012228009/article/details/43450609)
-// [一句代码搞定权限请求，从未如此简单](https://www.jianshu.com/p/c69ff8a445ed)
-// [Android 6.0 运行时权限处理](https://www.jianshu.com/p/b4a8b3d4f587)
-// [玩转Android Camera开发(二):使用TextureView和SurfaceTexture预览Camera 基础拍照demo](https://blog.csdn.net/yanzi1225627/article/details/33313707)
-// [Android 使Camera预览清晰，循环自动对焦处理](https://blog.csdn.net/z979451341/article/details/79446025)
+/*[Android 摄像头预览](https://www.jianshu.com/p/cf55f42f0cb7)
+[关于Android使用Camera自定义拍照出现模糊不清的解决方案](https://blog.csdn.net/u012228009/article/details/43450609)
+[一句代码搞定权限请求，从未如此简单](https://www.jianshu.com/p/c69ff8a445ed)
+[Android 6.0 运行时权限处理](https://www.jianshu.com/p/b4a8b3d4f587)
+[玩转Android Camera开发(二):使用TextureView和SurfaceTexture预览Camera 基础拍照demo](https://blog.csdn.net/yanzi1225627/article/details/33313707)
+[Android 使Camera预览清晰，循环自动对焦处理](https://blog.csdn.net/z979451341/article/details/79446025)*/
 
 @Deprecated(message = "Please use CameraUtil2")
-class CameraUtil1(
+open class CameraUtil1(
     private val activity: Activity,
-    private val view: View,
+    private val previewView: View,
     private val previewCallback: Camera.PreviewCallback? = null,
     private val frameRate: Int = 50,
+    private val pictureSize: Size = Size(1080, 1920),
     autoFocus: Boolean = true
 ) {
     companion object {
         const val TAG = "CameraUtil1"
-        const val PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE = 1
         const val MSG_AUTO_FOCUS = 2
         const val AUTO_FOCUS_INTERVAL = 1000L  // 自动对焦时间
-
-        /**
-         * 设置 摄像头的角度
-         *
-         * @param activity 上下文
-         * @param cameraId 摄像头ID（假如手机有N个摄像头，cameraId 的值 就是 0 ~ N-1）
-         * @param camera   摄像头对象
-         */
-        fun setCameraDisplayOrientation(
-            activity: Activity, cameraId: Int, camera: Camera
-        ) {
-            val info = Camera.CameraInfo()
-            // 获取摄像头信息
-            Camera.getCameraInfo(cameraId, info)
-            val rotation = activity.windowManager.defaultDisplay.rotation
-            // 获取摄像头当前的角度
-            var degrees = 0
-            when (rotation) {
-                Surface.ROTATION_0 -> degrees = 0
-                Surface.ROTATION_90 -> degrees = 90
-                Surface.ROTATION_180 -> degrees = 180
-                Surface.ROTATION_270 -> degrees = 270
-            }
-            var result: Int
-            if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) { // 前置摄像头
-                result = (info.orientation + degrees) % 360
-                result = (360 - result) % 360 // compensate the mirror
-            } else { // back-facing  后置摄像头
-                result = (info.orientation - degrees + 360) % 360
-            }
-            Log.d(TAG, "camera.setDisplayOrientation($result)")
-            camera.setDisplayOrientation(result)
-        }
-
-        fun requestPermissions(activity: Activity) {
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
-                (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                        ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-            ) {
-                ActivityCompat.requestPermissions(
-                    activity,
-                    arrayOf(
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.CAMERA
-                    ),
-                    PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
-                )
-                Log.d(TAG, "requestPermissions")
-            }
-        }
 
         class AutoFocusHandler(private val autoFocusCallback: Camera.AutoFocusCallback) : Handler() {
             var camera: Camera? = null
@@ -121,9 +64,12 @@ class CameraUtil1(
     private var autoFocusCallback: MyAutoFocusCallback? = null
 
     init {
-        requestPermissions(activity)
-        if (view is SurfaceView) {
-            view.holder.run {
+        requestCameraPermissions(activity)
+        if (previewView is SurfaceView) {
+            previewView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+            val width = previewView.measuredWidth
+            val height = previewView.measuredHeight
+            previewView.holder.run {
                 setFormat(PixelFormat.TRANSPARENT)
                 addCallback(object : SurfaceHolder.Callback {
                     override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
@@ -138,13 +84,13 @@ class CameraUtil1(
 
                     override fun surfaceCreated(holder: SurfaceHolder?) {
                         Log.d(TAG, "SurfaceHolder -- surfaceCreated")
-                        openCamera()
+                        openCamera(width, height)
                         startPreview()
                     }
                 })
             }
-        } else if (view is TextureView) {
-            view.surfaceTextureListener = object : TextureView.SurfaceTextureListener {
+        } else if (previewView is TextureView) {
+            previewView.surfaceTextureListener = object : TextureView.SurfaceTextureListener {
                 override fun onSurfaceTextureSizeChanged(surface: SurfaceTexture?, width: Int, height: Int) {
                     Log.d(TAG, "SurfaceTexture -- onSurfaceTextureSizeChanged -- width: $width, height: $height")
                 }
@@ -162,7 +108,7 @@ class CameraUtil1(
 
                 override fun onSurfaceTextureAvailable(surface: SurfaceTexture?, width: Int, height: Int) {
                     Log.d(TAG, "SurfaceTexture -- onSurfaceTextureAvailable -- width: $width, height: $height")
-                    openCamera()
+                    openCamera(width, height)
                     startPreview()
                 }
             }
@@ -174,11 +120,8 @@ class CameraUtil1(
         }
     }
 
-    fun openCamera() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
-            (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        ) {
+    fun openCamera(width: Int, height: Int) {
+        if (checkCameraPermission(activity)) {
             Log.d(TAG, "createCamera -- failed, because there are not enough permissions")
             return
         }
@@ -189,90 +132,38 @@ class CameraUtil1(
         }
         val cameraInfo: Camera.CameraInfo = Camera.CameraInfo()
         var backFlag = true
-        val comparator = Comparator<Camera.Size> { s1, s2 ->
-            if (s1.height == s2.height) s2.width - s1.width else s2.height - s1.height
-        }
         val defaultDisplay = activity.windowManager.defaultDisplay
-        for (i in 0 until cameraCount) {
-            Camera.getCameraInfo(i, cameraInfo)
-            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-                backFlag = false
-                try {
-                    camera = Camera.open(i)
-                } catch (e: RuntimeException) {
-                    Log.e(TAG, "createCamera -- open camera($i) failed", e)
-                    continue
-                }
-
-                val cameraParameters = camera!!.parameters
-                val supportedPreviewSizes = cameraParameters.supportedPreviewSizes
-                val supportedVideoSizes = cameraParameters.supportedVideoSizes
-                val supportedPictureSizes = cameraParameters.supportedPictureSizes
-                val supportedJpegThumbnailSizes = cameraParameters.supportedJpegThumbnailSizes
-                supportedPreviewSizes.sortWith(comparator)
-                supportedVideoSizes.sortWith(comparator)
-                supportedPictureSizes.sortWith(comparator)
-                supportedJpegThumbnailSizes.sortWith(comparator)
-                Log.d(
-                    TAG,
-                    "createCamera -- cameraId: $i, supportedPreviewSizes: " + supportedPreviewSizes.joinToString { "(${it.width}, ${it.height})" } +
-                            "\nsupportedVideoSizes: " + supportedVideoSizes.joinToString { "(${it.width}, ${it.height})" } +
-                            "\nsupportedPictureSizes: " + supportedPictureSizes.joinToString { "(${it.width}, ${it.height})" } +
-                            "\nsupportedJpegThumbnailSizes: " + supportedJpegThumbnailSizes.joinToString { "(${it.width}, ${it.height})" } +
-                            "\ndefaultDisplay.width: ${defaultDisplay.width}, defaultDisplay.height: ${defaultDisplay.height}")
-                var it = supportedPreviewSizes[0]
-                cameraParameters.setPreviewSize(it.width, it.height)
-                Log.d(TAG, "createCamera -- cameraId: $i, setPreviewSize(${it.width}, ${it.height})")
-                it = supportedPictureSizes[0]
-                cameraParameters.setPictureSize(it.width, it.height)
-                Log.d(TAG, "createCamera -- cameraId: $i, setPictureSize(${it.width}, ${it.height})")
-
-                val supportedPreviewFrameRates = cameraParameters.supportedPreviewFrameRates
-                val supportedPreviewFpsRange = cameraParameters.supportedPreviewFpsRange
-                supportedPreviewFrameRates.sort()
-                Log.d(
-                    TAG, "createCamera -- cameraId: $i, supportedPreviewFrameRates: ${supportedPreviewFrameRates.joinToString()}" +
-                            "\nsupportedPreviewFpsRange: ${supportedPreviewFpsRange.joinToString { """[${it.joinToString("~")}]""" }}"
-                )
-                val suitableFrameRate = supportedPreviewFrameRates.mapIndexed { j, v -> Pair(abs(v - this.frameRate), j) }.minBy { it.first }
-                if (suitableFrameRate != null) {
-                    cameraParameters.previewFrameRate = supportedPreviewFrameRates[suitableFrameRate.second]
-                    Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFrameRate: ${cameraParameters.previewFrameRate}")
-                } else {
-                    Log.e(TAG, "createCamera -- cameraId: $i, doesn't support any frameRate")
-                    continue
-                }
-                val targetFps = cameraParameters.previewFrameRate * 1000
-                var suitableFpsRange = supportedPreviewFpsRange.find { it[0] < targetFps && targetFps < it[1] }
-                if (suitableFpsRange != null) {
-                    cameraParameters.setPreviewFpsRange(suitableFpsRange[0], suitableFpsRange[1])
-                    Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFpsRange: [${suitableFpsRange[0]}, ${suitableFpsRange[1]}]")
-                } else {
-                    val suitableFpsRangeTuple =
-                        supportedPreviewFpsRange.mapIndexed { j, v -> Pair(min(abs(v[0] - targetFps), abs(v[1] - targetFps)), j) }.minBy { it.first }
-                    if (suitableFpsRangeTuple != null) {
-                        suitableFpsRange = supportedPreviewFpsRange[suitableFpsRangeTuple.second]
-                        cameraParameters.setPreviewFpsRange(suitableFpsRange[0], suitableFpsRange[1])
-                        Log.d(TAG, "createCamera -- cameraId: $i, setPreviewFpsRange: [${suitableFpsRange[0]}, ${suitableFpsRange[1]}]")
-                    } else {
-                        Log.d(TAG, "createCamera -- cameraId: $i, doesn't have suitableFpsRange")
-                        continue
-                    }
-                }
-
-                // val supportedPreviewFormats = cameraParameters.supportedPreviewFormats
-                // val supportedPictureFormats = cameraParameters.supportedPictureFormats
-                cameraParameters.focusMode = Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE
-
-                try {
-                    camera!!.parameters = cameraParameters
-                } catch (e: RuntimeException) {
-                    Log.e(TAG, "createCamera -- set parameters for camera($i) is failed", e)
-                    continue
-                }
-                setCameraDisplayOrientation(activity, i, camera!!)
-                break
+        // val judgeCameraList = mutableListOf<Triple<Camera.Parameters, Int, Int>>()
+        for (id in 0 until cameraCount) {
+            Camera.getCameraInfo(id, cameraInfo)
+            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                continue
             }
+            backFlag = false
+            try {
+                camera = Camera.open(id)
+            } catch (e: RuntimeException) {
+                Log.e(TAG, "createCamera -- open camera($id) failed", e)
+                closeCamera()
+                continue
+            }
+
+            val cameraParameters = camera!!.parameters
+            val judgeCamera = judgeOneCamera(cameraParameters, width, height, id, defaultDisplay)
+            if (judgeCamera.third != 4) {  // 如果想改变策略，可以将所有的
+                closeCamera()
+                continue
+            }
+            // judgeCameraList.add(judgeCamera)
+
+            try {
+                camera!!.parameters = cameraParameters
+            } catch (e: RuntimeException) {
+                Log.e(TAG, "createCamera -- set parameters for camera($id) is failed", e)
+                continue
+            }
+            setCameraDisplayOrientation(activity, id, camera!!)
+            break
         }
         Log.d(
             TAG, when {
@@ -283,16 +174,114 @@ class CameraUtil1(
         )
     }
 
-    fun startPreview() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
-            (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        ) {
+    protected fun judgeOneCamera(cameraParameters: Camera.Parameters, width: Int, height: Int, id: Int, defaultDisplay: Display)
+            : Triple<Camera.Parameters, Int, Int> {
+        // prepare
+        var suitableCount = 0
+        var setCount = 0
+        val supportedPreviewSizes = toUtilSize(cameraParameters.supportedPreviewSizes)
+        val supportedPictureSizes = toUtilSize(cameraParameters.supportedPictureSizes)
+        val supportedVideoSizes = toUtilSize(cameraParameters.supportedVideoSizes)
+        val supportedJpegThumbnailSizes = toUtilSize(cameraParameters.supportedJpegThumbnailSizes)
+        val supportedPreviewFrameRates = cameraParameters.supportedPreviewFrameRates
+        val supportedPreviewFpsRange = cameraParameters.supportedPreviewFpsRange
+        val supportedAntibanding = cameraParameters.supportedAntibanding
+        val supportedColorEffects = cameraParameters.supportedColorEffects
+        val supportedFlashModes = cameraParameters.supportedFlashModes
+        val supportedFocusModes = cameraParameters.supportedFocusModes
+        val supportedPreviewFormats = cameraParameters.supportedPreviewFormats
+        val supportedSceneModes = cameraParameters.supportedSceneModes
+        val supportedWhiteBalance = cameraParameters.supportedWhiteBalance
+
+        Log.d(
+            TAG,
+            "createCamera -- camera($id), supportedPreviewSizes: " + supportedPreviewSizes.joinToString { "(${it.width}, ${it.height})" } +
+                    "\nsupportedVideoSizes: " + supportedVideoSizes.joinToString { "(${it.width}, ${it.height})" } +
+                    "\nsupportedPictureSizes: " + supportedPictureSizes.joinToString { "(${it.width}, ${it.height})" } +
+                    "\nsupportedJpegThumbnailSizes: " + supportedJpegThumbnailSizes.joinToString { "(${it.width}, ${it.height})" } +
+                    "\ndefaultDisplay.width: ${defaultDisplay.width}, defaultDisplay.height: ${defaultDisplay.height}" +
+                    "\nsupportedPreviewFrameRates: ${supportedPreviewFrameRates.joinToString()}" +
+                    "\nsupportedPreviewFpsRange: ${supportedPreviewFpsRange.joinToString { """[${it.joinToString("~")}]""" }}" +
+                    "\nsupportedAntibanding: ${supportedAntibanding.joinToString()}" +
+                    "\nsupportedColorEffects: ${supportedColorEffects.joinToString()}" +
+                    "\nsupportedFlashModes: ${supportedFlashModes.joinToString()}" +
+                    "\nsupportedFocusModes: ${supportedFocusModes.joinToString()}" +
+                    "\nsupportedPreviewFormats: ${supportedPreviewFormats.joinToString()}" +
+                    "\nsupportedSceneModes: ${supportedSceneModes.joinToString()}" +
+                    "\nsupportedWhiteBalance: ${supportedWhiteBalance.joinToString()}"
+        )
+
+        // 选择预览size
+        val judgePreViewSize = selectPreviewSize(supportedPreviewSizes, width, height)
+        if (judgePreViewSize == null) {
+            Log.e(TAG, "judgeOneCamera -- camera($id) doesn't supported any preview size")
+        } else {
+            if (judgePreViewSize.second) {
+                suitableCount++
+            }
+            val suitablePreviewSize = judgePreViewSize.first
+            cameraParameters.setPreviewSize(suitablePreviewSize.width, suitablePreviewSize.height)
+            Log.d(TAG, "judgeOneCamera -- camera($id) setPreviewSize(${suitablePreviewSize.width}, ${suitablePreviewSize.height})")
+            setCount++
+        }
+
+        // 选择拍照size
+        val judgePictureSize = selectPictureSize(supportedPictureSizes, pictureSize)
+        if (judgePictureSize == null) {
+            Log.e(TAG, "judgeOneCamera -- camera($id) doesn't supported any picture size")
+        } else {
+            if (judgePictureSize.second) {
+                suitableCount++
+            }
+            val suitablePictureSize = judgePictureSize.first
+            cameraParameters.setPictureSize(suitablePictureSize.width, suitablePictureSize.height)
+            Log.d(TAG, "judgeOneCamera -- camera($id) setPictureSize(${suitablePictureSize.width}, ${suitablePictureSize.height})")
+            setCount++
+        }
+
+        // 选择预览帧率
+        val judgePreviewFrameRate = selectPreviewFrameRate(cameraParameters.supportedPreviewFrameRates, frameRate)
+        if (judgePreviewFrameRate == null) {
+            Log.e(TAG, "judgeOneCamera -- camera($id) doesn't supported any frame rate")
+        } else {
+            if (judgePreviewFrameRate.second) {
+                suitableCount++
+            }
+            cameraParameters.previewFrameRate = judgePreviewFrameRate.first
+            Log.d(TAG, "judgeOneCamera -- camera($id) previewFrameRate = ${judgePreviewFrameRate.first}")
+            setCount++
+        }
+
+        // 选择预览帧率范围
+        val judgePreviewFpsRange = selectPreviewFpsRange(cameraParameters.supportedPreviewFpsRange, frameRate)
+        if (judgePreviewFpsRange == null) {
+            Log.e(TAG, "judgeOneCamera -- camera($id) doesn't supported any fps range")
+        } else {
+            if (judgePreviewFpsRange.second) {
+                suitableCount++
+            }
+            val suitableFpsRange = judgePreviewFpsRange.first
+            cameraParameters.setPreviewFpsRange(suitableFpsRange[0], suitableFpsRange[1])
+            Log.d(TAG, "judgeOneCamera -- camera($id) setPreviewFpsRange(${suitableFpsRange[0]}, ${suitableFpsRange[1]})")
+            setCount++
+        }
+
+        cameraParameters.focusMode = Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE
+
+        return Triple(cameraParameters, suitableCount, setCount)
+    }
+
+    open fun startPreview() {
+        if (checkCameraPermission(activity)) {
             Log.d(TAG, "startPreview -- failed, because there are not enough permissions")
             return
         }
         camera?.run {
-            if (view is SurfaceView) setPreviewDisplay(view.holder) else if (view is TextureView) setPreviewTexture(view.surfaceTexture)
+            when (previewView) {
+                is SurfaceView -> setPreviewDisplay(previewView.holder)
+                is TextureView -> setPreviewTexture(previewView.surfaceTexture)
+                else -> throw java.lang.RuntimeException("cameraUtil1 only support surfaceView or textureView")
+            }
             setPreviewCallback(previewCallback)
             startPreview()
             if (autoFocusCallback != null) {
@@ -303,13 +292,13 @@ class CameraUtil1(
         } ?: Log.d(TAG, "startPreview -- failed, because the camera is null")
     }
 
-    fun stopPreview() {
+    open fun stopPreview() {
         autoFocusHandler?.removeCallbacksAndMessages(null)
         camera?.setPreviewCallback(null)
         camera?.stopPreview()
     }
 
-    fun closeCamera() {
+    open fun closeCamera() {
         camera?.release()
         camera = null
     }

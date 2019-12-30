@@ -75,23 +75,38 @@ open class SpProperty<T : Any> : Property<T> {
 
     constructor(desc: String, data: T, spKey: String) : super(desc, data) {
         this.spKey = spKey
+        getFromSp()
     }
 
     constructor(desc: String, type: Type, spKey: String) : super(desc, type) {
         this.spKey = spKey
+        getFromSp()
     }
 
     open fun getSpKey() = spKey
 
+    @Suppress("UNCHECKED_CAST")
     open fun saveInSp(sp: SharedPreferences) {
         val spEdit = sp.edit()
+        val data = getData() ?: return
         when (getType()) {
-            Boolean::class.java -> spEdit.putBoolean(spKey, getData() as? Boolean ?: false)
-            Int::class.java -> spEdit.putInt(spKey, getData() as? Int ?: 0)
-            Long::class.java -> spEdit.putLong(spKey, getData() as? Long ?: 0L)
-            Float::class.java -> spEdit.putFloat(spKey, getData() as? Float ?: 0f)
-            Double::class.java -> spEdit.putString(spKey, (getData() as? Double ?: 0.0).toString())
-            String::class.java -> spEdit.putString(spKey, getData() as? String ?: "")
+            Boolean::class.java -> spEdit.putBoolean(spKey, data as Boolean)
+            Int::class.java -> spEdit.putInt(spKey, data as Int)
+            Long::class.java -> spEdit.putLong(spKey, data as Long)
+            Float::class.java -> spEdit.putFloat(spKey, data as Float)
+            Double::class.java -> spEdit.putString(spKey, (data as Double).toString())
+            String::class.java -> spEdit.putString(spKey, data as String)
+            Set::class.java -> {
+                val setData = data as Set<*>
+                if (setData.isEmpty()) {
+                    return
+                }
+                if (setData.first() is String) {
+                    spEdit.putStringSet(spKey, setData as Set<String>)
+                } else {
+                    spEdit.putString(spKey, JsonApi.toJson(setData))
+                }
+            }
             else -> spEdit.putString(spKey, JsonApi.toJson(getData()))
         }
         spEdit.putString("${spKey}_desc", getDesc())
@@ -113,6 +128,16 @@ open class SpProperty<T : Any> : Property<T> {
                 }
             )
         }
+    }
+
+    override fun postValue(value: T) {
+        saveInSp()
+        super.postValue(value)
+    }
+
+    override fun setValue(value: T) {
+        saveInSp()
+        super.setValue(value)
     }
 }
 

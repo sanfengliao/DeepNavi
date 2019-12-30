@@ -1,6 +1,7 @@
 from proto_model.basic_pb2 import DeepNaviReq, DeepNaviRes
 from autobahn.twisted.websocket import WebSocketServerProtocol
 
+
 class WebSocketServer(WebSocketServerProtocol):
     def onMessage(self, payload, isBinary):
         if isBinary:
@@ -15,11 +16,13 @@ class WebSocketServer(WebSocketServerProtocol):
             self.sendMessage(deepNaviRes.SerializeToString(), True)
         else:
             pass
+
     def onClose(self, wasClean, code, reason):
         pass
 
     def onConnect(self, request):
         return super().onConnect(request)
+
 
 if __name__ == "__main__":
     import sys
@@ -34,5 +37,3 @@ if __name__ == "__main__":
 
     reactor.listenTCP(5000, factory)
     reactor.run()
-    
-    

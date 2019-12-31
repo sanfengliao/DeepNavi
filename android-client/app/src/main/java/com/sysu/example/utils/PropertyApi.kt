@@ -15,6 +15,10 @@ import java.lang.reflect.Type
 
 // [SharedPerference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
 
+/**
+ * 谨慎使用 getValue / getValue2 ，这里的是通过 postValue / setValue 设置的，然后会 mainHandler.post 。
+ * 所以在 onResume 之后才能通过 getValue / getValue2 来获取指
+ */
 open class Property<T : Any> : MutableLiveData<T> {
     protected var mDesc: String
     protected var mData: T? = null
@@ -34,6 +38,8 @@ open class Property<T : Any> : MutableLiveData<T> {
 
     open fun getDesc() = mDesc
     open fun getData() = mData
+    open fun getData2() = mData!!
+    open fun getValue2() = value!!
     open fun getType() = mType
 
     override fun postValue(value: T?) {
@@ -53,26 +59,6 @@ open class Property<T : Any> : MutableLiveData<T> {
 }
 
 open class SpProperty<T : Any> : Property<T> {
-    companion object {
-        inline fun <reified T : Any> getSpPropertyFromSp(sp: SharedPreferences, spKey: String): SpProperty<T> {
-            return if (!sp.contains(spKey)) {
-                SpProperty(sp.getString("${spKey}_desc", "") ?: "", T::class.java, spKey)
-            } else {
-                SpProperty(
-                    sp.getString("${spKey}_desc", "") ?: "", when (T::class.java) {
-                        Boolean::class.java -> sp.getBoolean(spKey, false) as T
-                        Int::class.java -> sp.getInt(spKey, 0) as T
-                        Long::class.java -> sp.getLong(spKey, 0L) as T
-                        Float::class.java -> sp.getFloat(spKey, 0f) as T
-                        Double::class.java -> sp.getString(spKey, "0.0")!!.toDouble() as T
-                        String::class.java -> sp.getString(spKey, "") as T
-                        else -> JsonApi.fromJsonNonNull(sp.getString(spKey, "") ?: "", T::class.java)
-                    }, spKey
-                )
-            }
-        }
-    }
-
     protected val mSpKey: String
 
     constructor(desc: String, data: T, spKey: String) : super(desc, data) {
@@ -90,12 +76,13 @@ open class SpProperty<T : Any> : Property<T> {
         val spEdit = sp.edit()
         val data = mData ?: return
         val type = mType
+        val typeStr = mType.toString()
         when {
-            type == Boolean::class.java -> spEdit.putBoolean(mSpKey, data as Boolean)
-            type == Int::class.java -> spEdit.putInt(mSpKey, data as Int)
-            type == Long::class.java -> spEdit.putLong(mSpKey, data as Long)
-            type == Float::class.java -> spEdit.putFloat(mSpKey, data as Float)
-            type == Double::class.java -> spEdit.putString(mSpKey, (data as Double).toString())
+            typeStr == "boolean" || typeStr == "class java.lang.Boolean" -> spEdit.putBoolean(mSpKey, data as Boolean)
+            typeStr == "int" || typeStr == "class java.lang.Integer" -> spEdit.putInt(mSpKey, data as Int)
+            typeStr == "long" || typeStr == "class java.lang.Long" -> spEdit.putLong(mSpKey, data as Long)
+            typeStr == "float" || typeStr == "class java.lang.Float" -> spEdit.putFloat(mSpKey, data as Float)
+            typeStr == "double" || typeStr == "class java.lang.Double" -> spEdit.putString(mSpKey, (data as Double).toString())
             type == String::class.java -> spEdit.putString(mSpKey, data as String)
             type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
                 val dataSet = data as Set<*>
@@ -110,20 +97,21 @@ open class SpProperty<T : Any> : Property<T> {
             }
             else -> spEdit.putString(mSpKey, JsonApi.toJson(data))
         }
-        spEdit.putString("${mSpKey}_desc", mDesc)
+        spEdit.putString("${mSpKey}_DESC", mDesc)
         spEdit.apply()
     }
 
     @Suppress("UNCHECKED_CAST")
-    open fun getFromSp(sp: SharedPreferences) {
+    open fun getFromSp(sp: SharedPreferences, post: Boolean = true) {
         if (sp.contains(mSpKey)) {
             val type = getType()
+            val typeStr = mType.toString()
             mData = when {
-                type == Boolean::class.java -> sp.getBoolean(mSpKey, false) as? T
-                type == Int::class.java -> sp.getInt(mSpKey, 0) as? T
-                type == Long::class.java -> sp.getLong(mSpKey, 0L) as? T
-                type == Float::class.java -> sp.getFloat(mSpKey, 0f) as? T
-                type == Double::class.java -> sp.getString(mSpKey, "0.0")!!.toDouble() as? T
+                typeStr == "boolean" || typeStr == "class java.lang.Boolean" -> sp.getBoolean(mSpKey, false) as? T
+                typeStr == "int" || typeStr == "class java.lang.Integer" -> sp.getInt(mSpKey, 0) as? T
+                typeStr == "long" || typeStr == "class java.lang.Long" -> sp.getLong(mSpKey, 0L) as? T
+                typeStr == "float" || typeStr == "class java.lang.Float" -> sp.getFloat(mSpKey, 0f) as? T
+                typeStr == "double" || typeStr == "class java.lang.Double" -> sp.getString(mSpKey, "0.0")!!.toDouble() as? T
                 type == String::class.java -> sp.getString(mSpKey, "") as? T
                 type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
                     val stringSet = sp.getStringSet(mSpKey, null)
@@ -135,56 +123,60 @@ open class SpProperty<T : Any> : Property<T> {
                 }
                 else -> JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
             }
+            if (post) {
+                postValue(mData)
+            }
         }
     }
 
     open fun remove(sp: SharedPreferences) = sp.edit().remove(mSpKey).apply()
 }
 
+@Suppress("LeakingThis")
 open class ContextSpProperty<T : Any> : SpProperty<T> {
     private val context: Context
     var mode: Int = Context.MODE_PRIVATE
 
     constructor(desc: String, data: T, spKey: String, context: Context) : super(desc, data, spKey) {
+        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
         this.context = context
     }
 
     constructor(desc: String, type: Type, spKey: String, context: Context) : super(desc, type, spKey) {
+        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
         this.context = context
     }
 
     override fun setValue(value: T?) {
-        if (value != mData) {
-            super.setValue(value)
-            saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
-        }
+        super.setValue(value)
+        saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
     }
 
     override fun setData(value: T?) {
-        if (value != mData) {
-            super.setData(value)
-            saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
-        }
-    }
-
-    override fun getValue(): T? {
-        if (mData == null) {
-            getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
-        }
-        return super.getValue()
-    }
-
-    override fun getData(): T? {
-        if (mData == null) {
-            getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
-        }
-        return super.getData()
+        super.setData(value)
+        saveInSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
     }
 
     open fun remove() = context.getSharedPreferences(PROPERTY_SP_NAME, mode).edit().remove(mSpKey).apply()
 
     companion object {
         const val PROPERTY_SP_NAME = "PROPERTY_SP_NAME"
+    }
+}
+
+fun ContextSpProperty<HashSet<String>>.add(data: String) {
+    val dataSet = getData() ?: HashSet()
+    dataSet.add(data)
+    setData(dataSet)
+}
+
+fun ContextSpProperty<HashSet<String>>.contains(data: String) = getData()?.contains(data) ?: false
+
+fun ContextSpProperty<HashSet<String>>.remove(data: String) {
+    val dataSet = getData() ?: return
+    if (dataSet.contains(data)) {
+        dataSet.remove(data)
+        setData(dataSet)
     }
 }
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layout_1" type="id"/>
+    <item name="layout_2" type="id"/>
+    <item name="layout_3" type="id"/>
+    <item name="layout_4" type="id"/>
+    <item name="layout_5" type="id"/>
+
+    <item name="frame_layout_1" type="id"/>
+    <item name="frame_layout_2" type="id"/>
+    <item name="frame_layout_3" type="id"/>
+    <item name="frame_layout_4" type="id"/>
+    <item name="frame_layout_5" type="id"/>
+
+    <item name="linear_layout_1" type="id"/>
+    <item name="linear_layout_2" type="id"/>
+    <item name="linear_layout_3" type="id"/>
+    <item name="linear_layout_4" type="id"/>
+    <item name="linear_layout_5" type="id"/>
+
+    <item name="relative_layout_1" type="id"/>
+    <item name="relative_layout_2" type="id"/>
+    <item name="relative_layout_3" type="id"/>
+    <item name="relative_layout_4" type="id"/>
+    <item name="relative_layout_5" type="id"/>
+
+    <item name="card_layout_1" type="id"/>
+    <item name="card_layout_2" type="id"/>
+    <item name="card_layout_3" type="id"/>
+    <item name="card_layout_4" type="id"/>
+    <item name="card_layout_5" type="id"/>
+
+    <item name="absolute_layout_1" type="id"/>
+    <item name="absolute_layout_2" type="id"/>
+    <item name="absolute_layout_3" type="id"/>
+    <item name="absolute_layout_4" type="id"/>
+    <item name="absolute_layout_5" type="id"/>
+
+    <item name="app_bar_1" type="id"/>
+    <item name="app_bar_2" type="id"/>
+    <item name="app_bar_3" type="id"/>
+    <item name="app_bar_4" type="id"/>
+    <item name="app_bar_5" type="id"/>
+
+    <item name="bottom_app_bar_1" type="id"/>
+    <item name="bottom_app_bar_2" type="id"/>
+    <item name="bottom_app_bar_3" type="id"/>
+    <item name="bottom_app_bar_4" type="id"/>
+    <item name="bottom_app_bar_5" type="id"/>
+
+    <item name="constraint_layout_1" type="id"/>
+    <item name="constraint_layout_2" type="id"/>
+    <item name="constraint_layout_3" type="id"/>
+    <item name="constraint_layout_4" type="id"/>
+    <item name="constraint_layout_5" type="id"/>
+
+    <item name="drawer_layout_1" type="id"/>
+    <item name="drawer_layout_2" type="id"/>
+    <item name="drawer_layout_3" type="id"/>
+    <item name="drawer_layout_4" type="id"/>
+    <item name="drawer_layout_5" type="id"/>
+
+    <item name="navigation_1" type="id"/>
+    <item name="navigation_2" type="id"/>
+    <item name="navigation_3" type="id"/>
+    <item name="navigation_4" type="id"/>
+    <item name="navigation_5" type="id"/>
+
+    <item name="bottom_navigation_1" type="id"/>
+    <item name="bottom_navigation_2" type="id"/>
+    <item name="bottom_navigation_3" type="id"/>
+    <item name="bottom_navigation_4" type="id"/>
+    <item name="bottom_navigation_5" type="id"/>
+
+    <item name="scroll_view_1" type="id"/>
+    <item name="scroll_view_2" type="id"/>
+    <item name="scroll_view_3" type="id"/>
+    <item name="scroll_view_4" type="id"/>
+    <item name="scroll_view_5" type="id"/>
+
+    <item name="tab_1" type="id"/>
+    <item name="tab_2" type="id"/>
+    <item name="tab_3" type="id"/>
+    <item name="tab_4" type="id"/>
+    <item name="tab_5" type="id"/>
+
+    <item name="tab_host_1" type="id"/>
+    <item name="tab_host_2" type="id"/>
+    <item name="tab_host_3" type="id"/>
+    <item name="tab_host_4" type="id"/>
+    <item name="tab_host_5" type="id"/>
+
+    <item name="space_1" type="id"/>
+    <item name="space_2" type="id"/>
+    <item name="space_3" type="id"/>
+    <item name="space_4" type="id"/>
+    <item name="space_5" type="id"/>
+
+    <item name="spinner_1" type="id"/>
+    <item name="spinner_2" type="id"/>
+    <item name="spinner_3" type="id"/>
+    <item name="spinner_4" type="id"/>
+    <item name="spinner_5" type="id"/>
+
+    <item name="swipe_refresh_1" type="id"/>
+    <item name="swipe_refresh_2" type="id"/>
+    <item name="swipe_refresh_3" type="id"/>
+    <item name="swipe_refresh_4" type="id"/>
+    <item name="swipe_refresh_5" type="id"/>
+
+    <item name="table_row_1" type="id"/>
+    <item name="table_row_2" type="id"/>
+    <item name="table_row_3" type="id"/>
+    <item name="table_row_4" type="id"/>
+    <item name="table_row_5" type="id"/>
+
+    <item name="tool_bar_1" type="id"/>
+    <item name="tool_bar_2" type="id"/>
+    <item name="tool_bar_3" type="id"/>
+    <item name="tool_bar_4" type="id"/>
+    <item name="tool_bar_5" type="id"/>
+
+    <item name="coordinator_layout_1" type="id"/>
+    <item name="coordinator_layout_2" type="id"/>
+    <item name="coordinator_layout_3" type="id"/>
+    <item name="coordinator_layout_4" type="id"/>
+    <item name="coordinator_layout_5" type="id"/>
+</resources>

@@ -8,7 +8,7 @@ import com.sysu.deepnavi.bean.Basic
 class SensorListeners {
 
     companion object {
-        val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }
+        val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }.toHashSet()
     }
 
     private fun createCoorSensorReq(event: SensorEvent, xIndex: Int = 0, yIndex: Int = 1, zIndex: Int = 2): Basic.CoorSensorReq {
@@ -53,7 +53,7 @@ class SensorListeners {
     fun initAll(
         rate: Int = 1000000 / 50,
         registerList: List<Boolean> = (0 until 10).map { true },
-        useList: List<String> = DEFAULT_VALUE_SENSOR_CONFIG
+        useList: Set<String> = DEFAULT_VALUE_SENSOR_CONFIG
     ) {
         if (magneticListener.field in useList) {
             magneticListener.init(rate, registerList[0])

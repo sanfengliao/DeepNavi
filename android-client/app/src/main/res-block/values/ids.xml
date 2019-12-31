@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="view_1" type="id"/>
+    <item name="view_2" type="id"/>
+    <item name="view_3" type="id"/>
+    <item name="view_4" type="id"/>
+    <item name="view_5" type="id"/>
+
+    <item name="text_view_1" type="id"/>
+    <item name="text_view_2" type="id"/>
+    <item name="text_view_3" type="id"/>
+    <item name="text_view_4" type="id"/>
+    <item name="text_view_5" type="id"/>
+
+    <item name="button_1" type="id"/>
+    <item name="button_2" type="id"/>
+    <item name="button_3" type="id"/>
+    <item name="button_4" type="id"/>
+    <item name="button_5" type="id"/>
+
+    <item name="edit_view_1" type="id"/>
+    <item name="edit_view_2" type="id"/>
+    <item name="edit_view_3" type="id"/>
+    <item name="edit_view_4" type="id"/>
+    <item name="edit_view_5" type="id"/>
+
+    <item name="image_view_1" type="id"/>
+    <item name="image_view_2" type="id"/>
+    <item name="image_view_3" type="id"/>
+    <item name="image_view_4" type="id"/>
+    <item name="image_view_5" type="id"/>
+
+    <item name="image_button_1" type="id"/>
+    <item name="image_button_2" type="id"/>
+    <item name="image_button_3" type="id"/>
+    <item name="image_button_4" type="id"/>
+    <item name="image_button_5" type="id"/>
+
+    <item name="surface_view_1" type="id"/>
+    <item name="surface_view_2" type="id"/>
+    <item name="surface_view_3" type="id"/>
+    <item name="surface_view_4" type="id"/>
+    <item name="surface_view_5" type="id"/>
+
+    <item name="texture_view_1" type="id"/>
+    <item name="texture_view_2" type="id"/>
+    <item name="texture_view_3" type="id"/>
+    <item name="texture_view_4" type="id"/>
+    <item name="texture_view_5" type="id"/>
+
+    <item name="corner_view_1" type="id"/>
+    <item name="corner_view_2" type="id"/>
+    <item name="corner_view_3" type="id"/>
+    <item name="corner_view_4" type="id"/>
+    <item name="corner_view_5" type="id"/>
+
+    <item name="chip_1" type="id"/>
+    <item name="chip_2" type="id"/>
+    <item name="chip_3" type="id"/>
+    <item name="chip_4" type="id"/>
+    <item name="chip_5" type="id"/>
+
+    <item name="radio_button_1" type="id"/>
+    <item name="radio_button_2" type="id"/>
+    <item name="radio_button_3" type="id"/>
+    <item name="radio_button_4" type="id"/>
+    <item name="radio_button_5" type="id"/>
+
+    <item name="checkbox_1" type="id"/>
+    <item name="checkbox_2" type="id"/>
+    <item name="checkbox_3" type="id"/>
+    <item name="checkbox_4" type="id"/>
+    <item name="checkbox_5" type="id"/>
+
+    <item name="progress_bar_1" type="id"/>
+    <item name="progress_bar_2" type="id"/>
+    <item name="progress_bar_3" type="id"/>
+    <item name="progress_bar_4" type="id"/>
+    <item name="progress_bar_5" type="id"/>
+
+    <item name="rating_bar_1" type="id"/>
+    <item name="rating_bar_2" type="id"/>
+    <item name="rating_bar_3" type="id"/>
+    <item name="rating_bar_4" type="id"/>
+    <item name="rating_bar_5" type="id"/>
+
+    <item name="search_view_1" type="id"/>
+    <item name="search_view_2" type="id"/>
+    <item name="search_view_3" type="id"/>
+    <item name="search_view_4" type="id"/>
+    <item name="search_view_5" type="id"/>
+
+    <item name="seek_bar_1" type="id"/>
+    <item name="seek_bar_2" type="id"/>
+    <item name="seek_bar_3" type="id"/>
+    <item name="seek_bar_4" type="id"/>
+    <item name="seek_bar_5" type="id"/>
+
+    <item name="stub_view_1" type="id"/>
+    <item name="stub_view_2" type="id"/>
+    <item name="stub_view_3" type="id"/>
+    <item name="stub_view_4" type="id"/>
+    <item name="stub_view_5" type="id"/>
+
+    <item name="toggle_button_1" type="id"/>
+    <item name="toggle_button_2" type="id"/>
+    <item name="toggle_button_3" type="id"/>
+    <item name="toggle_button_4" type="id"/>
+    <item name="toggle_button_5" type="id"/>
+
+    <item name="tab_item_1" type="id"/>
+    <item name="tab_item_2" type="id"/>
+    <item name="tab_item_3" type="id"/>
+    <item name="tab_item_4" type="id"/>
+    <item name="tab_item_5" type="id"/>
+
+    <item name="slider_1" type="id"/>
+    <item name="slider_2" type="id"/>
+    <item name="slider_3" type="id"/>
+    <item name="slider_4" type="id"/>
+    <item name="slider_5" type="id"/>
+
+    <item name="floating_action_button_1" type="id"/>
+    <item name="floating_action_button_2" type="id"/>
+    <item name="floating_action_button_3" type="id"/>
+    <item name="floating_action_button_4" type="id"/>
+    <item name="floating_action_button_5" type="id"/>
+
+    <item name="web_view_1" type="id"/>
+    <item name="web_view_2" type="id"/>
+    <item name="web_view_3" type="id"/>
+    <item name="web_view_4" type="id"/>
+    <item name="web_view_5" type="id"/>
+
+    <item name="text_clock_1" type="id"/>
+    <item name="text_clock_2" type="id"/>
+    <item name="text_clock_3" type="id"/>
+    <item name="text_clock_4" type="id"/>
+    <item name="text_clock_5" type="id"/>
+
+    <item name="video_view_1" type="id"/>
+    <item name="video_view_2" type="id"/>
+    <item name="video_view_3" type="id"/>
+    <item name="video_view_4" type="id"/>
+    <item name="video_view_5" type="id"/>
+
+    <item name="adapter_view_1" type="id"/>
+    <item name="adapter_view_2" type="id"/>
+    <item name="adapter_view_3" type="id"/>
+    <item name="adapter_view_4" type="id"/>
+    <item name="adapter_view_5" type="id"/>
+
+    <item name="analog_clock_1" type="id"/>
+    <item name="analog_clock_2" type="id"/>
+    <item name="analog_clock_3" type="id"/>
+    <item name="analog_clock_4" type="id"/>
+    <item name="analog_clock_5" type="id"/>
+
+    <item name="item_1" type="id"/>
+    <item name="item_2" type="id"/>
+    <item name="item_3" type="id"/>
+    <item name="item_4" type="id"/>
+    <item name="item_5" type="id"/>
+
+    <item name="digital_clock_1" type="id"/>
+    <item name="digital_clock_2" type="id"/>
+    <item name="digital_clock_3" type="id"/>
+    <item name="digital_clock_4" type="id"/>
+    <item name="digital_clock_5" type="id"/>
+
+    <item name="list_view_1" type="id"/>
+    <item name="list_view_2" type="id"/>
+    <item name="list_view_3" type="id"/>
+    <item name="list_view_4" type="id"/>
+    <item name="list_view_5" type="id"/>
+
+    <item name="grid_view_1" type="id"/>
+    <item name="grid_view_2" type="id"/>
+    <item name="grid_view_3" type="id"/>
+    <item name="grid_view_4" type="id"/>
+    <item name="grid_view_5" type="id"/>
+
+    <item name="pager_view_1" type="id"/>
+    <item name="pager_view_2" type="id"/>
+    <item name="pager_view_3" type="id"/>
+    <item name="pager_view_4" type="id"/>
+    <item name="pager_view_5" type="id"/>
+
+    <item name="recycler_view_1" type="id"/>
+    <item name="recycler_view_2" type="id"/>
+    <item name="recycler_view_3" type="id"/>
+    <item name="recycler_view_4" type="id"/>
+    <item name="recycler_view_5" type="id"/>
+
+    <item name="circle_image_view_1" type="id"/>
+    <item name="circle_image_view_2" type="id"/>
+    <item name="circle_image_view_3" type="id"/>
+    <item name="circle_image_view_4" type="id"/>
+    <item name="circle_image_view_5" type="id"/>
+
+    <item name="chip_group_1" type="id"/>
+    <item name="chip_group_2" type="id"/>
+    <item name="chip_group_3" type="id"/>
+    <item name="chip_group_4" type="id"/>
+    <item name="chip_group_5" type="id"/>
+
+    <item name="radio_group_1" type="id"/>
+    <item name="radio_group_2" type="id"/>
+    <item name="radio_group_3" type="id"/>
+    <item name="radio_group_4" type="id"/>
+    <item name="radio_group_5" type="id"/>
+
+    <item name="group_1" type="id"/>
+    <item name="group_2" type="id"/>
+    <item name="group_3" type="id"/>
+    <item name="group_4" type="id"/>
+    <item name="group_5" type="id"/>
+
+    <item name="switch_1" type="id"/>
+    <item name="switch_2" type="id"/>
+    <item name="switch_3" type="id"/>
+    <item name="switch_4" type="id"/>
+    <item name="switch_5" type="id"/>
+</resources>

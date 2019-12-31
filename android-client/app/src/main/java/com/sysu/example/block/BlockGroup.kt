@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
+import androidx.core.view.updateLayoutParams
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -44,6 +45,7 @@ open class BlockGroup(@LayoutRes layoutId: Int = 0) : Block(layoutId) {
 
     // inflate
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : View> setInflatedCallback(callback: (T) -> Unit): BlockGroup {
         afterInflateListener = Runnable { callback(view as T) }
         return this

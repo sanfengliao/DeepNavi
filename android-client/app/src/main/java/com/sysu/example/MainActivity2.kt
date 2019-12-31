@@ -38,7 +38,7 @@ class MainActivity2 : AppCompatActivity() {
             var socket: WebSocketClient? = null
 
             override fun connect() {
-                val url = "ws://" + this@MainActivity2.intent.getStringExtra(ConfigActivity.EXTRA_KEY_URL)
+                val url = "ws://" + (ConfigActivity.DEEPNAVI_URL.getData2())
                 socket = object : WebSocketClient(URI.create(url)) {
                     override fun onOpen(handshakedata: ServerHandshake?) {
                         DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
@@ -83,11 +83,11 @@ class MainActivity2 : AppCompatActivity() {
             override fun onMessage(res: Basic.DeepNaviRes) {
                 deepNaviManager.onMessage(res)
             }
-        }, 1000 / intent.getIntExtra(ConfigActivity.EXTRA_KEY_FREQUENCY, ConfigActivity.DEFAULT_VALUE_FREQUENCY).toLong())
+        }, 1000 / ConfigActivity.DEEPNAVI_FREQUENCY.getData2())
         deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
         deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
 
-        val useList = intent.getStringExtra(ConfigActivity.EXTRA_KEY_SIGNAL_CONFIG)?.split(", ") ?: SensorListeners.DEFAULT_VALUE_SENSOR_CONFIG
+        val useList = ConfigActivity.SIGNAL_CONFIG_SET.getData2()
         findViewById<Button>(R.id.start_preview).setOnClickListener {
             sensorListeners.initAll(useList = useList)
             deepNaviManager.loop()

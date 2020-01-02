@@ -93,7 +93,7 @@ class ConfigActivity : BlockActivity() {
                 it.hint = "please input frequency"
                 it.inputType = 0x00000002
                 it.setDrawableRight(R.drawable.frequency_select)
-                it.setText((DEEPNAVI_FREQUENCY.getData() ?: DEFAULT_VALUE_FREQUENCY).toString())
+                it.setText((DEEPNAVI_FREQUENCY.value ?: DEFAULT_VALUE_FREQUENCY).toString())
                 it.addTextChangedListener { text ->
                     DEEPNAVI_FREQUENCY.value = if (text.isNullOrEmpty()) DEFAULT_VALUE_FREQUENCY else text.toString().toLong()
                 }
@@ -106,7 +106,7 @@ class ConfigActivity : BlockActivity() {
                 it.layoutParams = lp
                 it.hint = "please input backend s url"
                 it.inputType = 0x00000011
-                it.setText(DEEPNAVI_URL.getData() ?: DEFAULT_VALUE_URL)
+                it.setText(DEEPNAVI_URL.value ?: DEFAULT_VALUE_URL)
                 it.addTextChangedListener { text -> DEEPNAVI_URL.setData(text?.toString().orEmpty()) }
             })
 

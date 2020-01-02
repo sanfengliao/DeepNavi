@@ -8,21 +8,21 @@ import android.content.SharedPreferences
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.Subject
 import java.lang.reflect.Field
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.lang.reflect.Type
 
-// [SharedPerference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
+// [SharedPreference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
 
-/**
- * 谨慎使用 getValue / getValue2 ，这里的是通过 postValue / setValue 设置的，然后会 mainHandler.post 。
- * 所以在 onResume 之后才能通过 getValue / getValue2 来获取指
- */
 open class Property<T : Any> : MutableLiveData<T> {
     protected var mDesc: String
     protected var mData: T? = null
     protected var mType: Type
+    protected var subject: Subject<Any>? = null
 
     constructor(desc: String, data: T) : super(data) {
         this.mDesc = desc
@@ -45,16 +45,39 @@ open class Property<T : Any> : MutableLiveData<T> {
     override fun postValue(value: T?) {
         mData = value
         super.postValue(value)
+        notifySubject(value)
     }
 
     @MainThread
     override fun setValue(value: T?) {
         mData = value
         super.setValue(value)
+        notifySubject(value)
     }
 
     open fun setData(value: T?) {
         this.mData = value
+        notifySubject(value)
+    }
+
+    protected fun notifySubject(value: T?) {
+        subject?.onNext(value ?: NULL_OBJECT)
+    }
+
+    @Synchronized
+    open fun getSubject(): Observable<Any> {
+        if (subject == null) {
+            subject = PublishSubject.create()
+        }
+        return if (mData != null) {
+            subject!!.startWith(mData!!)
+        } else {
+            subject!!
+        }
+    }
+
+    companion object {
+        val NULL_OBJECT = Any()
     }
 }
 
@@ -102,7 +125,7 @@ open class SpProperty<T : Any> : Property<T> {
     }
 
     @Suppress("UNCHECKED_CAST")
-    open fun getFromSp(sp: SharedPreferences, post: Boolean = true) {
+    open fun getFromSp(sp: SharedPreferences, set: Boolean = true) {
         if (sp.contains(mSpKey)) {
             val type = getType()
             val typeStr = mType.toString()
@@ -123,8 +146,8 @@ open class SpProperty<T : Any> : Property<T> {
                 }
                 else -> JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
             }
-            if (post) {
-                postValue(mData)
+            if (set) {
+                value = mData
             }
         }
     }

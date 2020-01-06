@@ -1,6 +1,9 @@
-from proto_model.basic_pb2 import DeepNaviReq, DeepNaviRes
 from autobahn.twisted.websocket import WebSocketServerProtocol
-
+import sys
+from twisted.python import log
+from twisted.internet import reactor
+from proto_model.basic_pb2 import DeepNaviReq, DeepNaviRes
+from autobahn.twisted.websocket import WebSocketServerFactory
 
 class WebSocketServer(WebSocketServerProtocol):
     def onMessage(self, payload, isBinary):
@@ -24,14 +27,8 @@ class WebSocketServer(WebSocketServerProtocol):
         return super().onConnect(request)
 
 
-if __name__ == "__main__":
-    import sys
-
-    from twisted.python import log
-    from twisted.internet import reactor
+def runWebSocket(port):
     log.startLogging(sys.stdout)
-
-    from autobahn.twisted.websocket import WebSocketServerFactory
     factory = WebSocketServerFactory()
     factory.protocol = WebSocketServer
 

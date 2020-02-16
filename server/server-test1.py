@@ -16,7 +16,10 @@ from socket import socket
 from socketserver import StreamRequestHandler, TCPServer, ThreadingMixIn
 from typing import Tuple, Union
 
-from basic_pb2 import DeepNaviReq, DeepNaviRes
+path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(path)
+
+from proto_model.basic_pb2 import DeepNaviReq, DeepNaviRes
 
 FIN = 0x80
 OP_CODE = 0x0f

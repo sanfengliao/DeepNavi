@@ -6,4 +6,4 @@ sys.path.append(path)
 # from web.controller import * 
 from web import app
 if __name__ == "__main__":
-    app.run(port=3000, debug=True)
+    app.run(host='192.168.43.47', port=3000, debug=True)

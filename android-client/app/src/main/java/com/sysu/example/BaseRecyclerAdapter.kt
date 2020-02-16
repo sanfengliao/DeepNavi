@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 
-class BaseRecyclerViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class BaseRecyclerViewHolder(private val view: View, var data: Any? = null) : RecyclerView.ViewHolder(view) {
     private val viewCache = SparseArray<View>()
+
     fun getView() = view
+
     @Suppress("UNCHECKED_CAST")
     fun <T : View> findViewById(id: Int): T {
         val result: T
@@ -40,8 +42,7 @@ class BaseRecyclerAdapter<T>(
     private val context: Context,
     private val dataSet: MutableList<T>, @LayoutRes private val layoutId: Int,
     private val action: AdapterAction<T>
-) :
-    RecyclerView.Adapter<BaseRecyclerViewHolder>() {
+) : RecyclerView.Adapter<BaseRecyclerViewHolder>() {
 
     // click
 
@@ -266,6 +267,7 @@ class BaseRecyclerAdapter<T>(
             truePos--
         }
         val data = dataSet[truePos]
+        holder.data = data
         action.onBindViewHolder(holder, data, truePos)
         itemClickListener?.let {
             holder.getView().run {

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.sysu.deepnavi
 
 // [几种常用的传感器（加速度传感器、重力传感器、方向传感器、陀螺仪）简介](https://blog.csdn.net/LEON1741/article/details/77200220) finished
@@ -23,9 +25,9 @@ import com.sysu.deepnavi.util.doNotNeedImpl
 class DeepNaviManager private constructor() : SensorEventListener {
     private var descriptor: Descriptors.Descriptor = Basic.DeepNaviReq.getDescriptor()
     private val dataList: MutableMap<Descriptors.FieldDescriptor, DataCollectorInter<Any>> = mutableMapOf()
-    // TODO: sensorDataList
+
     private var running: Boolean = false
-    var thread: Thread? = null
+    private var thread: Thread? = null
 
     private var sensorManager: SensorManager? = null
     private var socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>? = null
@@ -45,7 +47,16 @@ class DeepNaviManager private constructor() : SensorEventListener {
         var logger: LoggerInter? = null
     }
 
+    private var hasInited = false
     fun init(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long = defaultInterval): DeepNaviManager {
+        if (hasInited) {
+            return this
+        }
+        return forceInit(context, socket, interval)
+    }
+
+    fun forceInit(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long): DeepNaviManager {
+        hasInited = true
         sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         this.socket = socket
         this.interval = interval
@@ -57,12 +68,14 @@ class DeepNaviManager private constructor() : SensorEventListener {
 
     fun addDataCollector(dataCollector: DataCollectorInter<Any>) {
         logger?.d(DEFAULT_TAG, "DeepNaviManager.addDataCollector(field: %s)", dataCollector.field)
-        dataList.put(descriptor.findFieldByName(dataCollector.field), dataCollector)
+        val key = descriptor.findFieldByName(dataCollector.field)
+        dataList[key] = dataCollector
     }
 
     fun removeDataCollector(field: String): DataCollectorInter<Any>? {
         logger?.d(DEFAULT_TAG, "DeepNaviManager.removeDataCollector(type: %s)", field)
-        return dataList.remove(descriptor.findFieldByName(field))
+        val key = descriptor.findFieldByName(field)
+        return dataList.remove(key) ?: return null
     }
 
     fun registerListener(sensor: Sensor?, samplingPeriodUs: Int): Boolean? {
@@ -78,15 +91,26 @@ class DeepNaviManager private constructor() : SensorEventListener {
     private fun send() {
         val reqBuilder = Basic.DeepNaviReq.newBuilder()
         reqBuilder.time = System.currentTimeMillis()
+        if (socket?.isConnected == false) {
+            return
+        }
         dataList.forEach { entry ->
             val field = entry.key
             val dataCollector = entry.value
             if (field.isRepeated) {
-                dataCollector.getDataArray()?.forEach { value -> reqBuilder.addRepeatedField(field, value) }
-            } else reqBuilder.setField(field, dataCollector.getData())
+                dataCollector.getDataArray()?.forEach { value -> reqBuilder.addRepeatedField(field, value) } ?: return
+            } else {
+                reqBuilder.setField(field, dataCollector.getData() ?: return)
+            }
         }
-        logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}", reqBuilder.time)
-        if (running) socket!!.send(reqBuilder.build())
+        if (running) {
+            try {
+                socket!!.send(reqBuilder.build())
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}", reqBuilder.time)
+            } catch (e: Exception) {
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, but failed", reqBuilder.time)
+            }
+        }
     }
 
     fun loop() {

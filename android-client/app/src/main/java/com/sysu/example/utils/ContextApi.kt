@@ -15,6 +15,8 @@ object ContextApi {
     val activityStack: MutableList<Activity> = mutableListOf()
     val fragmentStack: MutableList<Fragment> = mutableListOf()
 
+    val global: MutableMap<String, Any> = mutableMapOf()
+
     fun init(application: Application) {
         this.app = application
         this.appContext = application

@@ -1,18 +1,23 @@
 package com.sysu.example
 
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Size
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.sysu.deepnavi.DeepNaviManager
 import com.sysu.deepnavi.bean.Basic
 import com.sysu.deepnavi.impl.AudioListener
+import com.sysu.deepnavi.impl.AudioListener2
 import com.sysu.deepnavi.impl.SensorListeners
 import com.sysu.deepnavi.impl.WifiListener
 import com.sysu.deepnavi.inter.DataCollectorInter
 import com.sysu.deepnavi.inter.SocketInter
 import com.sysu.deepnavi.util.AndroidLogLogger
 import com.sysu.deepnavi.util.DEFAULT_TAG
+import com.sysu.deepnavi.util.PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.enums.ReadyState
 import org.java_websocket.handshake.ServerHandshake
@@ -24,21 +29,22 @@ import java.nio.ByteBuffer
 @SuppressLint("CI_ByteDanceKotlinRules_Not_Allow_findViewById_Invoked_In_UI")
 class MainActivity2 : AppCompatActivity() {
     private lateinit var deepNaviManager: DeepNaviManager
-    private lateinit var sensorListeners: SensorListeners
+    private var audioListener2: AudioListener2? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DeepNaviManager.logger = AndroidLogLogger()
+        if (DeepNaviManager.logger != null) {
+            DeepNaviManager.logger = AndroidLogLogger()
+        }
         deepNaviManager = DeepNaviManager.get()
-        sensorListeners = SensorListeners()
 
         deepNaviManager.init(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
             var socket: WebSocketClient? = null
 
             override fun connect() {
-                val url = "ws://" + (ConfigActivity.DEEPNAVI_URL.getValue2())
+                val url = "ws://" + (ConfigProperty.DEEPNAVI_URL.getValue2())
                 socket = object : WebSocketClient(URI.create(url)) {
                     override fun onOpen(handshakedata: ServerHandshake?) {
                         DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
@@ -83,18 +89,68 @@ class MainActivity2 : AppCompatActivity() {
             override fun onMessage(res: Basic.DeepNaviRes) {
                 deepNaviManager.onMessage(res)
             }
-        }, 1000 / ConfigActivity.DEEPNAVI_FREQUENCY.getValue2())
-        deepNaviManager.addDataCollector(AudioListener(this, findViewById(R.id.test_textureview)) as DataCollectorInter<Any>)
-        deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
 
-        val useList = ConfigActivity.SIGNAL_CONFIG_SET.getValue2()
+            override val isConnected: Boolean
+                get() = socket?.isOpen ?: false
+        }, 1000 / ConfigProperty.DEEPNAVI_FREQUENCY.getValue2())
+
+        val configDataSet = ConfigProperty.SIGNAL_CONFIG_SET.value?.split(',')?.toSet() ?: emptySet()
+        val previewView: View = findViewById(R.id.test_textureview) ?: findViewById(R.id.test_surfaceview)
+        if ("image" in configDataSet) {
+            val imageSize = ConfigProperty.DEEPNAVI_IMAGE_SIZE.value ?: ConfigProperty.DEFAULT_PICTURE_SIZE
+            audioListener2 = AudioListener2(this, previewView, pictureSize = Size(imageSize.width, imageSize.height))
+            deepNaviManager.addDataCollector(audioListener2 as DataCollectorInter<Any>)
+        }
+        if ("wifiList" in configDataSet) {
+            deepNaviManager.addDataCollector(WifiListener(this) as DataCollectorInter<Any>)
+        }
+
+        SensorListeners.initAll(configDataSet)
         findViewById<Button>(R.id.start_preview).setOnClickListener {
-            sensorListeners.initAll(useList = useList)
+            if (audioListener2 != null) {
+                if (!audioListener2!!.haveOpenCamera) {
+                    audioListener2!!.cameraUtil.openCamera()
+                }
+                audioListener2!!.cameraUtil.startPreview()
+            }
+            SensorListeners.registerAll(ConfigProperty.DEEPNAVI_SENSOR_RATE.value ?: ConfigProperty.DEFAULT_VALUE_SENSOR_RATE, configDataSet)
             deepNaviManager.loop()
         }
         findViewById<Button>(R.id.stop_preview).setOnClickListener {
+            audioListener2?.cameraUtil?.stopPreview()
             deepNaviManager.stop()
-            deepNaviManager.unregisterListener()
+            SensorListeners.unregisterAll()
         }
+    }
+
+    // override fun onResume() {
+    //     audioListener2?.cameraUtil?.onResume()
+    //     super.onResume()
+    // }
+    //
+    // override fun onPause() {
+    //     audioListener2?.cameraUtil?.onPause()
+    //     super.onPause()
+    // }
+
+    override fun onDestroy() {
+        deepNaviManager.stop()
+        SensorListeners.unregisterAll()
+        super.onDestroy()
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
+            && grantResults.isNotEmpty()
+            && grantResults[0] == PackageManager.PERMISSION_GRANTED
+            && grantResults[1] == PackageManager.PERMISSION_GRANTED
+            && grantResults[2] == PackageManager.PERMISSION_GRANTED
+        ) {
+            if (audioListener2 != null && !audioListener2!!.haveOpenCamera) {
+                audioListener2!!.cameraUtil.openCamera()
+                audioListener2!!.cameraUtil.startPreview()
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 }

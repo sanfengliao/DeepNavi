@@ -1,5 +1,7 @@
 package com.sysu.deepnavi.inter;
 
+import java.util.Observable
+
 // // 为加速度传感器注册监听器
 // sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME)
 // // 为方向传感器注册监听器

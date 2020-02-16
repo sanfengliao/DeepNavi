@@ -26,7 +26,7 @@ message DeepNaviReq {
     repeated FeelSensorReq lightList = 10;  // 亮度
     repeated FeelSensorReq pressureList = 11;  // 压力
     repeated FeelSensorReq proximityList = 12;  // 近距离
-    repeated int32 wifiList = 13;
+    repeated int32 wifiList = 13;  // wifi
 }
 
 message DeepNaviRes {

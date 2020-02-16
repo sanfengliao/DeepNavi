@@ -1,16 +1,22 @@
 package com.sysu.deepnavi.util
 
 import android.Manifest
+import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.hardware.Camera
+import android.hardware.camera2.CameraCharacteristics
+import android.hardware.camera2.CameraManager
 import android.os.Build
 import android.util.Log
 import android.util.Size
 import android.view.Surface
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import java.io.ByteArrayOutputStream
 import kotlin.math.abs
 import kotlin.math.min
 
@@ -167,10 +173,18 @@ fun getCameraDisplayOrientation(activity: Activity, cameraId: Int): Int {
     } else { // back-facing  后置摄像头
         (info.orientation - degrees + 360) % 360
     }
-    Log.d(TAG, "camera.setDisplayOrientation($result)")
+    Log.d(TAG, "getCameraDisplayOrientation($result)")
     return result
 }
 
+/**
+ * 旋转yuv420图片的角度 -- NV21 也是 420 的一种，即 y : u : v = 4 : 2 : 0
+ * 这里是旋转90°
+ *
+ * @param data yuv data -- size = imageWidth * imageHeight * 1.5
+ * @param imageWidth
+ * @param imageHeight
+ */
 fun rotateYUV420Degree90(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
     // prepare
     val temp = imageWidth * imageHeight
@@ -178,24 +192,34 @@ fun rotateYUV420Degree90(data: ByteArray, imageWidth: Int, imageHeight: Int): By
     val yuv = ByteArray(size)
     // Rotate the Y luma
     var i = 0
-    (0 until imageWidth).forEach { x ->
-        ((imageHeight - 1) downTo 0).forEach { y ->
+    for (x in 0 until imageWidth) {
+        for (y in imageHeight - 1 downTo 0) {
             yuv[i++] = data[y * imageWidth + x]
         }
     }
     // Rotate the U and V color components
     i = size - 1
-    IntProgression.fromClosedRange(imageWidth - 1, 0, 2).forEach { x ->
-        (0 until imageHeight.shr(1)).forEach { y ->
-            val temp2 = temp + (y * imageWidth) + x
+    var x = imageWidth - 1
+    while (x > 0) {
+        for (y in 0 until imageHeight / 2) {
+            val temp2 = temp + y * imageWidth + x
             yuv[i--] = data[temp2]
             yuv[i--] = data[temp2 - 1]
         }
+        x -= 2
     }
     // result
     return yuv
 }
 
+/**
+ * 旋转yuv420图片的角度 -- NV21 也是 420 的一种，即 y : u : v = 4 : 2 : 0
+ * 这里是旋转180°
+ *
+ * @param data yuv data -- size = imageWidth * imageHeight * 1.5
+ * @param imageWidth
+ * @param imageHeight
+ */
 fun rotateYUV420Degree180(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
     // prepare
     val temp = imageWidth * imageHeight
@@ -203,10 +227,10 @@ fun rotateYUV420Degree180(data: ByteArray, imageWidth: Int, imageHeight: Int): B
     val yuv = ByteArray(size)
     // transform
     var count = 0
-    ((temp - 1) downTo 0).forEach { i ->
+    for (i in (temp - 1) downTo 0) {
         yuv[count++] = data[i]
     }
-    IntProgression.fromClosedRange(size - 1, temp, 2).forEach { i ->
+    for (i in IntProgression.fromClosedRange(size - 1, temp, -2)) {
         yuv[count++] = data[i - 1]
         yuv[count++] = data[i]
     }
@@ -214,6 +238,14 @@ fun rotateYUV420Degree180(data: ByteArray, imageWidth: Int, imageHeight: Int): B
     return yuv
 }
 
+/**
+ * 旋转yuv420图片的角度 -- NV21 也是 420 的一种，即 y : u : v = 4 : 2 : 0
+ * 这里是旋转270°
+ *
+ * @param data yuv data -- size = imageWidth * imageHeight * 1.5
+ * @param imageWidth
+ * @param imageHeight
+ */
 fun rotateYUV420Degree270(data: ByteArray, imageWidth: Int, imageHeight: Int): ByteArray {
     // prepare
     val temp = imageWidth * imageHeight
@@ -222,16 +254,17 @@ fun rotateYUV420Degree270(data: ByteArray, imageWidth: Int, imageHeight: Int): B
     val uvHeight = imageHeight.shl(1)
     // transform
     var k = 0
-    (0 until imageWidth).forEach { i ->
-        var nPos = 0
-        (0 until imageHeight).forEach { j ->
+    var nPos: Int
+    for (i in 0 until imageWidth) {
+        nPos = 0
+        for (j in 0 until imageHeight) {
             yuv[k++] = data[nPos + i]
             nPos += imageWidth
         }
     }
-    IntProgression.fromClosedRange(0, imageWidth - 1, 2).forEach { i ->
-        var nPos = temp
-        (0 until uvHeight).forEach { j ->
+    for (i in IntProgression.fromClosedRange(0, imageWidth - 1, -2)) {
+        nPos = temp
+        for (j in 0 until uvHeight) {
             yuv[k] = data[nPos + i]
             yuv[k + 1] = data[nPos + i + 1]
             k += 2
@@ -239,7 +272,7 @@ fun rotateYUV420Degree270(data: ByteArray, imageWidth: Int, imageHeight: Int): B
         }
     }
     // result
-    return rotateYUV420Degree180(yuv, imageWidth, imageHeight)
+    return rotateYUV420Degree180(rotateYUV420Degree90(data, imageWidth, imageHeight), imageWidth, imageHeight)
 }
 
 /**
@@ -268,3 +301,36 @@ fun requestCameraPermissions(activity: Activity) {
 fun checkCameraPermission(context: Context): Boolean = Build.VERSION.SDK_INT > Build.VERSION_CODES.M &&
         (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+fun hasCamera2(context: Context): Boolean {
+    try {
+        val manager = context.getSystemService(Context.CAMERA_SERVICE) as? CameraManager ?: return false
+        val strIds = manager.cameraIdList
+        if (strIds.isNullOrEmpty()) {
+            return false
+        }
+        for (str in strIds) {
+            if (str == null || str.trim().isEmpty() || manager.getCameraCharacteristics(str).get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL)
+                == CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_LEGACY
+            ) {
+                return false
+            }
+        }
+        return true;
+    } catch (ignore: Throwable) {
+        return false;
+    }
+}
+
+fun createScaledBitmap(bitmapAsData: ByteArray, width: Int, height: Int): Bitmap =
+    Bitmap.createScaledBitmap(BitmapFactory.decodeByteArray(bitmapAsData, 0, bitmapAsData.size), width, height, true)
+
+fun bitmapToByteArray(bitmap: Bitmap, recycle: Boolean = true): ByteArray {
+    val blob = ByteArrayOutputStream()
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, blob)
+    if (recycle) {
+        bitmap.recycle()
+    }
+    return blob.toByteArray()
+}

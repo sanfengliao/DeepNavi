@@ -1,6 +1,7 @@
 package com.sysu.deepnavi.inter;
 
 interface SocketInter<Req, Res> {
+    val isConnected: Boolean
     fun connect()
     fun close()
 

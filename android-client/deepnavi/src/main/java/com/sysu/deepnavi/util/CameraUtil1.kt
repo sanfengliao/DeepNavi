@@ -15,13 +15,14 @@ import android.view.*
 [一句代码搞定权限请求，从未如此简单](https://www.jianshu.com/p/c69ff8a445ed)
 [Android 6.0 运行时权限处理](https://www.jianshu.com/p/b4a8b3d4f587)
 [玩转Android Camera开发(二):使用TextureView和SurfaceTexture预览Camera 基础拍照demo](https://blog.csdn.net/yanzi1225627/article/details/33313707)
-[Android 使Camera预览清晰，循环自动对焦处理](https://blog.csdn.net/z979451341/article/details/79446025)*/
+[Android 使Camera预览清晰，循环自动对焦处理](https://blog.csdn.net/z979451341/article/details/79446025)
+[android camera之nv21旋转](https://www.cnblogs.com/cmai/p/8372607.html)*/
 
 @Deprecated(message = "Please use CameraUtil2")
 open class CameraUtil1(
     private val activity: Activity,
     private val previewView: View,
-    private val previewCallback: Camera.PreviewCallback? = null,
+    private val previewCallback: (data: ByteArray, camera: Camera, width: Int, height: Int) -> Unit,
     private val frameRate: Int = 50,
     private val pictureSize: Size = Size(1080, 1920),
     autoFocus: Boolean = true
@@ -59,10 +60,10 @@ open class CameraUtil1(
         }
     }
 
-    private var camera: Camera? = null
-    private var displayOrientation: Int = 0
-    private var autoFocusHandler: AutoFocusHandler? = null
-    private var autoFocusCallback: MyAutoFocusCallback? = null
+    open var camera: Camera? = null
+    open var displayOrientation: Int = 0
+    open var autoFocusHandler: AutoFocusHandler? = null
+    open var autoFocusCallback: MyAutoFocusCallback? = null
 
     init {
         requestCameraPermissions(activity)
@@ -121,14 +122,14 @@ open class CameraUtil1(
         }
     }
 
-    fun openCamera(width: Int, height: Int) {
+    open fun openCamera(width: Int, height: Int) {
         if (checkCameraPermission(activity)) {
-            Log.d(TAG, "createCamera -- failed, because there are not enough permissions")
+            Log.d(TAG, "openCamera -- failed, because there are not enough permissions")
             return
         }
         val cameraCount = Camera.getNumberOfCameras()
         if (cameraCount == 0) {
-            Log.d(TAG, "createCamera -- failed, because this phone has no camera")
+            Log.d(TAG, "openCamera -- failed, because this phone has no camera")
             return
         }
         val cameraInfo: Camera.CameraInfo = Camera.CameraInfo()
@@ -144,7 +145,7 @@ open class CameraUtil1(
             try {
                 camera = Camera.open(id)
             } catch (e: RuntimeException) {
-                Log.e(TAG, "createCamera -- open camera($id) failed", e)
+                Log.e(TAG, "openCamera -- open camera($id) failed", e)
                 closeCamera()
                 continue
             }
@@ -160,7 +161,8 @@ open class CameraUtil1(
             try {
                 camera!!.parameters = cameraParameters
             } catch (e: RuntimeException) {
-                Log.e(TAG, "createCamera -- set parameters for camera($id) is failed", e)
+                Log.e(TAG, "openCamera -- set parameters for camera($id) is failed", e)
+                closeCamera()
                 continue
             }
             displayOrientation = getCameraDisplayOrientation(activity, id)
@@ -169,14 +171,14 @@ open class CameraUtil1(
         }
         Log.d(
             TAG, when {
-                backFlag -> "createCamera -- failed, because this phone does not have a back camera"
-                camera == null -> "createCamera -- failed, because cameras are disabled"
-                else -> "createCamera -- successfully"
+                backFlag -> "openCamera -- failed, because this phone does not have a back camera"
+                camera == null -> "openCamera -- failed, because cameras are disabled"
+                else -> "openCamera -- successfully"
             }
         )
     }
 
-    protected fun judgeOneCamera(cameraParameters: Camera.Parameters, width: Int, height: Int, id: Int, defaultDisplay: Display)
+    open protected fun judgeOneCamera(cameraParameters: Camera.Parameters, width: Int, height: Int, id: Int, defaultDisplay: Display)
             : Triple<Camera.Parameters, Int, Int> {
         // prepare
         var suitableCount = 0
@@ -197,7 +199,7 @@ open class CameraUtil1(
 
         Log.d(
             TAG,
-            "createCamera -- camera($id), supportedPreviewSizes: " + supportedPreviewSizes.joinToString { "(${it.width}, ${it.height})" } +
+            "openCamera -- camera($id), supportedPreviewSizes: " + supportedPreviewSizes.joinToString { "(${it.width}, ${it.height})" } +
                     "\nsupportedVideoSizes: " + supportedVideoSizes.joinToString { "(${it.width}, ${it.height})" } +
                     "\nsupportedPictureSizes: " + supportedPictureSizes.joinToString { "(${it.width}, ${it.height})" } +
                     "\nsupportedJpegThumbnailSizes: " + supportedJpegThumbnailSizes.joinToString { "(${it.width}, ${it.height})" } +
@@ -284,7 +286,33 @@ open class CameraUtil1(
                 is TextureView -> setPreviewTexture(previewView.surfaceTexture)
                 else -> throw java.lang.RuntimeException("cameraUtil1 only support surfaceView or textureView")
             }
-            setPreviewCallback(previewCallback)
+            setPreviewCallback { data, camera ->
+                val size = camera.parameters.previewSize
+                var width = size.width
+                var height = size.height
+                var shouldExChange = false
+
+                // 角度调整
+                val newData: ByteArray = when (displayOrientation) {
+                    90 -> {
+                        shouldExChange = true
+                        rotateYUV420Degree90(data, width, height)
+                    }
+                    180 -> rotateYUV420Degree180(data, width, height)
+                    270 -> {
+                        shouldExChange = true
+                        rotateYUV420Degree270(data, width, height)
+                    }
+                    else -> data
+                }
+                if (shouldExChange) {
+                    width -= height
+                    height += width
+                    width = height - width
+                }
+
+                previewCallback(newData, camera, width, height)
+            }
             startPreview()
             if (autoFocusCallback != null) {
                 autoFocusHandler?.camera = this
@@ -304,6 +332,4 @@ open class CameraUtil1(
         camera?.release()
         camera = null
     }
-
-    fun getDisplayOrientation() = displayOrientation
 }

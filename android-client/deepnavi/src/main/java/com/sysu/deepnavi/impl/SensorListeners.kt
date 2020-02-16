@@ -2,14 +2,12 @@ package com.sysu.deepnavi.impl
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
+import com.sysu.deepnavi.DeepNaviManager
 import com.sysu.deepnavi.bean.Basic
 
 @Suppress("MemberVisibilityCanBePrivate", "unused", "DEPRECATION")
-class SensorListeners {
-
-    companion object {
-        val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }.toHashSet()
-    }
+object SensorListeners {
+    val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }.toHashSet()
 
     private fun createCoorSensorReq(event: SensorEvent, xIndex: Int = 0, yIndex: Int = 1, zIndex: Int = 2): Basic.CoorSensorReq {
         val values = event.values
@@ -50,41 +48,74 @@ class SensorListeners {
     val proximityListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_PRESSURE, "proximityList")
     { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
-    fun initAll(
-        rate: Int = 1000000 / 50,
-        registerList: List<Boolean> = (0 until 10).map { true },
-        useList: Set<String> = DEFAULT_VALUE_SENSOR_CONFIG
-    ) {
+    fun initAll(useList: Set<String> = DEFAULT_VALUE_SENSOR_CONFIG) {
         if (magneticListener.field in useList) {
-            magneticListener.init(rate, registerList[0])
+            magneticListener.init()
         }
         if (accelerometerListener.field in useList) {
-            accelerometerListener.init(rate, registerList[1])
+            accelerometerListener.init()
         }
         if (orientationListener.field in useList) {
-            orientationListener.init(rate, registerList[2])
+            orientationListener.init()
         }
         if (gyroscopeListener.field in useList) {
-            gyroscopeListener.init(rate, registerList[3])
+            gyroscopeListener.init()
         }
         if (gyroscopeListener.field in useList) {
-            gravityListener.init(rate, registerList[4])
+            gravityListener.init()
         }
         if (linearAccelerationListener.field in useList) {
-            linearAccelerationListener.init(rate, registerList[5])
+            linearAccelerationListener.init()
         }
         if (ambientTemperatureListener.field in useList) {
-            ambientTemperatureListener.init(rate, registerList[6])
+            ambientTemperatureListener.init()
         }
         if (lightListener.field in useList) {
-            lightListener.init(rate, registerList[7])
+            lightListener.init()
         }
         if (pressureListener.field in useList) {
-            pressureListener.init(rate, registerList[8])
+            pressureListener.init()
         }
         if (proximityListener.field in useList) {
-            proximityListener.init(rate, registerList[9])
+            proximityListener.init()
         }
+    }
+
+    fun registerAll(rate: Int = 1000000 / 50, registerList: Set<String> = DEFAULT_VALUE_SENSOR_CONFIG) {
+        if (magneticListener.field in registerList) {
+            magneticListener.register(rate)
+        }
+        if (accelerometerListener.field in registerList) {
+            accelerometerListener.register(rate)
+        }
+        if (orientationListener.field in registerList) {
+            orientationListener.register(rate)
+        }
+        if (gyroscopeListener.field in registerList) {
+            gyroscopeListener.register(rate)
+        }
+        if (gyroscopeListener.field in registerList) {
+            gravityListener.register(rate)
+        }
+        if (linearAccelerationListener.field in registerList) {
+            linearAccelerationListener.register(rate)
+        }
+        if (ambientTemperatureListener.field in registerList) {
+            ambientTemperatureListener.register(rate)
+        }
+        if (lightListener.field in registerList) {
+            lightListener.register(rate)
+        }
+        if (pressureListener.field in registerList) {
+            pressureListener.register(rate)
+        }
+        if (proximityListener.field in registerList) {
+            proximityListener.register(rate)
+        }
+    }
+
+    fun unregisterAll() {
+        DeepNaviManager.get().unregisterListener()
     }
 }
 

@@ -4,12 +4,9 @@ import java.lang.Exception
 import java.net.HttpURLConnection
 import java.net.URL
 
-// [HttpURLConnection 使用总结](https://www.jianshu.com/p/cfefdc4e062e)
-// [【封装】异步HttpURLConnection网络访问](https://blog.csdn.net/u013806583/article/details/69916214)
-
 val DEFAULT_RES_CODE = listOf(HttpURLConnection.HTTP_OK)
 
-data class HttpResult(val con: HttpURLConnection, val content: ByteArray?, val resCode: Int) {
+data class HttpResult(val con: HttpURLConnection, val content: ByteArray?, val resCode: Int, val e: Exception?) {
     override fun equals(other: Any?): Boolean {
         if (this === other) {
             return true
@@ -31,36 +28,41 @@ data class HttpResult(val con: HttpURLConnection, val content: ByteArray?, val r
     }
 }
 
-private fun httpSync(url: String, headers: Map<String, String>?, targetResCode: List<Int>, prepare: (con: HttpURLConnection) -> Unit): HttpResult? {
+private fun httpSync(url: String, headers: Map<String, String>?, targetResCode: List<Int>, prepare: ((con: HttpURLConnection) -> Unit)? = null): HttpResult? {
     val con = URL(url).openConnection() as HttpURLConnection
+    con.doInput = true
     con.connectTimeout = 3000
     con.readTimeout = 3000
     headers?.forEach { con.addRequestProperty(it.key, it.value) }
-    prepare(con)
-    con.connect()
+    prepare?.invoke(con)
+    try {
+        con.connect()
+    } catch (e: Exception) {
+        return HttpResult(con, null, -1, e)
+    }
     val resCode = con.responseCode
     return try {
         if (resCode in targetResCode && con.inputStream != null) {
-            HttpResult(con, con.inputStream.readBytes(), resCode)
+            HttpResult(con, con.inputStream.readBytes(), resCode, null)
         } else if (con.errorStream != null) {
-            HttpResult(con, con.errorStream.readBytes(), resCode)
+            HttpResult(con, con.errorStream.readBytes(), resCode, null)
         } else {
-            HttpResult(con, null, resCode)
+            HttpResult(con, null, resCode, null)
         }
     } catch (e: Exception) {
-        HttpResult(con, null, resCode)
+        HttpResult(con, null, resCode, e)
     } finally {
         con.inputStream?.close()
-        con.outputStream?.close()
         con.errorStream?.close()
     }
 }
 
 fun doGetSync(url: String, headers: Map<String, String>?, targetResCode: List<Int> = DEFAULT_RES_CODE): HttpResult? =
-    httpSync(url, headers, targetResCode) {}
+    httpSync(url, headers, targetResCode)
 
 fun doPostSync(url: String, headers: Map<String, String>?, params: ByteArray?, targetResCode: List<Int> = DEFAULT_RES_CODE): HttpResult? =
     httpSync(url, headers, targetResCode) { con ->
+        con.doOutput = true
         con.requestMethod = "POST"
         if (params != null) {
             val output = con.outputStream
@@ -69,6 +71,7 @@ fun doPostSync(url: String, headers: Map<String, String>?, params: ByteArray?, t
                 output.flush()
                 output.close()
             }
+            con.outputStream?.close()
         }
     }
 

@@ -1,4 +1,4 @@
-@file:Suppress("unused", "MemberVisibilityCanBePrivate")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate", "SortModifiers")
 
 package com.sysu.example.utils
 
@@ -7,30 +7,31 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.liang.example.json_ktx.JsonStyle
+import com.liang.example.json_ktx.ReflectJsonApi
+import com.liang.example.json_ktx.SimpleJsonObject
+import com.liang.example.json_ktx.SimpleJsonParser
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.Subject
 import java.lang.reflect.Field
-import java.lang.reflect.Method
 import java.lang.reflect.Modifier
-import java.lang.reflect.Type
 
 // [SharedPreference 里存储StringSet，App关闭丢失数据问题](https://blog.csdn.net/weixin_40299948/article/details/80008940)
 
 open class Property<T : Any> : MutableLiveData<T> {
-    protected var mDesc: String
-    protected var mData: T? = null
-    protected var mType: Type
-    protected var subject: Subject<Any>? = null
+    open protected var mDesc: String
+    open protected var mData: T? = null
+    open protected var mType: Class<T>
+    open protected var subject: Subject<Any>? = null
 
     constructor(desc: String, data: T) : super(data) {
         this.mDesc = desc
         this.mData = data
-        this.mType = data::class.java
+        this.mType = data::class.java as Class<T>
     }
 
-    constructor(desc: String, type: Type) : super() {
+    constructor(desc: String, type: Class<T>) : super() {
         this.mDesc = desc
         this.mData = null
         this.mType = type
@@ -60,7 +61,7 @@ open class Property<T : Any> : MutableLiveData<T> {
         notifySubject(value)
     }
 
-    protected fun notifySubject(value: T?) {
+    open protected fun notifySubject(value: T?) {
         subject?.onNext(value ?: NULL_OBJECT)
     }
 
@@ -82,13 +83,13 @@ open class Property<T : Any> : MutableLiveData<T> {
 }
 
 open class SpProperty<T : Any> : Property<T> {
-    protected val mSpKey: String
+    open protected val mSpKey: String
 
     constructor(desc: String, data: T, spKey: String) : super(desc, data) {
         this.mSpKey = spKey
     }
 
-    constructor(desc: String, type: Type, spKey: String) : super(desc, type) {
+    constructor(desc: String, type: Class<T>, spKey: String) : super(desc, type) {
         this.mSpKey = spKey
     }
 
@@ -107,7 +108,7 @@ open class SpProperty<T : Any> : Property<T> {
             typeStr == "float" || typeStr == "class java.lang.Float" -> spEdit.putFloat(mSpKey, data as Float)
             typeStr == "double" || typeStr == "class java.lang.Double" -> spEdit.putString(mSpKey, (data as Double).toString())
             type == String::class.java -> spEdit.putString(mSpKey, data as String)
-            type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
+            type.isImplementInclusive(Set::class.java) -> {
                 val dataSet = data as Set<*>
                 if (dataSet.isEmpty()) {
                     return
@@ -115,10 +116,10 @@ open class SpProperty<T : Any> : Property<T> {
                 if (dataSet.first() is String) {
                     spEdit.putStringSet(mSpKey, dataSet as Set<String>)
                 } else {
-                    spEdit.putString(mSpKey, JsonApi.toJson(dataSet))
+                    spEdit.putString(mSpKey, ReflectJsonApi.toJson(dataSet))
                 }
             }
-            else -> spEdit.putString(mSpKey, JsonApi.toJson(data))
+            else -> spEdit.putString(mSpKey, ReflectJsonApi.toJson(data))
         }
         spEdit.putString("${mSpKey}_DESC", mDesc)
         spEdit.apply()
@@ -136,18 +137,18 @@ open class SpProperty<T : Any> : Property<T> {
                 typeStr == "float" || typeStr == "class java.lang.Float" -> sp.getFloat(mSpKey, 0f) as? T
                 typeStr == "double" || typeStr == "class java.lang.Double" -> sp.getString(mSpKey, "0.0")!!.toDouble() as? T
                 type == String::class.java -> sp.getString(mSpKey, "") as? T
-                type is Class<*> && type.isImplementInclusive(Set::class.java) -> {
+                type.isImplementInclusive(Set::class.java) -> {
                     val stringSet = sp.getStringSet(mSpKey, null)
                     if (stringSet != null) {
                         HashSet<String>(stringSet) as? T
                     } else {
-                        JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
+                        ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
                     }
                 }
-                else -> JsonApi.fromJsonOrNull(sp.getString(mSpKey, "") ?: "", type)
+                else -> ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
             }
             if (set) {
-                value = mData
+                postValue(mData)
             }
         }
     }
@@ -161,13 +162,13 @@ open class ContextSpProperty<T : Any> : SpProperty<T> {
     var mode: Int = Context.MODE_PRIVATE
 
     constructor(desc: String, data: T, spKey: String, context: Context) : super(desc, data, spKey) {
-        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
         this.context = context
+        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
     }
 
-    constructor(desc: String, type: Type, spKey: String, context: Context) : super(desc, type, spKey) {
-        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
+    constructor(desc: String, type: Class<T>, spKey: String, context: Context) : super(desc, type, spKey) {
         this.context = context
+        getFromSp(context.getSharedPreferences(PROPERTY_SP_NAME, mode))
     }
 
     override fun setValue(value: T?) {
@@ -193,7 +194,7 @@ fun ContextSpProperty<HashSet<String>>.add(data: String) {
     setData(dataSet)
 }
 
-fun ContextSpProperty<HashSet<String>>.contains(data: String) = getData()?.contains(data) ?: false
+operator fun ContextSpProperty<HashSet<String>>.contains(data: String) = getData()?.contains(data) ?: false
 
 fun ContextSpProperty<HashSet<String>>.remove(data: String) {
     val dataSet = getData() ?: return
@@ -205,7 +206,7 @@ fun ContextSpProperty<HashSet<String>>.remove(data: String) {
 
 open class AppSpProperty<T : Any> : ContextSpProperty<T> {
     constructor(desc: String, data: T, spKey: String) : super(desc, data, spKey, ContextApi.appContext)
-    constructor(desc: String, type: Type, spKey: String) : super(desc, type, spKey, ContextApi.appContext)
+    constructor(desc: String, type: Class<T>, spKey: String) : super(desc, type, spKey, ContextApi.appContext)
 }
 
 open class NetProperty<T : Any> : Property<T> {
@@ -213,7 +214,7 @@ open class NetProperty<T : Any> : Property<T> {
     private var options: ArrayList<String>? = null
 
     constructor(desc: String, data: T) : super(desc, data)
-    constructor(desc: String, type: Type) : super(desc, type)
+    constructor(desc: String, type: Class<T>) : super(desc, type)
 
     // mode values
 
@@ -239,83 +240,39 @@ open class NetProperty<T : Any> : Property<T> {
     open fun hasOption(option: String): Boolean = this.options?.contains(option) ?: false
 }
 
-open class PropertyHolder : ViewModel() {
+open class StrPropertyHelper(vararg _classes: Class<*>) {
     companion object {
         val fieldFilterAction: (Field) -> Boolean = {
-            it.type == Property::class.java &&
-                    Modifier.isPublic(it.modifiers) &&
+            it.type.isExtendInclusive(Property::class.java) &&
                     Modifier.isStatic(it.modifiers) &&
                     Modifier.isFinal(it.modifiers)
         }
-        val methodFilterAction: (Method) -> Boolean = {
-            it.returnType == Property::class.java &&
-                    Modifier.isPublic(it.modifiers) &&
-                    Modifier.isStatic(it.modifiers) &&
-                    Modifier.isFinal(it.modifiers)
+
+        fun readPropertyFieldsFromClass(properties: MutableMap<String, Field>, cls: Class<*>) = properties
+            .putAll(cls.declaredFields.filter(fieldFilterAction).map {
+                it.isAccessible = true
+                it.name to it
+            }.toMap())
+
+        fun jsonContentHelper(content: ByteArray?, propertyFields: MutableMap<String, Field>) {
+            if (content?.isNotEmpty() == true) {
+                val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject ?: return
+                for ((name, propertyField) in propertyFields) {
+                    val jsonVal = jsonObj[name] ?: continue
+                    val property = propertyField.get(null) as? Property<Any> ?: continue
+                    property.postValue(ReflectJsonApi.fromJsonOrNull<Any>(jsonVal, property.getType()) ?: continue)
+                }
+            }
         }
     }
 
-    private val properties: MutableList<Property<*>> = mutableListOf()
+    open val classes = _classes.toMutableList()
 
-    open fun addProperty(property: Property<*>) = properties.add(property)
-    open fun addProperties(properties: List<Property<*>>) = this.properties.addAll(properties)
-    open fun removeProperty(property: Property<*>) = properties.remove(property)
-    open fun hasProperty(property: Property<*>) = property in properties
-    open fun getProperties() = properties
-    open fun getPropertyAt(index: Int) = properties[index]
-    open fun clearAll() = properties.clear()
-
-    open fun readPropertiesFromClass(cls: Class<*>) =
-        properties.run {
-            addAll(cls.fields.filter(fieldFilterAction).map { it.get(null) as Property<*> }) &&
-                    addAll(cls.methods.filter(methodFilterAction).map { it.invoke(null) as Property<*> })
-        }
-}
-
-open class SpPropertyHelper(protected val mContext: Context, protected val mSpName: String) : PropertyHolder() {
-    private var sp: SharedPreferences = mContext.getSharedPreferences(mSpName, Context.MODE_PRIVATE)
-    private val observeAction: (Any) -> Unit = { saveProperty(it as Property<*>) }
-
-    override fun addProperty(property: Property<*>): Boolean {
-        property.observeForever(observeAction)
-        return super.addProperty(property)
+    open fun getPropertyFields(): MutableMap<String, Field> {
+        val propertyFields = mutableMapOf<String, Field>()
+        classes.forEach { readPropertyFieldsFromClass(propertyFields, it) }
+        return propertyFields
     }
 
-    override fun addProperties(properties: List<Property<*>>): Boolean {
-        properties.forEach { it.observeForever(observeAction) }
-        return super.addProperties(properties)
-    }
-
-    override fun readPropertiesFromClass(cls: Class<*>): Boolean {
-        val properties = mutableListOf<Property<*>>()
-        properties.addAll(cls.fields.filter(fieldFilterAction).map { it.get(null) as Property<*> })
-        properties.addAll(cls.methods.filter(methodFilterAction).map { it.invoke(null) as Property<*> })
-        properties.forEach { it.observeForever(observeAction) }
-        return super.addProperties(properties)
-    }
-
-    override fun removeProperty(property: Property<*>): Boolean {
-        property.removeObserver(observeAction)
-        return super.removeProperty(property)
-    }
-
-    override fun clearAll() {
-        getProperties().forEach { it.removeObserver(observeAction) }
-        super.clearAll()
-    }
-
-    fun saveProperty(property: Property<*>) {
-        if (property is SpProperty) {
-            property.saveInSp(sp)
-        }
-    }
-
-    fun getContext() = mContext
-    fun getSpName() = mSpName
-}
-
-open class NetPropertyHelper(protected val url: String) : PropertyHolder() {
-    init {
-        TODO("NetPropertyHelper hasn't implemented")
-    }
+    open fun readFromJson(url: String) = doGetAsync(url, null) { jsonContentHelper(it?.content, getPropertyFields()) }
 }

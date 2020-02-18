@@ -1,6 +1,6 @@
-from tornado.web import Application
+from tornado.web import Application, RequestHandler
 import tornado.ioloop
-from handler import ConfigHandler,DeepNaviWebSocket
+from handler import ConfigHandler,DeepNaviWebSocket, NotFoundHandler
 from config import SERVER_PORT
 import tornado.log
 import tornado
@@ -21,6 +21,9 @@ def initLog():
     tornado.options.parse_command_line()
     [i.setFormatter(LogFormatter()) for i in logging.getLogger().handlers]
 
+
+
+
 if __name__ == "__main__":
     initLog()
     logging.debug('这是测试日志')
@@ -28,7 +31,10 @@ if __name__ == "__main__":
     application = Application([
         (r'/config', ConfigHandler),
         (r'/', DeepNaviWebSocket)
-    ], debug=True)
+    ],  debug=True, 
+        default_handler_class=NotFoundHandler,
+        default_handler_args=dict(status_code=404)
+    )
     httpserver = tornado.httpserver.HTTPServer(application)
     httpserver.listen(SERVER_PORT)
     tornado.ioloop.IOLoop.current().start()

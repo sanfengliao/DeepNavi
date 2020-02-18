@@ -1,19 +1,19 @@
 from .naviservice import NaviModelService
 from .naviservice.ttypes import *
 from .naviservice.constants import *
-from ..config import RPC_IP, RPC_PORT
-from ..model.basic_pb2 import DeepNaviReq
+from config import RPC_IP, RPC_PORT
+from model.basic_pb2 import DeepNaviReq
 from google.protobuf.json_format import MessageToJson, Parse, MessageToDict
 
 from thrift import Thrift
 from thrift.transport import TSocket, TTransport
 from thrift.protocol import TBinaryProtocol
 
-transocket = TSocket.TSocket(RPC_IP, RPC_PORT)
-transport = TTransport.TBufferedTransport(transocket)
-protocol = TBinaryProtocol.TBinaryProtocol(transport)
-naviModelService = NaviModelService.Client(protocol)
-transport.open()
+# transocket = TSocket.TSocket(RPC_IP, RPC_PORT)
+# transport = TTransport.TBufferedTransport(transocket)
+# protocol = TBinaryProtocol.TBinaryProtocol(transport)
+# naviModelService = NaviModelService.Client(protocol)
+# transport.open()
 
 class Navi:
     def predictByImageAndWifi(self, reqData: DeepNaviReq):

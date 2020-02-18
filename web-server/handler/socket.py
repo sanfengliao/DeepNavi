@@ -1,6 +1,6 @@
 from tornado.websocket import WebSocketHandler
-from ..model.basic_pb2 import DeepNaviReq, DeepNaviRes
-from ..service.navi import Navi
+from model.basic_pb2 import DeepNaviReq, DeepNaviRes
+from service.navi import Navi
 navi = Navi()
 class DeepNaviWebSocket(WebSocketHandler):
     def open(self):

@@ -9,11 +9,11 @@ from thrift import Thrift
 from thrift.transport import TSocket, TTransport
 from thrift.protocol import TBinaryProtocol
 
-# transocket = TSocket.TSocket(RPC_IP, RPC_PORT)
-# transport = TTransport.TBufferedTransport(transocket)
-# protocol = TBinaryProtocol.TBinaryProtocol(transport)
-# naviModelService = NaviModelService.Client(protocol)
-# transport.open()
+transocket = TSocket.TSocket(RPC_IP, RPC_PORT)
+transport = TTransport.TBufferedTransport(transocket)
+protocol = TBinaryProtocol.TBinaryProtocol(transport)
+naviModelService = NaviModelService.Client(protocol)
+transport.open()
 
 class Navi:
     def predictByImageAndWifi(self, reqData: DeepNaviReq):

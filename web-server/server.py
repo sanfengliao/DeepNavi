@@ -16,7 +16,7 @@ class LogFormatter(tornado.log.LogFormatter):
         )
 
 def initLog():
-    options.log_file_prefix = os.path.join(os.path.dirname(__file__), 'logs/tornado_main.log')
+    # options.log_file_prefix = os.path.join(os.path.dirname(__file__), 'logs/tornado_main.log')
     options.logging = 'debug'
     tornado.options.parse_command_line()
     [i.setFormatter(LogFormatter()) for i in logging.getLogger().handlers]
@@ -26,8 +26,6 @@ def initLog():
 
 if __name__ == "__main__":
     initLog()
-    logging.debug('这是测试日志')
-    # application.listen(SERVER_PORT)
     application = Application([
         (r'/config', ConfigHandler),
         (r'/', DeepNaviWebSocket)
@@ -36,5 +34,6 @@ if __name__ == "__main__":
         default_handler_args=dict(status_code=404)
     )
     httpserver = tornado.httpserver.HTTPServer(application)
+    logging.info("Server listen in %d"%SERVER_PORT)
     httpserver.listen(SERVER_PORT)
     tornado.ioloop.IOLoop.current().start()

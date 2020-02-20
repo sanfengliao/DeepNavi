@@ -5,12 +5,16 @@ class ResponseCode():
     ERROR = 'error'
 
 DEEPNAVI_CLIENT_CONFIG = {
-    "name": "value",
-    "hello": "world",
-    "width": 100
+    "DEEPNAVI_FREQUENCY": 3, 
+    "DEEPNAVI_URL": "192.168.43.47:5000", 
+    "DEEPNAVI_IMAGE_SIZE": {
+        "width": 720, 
+        "height": 1080
+    }, 
+    "SIGNAL_CONFIG_SET": "image,wifiList"
 }
 
-SERVER_PORT = 8000
+SERVER_PORT = 5000
 
 RPC_IP = '127.0.0.1'
 RPC_PORT = 1234

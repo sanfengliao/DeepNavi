@@ -24,9 +24,9 @@ class Navi:
         return resultList
     def predictByImageAndMag(self, reqData: DeepNaviReq):
         dic = MessageToDict(reqData)
-        gravityList = dic['gravityList']
+        _magneticList = dic['magneticList']
         magneticList = []
-        for magnetic in magneticList:
+        for magnetic in _magneticList:
             magneticList.append(CoorSensor(x=magnetic['x'], y=magnetic['y'], z=magnetic['z']))
         naviModel = NaviModel(image=reqData.image, magneticList=magneticList)
         resultList = naviModelService.predictByImageAndMag(naviModel)

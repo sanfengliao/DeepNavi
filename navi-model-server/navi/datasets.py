@@ -7,8 +7,8 @@ import functools
 import numpy as np
 import torch
 from torch.utils import data
-from utils import *
-from config import *
+from .utils import *
+from .config import *
 import torchvision.models as models
 from PIL import Image
 

@@ -8,8 +8,8 @@ import torchvision.transforms as transforms
 from PIL import Image
 from sklearn.preprocessing import StandardScaler
 
-from datasets import *
-from models import *
+from .datasets import *
+from .models import *
 
 
 def use_deepnavi(imgs: Image.Image, mags: torch.Tensor, model_path='./model_weights/sc/sc.pth.tar', device_index=0) -> torch.Tensor:
@@ -125,7 +125,7 @@ def rotate_vector(rotation_output: torch.Tensor, v: typing.List) -> typing.List:
 #     return transform1(Image.open(BytesIO(img)).convert('RGB'))
 
 
-if __name__ == "__main__":
+def main(path):
     mags = torch.tensor([37.857056, 16.542053, -11.161804, 37.857056, 16.542053, -11.161804,
                          35.585022, 10.758972, -10.366821, 35.585022, 10.758972, -10.366821,
                          36.091614, 15.016174, -11.819458, 36.091614, 15.016174, -11.819458,
@@ -134,9 +134,10 @@ if __name__ == "__main__":
                          37.857056, 16.542053, -11.161804, 37.088013, 12.394714, -9.571838,
                          34.96704, 14.585876, -12.930298, 34.96704, 14.585876, -12.930298,
                          36.643982, 16.670227, -11.070251, 36.643982, 16.670227, -11.070251])
-    img_file = open(
-        './dataset/office/sensor_data/images/1527408657595803863.png', 'rb')
+    img_file = open(path, 'rb')
     img = img_file.read()
     img_file.close()
     img = Image.open(BytesIO(img)).convert('RGB')
     use_deepnavi(img, mags)
+if __name__ == "__main__":
+    main()

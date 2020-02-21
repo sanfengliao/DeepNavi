@@ -4,7 +4,7 @@ models
 import numpy as np
 import torch
 import torch.nn as nn
-from config import *
+from .config import *
 
 class ImageEncoder(nn.Module):
     """

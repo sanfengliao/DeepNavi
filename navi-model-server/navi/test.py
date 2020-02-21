@@ -1,7 +1,7 @@
 import os
-from datasets import *
-from models import *
-from losses import *
+from .datasets import *
+from .models import *
+from .losses import *
 import torchvision.transforms as transforms
 from sklearn.preprocessing import StandardScaler
 

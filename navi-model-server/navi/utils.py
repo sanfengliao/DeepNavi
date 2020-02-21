@@ -8,8 +8,8 @@ import numpy as np
 from datetime import datetime
 import time
 import pandas as pd
-from losses import *
-from datasets import *
+from .losses import *
+from .datasets import *
 import bisect
 from tqdm import tqdm
 import re

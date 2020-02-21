@@ -19,12 +19,25 @@ class MyClientProtocol(WebSocketClientProtocol):
 def generateReq():
     req = DeepNaviReq()
     req.time = int(time.time() * 1000)
-    f = open('./images/timg.jpeg', 'rb')
+    f = open('./images/1527408677520814362.png', 'rb')
     req.image = f.read()
-    magnetic = req.magneticList.add()
-    magnetic.x = 1
-    magnetic.y = 2
-    magnetic.z = 3
+    magList = [37.857056, 16.542053, -11.161804, 37.857056, 16.542053, -11.161804,
+                35.585022, 10.758972, -10.366821, 35.585022, 10.758972, -10.366821,
+                36.091614, 15.016174, -11.819458, 36.091614, 15.016174, -11.819458,
+                34.526062, 12.641907, -10.768127, 34.526062, 12.641907, -10.768127,
+                36.524963, 12.173462, -9.135437, 37.857056, 16.542053, -11.161804,
+                37.857056, 16.542053, -11.161804, 37.088013, 12.394714, -9.571838,
+                34.96704, 14.585876, -12.930298, 34.96704, 14.585876, -12.930298,
+                36.643982, 16.670227, -11.070251, 36.643982, 16.670227, -11.070251]
+
+    i = 0
+    while i < len(magList):
+        magnetic = req.magneticList.add()
+        magnetic.x = magList[i]
+        magnetic.y = magList[i + 1]
+        magnetic.z = magList[i + 2]
+        i += 3
+    
     accelerometer = req.accelerometerList.add()
     accelerometer.x = 1
     accelerometer.y = 2
@@ -61,7 +74,7 @@ if __name__ == "__main__":
     factory.protocol = MyClientProtocol
 
     loop = asyncio.get_event_loop()
-    coro = loop.create_connection(factory, '127.0.0.1', 8000)
+    coro = loop.create_connection(factory, '127.0.0.1', 5000)
     loop.run_until_complete(coro)
     loop.run_forever()
     loop.close()

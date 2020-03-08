@@ -7,7 +7,7 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 from sklearn.preprocessing import StandardScaler
-
+import logging
 from .datasets import *
 from .models import *
 
@@ -67,8 +67,7 @@ class DeepNaviModel:
             mags = mags.view(batch_size, 1, -1)
 
             trans_output, rotation_output = self.model([imgs, mags])
-            print(trans_output[0], rotation_output[0],
-                self.quaternion_to_euler(rotation_output[0]), self.rotate_vector(rotation_output[0], [1, 1, 1]))
+            logging.info('trans_output: %s rotation_out: %s'%(trans_output[0], rotation_output[0]))
             return self.rotate_vector(rotation_output[0], [1, 1, 1])
     
     def quaternion_to_euler(self,rotation_output: torch.Tensor) -> typing.List:

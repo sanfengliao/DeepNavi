@@ -1,3 +1,4 @@
 import os
+from navi.test import test_deepnavi
 
-print(os.path.join(os.path.dirname(__file__), 'navi/config.py'))
+test_deepnavi(os.path.basename(__file__), 'navi/model_weights/sc/sc.pth.tar')

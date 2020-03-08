@@ -1,6 +1,6 @@
-from .naviservice import NaviModelService
-from .naviservice.ttypes import *
-from .naviservice.constants import *
+from service.naviservice import NaviModelService
+from service.naviservice.ttypes import *
+from service.naviservice.constants import *
 from config import RPC_IP, RPC_PORT
 from model.basic_pb2 import DeepNaviReq
 from google.protobuf.json_format import MessageToJson, Parse, MessageToDict
@@ -15,6 +15,7 @@ protocol = TBinaryProtocol.TBinaryProtocol(transport)
 naviModelService = NaviModelService.Client(protocol)
 transport.open()
 
+MAGNETIC_LIST_MAX_LEN = 48
 class Navi:
     def predictByImageAndWifi(self, reqData: DeepNaviReq):
         naviModel = NaviModel()
@@ -28,6 +29,8 @@ class Navi:
         magneticList = []
         for magnetic in _magneticList:
             magneticList.append(CoorSensor(x=magnetic['x'], y=magnetic['y'], z=magnetic['z']))
+            if len(magneticList) == MAGNETIC_LIST_MAX_LEN:
+                break
         naviModel = NaviModel(image=reqData.image, magneticList=magneticList)
         resultList = naviModelService.predictByImageAndMag(naviModel)
         return resultList

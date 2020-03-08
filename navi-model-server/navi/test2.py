@@ -8,8 +8,8 @@ import torchvision.transforms as transforms
 from PIL import Image
 from sklearn.preprocessing import StandardScaler
 
-from .datasets import *
-from .models import *
+from datasets import *
+from models import *
 
 
 def use_deepnavi(imgs: Image.Image, mags: torch.Tensor, model_path='./model_weights/sc/sc.pth.tar', device_index=0) -> torch.Tensor:
@@ -140,4 +140,4 @@ def main(path):
     img = Image.open(BytesIO(img)).convert('RGB')
     use_deepnavi(img, mags)
 if __name__ == "__main__":
-    main()
+    main('./dataset/office/sensor_data/images/1527408657595803863.png')

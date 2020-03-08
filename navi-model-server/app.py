@@ -7,38 +7,30 @@ from PIL import Image
 from io import BytesIO
 import torch
 from navi import DeepNaviModel
-
+from handler import NaviModelServiceHandler
+import logging
 IP = '127.0.0.1'
 PORT = 1234
 
-import socket
+import socket   
 
-class NaviModelServiceHandler:
+class NaviModelServer:
+    def __initLog(self):
+        logging.basicConfig(format='[%(asctime)s %(filename)s:%(funcName)s:%(lineno)d %(levelname)s] %(message)s', filemode='a', filename=None, level=logging.DEBUG)
+        naviModelServiceHandler = NaviModelServiceHandler()
+        processor = NaviModelService.Processor(naviModelServiceHandler)
+        transport = TSocket.TServerSocket('127.0.0.1', port=PORT)
+        tfactory = TTransport.TBufferedTransportFactory()
+        pfactory = TBinaryProtocol.TBinaryProtocolFactory()
+        self.server = TServer.TSimpleServer(processor, transport, tfactory, pfactory)
+
     def __init__(self):
-        self.deepNaviModel = DeepNaviModel()
+        self.__initLog()
+    def serve(self):
+        logging.info('NaviModelServier start')
+        self.server.serve()
 
-    def predictByImageAndWifi(self, naviModel: NaviModel):
-        return [1.23, 4.56]
-    
-    def predictByImageAndMag(self, naviModel: NaviModel):
-        image = naviModel.image
-        mags = naviModel.magneticList
-        magList = []
-        for mag in mags:
-            magList.append(mag.x)
-            magList.append(mag.y)
-            magList.append(mag.z)
-        magTensor = torch.Tensor(magList)
-        image = Image.open(BytesIO(image)).convert('RGB')
-        return self.deepNaviModel.predictByImageAndMags(image, magTensor)      
 
 if __name__ == "__main__":
-    naviModelServiceHandler = NaviModelServiceHandler()
-    processor = NaviModelService.Processor(naviModelServiceHandler)
-    transport = TSocket.TServerSocket('127.0.0.1', port=PORT)
-    tfactory = TTransport.TBufferedTransportFactory()
-    pfactory = TBinaryProtocol.TBinaryProtocolFactory()
-
-    server = TServer.TSimpleServer(processor, transport, tfactory, pfactory)
-
-    server.serve()
+    naviModelServer = NaviModelServer()
+    naviModelServer.serve()

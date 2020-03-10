@@ -257,6 +257,7 @@ String mapId
 	code: 0;
 	data: [{
 		loc: {
+			id: 'xxx'
 			name: 'xxx',
 			planCoordinate: {
                 x: 0, //
@@ -280,6 +281,69 @@ String mapId
             orginInPlan: [0, 0, 0]
             modelPath: ''
 		}
+	}]
+}
+```
+
+#### 根据起点和终点获取路径
+
+```
+/map/navi POST
+Content-Type: application/json
+```
+
+> request
+
+```
+{
+	start: {
+		planCoordinate: {
+            x: 0, //
+            y: 0,
+            z: 0
+        },
+        actualCoordinate: {
+            x: 0,
+            y: 0,
+            z: 0
+        }, // 实
+	},
+	end: {
+		planCoordinate: {
+            x: 0, //
+            y: 0,
+            z: 0
+        },
+        actualCoordinate: {
+            x: 0,
+            y: 0,
+            z: 0
+        }, // 实
+	}
+}
+```
+
+> response
+
+```
+// success
+{
+	code: 0,
+	// 第一个元素和最后一个元素是起点和终点
+	data: [{
+		{
+			pointId: 'xxxx',
+            planCoordinate: {
+                x: 0, //
+                y: 0,
+                z: 0
+            },
+            actualCoordinate: {
+                x: 0,
+                y: 0,
+                z: 0
+            }, // 实
+        },
 	}]
 }
 ```

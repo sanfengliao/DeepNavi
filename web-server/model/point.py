@@ -14,7 +14,12 @@ class Point:
 			for k, v in info.items():
 				self[k] = v
 	
+	def addAdjacence(self, pid: str):
+		self.adjacence.append(pid)
+
 	def __setitem__(self, name, value):
+		if name == '_id':
+			return
 		self.__dict__[name] = value
 
 	def __getitem__(self, name):

@@ -189,6 +189,101 @@ String mapId
 }
 ```
 
+#### 根据起点搜索
+
+```
+/map/search GET
+```
+
+> request
+
+```
+String name
+```
+
+> response
+
+```
+// success
+{
+	code: 0;
+	data: [{
+		loc: {
+			name: 'xxx',
+			planCoordinate: {
+                x: 0, //
+                y: 0,
+                z: 0
+            },
+            actualCoordinate: {
+                x: 0,
+                y: 0,
+                z: 0
+            }, // 实
+		},
+		map: {
+			id: 'ddss', // map的Id
+            name: '',
+            planPath: 'xxx',
+            planSize: [0, 0, 0],
+            planUint: 'px',
+            actualSize: [0, 0, 0],
+            actualUnit: 'm',
+            orginInPlan: [0, 0, 0]
+            modelPath: ''
+		}
+	}]
+}
+```
+
+#### 根据终点和mapId搜索
+
+```
+/map/search GET
+```
+
+> request
+
+```
+String name,
+String mapId
+```
+
+> response
+
+```
+// success
+{
+	code: 0;
+	data: [{
+		loc: {
+			name: 'xxx',
+			planCoordinate: {
+                x: 0, //
+                y: 0,
+                z: 0
+            },
+            actualCoordinate: {
+                x: 0,
+                y: 0,
+                z: 0
+            }, // 实
+		},
+		map: {
+			id: 'ddss', // map的Id
+            name: '',
+            planPath: 'xxx',
+            planSize: [0, 0, 0],
+            planUint: 'px',
+            actualSize: [0, 0, 0],
+            actualUnit: 'm',
+            orginInPlan: [0, 0, 0]
+            modelPath: ''
+		}
+	}]
+}
+```
+
 
 
 #### 训练deep-navi模型

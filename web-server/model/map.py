@@ -27,6 +27,8 @@ class Map:
 				self[k] = v
 		
 	def __setitem__(self, name, value):
+		if name == '_id':
+			return
 		self.__dict__[name] = value
 
 	def __getitem__(self, name):

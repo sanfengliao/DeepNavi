@@ -5,7 +5,7 @@
 ##### 1. 新建一个地图
 
 ```
-/map/new POST
+/map POST
 Content-Type: multipart/form-data
 ```
 
@@ -50,7 +50,7 @@ int[] originInPlan //原点在平面图的位置
 ##### 2. 添加点到地图
 
 ```
-/map/addPoint POST
+/post POST
 content-type: application/json
 ```
 
@@ -104,7 +104,7 @@ content-type: application/json
 ##### 3. 添加路径到map
 
 ```
-/map/addPath POST
+/path POST
 Content-Type: 只要不是form-data
 ```
 
@@ -148,10 +148,79 @@ String mapId //
 }
 ```
 
-#### 获取地图所有的点
+#### 获取地图信息
 
 ```
-/map/points GET
+/map
+```
+
+> request
+
+```
+String mapId  // required
+int includePoint // 是否包含点
+int includeEdge // 是否包含边
+```
+
+> response
+
+```json
+{
+    code: 0,
+    data: [{
+        map: {
+            id: 'ddss', // map的Id
+            name: '',
+            planPath: 'xxx',
+            planSize: [0, 0, 0],
+            planUint: 'px',
+            actualSize: [0, 0, 0],
+            actualUnit: 'm',
+            orginInPlan: [0, 0, 0]
+            modelPath: ''
+        },
+        points: [
+            {
+                id: 'xx',
+                mapId: 'xx',
+                planCoordinate: {
+                    x: 0, //
+                    y: 0,
+                    z: 0
+                },
+                actualCoordinate: {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                }, // 实际
+                adjacence: ['id1', 'id2'] // 相连的点
+            }
+        ],
+        path: [{
+            id: 'xxx',
+            pointA: {
+                id: 'xx',
+                planCoordinate: {
+                    x: 0, //
+                    y: 0,
+                    z: 0
+                },
+                actualCoordinate: {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                }, // 实际
+            },
+            pointB: //同pointA
+        }]
+    }]
+}
+```
+
+#### 获取地图上的点
+
+```
+/point GET
 ```
 
 > request
@@ -162,8 +231,7 @@ String mapId
 
 > response
 
-```json
-// success
+```// success
 {
     code: 0,
     data: [{
@@ -188,6 +256,8 @@ String mapId
     msg: 'xxx'
 }
 ```
+
+
 
 #### 根据起点搜索
 

@@ -16,6 +16,7 @@ class Path:
 			}
 		self.id = ''
 		self.mapId = mapId
+		self.planWidth = 1
 		if 'id' in kwargs:
 			self.id = kwargs['id']
 		if 'mapId' in kwargs:

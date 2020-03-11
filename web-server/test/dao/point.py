@@ -1,6 +1,5 @@
 from dao.point import PointDao
 from model import Point
-
 import unittest
 from unittest import TestCase
 from bson import ObjectId
@@ -28,7 +27,7 @@ class TesPointDao(TestCase):
         print(p.id)
         result = self.pointDao.dropPoint(p)
         self.assertEqual(result, 1)
-    def test_dropPointById(self):
+    def _test_dropPointById(self):
         result = self.pointDao.dropPointById('5e64d614b40dda58e5e7b190', '5e64cfce8aeb3647322e0880')
         print(result)
     def _testFindById(self):
@@ -46,5 +45,9 @@ class TesPointDao(TestCase):
         for item in result:
             print(item.id)
         self.assertEqual(len(result), 2)
+    def testfindPointsIn(self):
+        result = self.pointDao.findPointsIn(['5e64de9265bf8bca60db5865', '5e64deb3bd4b95cd35f1430f'], '5e64cfce8aeb3647322e0880')
+        for item in result:
+            print(item.toJsonMap())
 if __name__ == "__main__":
     unittest.main()

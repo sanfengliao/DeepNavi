@@ -1,11 +1,9 @@
 from model import Point
-from .path import PathDao
 from dao.mongodb import db
 from bson import ObjectId
 import typing
 DBPREFIX = 'point'
 
-pathDao = PathDao()
 class PointDao:
     def savePoint(self, point: Point) -> Point:
         col = self.getColl(point.mapId)
@@ -103,6 +101,25 @@ class PointDao:
             result.append(self.assemblePoint(item))
         return result
     
+    def findPointsIn(self, ids: typing.List[str], mapId: str) -> typing.List[Point]:
+        ids = [ObjectId(id) for id in ids]
+        col = self.getColl(mapId)
+        cursor = col.find({'_id': {'$in': ids}})
+        result = []
+        for item in cursor:
+            result.append(self.assemblePoint(item))
+        return result
+
+    def findClosePoint(self, actualCoordinate: dict, mapId: str) -> typing.List[Point]:
+        if len(mapId) != 24:
+            return []
+        paths = pathDao.findPathWherePointIn(actualCoordinate, mapId)
+        pointIds = []
+        for item in paths:
+            pointIds.append(item.pointA['id'])
+            pointIds.append(item.pointB['id'])
+        return self.findPointsIn(pointIds, mapId)
+
     def assemblePoint(self, item: dict) -> Point:
         p = Point(item['mapId'], item)
         p.id = str(item['_id'])
@@ -110,3 +127,8 @@ class PointDao:
     
     def getColl(self, mId: str):
         return db.get_collection(DBPREFIX + '_' + mId)
+
+
+
+from .path import PathDao
+pathDao = PathDao()

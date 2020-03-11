@@ -36,18 +36,19 @@ class MapHandler(RequestHandler):
         actualSize = self.get_body_arguments('actualSize')
         actualUnit = self.get_body_argument('actualUnit')
         originInPlan = self.get_body_arguments('originInPlan')
-        if isinstance(actualSize, list):
+        print(planSize)
+        if len(planSize) > 1:
             actualSize = [float(item) for item in actualSize]
-        elif isinstance(actualSize, str):
-            actualSize = [float(item) for item in actualSize.split(',')]
-        if isinstance(planSize, list):
+        else:
+            actualSize = [float(item) for item in actualSize[0].split(',')]
+        if len(planSize) > 1:
             planSize = [float(item) for item in planSize]
-        elif isinstance(planSize, str):
-             planSize = [float(item) for item in planSize.split(',')]
-        if isinstance(originInPlan, list):
+        else:
+             planSize = [float(item) for item in planSize[0].split(',')]
+        if len(originInPlan) > 1:
             originInPlan = [float(item) for item in originInPlan]
-        elif isinstance(originInPlan, str):
-            originInPlan = [float(item) for item in originInPlan.split(',')]
+        else:
+            originInPlan = [float(item) for item in originInPlan[0].split(',')]
 
         planImage = self.request.files['planImage']
         filename = name + os.path.splitext(planImage[0]['filename'])[-1]

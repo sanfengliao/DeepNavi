@@ -19,34 +19,34 @@ class PointDao:
         result = col.update_one({'_id': ObjectId(point.id)}, {'$set': point.toDBMap()}, upsert=True)
         if result.upserted_id:
             point.id = str(result.upserted_id)
-        path = pathDao.findPathByPointAId(point.id, point.mapId)
+        path = edgeDao.findEdgeByPointAId(point.id, point.mapId)
         for item in path:
             item.pointA = {
                 'id': point.id,
                 'planCoordinate': point.planCoordinate,
                 'actualCoordinate': point.actualCoordinate
             }
-            pathDao.updatePath(item)
-        path = pathDao.findPathByPointBId(point.id, point.mapId)
+            edgeDao.updateEdge(item)
+        path = edgeDao.findEdgeByPointBId(point.id, point.mapId)
         for item in path:
             item.pointB = {
                 'id': point.id,
                 'planCoordinate': point.planCoordinate,
                 'actualCoordinate': point.actualCoordinate
             }
-            pathDao.updatePath(item)
+            edgeDao.updateEdge(item)
         return point
     
     def dropPoint(self, point: Point) -> int:
         col = self.getColl(point.mId)
         result = col.delete_one({'_id': ObjectId(point.id)})
-        pathDao.dropPathByPid(point.id, point.mapId)
+        edgeDao.dropEdgeByPid(point.id, point.mapId)
         return result.deleted_count
         
     def dropPointById(self, pid:str, mapId:str) -> int:
         col = self.getColl(mapId)
         result = col.delete_one({'_id': ObjectId(pid)})
-        pathDao.dropPathByPid(pid, mapId)
+        edgeDao.dropEdgeByPid(pid, mapId)
         return result.deleted_count
     
     def findById(self, id: str, mid: str) -> Point:
@@ -87,7 +87,8 @@ class PointDao:
                     continue
                 if self.isPidExistMap(pAddId, mid):
                     point.addAdjacence(pAddId)
-        point = self.updatePoint(point)
+        col = self.getColl(mid)
+        result = col.update_one({'_id': ObjectId(point.id)}, {'$set': point.toDBMap()})
         return point
 
     def getAdjacence(self, pid: str, mid: str) -> typing.List[Point]:
@@ -113,7 +114,7 @@ class PointDao:
     def findClosePoint(self, actualCoordinate: dict, mapId: str) -> typing.List[Point]:
         if len(mapId) != 24:
             return []
-        paths = pathDao.findPathWherePointIn(actualCoordinate, mapId)
+        paths = edgeDao.findEdgeByPointAId(actualCoordinate, mapId)
         pointIds = []
         for item in paths:
             pointIds.append(item.pointA['id'])
@@ -130,5 +131,5 @@ class PointDao:
 
 
 
-from .path import PathDao
-pathDao = PathDao()
+from .edge import EdgeDao
+edgeDao = EdgeDao()

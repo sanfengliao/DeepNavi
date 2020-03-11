@@ -1,6 +1,6 @@
 from .point import Point
 # 存数据库
-class Path:
+class Edge:
 	def __init__(self,  mapId: str, pointA:dict=None, pointB:dict=None,**kwargs):
 		if pointA is not None:
 			self.pointA = {
@@ -16,11 +16,13 @@ class Path:
 			}
 		self.id = ''
 		self.mapId = mapId
-		self.planWidth = 1
+		self.edgeWidth = 1
 		if 'id' in kwargs:
 			self.id = kwargs['id']
 		if 'mapId' in kwargs:
 			self.mapId = kwargs['mapId']
+		if 'edgeWidth'in kwargs:
+			self.edgeWidth = kwargs['edgeWidth']
 	def toDBMap(self) -> dict:
 		return {
 			'pointA': self.pointA,

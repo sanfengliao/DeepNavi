@@ -1,25 +1,26 @@
 # 存数据库
+import copy
 class Map:
-	DB_KEY = ['name', 'planPath', 'planSize', 'planUnit', 'actualSize', 'actualUnit', 'modelPath','orginInPlan']
+	DB_KEY = ['name', 'planPath', 'planSize', 'planUnit', 'actualSize', 'actualUnit', 'modelPath','originInPlan']
 	def __init__(self, info:dict=None, **kwargs):
 		# id
 		self.id = ''
 		# 地图名
-		self.name = '超算5楼'
+		self.name = ''
 		# 平面图所在位置
-		self.planPath = 'image/test.png'
+		self.planPath = ''
 		# 平面图大小
-		self.planSize = [70, 50, 0] # x 70 y 50
+		self.planSize = [] # x 70 y 50
 		# 平面图单位
 		self.planUnit = 'px'
 		# 地图实际大小
-		self.actualSize = [70, 50, 0] # x 70 y 50
+		self.actualSize = [] # x 70 y 50
 		# 地图实际单位
 		self.actualUnit = 'm'
 		# 模型位置
-		self.modelPath = 'modelPath'
+		self.modelPath = ''
 		# 原点在平面图的位置 单位 planUnit
-		self.orginInPlan = [0, 0, 0]
+		self.originInPlan = [0, 0, 0]
 		for k, v in kwargs.items():
 			self[k] = v
 		if isinstance(info, dict):
@@ -35,7 +36,10 @@ class Map:
 		return self.__dict__[name]
 	
 	def toJsonMap(self) -> dict:
-		 return self.__dict__
+		# jsonDict = copy.deepcopy(self.__dict__)
+		# jsonDict.pop('planPath')
+		# return jsonDict
+		return self.__dict__
 	
 	def toDBMap(self) -> dict:
 		DBMap = {}

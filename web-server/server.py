@@ -1,6 +1,6 @@
 from tornado.web import Application, RequestHandler
 import tornado.ioloop
-from handler import ConfigHandler,DeepNaviWebSocket, NotFoundHandler
+from handler import ConfigHandler,DeepNaviWebSocket, NotFoundHandler, MapHandler, PointHandler, EdgeHandler, LocHandler, LocSearchHandler
 from config import SERVER_PORT
 import tornado.log
 import tornado
@@ -27,11 +27,19 @@ def initLog():
 if __name__ == "__main__":
     initLog()
     application = Application([
+        (r'/loc', LocHandler),
+        (r'/edge', EdgeHandler),
+        (r'/point', PointHandler),
+        (r'/map', MapHandler),
+        (r'/loc/search', LocSearchHandler),
         (r'/config', ConfigHandler),
         (r'/', DeepNaviWebSocket)
-    ],  debug=True, 
-        default_handler_class=NotFoundHandler,
-        default_handler_args=dict(status_code=404)
+    ],
+    static_path = os.path.join(os.path.dirname(__file__),'upload'),  # 为了便于部署，建议使用static
+    static_url_prefix = '/static/',  # 默认使用的是static，为了便于部署，建议使用static
+    debug=True, 
+    default_handler_class=NotFoundHandler,
+    default_handler_args=dict(status_code=404)
     )
     httpserver = tornado.httpserver.HTTPServer(application)
     logging.info("Server listen in %d"%SERVER_PORT)

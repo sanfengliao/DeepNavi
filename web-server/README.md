@@ -14,11 +14,11 @@ Content-Type: multipart/form-data
 ```
 String name
 byte[] planImage required // 平面图
-int[] planSize required // 平面图大小
-String plantUnix // 平面图单位 default 'px'
-int[] actualSize required // 实际大小
+float planSize required // 平面图大小
+String planUnit // 平面图单位 default 'px'
+float[] actualSize required // 实际大小
 String actualUnit // 实际单位 default 'm'
-int[] originInPlan //原点在平面图的位置
+float[] originInPlan //原点在平面图的位置
 ```
 
 > response
@@ -104,8 +104,8 @@ content-type: application/json
 ##### 3. 添加路径到map
 
 ```
-/path POST
-Content-Type: 只要不是form-data
+/edge POST
+Content-Type: application/x-www-form-urlencoded
 ```
 
 > request
@@ -158,8 +158,8 @@ String mapId //
 
 ```
 String mapId  // required
-int includePoint // 是否包含点
-int includeEdge // 是否包含边
+int includePoint // 是否包含点 1表示包含
+int includeEdge // 是否包含边 1表示包含
 ```
 
 > response
@@ -179,7 +179,7 @@ int includeEdge // 是否包含边
             orginInPlan: [0, 0, 0]
             modelPath: ''
         },
-        points: [
+        points: [ // includePoint = 1时
             {
                 id: 'xx',
                 mapId: 'xx',
@@ -196,7 +196,7 @@ int includeEdge // 是否包含边
                 adjacence: ['id1', 'id2'] // 相连的点
             }
         ],
-        path: [{
+        edge: [{ // includeEdge 为1时
             id: 'xxx',
             pointA: {
                 id: 'xx',
@@ -262,7 +262,7 @@ String mapId
 #### 根据起点搜索
 
 ```
-/map/search GET
+/loc/search GET
 ```
 
 > request
@@ -309,7 +309,7 @@ String name
 #### 根据终点和mapId搜索
 
 ```
-/map/search GET
+/loc/search GET
 ```
 
 > request
@@ -417,6 +417,57 @@ Content-Type: application/json
 	}]
 }
 ```
+
+#### 添加关键点
+
+```
+/loc POST
+content-type: application/json
+```
+
+> request
+
+```json
+{
+	mapId: "xxxxx",
+    name: "超算五楼",
+    planCoordinate: {
+        x: 1,
+        y: 1,
+        z: 1
+    },
+    actualCoordinate: {
+        x: 1,
+        y: 1,
+        z: 1
+    }
+}
+```
+
+> response
+
+```json
+{
+    "code": 0,
+    "data": {
+        "id": "5e68edb2170102f1cffc97a8",
+        "mapId": "xxxxx",
+        "name": "超算五楼",
+        "planCoordinate": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+        },
+        "actualCoordinate": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+        }
+    }
+}
+```
+
+
 
 
 

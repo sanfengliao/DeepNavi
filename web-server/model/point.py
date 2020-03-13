@@ -27,12 +27,15 @@ class Point:
 	
 
 	def toDBMap(self) -> dict:
-		return {
+		dbMap =  {
 			'mapId': self.mapId,
 			'planCoordinate': self.planCoordinate,
 			'actualCoordinate': self.actualCoordinate,
 			'adjacence': self.adjacence
 		}
+		if 'name' in self.__dict__:
+			dbMap['name'] = self.name
+		return dbMap
 
 	def toJsonMap(self) -> dict:
 		return self.__dict__

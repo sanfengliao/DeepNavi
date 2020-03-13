@@ -4,12 +4,15 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 
 object ContextApi {
     lateinit var app: Application
     lateinit var appContext: Context
+    lateinit var handler: Handler
     var activity: Activity? = null
     var fragment: Fragment? = null
     val activityStack: MutableList<Activity> = mutableListOf()
@@ -20,6 +23,7 @@ object ContextApi {
     fun init(application: Application) {
         this.app = application
         this.appContext = application
+        handler = Handler()
         this.app.registerActivityLifecycleCallbacks(object : LogActivityLifecycleCallbacks() {
             private val fragmentLifecycleCallbacks = object : LogFragmentLifecycleCallbacks() {
                 // TODO()
@@ -49,3 +53,12 @@ object ContextApi {
         })
     }
 }
+
+
+fun <T> returnToast(text: String, result: T? = null, duration: Int = Toast.LENGTH_LONG): T? {
+    Toast.makeText(ContextApi.appContext, text, duration).show()
+    return result
+}
+
+fun <T> returnToast2(text: String, result: T, duration: Int = Toast.LENGTH_LONG): T = returnToast(text, result, duration)!!
+fun returnToast3(text: String, duration: Int = Toast.LENGTH_LONG): Unit = returnToast(text, Unit, duration)!!

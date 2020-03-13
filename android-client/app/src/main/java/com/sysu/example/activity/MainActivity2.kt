@@ -1,4 +1,4 @@
-package com.sysu.example
+package com.sysu.example.activity
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -9,7 +9,6 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.sysu.deepnavi.DeepNaviManager
 import com.sysu.deepnavi.bean.Basic
-import com.sysu.deepnavi.impl.AudioListener
 import com.sysu.deepnavi.impl.AudioListener2
 import com.sysu.deepnavi.impl.SensorListeners
 import com.sysu.deepnavi.impl.WifiListener
@@ -18,6 +17,7 @@ import com.sysu.deepnavi.inter.SocketInter
 import com.sysu.deepnavi.util.AndroidLogLogger
 import com.sysu.deepnavi.util.DEFAULT_TAG
 import com.sysu.deepnavi.util.PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
+import com.sysu.example.R
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.enums.ReadyState
 import org.java_websocket.handshake.ServerHandshake
@@ -35,12 +35,12 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (DeepNaviManager.logger != null) {
+        if (DeepNaviManager.logger == null) {
             DeepNaviManager.logger = AndroidLogLogger()
         }
         deepNaviManager = DeepNaviManager.get()
 
-        deepNaviManager.init(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
+        deepNaviManager.forceInit(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
             var socket: WebSocketClient? = null
 
             override fun connect() {
@@ -96,6 +96,7 @@ class MainActivity2 : AppCompatActivity() {
 
         val configDataSet = ConfigProperty.SIGNAL_CONFIG_SET.value?.split(',')?.toSet() ?: emptySet()
         val previewView: View = findViewById(R.id.test_textureview) ?: findViewById(R.id.test_surfaceview)
+        deepNaviManager.view(findViewById(R.id.direction_panel))
         if ("image" in configDataSet) {
             val imageSize = ConfigProperty.DEEPNAVI_IMAGE_SIZE.value ?: ConfigProperty.DEFAULT_PICTURE_SIZE
             audioListener2 = AudioListener2(this, previewView, pictureSize = Size(imageSize.width, imageSize.height))
@@ -113,7 +114,7 @@ class MainActivity2 : AppCompatActivity() {
                 }
                 audioListener2!!.cameraUtil.startPreview()
             }
-            SensorListeners.registerAll(ConfigProperty.DEEPNAVI_SENSOR_RATE.value ?: ConfigProperty.DEFAULT_VALUE_SENSOR_RATE, configDataSet)
+            SensorListeners.registerAll(ConfigProperty.getRates(), configDataSet)
             deepNaviManager.loop()
         }
         findViewById<Button>(R.id.stop_preview).setOnClickListener {
@@ -122,16 +123,6 @@ class MainActivity2 : AppCompatActivity() {
             SensorListeners.unregisterAll()
         }
     }
-
-    // override fun onResume() {
-    //     audioListener2?.cameraUtil?.onResume()
-    //     super.onResume()
-    // }
-    //
-    // override fun onPause() {
-    //     audioListener2?.cameraUtil?.onPause()
-    //     super.onPause()
-    // }
 
     override fun onDestroy() {
         deepNaviManager.stop()
@@ -153,4 +144,14 @@ class MainActivity2 : AppCompatActivity() {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+
+    // override fun onResume() {
+    //     audioListener2?.cameraUtil?.onResume()
+    //     super.onResume()
+    // }
+    //
+    // override fun onPause() {
+    //     audioListener2?.cameraUtil?.onPause()
+    //     super.onPause()
+    // }
 }

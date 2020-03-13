@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MapContainer">
+        <attr name="marker_width" format="dimension" />
+        <attr name="marker_height" format="dimension" />
+        <attr name="marker_anim" format="reference" />
+        <attr name="marker_anim_duration" format="integer" />
+    </declare-styleable>
+</resources>

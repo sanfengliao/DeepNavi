@@ -94,7 +94,7 @@ object SensorListeners {
         if (gyroscopeListener.field in registerList) {
             gyroscopeListener.register(rate)
         }
-        if (gyroscopeListener.field in registerList) {
+        if (gravityListener.field in registerList) {
             gravityListener.register(rate)
         }
         if (linearAccelerationListener.field in registerList) {
@@ -111,6 +111,42 @@ object SensorListeners {
         }
         if (proximityListener.field in registerList) {
             proximityListener.register(rate)
+        }
+    }
+
+    fun registerAll(
+        rates: Map<String, Int> = DEFAULT_VALUE_SENSOR_CONFIG.map { it to 1000000 / 50 }.toMap(),
+        registerList: Set<String> = DEFAULT_VALUE_SENSOR_CONFIG) {
+        val default = 1000000 / 50
+        if (magneticListener.field in registerList) {
+            magneticListener.register(rates[magneticListener.field] ?: default)
+        }
+        if (accelerometerListener.field in registerList) {
+            accelerometerListener.register(rates[accelerometerListener.field] ?: default)
+        }
+        if (orientationListener.field in registerList) {
+            orientationListener.register(rates[orientationListener.field] ?: default)
+        }
+        if (gyroscopeListener.field in registerList) {
+            gyroscopeListener.register(rates[gyroscopeListener.field] ?: default)
+        }
+        if (gravityListener.field in registerList) {
+            gravityListener.register(rates[gravityListener.field] ?: default)
+        }
+        if (linearAccelerationListener.field in registerList) {
+            linearAccelerationListener.register(rates[linearAccelerationListener.field] ?: default)
+        }
+        if (ambientTemperatureListener.field in registerList) {
+            ambientTemperatureListener.register(rates[ambientTemperatureListener.field] ?: default)
+        }
+        if (lightListener.field in registerList) {
+            lightListener.register(rates[lightListener.field] ?: default)
+        }
+        if (pressureListener.field in registerList) {
+            pressureListener.register(rates[pressureListener.field] ?: default)
+        }
+        if (proximityListener.field in registerList) {
+            proximityListener.register(rates[proximityListener.field] ?: default)
         }
     }
 

@@ -14,6 +14,8 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.view.View
+import android.widget.ImageView
 import com.google.protobuf.Descriptors
 import com.sysu.deepnavi.bean.Basic
 import com.sysu.deepnavi.inter.DataCollectorInter
@@ -21,6 +23,45 @@ import com.sysu.deepnavi.inter.LoggerInter
 import com.sysu.deepnavi.inter.SocketInter
 import com.sysu.deepnavi.util.DEFAULT_TAG
 import com.sysu.deepnavi.util.doNotNeedImpl
+
+enum class Orientation {
+    LEFT,
+    FORWARD,
+    RIGHT,
+    TOP,
+    BOTTOM,
+    BACKWARD;
+
+    override fun toString(): String = when (this) {
+        LEFT -> "1"
+        FORWARD -> "2"
+        RIGHT -> "4"
+        TOP -> "8"
+        BOTTOM -> "16"
+        BACKWARD -> "32"
+    }
+
+    fun toInt(): Int = when (this) {
+        LEFT -> 1
+        FORWARD -> 2
+        RIGHT -> 4
+        TOP -> 8
+        BOTTOM -> 16
+        BACKWARD -> 32
+    }
+
+    companion object {
+        fun fromString(s: String): Orientation = when (s) {
+            "1" -> LEFT
+            "2" -> FORWARD
+            "4" -> RIGHT
+            "8" -> TOP
+            "16" -> BOTTOM
+            "32" -> BACKWARD
+            else -> FORWARD
+        }
+    }
+}
 
 class DeepNaviManager private constructor() : SensorEventListener {
     private var descriptor: Descriptors.Descriptor = Basic.DeepNaviReq.getDescriptor()
@@ -53,6 +94,12 @@ class DeepNaviManager private constructor() : SensorEventListener {
             return this
         }
         return forceInit(context, socket, interval)
+    }
+
+    private var view: View? = null
+    fun view(view: View): DeepNaviManager {
+        this.view = view
+        return this
     }
 
     fun forceInit(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long): DeepNaviManager {
@@ -91,24 +138,27 @@ class DeepNaviManager private constructor() : SensorEventListener {
     private fun send() {
         val reqBuilder = Basic.DeepNaviReq.newBuilder()
         reqBuilder.time = System.currentTimeMillis()
-        if (socket?.isConnected == false) {
+        if (socket?.isConnected == false || dataList.isEmpty()) {
             return
         }
         dataList.forEach { entry ->
             val field = entry.key
             val dataCollector = entry.value
             if (field.isRepeated) {
-                dataCollector.getDataArray()?.forEach { value -> reqBuilder.addRepeatedField(field, value) } ?: return
+                val dataArray = dataCollector.getDataArray()
+                dataArray?.forEach { value -> reqBuilder.addRepeatedField(field, value) }
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, field: %s, size: %d", reqBuilder.time, field.name, dataArray?.size ?: 0)
             } else {
                 reqBuilder.setField(field, dataCollector.getData() ?: return)
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, field: %s, size: 1", reqBuilder.time, field.name)
             }
         }
         if (running) {
             try {
                 socket!!.send(reqBuilder.build())
-                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}", reqBuilder.time)
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, successfully", reqBuilder.time)
             } catch (e: Exception) {
-                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, but failed", reqBuilder.time)
+                logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, failed", reqBuilder.time)
             }
         }
     }
@@ -135,7 +185,20 @@ class DeepNaviManager private constructor() : SensorEventListener {
     }
 
     fun onMessage(res: Basic.DeepNaviRes) {
-        // TODO:
+        val v = view ?: return
+        val resId = when (Orientation.fromString(res.result)) {
+            Orientation.LEFT -> R.drawable.go_left
+            Orientation.FORWARD -> R.drawable.go_forward
+            Orientation.RIGHT -> R.drawable.go_right
+            Orientation.TOP -> R.drawable.go_up
+            Orientation.BOTTOM -> R.drawable.go_down
+            Orientation.BACKWARD -> R.drawable.go_backward
+        }
+        if (v is ImageView) {
+            v.setImageResource(resId)
+        } else {
+            v.setBackgroundResource(resId)
+        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

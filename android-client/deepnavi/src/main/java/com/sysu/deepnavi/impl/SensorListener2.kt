@@ -20,7 +20,7 @@ class SensorListener2<Data>(
     @Volatile
     private var data: Data? = null
     private val dataList: LinkedList<Data> = LinkedList()
-    var maxSize: Int = 0
+    var maxSize: Int = 16
 
     fun init(): SensorListener2<Data> {
         DeepNaviManager.get().addDataCollector(this as DataCollectorInter<Any>)

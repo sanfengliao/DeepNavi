@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!--<path-->
+    <!--    android:fillColor="@android:color/darker_gray"-->
+    <!--    android:pathData="h200v200h-200v-200" />-->
+
+    <path
+        android:name="left"
+        android:pathData="
+        m75, 180 l-15, -21 h44 l21, 21 h-50
+        m-20, -28 l-15, -21 h36 l21, 21 h-42
+        m-20, -28 l-10, -14 h-15 l15, -20 l45, 20 h-15 l14, 14 h-34"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <path
+        android:name="right"
+        android:pathData="
+        m125, 180 l15, -21 h-44 l-21, 21 h50
+        m20, -28 l15, -21 h-36 l-21, 21 h42
+        m20, -28 l10, -14 h15 l-15, -20 l-45, 20 h15 l-14, 14 h34"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <path
+        android:name="forward"
+        android:pathData="
+        m75, 180 l4.5, -21 h41 l4.5, 21 h-50
+        m6, -28 l4.5, -21 h29 l4.5, 21 h-38
+        m6, -28 l3, -14 h-15 l25, -20 l25, 20 h-15 l3, 14 h-26"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <path
+        android:name="backward"
+        android:pathData="
+        m110, 90 l2.25, 21 h-24.5 l2.25 -21 h20
+        m3, 28 l2.25, 21 h-30.5 l2.25 -21 h26
+        m3, 28 l1.5, 14 h12.5 l-30 20 l-30, -20 h12.5 l1.5, -14 h32"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <path
+        android:name="up"
+        android:pathData="
+        m80, 180 h40 v-30 h-40 v30
+        m0, -40 h40 v-30 h-40 v30
+        m0, -40 h40 v-20 h20 l-40, -30 l-40, 30 h20 v20"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <path
+        android:name="down"
+        android:pathData="
+        m80, 50 h40 v30 h-40 v-30
+        m0, 40 h40 v30 h-40 v-30
+        m0, 40 h40 v20 h20 l-40, 30 l-40, -30 h20 v-20"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

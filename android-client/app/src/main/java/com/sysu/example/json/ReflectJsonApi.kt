@@ -574,12 +574,12 @@ open class ReflectJsonApi(
                         val n = jsonValueItem as SimpleJsonNumber
                         n.numberType()
                         when (fieldCls) {
-                            Byte::class.java -> field.setByte(result, (n.value() as Long).toByte())
-                            Short::class.java -> field.setShort(result, (n.value() as Long).toShort())
-                            Int::class.java -> field.setInt(result, (n.value() as Long).toInt())
-                            Long::class.java -> field.setLong(result, n.value() as Long)
-                            Float::class.java -> field.setFloat(result, (n.value() as Double).toFloat())
-                            Double::class.java -> field.setDouble(result, n.value() as Double)
+                            Byte::class.java -> field.setByte(result, n.value()!!.toByte())
+                            Short::class.java -> field.setShort(result, n.value()!!.toShort())
+                            Int::class.java -> field.setInt(result, n.value()!!.toInt())
+                            Long::class.java -> field.setLong(result, n.value()!!.toLong())
+                            Float::class.java -> field.setFloat(result, n.value()!!.toFloat())
+                            Double::class.java -> field.setDouble(result, n.value()!!.toDouble())
                             Char::class.java -> field.setChar(result, n.charValue())
                             BigInteger::class.java -> field.set(result, n.value())
                             BigDecimal::class.java -> field.set(result, n.value())
@@ -591,7 +591,7 @@ open class ReflectJsonApi(
                         field.set(result, fromJsonObject(jsonValueItem as SimpleJsonObject, fieldCls))
                     fieldClsStr.startsWith("class [") && jsonValueType == JsonType.ARRAY ->
                         field.set(result, fromJsonArray(jsonValueItem as SimpleJsonArray, fieldCls))
-                    else -> throw RuntimeException("non corresponding jsonValue's type and field's cls -- cls: $fieldClsStr")
+                    else -> throw RuntimeException("non corresponding jsonValue's type and field's cls -- cls: $fieldClsStr, type: $jsonValueType")
                 }
             }
             return result

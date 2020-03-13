@@ -1,31 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<?xml version="1.0" encoding="utf-8"?><!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/item_select"-->
 <!--    android:layout_width="match_parent"-->
 <!--    android:layout_height="40dp"-->
+<!--    android:drawableEnd="@drawable/item_select"-->
 <!--    android:gravity="center_vertical"-->
-<!--    android:orientation="horizontal"-->
-<!--    android:padding="5dp">-->
-
-<!--    <TextView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_weight="1"-->
-<!--        android:gravity="center_vertical"-->
-<!--        tools:text="地磁" />-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:src="@drawable/item_select"-->
-<!--        tools:ignore="ContentDescription" />-->
-<!--</LinearLayout>-->
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--    android:paddingStart="10dp"-->
+<!--    android:paddingEnd="10dp"-->
+<!--    tools:text="地磁" />-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_select"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:drawableEnd="@drawable/item_select"
     android:gravity="center_vertical"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp"
-    tools:text="地磁" />
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_vertical"
+        tools:text="地磁" />
+
+    <EditText
+        android:id="@+id/item_frequency"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:inputType="number"
+        tools:ignore="Autofill" />
+
+    <ImageView
+        android:id="@+id/item_select"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/item_select"
+        tools:ignore="ContentDescription" />
+</LinearLayout>

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
-
 class BaseRecyclerViewHolder(private val view: View, var data: Any? = null) : RecyclerView.ViewHolder(view) {
     private val viewCache = SparseArray<View>()
 
@@ -47,14 +46,8 @@ class BaseRecyclerAdapter<T>(
     // click
 
     private var itemClickListener: ItemClickListener<T>? = null
-
-    fun setItemClickListener(itemClickListener: ItemClickListener<T>) {
+    fun setItemClickListener(itemClickListener: ItemClickListener<T>?) {
         this.itemClickListener = itemClickListener
-    }
-
-    interface ItemClickListener<T> {
-        fun onItemClick(holder: BaseRecyclerViewHolder, data: T, position: Int) = Unit
-        fun onItemLongClick(holder: BaseRecyclerViewHolder, data: T, position: Int): Boolean = false
     }
 
     // single add remove get update move
@@ -187,6 +180,15 @@ class BaseRecyclerAdapter<T>(
         notifyDataSetChanged()
     }
 
+    fun clear() {
+        val itemCount = dataSet.size
+        dataSet.clear()
+        notifyItemRangeRemoved(0, itemCount)
+    }
+
+    val size: Int
+        get() = dataSet.size
+
     // view / header / footer / item_empty
 
     private var headerView: View? = null
@@ -302,6 +304,13 @@ class BaseRecyclerAdapter<T>(
 
     override fun onDetachedFromRecyclerView(recyclerView: RecyclerView) {
         this.recyclerView = null
+    }
+
+    // interface
+
+    interface ItemClickListener<T> {
+        fun onItemClick(holder: BaseRecyclerViewHolder, data: T, position: Int) = Unit
+        fun onItemLongClick(holder: BaseRecyclerViewHolder, data: T, position: Int): Boolean = false
     }
 
     interface AdapterAction<T> {

@@ -7,7 +7,7 @@ message FeelSensorReq {
 	required float value = 1;
 }
 
-message CoorSensorReq {
+message Coor {
     required float x = 1;
     required float y = 2;
     required float z = 3;
@@ -16,19 +16,22 @@ message CoorSensorReq {
 message DeepNaviReq {
 	required int64 time = 1;
     optional bytes image = 2;  // audio
-    repeated CoorSensorReq magneticList = 3;  // 磁场
-    repeated CoorSensorReq accelerometerList = 4;  // 加速度
-    repeated CoorSensorReq orientationList = 5;  // 方向
-    repeated CoorSensorReq gyroscopeList = 6;  // 陀螺仪
-    repeated CoorSensorReq gravityList = 7;  // 重力
-    repeated CoorSensorReq linearAccelerationList = 8;  // 线性加速度
+    repeated Coor magneticList = 3;  // 磁场
+    repeated Coor accelerometerList = 4;  // 加速度
+    repeated Coor orientationList = 5;  // 方向
+    repeated Coor gyroscopeList = 6;  // 陀螺仪
+    repeated Coor gravityList = 7;  // 重力
+    repeated Coor linearAccelerationList = 8;  // 线性加速度
     repeated FeelSensorReq ambientTemperatureList = 9;  // 温度
     repeated FeelSensorReq lightList = 10;  // 亮度
     repeated FeelSensorReq pressureList = 11;  // 压力
     repeated FeelSensorReq proximityList = 12;  // 近距离
     repeated int32 wifiList = 13;  // wifi
+	optional string id = 14;
 }
 
 message DeepNaviRes {
-	required string result = 1;
+	// required string result = 1;
+	required Coor coor = 1;
+	required float rotation = 2;
 }

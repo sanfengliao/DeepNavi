@@ -51,7 +51,8 @@ class MapHandler(RequestHandler):
             originInPlan = [float(item) for item in originInPlan[0].split(',')]
 
         planImage = self.request.files['planImage']
-        filename = name + os.path.splitext(planImage[0]['filename'])[-1]
+        originName = planImage[0]['filename']
+        filename = name + os.path.splitext(originName)[-1]
         fileBody = planImage[0]['body']
         planPath = localFileAdapter.save(filename, fileBody)
 

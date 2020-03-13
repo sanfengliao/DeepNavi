@@ -34,7 +34,7 @@ class Point:
 			'adjacence': self.adjacence
 		}
 		if 'name' in self.__dict__:
-			dbMap['name'] = self.name
+			dbMap['name'] = self.__dict__['name']
 		return dbMap
 
 	def toJsonMap(self) -> dict:

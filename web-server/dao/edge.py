@@ -6,8 +6,8 @@ import typing
 DBPREFIX = 'edge'
 from decorator import transaction
 
-def isIn(a: int, x1: int, x2: int) -> bool:
-    return x1 <= a <= x2 or x2 <= a <= x1
+def isNotIn(a: int, x1: int, x2: int) -> bool:
+    return ((a > x1 and a > x2) or (a < x1 and a < x2))
 
 def calDistance(src: dict, pointA: dict, pointB: dict) -> float:
     a = pointB['y'] - pointA['y'] # y2 - y1
@@ -18,8 +18,8 @@ def calDistance(src: dict, pointA: dict, pointB: dict) -> float:
     dis = abs(a * x + b * y + c) / math.sqrt(a * a + b * b)
     return dis
 
-def isInEdge(src: dict, pointA: dict, pointB: dict, planWidth: float) -> bool:
-    return calDistance(src, pointA, pointB) <= planWidth and (isIn(src['x'], pointA['x'], pointB['x']) or isIn(src['y'], pointA['y'], pointB['y']))
+def isInEdge(src: dict, pointA: dict, pointB: dict, edgeWidth: float) -> bool:
+    return calDistance(src, pointA, pointB) <= edgeWidth and (not (isNotIn(src['x'], pointA['x'], pointB['x']) or isNotIn(src['y'], pointA['y'], pointB['y'])))
 
 
 class EdgeDao:
@@ -56,7 +56,7 @@ class EdgeDao:
         for item in items:
             actualCoordinateA = item.pointA['actualCoordinate']
             actualCoordinateB = item.pointB['actualCoordinate']
-            if isInEdge(actualCoordinate, actualCoordinateA, actualCoordinateB, item.planWidth):
+            if isInEdge(actualCoordinate, actualCoordinateA, actualCoordinateB, item.edgeWidth):
                 result.append(item)
         return result
 

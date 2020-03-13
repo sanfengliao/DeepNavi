@@ -364,57 +364,90 @@ Content-Type: application/json
 
 > request
 
-```
+```json
 {
-	start: {
-		planCoordinate: {
-            x: 0, //
-            y: 0,
-            z: 0
-        },
-        actualCoordinate: {
-            x: 0,
-            y: 0,
-            z: 0
-        }, // 实
+	"mapId": "5e68ca6e148277137d1c62b1",
+	"src": {
+        "actualCoordinate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
 	},
-	end: {
-		planCoordinate: {
-            x: 0, //
-            y: 0,
-            z: 0
-        },
-        actualCoordinate: {
-            x: 0,
-            y: 0,
-            z: 0
-        }, // 实
+	"dst": {
+        "actualCoordinate": {
+            "x": 70,
+            "y": -50,
+            "z": 0
+        }
 	}
 }
 ```
 
 > response
 
-```
-// success
+```json
 {
-	code: 0,
-	// 第一个元素和最后一个元素是起点和终点
-	data: [{
-		{
-			pointId: 'xxxx',
-            planCoordinate: {
-                x: 0, //
-                y: 0,
-                z: 0
+    "code": 0,
+    "data": {
+        "pathId": "eaa90fcc651d11eaa492001e64cce6eb",
+        "path": [
+            {
+                "id": "5e6b0be0e4f26f3c4a8dadc0",
+                "mapId": "5e68ca6e148277137d1c62b1",
+                "planCoordinate": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "actualCoordinate": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "adjacence": [
+                    "5e6b0c06e4f26f3c4a8dadc2",
+                    "5e6b0c1ae4f26f3c4a8dadc6"
+                ]
             },
-            actualCoordinate: {
-                x: 0,
-                y: 0,
-                z: 0
-            }, // 实
-        },
-	}]
+            {
+                "id": "5e6b0c1ae4f26f3c4a8dadc6",
+                "mapId": "5e68ca6e148277137d1c62b1",
+                "planCoordinate": {
+                    "x": 0,
+                    "y": -50,
+                    "z": 0
+                },
+                "actualCoordinate": {
+                    "x": 0,
+                    "y": -50,
+                    "z": 0
+                },
+                "adjacence": [
+                    "5e6b0c0fe4f26f3c4a8dadc4",
+                    "5e6b0be0e4f26f3c4a8dadc0"
+                ]
+            },
+            {
+                "id": "5e6b0c0fe4f26f3c4a8dadc4",
+                "mapId": "5e68ca6e148277137d1c62b1",
+                "planCoordinate": {
+                    "x": 70,
+                    "y": -50,
+                    "z": 0
+                },
+                "actualCoordinate": {
+                    "x": 70,
+                    "y": -50,
+                    "z": 0
+                },
+                "adjacence": [
+                    "5e6b0c06e4f26f3c4a8dadc2",
+                    "5e6b0c1ae4f26f3c4a8dadc6"
+                ]
+            }
+        ]
+    }
 }
 ```
 

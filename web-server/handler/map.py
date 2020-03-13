@@ -4,6 +4,7 @@ from service import MapService, PointService, EdgeService, LocService
 from adapter import LocalFileAdapter
 import logging
 import uuid
+import json
 import os
 
 mapService = MapService()
@@ -70,3 +71,11 @@ class MapHandler(RequestHandler):
         m = mapService.saveMap(m)
         self.write({'code': 0, 'data': m.toJsonMap()})
 
+class MapNaviHandler(RequestHandler):
+    def post(self):
+        data = json.loads(self.request.body)
+        mid = data['mapId']
+        src = data['src']['actualCoordinate']
+        dst = data['dst']['actualCoordinate']
+        result = mapService.navi(src, dst, mid)
+        self.write({'code': 0, 'data': result})

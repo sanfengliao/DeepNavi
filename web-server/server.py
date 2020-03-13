@@ -1,6 +1,6 @@
 from tornado.web import Application, RequestHandler
 import tornado.ioloop
-from handler import ConfigHandler,DeepNaviWebSocket, NotFoundHandler, MapHandler, PointHandler, EdgeHandler, LocHandler, LocSearchHandler
+from handler import ConfigHandler,DeepNaviWebSocket, NotFoundHandler, MapHandler, PointHandler, EdgeHandler, LocHandler, LocSearchHandler, MapNaviHandler
 from config import SERVER_PORT
 import tornado.log
 import tornado
@@ -27,6 +27,7 @@ def initLog():
 if __name__ == "__main__":
     initLog()
     application = Application([
+        (r'/map/navi', MapNaviHandler),
         (r'/loc', LocHandler),
         (r'/edge', EdgeHandler),
         (r'/point', PointHandler),

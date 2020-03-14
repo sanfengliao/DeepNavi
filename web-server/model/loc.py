@@ -23,7 +23,7 @@ class Loc:
             'mapId': self.mapId,
             'name': self.name,
             'planCoordinate': self.planCoordinate,
-            'actualCoordinate': self.planCoordinate
+            'actualCoordinate': self.actualCoordinate
         }
     
     def toJsonMap(self):
@@ -32,6 +32,6 @@ class Loc:
             'mapId': self.mapId,
             'name': self.name,
             'planCoordinate': self.planCoordinate,
-            'actualCoordinate': self.planCoordinate
+            'actualCoordinate': self.actualCoordinate
         }
     

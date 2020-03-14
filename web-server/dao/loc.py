@@ -17,6 +17,11 @@ class LocDao:
             loc.id = str(result.upserted_id)
         return loc
     
+    def findByMapId(self, mid:str) -> typing.List[Loc]:
+        result = locCol.find({'mapId': mid})
+        result = [self.assembleLoc(item) for item in result]
+        return result
+
     def deleteLocById(self, locId: str) -> int:
         if len(locId) != 24:
             return 0

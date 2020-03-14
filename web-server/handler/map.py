@@ -18,9 +18,9 @@ class MapHandler(RequestHandler):
         mapId = self.get_query_argument('mapId')
         includePoint = int(self.get_query_argument('includePoint', 0))
         includeEdge = int(self.get_query_argument('includeEdge', 0))
+        includeLoc = int(self.get_query_argument('includeEdge', 0))
         result = {'code': 0, 'data': {}}
         m = mapService.findById(mapId)
-        print(includeEdge)
         result['data']['map'] = m.toJsonMap()
         if includePoint == 1:
             points = pointService.findAll(mapId)
@@ -28,6 +28,9 @@ class MapHandler(RequestHandler):
         if includeEdge == 1:
             edges = edgeService.findAll(mapId)
             result['data']['edges'] = [item.toJsonMap() for item in edges]
+        if includeLoc == 1:
+            locs = locService.findByMapId(mapId)
+            result['data']['locs'] = [item.toJsonMap() for item in locs]
         self.write(result)
 
     def post(self):

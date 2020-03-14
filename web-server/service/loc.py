@@ -20,3 +20,5 @@ class LocService:
             m = mapDao.findById(item.mapId)
             result.append({'loc': item.toJsonMap(), 'map': m.toJsonMap()})
         return result
+    def findByMapId(self, mid:str) -> typing.List[Loc]:
+        return locDao.findByMapId(mid)

@@ -160,6 +160,7 @@ String mapId //
 String mapId  // required
 int includePoint // 是否包含点 1表示包含
 int includeEdge // 是否包含边 1表示包含
+int includeLoc // 是否包含关键点 1....
 ```
 
 > response

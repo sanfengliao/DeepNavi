@@ -1,7 +1,6 @@
 from model import Loc
-
 from dao import LocDao, MapDao
-
+import typing
 locDao = LocDao()
 mapDao = MapDao()
 

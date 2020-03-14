@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=_b('\n\026com.sysu.deepnavi.beanB\005Basic'),
-  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"0\n\rCoorSensorReq\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xc0\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12$\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x0e.CoorSensorReq\x12)\n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x0e.CoorSensorReq\x12\'\n\x0forientationList\x18\x05 \x03(\x0b\x32\x0e.CoorSensorReq\x12%\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x0e.CoorSensorReq\x12#\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16linearAccelerationList\x18\x08 \x03(\x0b\x32\x0e.CoorSensorReq\x12.\n\x16\x61mbientTemperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\"\x1d\n\x0b\x44\x65\x65pNaviRes\x12\x0e\n\x06result\x18\x01 \x02(\tB\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
+  serialized_pb=_b('\n\x0b\x62\x61sic.proto\"\x1e\n\rFeelSensorReq\x12\r\n\x05value\x18\x01 \x02(\x02\"\'\n\x04\x43oor\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\t\n\x01z\x18\x03 \x02(\x02\"\xa8\x03\n\x0b\x44\x65\x65pNaviReq\x12\x0c\n\x04time\x18\x01 \x02(\x03\x12\r\n\x05image\x18\x02 \x01(\x0c\x12\x1b\n\x0cmagneticList\x18\x03 \x03(\x0b\x32\x05.Coor\x12 \n\x11\x61\x63\x63\x65lerometerList\x18\x04 \x03(\x0b\x32\x05.Coor\x12\x1e\n\x0forientationList\x18\x05 \x03(\x0b\x32\x05.Coor\x12\x1c\n\rgyroscopeList\x18\x06 \x03(\x0b\x32\x05.Coor\x12\x1a\n\x0bgravityList\x18\x07 \x03(\x0b\x32\x05.Coor\x12%\n\x16linearAccelerationList\x18\x08 \x03(\x0b\x32\x05.Coor\x12.\n\x16\x61mbientTemperatureList\x18\t \x03(\x0b\x32\x0e.FeelSensorReq\x12!\n\tlightList\x18\n \x03(\x0b\x32\x0e.FeelSensorReq\x12$\n\x0cpressureList\x18\x0b \x03(\x0b\x32\x0e.FeelSensorReq\x12%\n\rproximityList\x18\x0c \x03(\x0b\x32\x0e.FeelSensorReq\x12\x10\n\x08wifiList\x18\r \x03(\x05\x12\n\n\x02id\x18\x0e \x01(\t\"4\n\x0b\x44\x65\x65pNaviRes\x12\x13\n\x04\x63oor\x18\x01 \x02(\x0b\x32\x05.Coor\x12\x10\n\x08rotation\x18\x02 \x02(\x02\x42\x1f\n\x16\x63om.sysu.deepnavi.beanB\x05\x42\x61sic')
 )
 
 
@@ -56,29 +56,29 @@ _FEELSENSORREQ = _descriptor.Descriptor(
 )
 
 
-_COORSENSORREQ = _descriptor.Descriptor(
-  name='CoorSensorReq',
-  full_name='CoorSensorReq',
+_COOR = _descriptor.Descriptor(
+  name='Coor',
+  full_name='Coor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='CoorSensorReq.x', index=0,
+      name='x', full_name='Coor.x', index=0,
       number=1, type=2, cpp_type=6, label=2,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='y', full_name='CoorSensorReq.y', index=1,
+      name='y', full_name='Coor.y', index=1,
       number=2, type=2, cpp_type=6, label=2,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='z', full_name='CoorSensorReq.z', index=2,
+      name='z', full_name='Coor.z', index=2,
       number=3, type=2, cpp_type=6, label=2,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -97,7 +97,7 @@ _COORSENSORREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=47,
-  serialized_end=95,
+  serialized_end=86,
 )
 
 
@@ -192,33 +192,16 @@ _DEEPNAVIREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=98,
-  serialized_end=546,
-)
-
-
-_DEEPNAVIRES = _descriptor.Descriptor(
-  name='DeepNaviRes',
-  full_name='DeepNaviRes',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='DeepNaviRes.result', index=0,
-      number=1, type=9, cpp_type=9, label=2,
+      name='wifiList', full_name='DeepNaviReq.wifiList', index=12,
+      number=13, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='DeepNaviReq.id', index=13,
+      number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -235,22 +218,61 @@ _DEEPNAVIRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=548,
-  serialized_end=577,
+  serialized_start=89,
+  serialized_end=513,
 )
 
-_DEEPNAVIREQ.fields_by_name['magneticList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['accelerometerList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['orientationList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['gyroscopeList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['gravityList'].message_type = _COORSENSORREQ
-_DEEPNAVIREQ.fields_by_name['linearAccelerationList'].message_type = _COORSENSORREQ
+
+_DEEPNAVIRES = _descriptor.Descriptor(
+  name='DeepNaviRes',
+  full_name='DeepNaviRes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='coor', full_name='DeepNaviRes.coor', index=0,
+      number=1, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='rotation', full_name='DeepNaviRes.rotation', index=1,
+      number=2, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=515,
+  serialized_end=567,
+)
+
+_DEEPNAVIREQ.fields_by_name['magneticList'].message_type = _COOR
+_DEEPNAVIREQ.fields_by_name['accelerometerList'].message_type = _COOR
+_DEEPNAVIREQ.fields_by_name['orientationList'].message_type = _COOR
+_DEEPNAVIREQ.fields_by_name['gyroscopeList'].message_type = _COOR
+_DEEPNAVIREQ.fields_by_name['gravityList'].message_type = _COOR
+_DEEPNAVIREQ.fields_by_name['linearAccelerationList'].message_type = _COOR
 _DEEPNAVIREQ.fields_by_name['ambientTemperatureList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['lightList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['pressureList'].message_type = _FEELSENSORREQ
 _DEEPNAVIREQ.fields_by_name['proximityList'].message_type = _FEELSENSORREQ
+_DEEPNAVIRES.fields_by_name['coor'].message_type = _COOR
 DESCRIPTOR.message_types_by_name['FeelSensorReq'] = _FEELSENSORREQ
-DESCRIPTOR.message_types_by_name['CoorSensorReq'] = _COORSENSORREQ
+DESCRIPTOR.message_types_by_name['Coor'] = _COOR
 DESCRIPTOR.message_types_by_name['DeepNaviReq'] = _DEEPNAVIREQ
 DESCRIPTOR.message_types_by_name['DeepNaviRes'] = _DEEPNAVIRES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -262,12 +284,12 @@ FeelSensorReq = _reflection.GeneratedProtocolMessageType('FeelSensorReq', (_mess
   ))
 _sym_db.RegisterMessage(FeelSensorReq)
 
-CoorSensorReq = _reflection.GeneratedProtocolMessageType('CoorSensorReq', (_message.Message,), dict(
-  DESCRIPTOR = _COORSENSORREQ,
+Coor = _reflection.GeneratedProtocolMessageType('Coor', (_message.Message,), dict(
+  DESCRIPTOR = _COOR,
   __module__ = 'basic_pb2'
-  # @@protoc_insertion_point(class_scope:CoorSensorReq)
+  # @@protoc_insertion_point(class_scope:Coor)
   ))
-_sym_db.RegisterMessage(CoorSensorReq)
+_sym_db.RegisterMessage(Coor)
 
 DeepNaviReq = _reflection.GeneratedProtocolMessageType('DeepNaviReq', (_message.Message,), dict(
   DESCRIPTOR = _DEEPNAVIREQ,

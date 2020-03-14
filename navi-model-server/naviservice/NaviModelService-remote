@@ -24,8 +24,7 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
     print('Usage: ' + sys.argv[0] + ' [-h host[:port]] [-u url] [-f[ramed]] [-s[sl]] [-novalidate] [-ca_certs certs] [-keyfile keyfile] [-certfile certfile] function [arg1 [arg2...]]')
     print('')
     print('Functions:')
-    print('   predictByImageAndMag(NaviModel naviModel)')
-    print('   predictByImageAndWifi(NaviModel naviModel)')
+    print('  LocationResult predict(NaviModel model)')
     print('')
     sys.exit(0)
 
@@ -105,17 +104,11 @@ protocol = TBinaryProtocol(transport)
 client = NaviModelService.Client(protocol)
 transport.open()
 
-if cmd == 'predictByImageAndMag':
+if cmd == 'predict':
     if len(args) != 1:
-        print('predictByImageAndMag requires 1 args')
+        print('predict requires 1 args')
         sys.exit(1)
-    pp.pprint(client.predictByImageAndMag(eval(args[0]),))
-
-elif cmd == 'predictByImageAndWifi':
-    if len(args) != 1:
-        print('predictByImageAndWifi requires 1 args')
-        sys.exit(1)
-    pp.pprint(client.predictByImageAndWifi(eval(args[0]),))
+    pp.pprint(client.predict(eval(args[0]),))
 
 else:
     print('Unrecognized method %s' % cmd)

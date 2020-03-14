@@ -11,5 +11,5 @@ class TestService(unittest.TestCase):
             print(item.toJsonMap())
     def testNavi(self):
         print(mapService.navi({'x': 0, 'y': 0}, {'x': 70, 'y': -50}, '5e68ca6e148277137d1c62b1'))
-        print(mapService.navi({'x': 50, 'y': 0}, {'x': 70, 'y': -50}, '5e68ca6e148277137d1c62b1'))
+        print(mapService.navi({'x': -50, 'y': 0}, {'x': 70, 'y': -50}, '5e68ca6e148277137d1c62b1'))
         print(mapService.navi({'x': 50, 'y': 0}, {'x': 50, 'y': -50}, '5e68ca6e148277137d1c62b1'))

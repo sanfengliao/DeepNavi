@@ -2,6 +2,7 @@
 
 package com.liang.example.json_ktx
 
+import java.lang.Exception
 import java.math.BigDecimal
 import java.math.BigInteger
 
@@ -306,25 +307,25 @@ open class SimpleJsonString(s: String? = null) : SimpleJsonValueAdapter<String>(
             val ch = tempValue[i]
             // val chInt = ch.toInt()
             resultBuilder.append(
-                    when {
-                        ch == '\\' -> "\\\\"
-                        ch == '"' -> "\\\""
-                        ch == '\b' -> "\\b"
-                        ch == '\u000C' -> "\\f"
-                        ch == '\n' -> "\\n"
-                        ch == '\r' -> "\\r"
-                        ch == '\t' -> "\\t"
-                        // chInt <= 0x1f -> String.format("\\u%04x", chInt) // ???
-                        // chInt == 0xe2 && i < length - 2 && tempValue[i + 1].toInt() == 0x80 && tempValue[i + 2].toInt() == 0xa8 -> {
-                        //     i += 2
-                        //     "\\u2028"
-                        // } // ???
-                        // chInt == 0xe2 && i < length - 2 && tempValue[i + 1].toInt() == 0x80 && tempValue[i + 2].toInt() == 0xa9 -> {
-                        //     i += 2
-                        //     "\\u2029"
-                        // } // ???
-                        else -> ch
-                    }
+                when {
+                    ch == '\\' -> "\\\\"
+                    ch == '"' -> "\\\""
+                    ch == '\b' -> "\\b"
+                    ch == '\u000C' -> "\\f"
+                    ch == '\n' -> "\\n"
+                    ch == '\r' -> "\\r"
+                    ch == '\t' -> "\\t"
+                    // chInt <= 0x1f -> String.format("\\u%04x", chInt) // ???
+                    // chInt == 0xe2 && i < length - 2 && tempValue[i + 1].toInt() == 0x80 && tempValue[i + 2].toInt() == 0xa8 -> {
+                    //     i += 2
+                    //     "\\u2028"
+                    // } // ???
+                    // chInt == 0xe2 && i < length - 2 && tempValue[i + 1].toInt() == 0x80 && tempValue[i + 2].toInt() == 0xa9 -> {
+                    //     i += 2
+                    //     "\\u2029"
+                    // } // ???
+                    else -> ch
+                }
             )
             i++
         }
@@ -514,8 +515,8 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
         protected fun innerParseString(): String? {
             if (index >= length || jsonStr[index] != '"') {
                 return makeFail<String>(
-                        "unexpected start of input in string: ${if (index >= length) "end" else jsonStr[index].toString()}",
-                        null
+                    "unexpected start of input in string: ${if (index >= length) "end" else jsonStr[index].toString()}",
+                    null
                 )
             }
             index++
@@ -534,13 +535,24 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
                     }
                     ch = jsonStr[index++]
                     when (ch) {
+                        'u' -> {
+                            if (index + 4 < length) {
+                                try {
+                                    ch = jsonStr.substring(index, index + 4).toInt(16).toChar()
+                                    index += 4
+                                } catch (e: Exception) {
+                                }
+                            }
+                            resultBuilder.append(ch)
+                        }
                         'b' -> resultBuilder.append('\b')
                         'f' -> resultBuilder.append('\u000C')
                         'n' -> resultBuilder.append('\n')
                         'r' -> resultBuilder.append('\r')
                         't' -> resultBuilder.append('\t')
                         '"', '\\', '/' -> resultBuilder.append(ch)
-                        else -> resultBuilder.append('\\') // else -> return makeFail<String>("invalid escape character $ch", null)
+                        /*else -> resultBuilder.append('\\') */
+                        else -> return makeFail<String>("invalid escape character $ch", null)
                     }
                 } else {
                     resultBuilder.append(ch)
@@ -551,8 +563,8 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
         protected fun parseArray(depth: Int): SimpleJsonArray? {
             if (index >= length || jsonStr[index] != '[') {
                 return makeFail<SimpleJsonArray>(
-                        "unexpected start of input in array: ${if (index >= length) "end" else
-                            jsonStr[index].toString()}", null
+                    "unexpected start of input in array: ${if (index >= length) "end" else
+                        jsonStr[index].toString()}", null
                 )
             }
             index++
@@ -563,7 +575,7 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
                 while (true) {
                     itemList.add(parseJson(depth + 1) ?: return null)
                     ch = getNextToken()
-                            ?: return makeFail<SimpleJsonArray>("invalid array's present, lack of \"]\"", null)
+                        ?: return makeFail<SimpleJsonArray>("invalid array's present, lack of \"]\"", null)
                     if (ch == ']') {
                         break
                     }
@@ -581,26 +593,26 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
         protected fun parseObject(depth: Int): SimpleJsonObject? {
             if (index >= length || jsonStr[index] != '{') {
                 return makeFail<SimpleJsonObject>(
-                        "unexpected start of input in object: ${if (index >= length) "end" else
-                            jsonStr[index].toString()}", null
+                    "unexpected start of input in object: ${if (index >= length) "end" else
+                        jsonStr[index].toString()}", null
                 )
             }
             index++
             var ch = getNextToken()
-                    ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
+                ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
             val itemMap = mutableMapOf<String, SimpleJsonValue<*>?>()
             if (ch != '}') {
                 index--
                 while (true) {
                     val key = innerParseString() ?: return null
                     ch = getNextToken()
-                            ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
+                        ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
                     if (ch != ':') {
                         return makeFail<SimpleJsonObject>("expected ':' in object, got '$ch'", null)
                     }
                     itemMap[key] = (parseJson(depth + 1) ?: return null)
                     ch = getNextToken()
-                            ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
+                        ?: return makeFail<SimpleJsonObject>("invalid object's present, lack of \"}\"", null)
                     if (ch == '}') {
                         break
                     }
@@ -639,10 +651,10 @@ open class SimpleJsonParser(var strategy: JsonStyle) {
             expected.forEach {
                 if (it != jsonStr[index++]) {
                     return makeFail<SimpleJsonValue<*>>(
-                            "parse error -- expected: $expected, got: " + jsonStr.substring(
-                                    start, start
+                        "parse error -- expected: $expected, got: " + jsonStr.substring(
+                            start, start
                                     + expected.length
-                            ), null
+                        ), null
                     )
                 }
             }
@@ -775,10 +787,10 @@ open class SimpleJsonApi {
 
     companion object {
         fun fromJson(jsonStr: String, strategy: JsonStyle = JsonStyle.STANDARD): SimpleJsonApi =
-                SimpleJsonApi(SimpleJsonParser.fromJson(jsonStr, strategy))
+            SimpleJsonApi(SimpleJsonParser.fromJson(jsonStr, strategy))
 
         fun fromJsonOrThrow(jsonStr: String, strategy: JsonStyle = JsonStyle.STANDARD): SimpleJsonApi =
-                SimpleJsonApi(SimpleJsonParser.fromJsonOrThrow(jsonStr, strategy))
+            SimpleJsonApi(SimpleJsonParser.fromJsonOrThrow(jsonStr, strategy))
 
         fun fromJsonOrNull(jsonStr: String, strategy: JsonStyle = JsonStyle.STANDARD): SimpleJsonApi? {
             return SimpleJsonApi(SimpleJsonParser.fromJsonOrNull(jsonStr, strategy) ?: return null)

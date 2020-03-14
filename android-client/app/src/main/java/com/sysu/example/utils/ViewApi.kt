@@ -1,6 +1,7 @@
 package com.sysu.example.utils
 
 import android.graphics.drawable.Drawable
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -126,4 +127,16 @@ var View.strId: String
             return EMPTY_VIEW_STR_ID
         }
         return id2StrMap[id]!!
+    }
+
+fun <T : TextView> T.setOnCompoundDrawableClickListener(index: Int = 2, action: Int = MotionEvent.ACTION_UP, callback: (t: T, d: Drawable) -> Boolean) =
+    setOnTouchListener touch@{ v, event ->
+        if (event.action != action) {
+            return@touch false
+        }
+        val drawable = compoundDrawables[index] ?: return@touch false
+        if (event.x > width - paddingRight - drawable.intrinsicWidth) {
+            return@touch callback(this, drawable)
+        }
+        false
     }

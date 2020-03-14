@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="40dp"
+                android:height="40dp" />
+            <gradient
+                android:centerColor="@android:color/transparent"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:endColor="@android:color/transparent"
+                android:gradientRadius="110"
+                android:startColor="@android:color/holo_blue_light"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/current_pos_vector_part" />
+</layer-list>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/half_white">
+
+    <LinearLayout
+        android:id="@+id/true_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/add_point"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/point_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/please_input_point_s_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/is_key_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:text="@string/break_point"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+
+        <Switch
+            android:id="@+id/is_percentage_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:text="@string/percentage_mode"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/point_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_x"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/point_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_y"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/point_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_z"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/point_actual_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_actual_x"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/point_actual_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_actual_y"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/point_actual_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_actual_z"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/cancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@android:string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/ok"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/ok"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@android:string/ok"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cancel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

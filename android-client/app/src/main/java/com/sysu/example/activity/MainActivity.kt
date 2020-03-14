@@ -1,4 +1,4 @@
-package com.sysu.example
+package com.sysu.example.activity
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -17,6 +17,7 @@ import com.sysu.deepnavi.inter.SocketInter
 import com.sysu.deepnavi.util.AndroidLogLogger
 import com.sysu.deepnavi.util.DEFAULT_TAG
 import com.sysu.deepnavi.util.PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
+import com.sysu.example.R
 // import io.socket.client.IO
 // import io.socket.client.Socket
 import org.java_websocket.client.WebSocketClient
@@ -43,10 +44,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun useJavaWebSocket() {
-        DeepNaviManager.logger = AndroidLogLogger()
+        if (DeepNaviManager.logger == null) {
+            DeepNaviManager.logger = AndroidLogLogger()
+        }
         deepNaviManager = DeepNaviManager.get()
 
-        deepNaviManager.init(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
+        deepNaviManager.forceInit(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
             var socket: WebSocketClient? = null
 
             override fun connect() {
@@ -102,6 +105,7 @@ class MainActivity : AppCompatActivity() {
 
         val configDataSet = ConfigProperty.SIGNAL_CONFIG_SET.value?.split(',')?.toSet() ?: emptySet()
         val previewView: View = findViewById(R.id.test_textureview) ?: findViewById(R.id.test_surfaceview)
+        deepNaviManager.view(findViewById(R.id.direction_panel))
         if ("image" in configDataSet) {
             val imageSize = ConfigProperty.DEEPNAVI_IMAGE_SIZE.value ?: ConfigProperty.DEFAULT_PICTURE_SIZE
             audioListener = AudioListener(this, previewView, pictureSize = Size(imageSize.width, imageSize.height))
@@ -117,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 audioListener!!.cameraUtil.openCamera(previewView.measuredWidth, previewView.measuredHeight)
                 audioListener!!.cameraUtil.startPreview()
             }
-            SensorListeners.registerAll(ConfigProperty.DEEPNAVI_SENSOR_RATE.value ?: ConfigProperty.DEFAULT_VALUE_SENSOR_RATE, configDataSet)
+            SensorListeners.registerAll(ConfigProperty.getRates(), configDataSet)
             deepNaviManager.loop()
         }
         findViewById<Button>(R.id.stop_preview).setOnClickListener {
@@ -191,7 +195,7 @@ class MainActivity : AppCompatActivity() {
                 audioListener!!.cameraUtil.openCamera(previewView.measuredWidth, previewView.measuredHeight)
                 audioListener!!.cameraUtil.startPreview()
             }
-            SensorListeners.registerAll(ConfigProperty.DEEPNAVI_SENSOR_RATE.value ?: ConfigProperty.DEFAULT_VALUE_SENSOR_RATE, configDataSet)
+            SensorListeners.registerAll(ConfigProperty.getRates(), configDataSet)
             deepNaviManager.loop()
         }
         findViewById<Button>(R.id.stop_preview).setOnClickListener {

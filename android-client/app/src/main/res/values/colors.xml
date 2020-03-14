@@ -5,4 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="drawable_select_selected_false">#dddddd</color>
     <color name="drawable_select_selected_true">#ffff4444</color>
+    <color name="half_white">#88FFFFFF</color>
+    <color name="half_black">#88000000</color>
+    <color name="quarter_white">#44FFFFFF</color>
+    <color name="quarter_black">#44000000</color>
+    <color name="location">#FF424242</color>
 </resources>

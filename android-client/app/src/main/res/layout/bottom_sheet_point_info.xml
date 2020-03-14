@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/point_name"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        tools:text="point name (index: 0)" />
+
+    <TextView
+        android:id="@+id/point_plan_location"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/point_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/location"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        tools:text="show: 577px x 377px x 0px" />
+
+    <TextView
+        android:id="@+id/point_actual_location"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/point_plan_location"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        tools:text="actual: 70m x 40m x 0m" />
+
+    <TextView
+        android:id="@+id/point_id"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/point_actual_location"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/id"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        tools:text="id: 5e6a401ce9c01114e5fcdecd" />
+
+    <TextView
+        android:id="@+id/point_map_id"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/point_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        tools:text="mapId: 5e6a401ce9c01114e5fcdecd" />
+
+    <Button
+        android:id="@+id/as_start_point"
+        style="?attr/buttonBarButtonStyle"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/as_start_point" />
+
+    <Button
+        android:id="@+id/as_end_point"
+        style="?attr/buttonBarButtonStyle"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/as_end_point" />
+</RelativeLayout>

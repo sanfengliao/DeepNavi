@@ -4,8110 +4,8023 @@
 package com.sysu.deepnavi.bean;
 
 public final class Basic {
-    private Basic() {
+  private Basic() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface FeelSensorReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:FeelSensorReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required float value = 1;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>required float value = 1;</code>
+     */
+    float getValue();
+  }
+  /**
+   * Protobuf type {@code FeelSensorReq}
+   */
+  public  static final class FeelSensorReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:FeelSensorReq)
+      FeelSensorReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FeelSensorReq.newBuilder() to construct.
+    private FeelSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FeelSensorReq() {
+      value_ = 0F;
     }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistryLite registry) {
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FeelSensorReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              value_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Basic.internal_static_FeelSensorReq_descriptor;
     }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions(
-                (com.google.protobuf.ExtensionRegistryLite) registry);
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Basic.internal_static_FeelSensorReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              FeelSensorReq.class, Builder.class);
     }
 
-    public interface FeelSensorReqOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:FeelSensorReq)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>required float value = 1;</code>
-         */
-        boolean hasValue();
-
-        /**
-         * <code>required float value = 1;</code>
-         */
-        float getValue();
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private float value_;
+    /**
+     * <code>required float value = 1;</code>
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required float value = 1;</code>
+     */
+    public float getValue() {
+      return value_;
     }
 
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFloat(1, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof FeelSensorReq)) {
+        return super.equals(obj);
+      }
+      FeelSensorReq other = (FeelSensorReq) obj;
+
+      boolean result = true;
+      result = result && (hasValue() == other.hasValue());
+      if (hasValue()) {
+        result = result && (
+            Float.floatToIntBits(getValue())
+            == Float.floatToIntBits(
+                other.getValue()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + Float.floatToIntBits(
+            getValue());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static FeelSensorReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static FeelSensorReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static FeelSensorReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static FeelSensorReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static FeelSensorReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static FeelSensorReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static FeelSensorReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static FeelSensorReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static FeelSensorReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static FeelSensorReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static FeelSensorReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static FeelSensorReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(FeelSensorReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code FeelSensorReq}
      */
-    public static final class FeelSensorReq extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:FeelSensorReq)
-            FeelSensorReqOrBuilder {
-        private static final long serialVersionUID = 0L;
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:FeelSensorReq)
+        FeelSensorReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Basic.internal_static_FeelSensorReq_descriptor;
+      }
 
-        // Use FeelSensorReq.newBuilder() to construct.
-        private FeelSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Basic.internal_static_FeelSensorReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                FeelSensorReq.class, Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.FeelSensorReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        value_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
 
-        private FeelSensorReq() {
-            value_ = 0F;
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Basic.internal_static_FeelSensorReq_descriptor;
+      }
+
+      @Override
+      public FeelSensorReq getDefaultInstanceForType() {
+        return FeelSensorReq.getDefaultInstance();
+      }
+
+      @Override
+      public FeelSensorReq build() {
+        FeelSensorReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
+      @Override
+      public FeelSensorReq buildPartial() {
+        FeelSensorReq result = new FeelSensorReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
+        result.value_ = value_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
 
-        private FeelSensorReq(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            value_ = input.readFloat();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      @Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof FeelSensorReq) {
+          return mergeFrom((FeelSensorReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return Basic.internal_static_FeelSensorReq_descriptor;
+      public Builder mergeFrom(FeelSensorReq other) {
+        if (other == FeelSensorReq.getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        @Override
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return Basic.internal_static_FeelSensorReq_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            FeelSensorReq.class, Builder.class);
+      @Override
+      public final boolean isInitialized() {
+        if (!hasValue()) {
+          return false;
         }
+        return true;
+      }
 
-        private int bitField0_;
-        public static final int VALUE_FIELD_NUMBER = 1;
-        private float value_;
-
-        /**
-         * <code>required float value = 1;</code>
-         */
-        public boolean hasValue() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        FeelSensorReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (FeelSensorReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        /**
-         * <code>required float value = 1;</code>
-         */
-        public float getValue() {
-            return value_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            if (!hasValue()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, value_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, value_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @Override
-        public boolean equals(final Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof FeelSensorReq)) {
-                return super.equals(obj);
-            }
-            FeelSensorReq other = (FeelSensorReq) obj;
-
-            boolean result = true;
-            result = result && (hasValue() == other.hasValue());
-            if (hasValue()) {
-                result = result && (
-                        Float.floatToIntBits(getValue())
-                                == Float.floatToIntBits(
-                                other.getValue()));
-            }
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasValue()) {
-                hash = (37 * hash) + VALUE_FIELD_NUMBER;
-                hash = (53 * hash) + Float.floatToIntBits(
-                        getValue());
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static FeelSensorReq parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static FeelSensorReq parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static FeelSensorReq parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static FeelSensorReq parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static FeelSensorReq parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static FeelSensorReq parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static FeelSensorReq parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static FeelSensorReq parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static FeelSensorReq parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static FeelSensorReq parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static FeelSensorReq parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static FeelSensorReq parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(FeelSensorReq prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @Override
-        protected Builder newBuilderForType(
-                BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code FeelSensorReq}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:FeelSensorReq)
-                FeelSensorReqOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return Basic.internal_static_FeelSensorReq_descriptor;
-            }
-
-            @Override
-            protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return Basic.internal_static_FeelSensorReq_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                FeelSensorReq.class, Builder.class);
-            }
-
-            // Construct using com.sysu.deepnavi.bean.Basic.FeelSensorReq.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @Override
-            public Builder clear() {
-                super.clear();
-                value_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            @Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return Basic.internal_static_FeelSensorReq_descriptor;
-            }
-
-            @Override
-            public FeelSensorReq getDefaultInstanceForType() {
-                return FeelSensorReq.getDefaultInstance();
-            }
-
-            @Override
-            public FeelSensorReq build() {
-                FeelSensorReq result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @Override
-            public FeelSensorReq buildPartial() {
-                FeelSensorReq result = new FeelSensorReq(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.value_ = value_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @Override
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            @Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            @Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            @Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            @Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            @Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            @Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof FeelSensorReq) {
-                    return mergeFrom((FeelSensorReq) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(FeelSensorReq other) {
-                if (other == FeelSensorReq.getDefaultInstance()) return this;
-                if (other.hasValue()) {
-                    setValue(other.getValue());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final boolean isInitialized() {
-                if (!hasValue()) {
-                    return false;
-                }
-                return true;
-            }
-
-            @Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                FeelSensorReq parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (FeelSensorReq) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private float value_;
-
-            /**
-             * <code>required float value = 1;</code>
-             */
-            public boolean hasValue() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float value = 1;</code>
-             */
-            public float getValue() {
-                return value_;
-            }
-
-            /**
-             * <code>required float value = 1;</code>
-             */
-            public Builder setValue(float value) {
-                bitField0_ |= 0x00000001;
-                value_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float value = 1;</code>
-             */
-            public Builder clearValue() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                value_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:FeelSensorReq)
-        }
-
-        // @@protoc_insertion_point(class_scope:FeelSensorReq)
-        private static final FeelSensorReq DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new FeelSensorReq();
-        }
-
-        public static FeelSensorReq getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        @Deprecated
-        public static final com.google.protobuf.Parser<FeelSensorReq>
-                PARSER = new com.google.protobuf.AbstractParser<FeelSensorReq>() {
-            @Override
-            public FeelSensorReq parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new FeelSensorReq(input, extensionRegistry);
-            }
-        };
-
-        public static com.google.protobuf.Parser<FeelSensorReq> parser() {
-            return PARSER;
-        }
-
-        @Override
-        public com.google.protobuf.Parser<FeelSensorReq> getParserForType() {
-            return PARSER;
-        }
-
-        @Override
-        public FeelSensorReq getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
+        return this;
+      }
+      private int bitField0_;
+
+      private float value_ ;
+      /**
+       * <code>required float value = 1;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required float value = 1;</code>
+       */
+      public float getValue() {
+        return value_;
+      }
+      /**
+       * <code>required float value = 1;</code>
+       */
+      public Builder setValue(float value) {
+        bitField0_ |= 0x00000001;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float value = 1;</code>
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0F;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:FeelSensorReq)
     }
 
-    public interface CoorSensorReqOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:CoorSensorReq)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        boolean hasX();
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        float getX();
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        boolean hasY();
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        float getY();
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        boolean hasZ();
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        float getZ();
+    // @@protoc_insertion_point(class_scope:FeelSensorReq)
+    private static final FeelSensorReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new FeelSensorReq();
     }
+
+    public static FeelSensorReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<FeelSensorReq>
+        PARSER = new com.google.protobuf.AbstractParser<FeelSensorReq>() {
+      @Override
+      public FeelSensorReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FeelSensorReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FeelSensorReq> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<FeelSensorReq> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public FeelSensorReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CoorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Coor)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * Protobuf type {@code CoorSensorReq}
+     * <code>required float x = 1;</code>
      */
-    public static final class CoorSensorReq extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:CoorSensorReq)
-            CoorSensorReqOrBuilder {
-        private static final long serialVersionUID = 0L;
+    boolean hasX();
+    /**
+     * <code>required float x = 1;</code>
+     */
+    float getX();
 
-        // Use CoorSensorReq.newBuilder() to construct.
-        private CoorSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
-        }
+    /**
+     * <code>required float y = 2;</code>
+     */
+    boolean hasY();
+    /**
+     * <code>required float y = 2;</code>
+     */
+    float getY();
 
-        private CoorSensorReq() {
-            x_ = 0F;
-            y_ = 0F;
-            z_ = 0F;
-        }
+    /**
+     * <code>required float z = 3;</code>
+     */
+    boolean hasZ();
+    /**
+     * <code>required float z = 3;</code>
+     */
+    float getZ();
+  }
+  /**
+   * Protobuf type {@code Coor}
+   */
+  public  static final class Coor extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Coor)
+      CoorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Coor.newBuilder() to construct.
+    private Coor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Coor() {
+      x_ = 0F;
+      y_ = 0F;
+      z_ = 0F;
+    }
 
-        @Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private CoorSensorReq(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new NullPointerException();
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Coor(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
             }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            x_ = input.readFloat();
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            y_ = input.readFloat();
-                            break;
-                        }
-                        case 29: {
-                            bitField0_ |= 0x00000004;
-                            z_ = input.readFloat();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
             }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              z_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return Basic.internal_static_CoorSensorReq_descriptor;
-        }
+      return Basic.internal_static_Coor_descriptor;
+    }
 
-        @Override
-        protected FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-            return Basic.internal_static_CoorSensorReq_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            CoorSensorReq.class, Builder.class);
-        }
-
-        private int bitField0_;
-        public static final int X_FIELD_NUMBER = 1;
-        private float x_;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public boolean hasX() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public float getX() {
-            return x_;
-        }
-
-        public static final int Y_FIELD_NUMBER = 2;
-        private float y_;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public float getY() {
-            return y_;
-        }
-
-        public static final int Z_FIELD_NUMBER = 3;
-        private float z_;
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public boolean hasZ() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public float getZ() {
-            return z_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            if (!hasX()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasY()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasZ()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeFloat(3, z_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(3, z_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @Override
-        public boolean equals(final Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof CoorSensorReq)) {
-                return super.equals(obj);
-            }
-            CoorSensorReq other = (CoorSensorReq) obj;
-
-            boolean result = true;
-            result = result && (hasX() == other.hasX());
-            if (hasX()) {
-                result = result && (
-                        Float.floatToIntBits(getX())
-                                == Float.floatToIntBits(
-                                other.getX()));
-            }
-            result = result && (hasY() == other.hasY());
-            if (hasY()) {
-                result = result && (
-                        Float.floatToIntBits(getY())
-                                == Float.floatToIntBits(
-                                other.getY()));
-            }
-            result = result && (hasZ() == other.hasZ());
-            if (hasZ()) {
-                result = result && (
-                        Float.floatToIntBits(getZ())
-                                == Float.floatToIntBits(
-                                other.getZ()));
-            }
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasX()) {
-                hash = (37 * hash) + X_FIELD_NUMBER;
-                hash = (53 * hash) + Float.floatToIntBits(
-                        getX());
-            }
-            if (hasY()) {
-                hash = (37 * hash) + Y_FIELD_NUMBER;
-                hash = (53 * hash) + Float.floatToIntBits(
-                        getY());
-            }
-            if (hasZ()) {
-                hash = (37 * hash) + Z_FIELD_NUMBER;
-                hash = (53 * hash) + Float.floatToIntBits(
-                        getZ());
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static CoorSensorReq parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static CoorSensorReq parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static CoorSensorReq parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static CoorSensorReq parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static CoorSensorReq parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static CoorSensorReq parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static CoorSensorReq parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static CoorSensorReq parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static CoorSensorReq parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static CoorSensorReq parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static CoorSensorReq parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static CoorSensorReq parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(CoorSensorReq prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @Override
-        protected Builder newBuilderForType(
-                BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code CoorSensorReq}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:CoorSensorReq)
-                CoorSensorReqOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return Basic.internal_static_CoorSensorReq_descriptor;
-            }
-
-            @Override
-            protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return Basic.internal_static_CoorSensorReq_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                CoorSensorReq.class, Builder.class);
-            }
-
-            // Construct using com.sysu.deepnavi.bean.Basic.CoorSensorReq.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @Override
-            public Builder clear() {
-                super.clear();
-                x_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                y_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                z_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            @Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return Basic.internal_static_CoorSensorReq_descriptor;
-            }
-
-            @Override
-            public CoorSensorReq getDefaultInstanceForType() {
-                return CoorSensorReq.getDefaultInstance();
-            }
-
-            @Override
-            public CoorSensorReq build() {
-                CoorSensorReq result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @Override
-            public CoorSensorReq buildPartial() {
-                CoorSensorReq result = new CoorSensorReq(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.x_ = x_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.y_ = y_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.z_ = z_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @Override
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            @Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            @Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            @Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            @Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            @Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            @Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof CoorSensorReq) {
-                    return mergeFrom((CoorSensorReq) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(CoorSensorReq other) {
-                if (other == CoorSensorReq.getDefaultInstance()) return this;
-                if (other.hasX()) {
-                    setX(other.getX());
-                }
-                if (other.hasY()) {
-                    setY(other.getY());
-                }
-                if (other.hasZ()) {
-                    setZ(other.getZ());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final boolean isInitialized() {
-                if (!hasX()) {
-                    return false;
-                }
-                if (!hasY()) {
-                    return false;
-                }
-                if (!hasZ()) {
-                    return false;
-                }
-                return true;
-            }
-
-            @Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                CoorSensorReq parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (CoorSensorReq) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private float x_;
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public boolean hasX() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public float getX() {
-                return x_;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder setX(float value) {
-                bitField0_ |= 0x00000001;
-                x_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder clearX() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                x_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            private float y_;
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public boolean hasY() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public float getY() {
-                return y_;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder setY(float value) {
-                bitField0_ |= 0x00000002;
-                y_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder clearY() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                y_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            private float z_;
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public boolean hasZ() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public float getZ() {
-                return z_;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder setZ(float value) {
-                bitField0_ |= 0x00000004;
-                z_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder clearZ() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                z_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:CoorSensorReq)
-        }
-
-        // @@protoc_insertion_point(class_scope:CoorSensorReq)
-        private static final CoorSensorReq DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new CoorSensorReq();
-        }
-
-        public static CoorSensorReq getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        @Deprecated
-        public static final com.google.protobuf.Parser<CoorSensorReq>
-                PARSER = new com.google.protobuf.AbstractParser<CoorSensorReq>() {
-            @Override
-            public CoorSensorReq parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new CoorSensorReq(input, extensionRegistry);
-            }
-        };
-
-        public static com.google.protobuf.Parser<CoorSensorReq> parser() {
-            return PARSER;
-        }
-
-        @Override
-        public com.google.protobuf.Parser<CoorSensorReq> getParserForType() {
-            return PARSER;
-        }
-
-        @Override
-        public CoorSensorReq getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
+      return Basic.internal_static_Coor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Coor.class, Builder.class);
     }
 
-    public interface DeepNaviReqOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:DeepNaviReq)
-            com.google.protobuf.MessageOrBuilder {
+    private int bitField0_;
+    public static final int X_FIELD_NUMBER = 1;
+    private float x_;
+    /**
+     * <code>required float x = 1;</code>
+     */
+    public boolean hasX() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required float x = 1;</code>
+     */
+    public float getX() {
+      return x_;
+    }
 
-        /**
-         * <code>required int64 time = 1;</code>
-         */
-        boolean hasTime();
+    public static final int Y_FIELD_NUMBER = 2;
+    private float y_;
+    /**
+     * <code>required float y = 2;</code>
+     */
+    public boolean hasY() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required float y = 2;</code>
+     */
+    public float getY() {
+      return y_;
+    }
 
-        /**
-         * <code>required int64 time = 1;</code>
-         */
-        long getTime();
+    public static final int Z_FIELD_NUMBER = 3;
+    private float z_;
+    /**
+     * <code>required float z = 3;</code>
+     */
+    public boolean hasZ() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required float z = 3;</code>
+     */
+    public float getZ() {
+      return z_;
+    }
 
-        /**
-         * <pre>
-         * audio
-         * </pre>
-         *
-         * <code>optional bytes image = 2;</code>
-         */
-        boolean hasImage();
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-        /**
-         * <pre>
-         * audio
-         * </pre>
-         *
-         * <code>optional bytes image = 2;</code>
-         */
-        com.google.protobuf.ByteString getImage();
+      if (!hasX()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasY()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZ()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
 
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        java.util.List<CoorSensorReq>
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFloat(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, z_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, z_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Coor)) {
+        return super.equals(obj);
+      }
+      Coor other = (Coor) obj;
+
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
+      if (hasX()) {
+        result = result && (
+            Float.floatToIntBits(getX())
+            == Float.floatToIntBits(
+                other.getX()));
+      }
+      result = result && (hasY() == other.hasY());
+      if (hasY()) {
+        result = result && (
+            Float.floatToIntBits(getY())
+            == Float.floatToIntBits(
+                other.getY()));
+      }
+      result = result && (hasZ() == other.hasZ());
+      if (hasZ()) {
+        result = result && (
+            Float.floatToIntBits(getZ())
+            == Float.floatToIntBits(
+                other.getZ()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasX()) {
+        hash = (37 * hash) + X_FIELD_NUMBER;
+        hash = (53 * hash) + Float.floatToIntBits(
+            getX());
+      }
+      if (hasY()) {
+        hash = (37 * hash) + Y_FIELD_NUMBER;
+        hash = (53 * hash) + Float.floatToIntBits(
+            getY());
+      }
+      if (hasZ()) {
+        hash = (37 * hash) + Z_FIELD_NUMBER;
+        hash = (53 * hash) + Float.floatToIntBits(
+            getZ());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Coor parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Coor parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Coor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Coor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Coor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Coor parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Coor parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Coor parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Coor parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Coor parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Coor parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Coor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Coor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Coor}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Coor)
+        CoorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Basic.internal_static_Coor_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Basic.internal_static_Coor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Coor.class, Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.Coor.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        z_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Basic.internal_static_Coor_descriptor;
+      }
+
+      @Override
+      public Coor getDefaultInstanceForType() {
+        return Coor.getDefaultInstance();
+      }
+
+      @Override
+      public Coor build() {
+        Coor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Coor buildPartial() {
+        Coor result = new Coor(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.z_ = z_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Coor) {
+          return mergeFrom((Coor)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Coor other) {
+        if (other == Coor.getDefaultInstance()) return this;
+        if (other.hasX()) {
+          setX(other.getX());
+        }
+        if (other.hasY()) {
+          setY(other.getY());
+        }
+        if (other.hasZ()) {
+          setZ(other.getZ());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        if (!hasX()) {
+          return false;
+        }
+        if (!hasY()) {
+          return false;
+        }
+        if (!hasZ()) {
+          return false;
+        }
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Coor parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Coor) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private float x_ ;
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public boolean hasX() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public float getX() {
+        return x_;
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public Builder setX(float value) {
+        bitField0_ |= 0x00000001;
+        x_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float x = 1;</code>
+       */
+      public Builder clearX() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        x_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float y_ ;
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public boolean hasY() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public float getY() {
+        return y_;
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public Builder setY(float value) {
+        bitField0_ |= 0x00000002;
+        y_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float y = 2;</code>
+       */
+      public Builder clearY() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        y_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float z_ ;
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public boolean hasZ() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public float getZ() {
+        return z_;
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public Builder setZ(float value) {
+        bitField0_ |= 0x00000004;
+        z_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float z = 3;</code>
+       */
+      public Builder clearZ() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        z_ = 0F;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Coor)
+    }
+
+    // @@protoc_insertion_point(class_scope:Coor)
+    private static final Coor DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Coor();
+    }
+
+    public static Coor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<Coor>
+        PARSER = new com.google.protobuf.AbstractParser<Coor>() {
+      @Override
+      public Coor parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Coor(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Coor> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Coor> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Coor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeepNaviReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DeepNaviReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    boolean hasTime();
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    long getTime();
+
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    boolean hasImage();
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    com.google.protobuf.ByteString getImage();
+
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    java.util.List<Coor>
         getMagneticListList();
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        CoorSensorReq getMagneticList(int index);
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        int getMagneticListCount();
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    Coor getMagneticList(int index);
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    int getMagneticListCount();
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getMagneticListOrBuilderList();
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    CoorOrBuilder getMagneticListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        CoorSensorReqOrBuilder getMagneticListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        java.util.List<CoorSensorReq>
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    java.util.List<Coor>
         getAccelerometerListList();
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        CoorSensorReq getAccelerometerList(int index);
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        int getAccelerometerListCount();
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    Coor getAccelerometerList(int index);
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    int getAccelerometerListCount();
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getAccelerometerListOrBuilderList();
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    CoorOrBuilder getAccelerometerListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        java.util.List<CoorSensorReq>
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    java.util.List<Coor>
         getOrientationListList();
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        CoorSensorReq getOrientationList(int index);
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        int getOrientationListCount();
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    Coor getOrientationList(int index);
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    int getOrientationListCount();
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getOrientationListOrBuilderList();
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    CoorOrBuilder getOrientationListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        CoorSensorReqOrBuilder getOrientationListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        java.util.List<CoorSensorReq>
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    java.util.List<Coor>
         getGyroscopeListList();
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        CoorSensorReq getGyroscopeList(int index);
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        int getGyroscopeListCount();
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    Coor getGyroscopeList(int index);
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    int getGyroscopeListCount();
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getGyroscopeListOrBuilderList();
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    CoorOrBuilder getGyroscopeListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        java.util.List<CoorSensorReq>
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    java.util.List<Coor>
         getGravityListList();
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        CoorSensorReq getGravityList(int index);
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        int getGravityListCount();
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    Coor getGravityList(int index);
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    int getGravityListCount();
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getGravityListOrBuilderList();
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    CoorOrBuilder getGravityListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        CoorSensorReqOrBuilder getGravityListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        java.util.List<CoorSensorReq>
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    java.util.List<Coor>
         getLinearAccelerationListList();
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        CoorSensorReq getLinearAccelerationList(int index);
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        int getLinearAccelerationListCount();
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        java.util.List<? extends CoorSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    Coor getLinearAccelerationList(int index);
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    int getLinearAccelerationListCount();
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    java.util.List<? extends CoorOrBuilder>
         getLinearAccelerationListOrBuilderList();
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    CoorOrBuilder getLinearAccelerationListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        java.util.List<FeelSensorReq>
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    java.util.List<FeelSensorReq>
         getAmbientTemperatureListList();
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        FeelSensorReq getAmbientTemperatureList(int index);
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        int getAmbientTemperatureListCount();
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        java.util.List<? extends FeelSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    FeelSensorReq getAmbientTemperatureList(int index);
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    int getAmbientTemperatureListCount();
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    java.util.List<? extends FeelSensorReqOrBuilder>
         getAmbientTemperatureListOrBuilderList();
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        java.util.List<FeelSensorReq>
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    java.util.List<FeelSensorReq>
         getLightListList();
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        FeelSensorReq getLightList(int index);
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        int getLightListCount();
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        java.util.List<? extends FeelSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    FeelSensorReq getLightList(int index);
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    int getLightListCount();
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    java.util.List<? extends FeelSensorReqOrBuilder>
         getLightListOrBuilderList();
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    FeelSensorReqOrBuilder getLightListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        FeelSensorReqOrBuilder getLightListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        java.util.List<FeelSensorReq>
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    java.util.List<FeelSensorReq>
         getPressureListList();
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        FeelSensorReq getPressureList(int index);
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        int getPressureListCount();
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        java.util.List<? extends FeelSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    FeelSensorReq getPressureList(int index);
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    int getPressureListCount();
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    java.util.List<? extends FeelSensorReqOrBuilder>
         getPressureListOrBuilderList();
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    FeelSensorReqOrBuilder getPressureListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        FeelSensorReqOrBuilder getPressureListOrBuilder(
-                int index);
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        java.util.List<FeelSensorReq>
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    java.util.List<FeelSensorReq>
         getProximityListList();
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        FeelSensorReq getProximityList(int index);
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        int getProximityListCount();
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        java.util.List<? extends FeelSensorReqOrBuilder>
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    FeelSensorReq getProximityList(int index);
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    int getProximityListCount();
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    java.util.List<? extends FeelSensorReqOrBuilder>
         getProximityListOrBuilderList();
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    FeelSensorReqOrBuilder getProximityListOrBuilder(
+            int index);
 
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        FeelSensorReqOrBuilder getProximityListOrBuilder(
-                int index);
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    java.util.List<Integer> getWifiListList();
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    int getWifiListCount();
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    int getWifiList(int index);
 
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        java.util.List<Integer> getWifiListList();
-
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        int getWifiListCount();
-
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        int getWifiList(int index);
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    String getId();
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+  }
+  /**
+   * Protobuf type {@code DeepNaviReq}
+   */
+  public  static final class DeepNaviReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:DeepNaviReq)
+      DeepNaviReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeepNaviReq.newBuilder() to construct.
+    private DeepNaviReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeepNaviReq() {
+      time_ = 0L;
+      image_ = com.google.protobuf.ByteString.EMPTY;
+      magneticList_ = java.util.Collections.emptyList();
+      accelerometerList_ = java.util.Collections.emptyList();
+      orientationList_ = java.util.Collections.emptyList();
+      gyroscopeList_ = java.util.Collections.emptyList();
+      gravityList_ = java.util.Collections.emptyList();
+      linearAccelerationList_ = java.util.Collections.emptyList();
+      ambientTemperatureList_ = java.util.Collections.emptyList();
+      lightList_ = java.util.Collections.emptyList();
+      pressureList_ = java.util.Collections.emptyList();
+      proximityList_ = java.util.Collections.emptyList();
+      wifiList_ = java.util.Collections.emptyList();
+      id_ = "";
     }
 
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeepNaviReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              time_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              image_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                magneticList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              magneticList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                accelerometerList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              accelerometerList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                orientationList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              orientationList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                gyroscopeList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              gyroscopeList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                gravityList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              gravityList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                linearAccelerationList_ = new java.util.ArrayList<Coor>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              linearAccelerationList_.add(
+                  input.readMessage(Coor.PARSER, extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              ambientTemperatureList_.add(
+                  input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                lightList_ = new java.util.ArrayList<FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              lightList_.add(
+                  input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                pressureList_ = new java.util.ArrayList<FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              pressureList_.add(
+                  input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                proximityList_ = new java.util.ArrayList<FeelSensorReq>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              proximityList_.add(
+                  input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+                wifiList_ = new java.util.ArrayList<Integer>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              wifiList_.add(input.readInt32());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000) && input.getBytesUntilLimit() > 0) {
+                wifiList_ = new java.util.ArrayList<Integer>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                wifiList_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 114: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              id_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          lightList_ = java.util.Collections.unmodifiableList(lightList_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
+        }
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+          proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
+        }
+        if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+          wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Basic.internal_static_DeepNaviReq_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Basic.internal_static_DeepNaviReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              DeepNaviReq.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TIME_FIELD_NUMBER = 1;
+    private long time_;
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 time = 1;</code>
+     */
+    public long getTime() {
+      return time_;
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString image_;
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    public boolean hasImage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * audio
+     * </pre>
+     *
+     * <code>optional bytes image = 2;</code>
+     */
+    public com.google.protobuf.ByteString getImage() {
+      return image_;
+    }
+
+    public static final int MAGNETICLIST_FIELD_NUMBER = 3;
+    private java.util.List<Coor> magneticList_;
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    public java.util.List<Coor> getMagneticListList() {
+      return magneticList_;
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getMagneticListOrBuilderList() {
+      return magneticList_;
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    public int getMagneticListCount() {
+      return magneticList_.size();
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    public Coor getMagneticList(int index) {
+      return magneticList_.get(index);
+    }
+    /**
+     * <pre>
+     * 磁场
+     * </pre>
+     *
+     * <code>repeated .Coor magneticList = 3;</code>
+     */
+    public CoorOrBuilder getMagneticListOrBuilder(
+        int index) {
+      return magneticList_.get(index);
+    }
+
+    public static final int ACCELEROMETERLIST_FIELD_NUMBER = 4;
+    private java.util.List<Coor> accelerometerList_;
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    public java.util.List<Coor> getAccelerometerListList() {
+      return accelerometerList_;
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getAccelerometerListOrBuilderList() {
+      return accelerometerList_;
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    public int getAccelerometerListCount() {
+      return accelerometerList_.size();
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    public Coor getAccelerometerList(int index) {
+      return accelerometerList_.get(index);
+    }
+    /**
+     * <pre>
+     * 加速度
+     * </pre>
+     *
+     * <code>repeated .Coor accelerometerList = 4;</code>
+     */
+    public CoorOrBuilder getAccelerometerListOrBuilder(
+        int index) {
+      return accelerometerList_.get(index);
+    }
+
+    public static final int ORIENTATIONLIST_FIELD_NUMBER = 5;
+    private java.util.List<Coor> orientationList_;
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    public java.util.List<Coor> getOrientationListList() {
+      return orientationList_;
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getOrientationListOrBuilderList() {
+      return orientationList_;
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    public int getOrientationListCount() {
+      return orientationList_.size();
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    public Coor getOrientationList(int index) {
+      return orientationList_.get(index);
+    }
+    /**
+     * <pre>
+     * 方向
+     * </pre>
+     *
+     * <code>repeated .Coor orientationList = 5;</code>
+     */
+    public CoorOrBuilder getOrientationListOrBuilder(
+        int index) {
+      return orientationList_.get(index);
+    }
+
+    public static final int GYROSCOPELIST_FIELD_NUMBER = 6;
+    private java.util.List<Coor> gyroscopeList_;
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    public java.util.List<Coor> getGyroscopeListList() {
+      return gyroscopeList_;
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getGyroscopeListOrBuilderList() {
+      return gyroscopeList_;
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    public int getGyroscopeListCount() {
+      return gyroscopeList_.size();
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    public Coor getGyroscopeList(int index) {
+      return gyroscopeList_.get(index);
+    }
+    /**
+     * <pre>
+     * 陀螺仪
+     * </pre>
+     *
+     * <code>repeated .Coor gyroscopeList = 6;</code>
+     */
+    public CoorOrBuilder getGyroscopeListOrBuilder(
+        int index) {
+      return gyroscopeList_.get(index);
+    }
+
+    public static final int GRAVITYLIST_FIELD_NUMBER = 7;
+    private java.util.List<Coor> gravityList_;
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    public java.util.List<Coor> getGravityListList() {
+      return gravityList_;
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getGravityListOrBuilderList() {
+      return gravityList_;
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    public int getGravityListCount() {
+      return gravityList_.size();
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    public Coor getGravityList(int index) {
+      return gravityList_.get(index);
+    }
+    /**
+     * <pre>
+     * 重力
+     * </pre>
+     *
+     * <code>repeated .Coor gravityList = 7;</code>
+     */
+    public CoorOrBuilder getGravityListOrBuilder(
+        int index) {
+      return gravityList_.get(index);
+    }
+
+    public static final int LINEARACCELERATIONLIST_FIELD_NUMBER = 8;
+    private java.util.List<Coor> linearAccelerationList_;
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    public java.util.List<Coor> getLinearAccelerationListList() {
+      return linearAccelerationList_;
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    public java.util.List<? extends CoorOrBuilder>
+        getLinearAccelerationListOrBuilderList() {
+      return linearAccelerationList_;
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    public int getLinearAccelerationListCount() {
+      return linearAccelerationList_.size();
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    public Coor getLinearAccelerationList(int index) {
+      return linearAccelerationList_.get(index);
+    }
+    /**
+     * <pre>
+     * 线性加速度
+     * </pre>
+     *
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
+     */
+    public CoorOrBuilder getLinearAccelerationListOrBuilder(
+        int index) {
+      return linearAccelerationList_.get(index);
+    }
+
+    public static final int AMBIENTTEMPERATURELIST_FIELD_NUMBER = 9;
+    private java.util.List<FeelSensorReq> ambientTemperatureList_;
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
+      return ambientTemperatureList_;
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    public java.util.List<? extends FeelSensorReqOrBuilder>
+        getAmbientTemperatureListOrBuilderList() {
+      return ambientTemperatureList_;
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    public int getAmbientTemperatureListCount() {
+      return ambientTemperatureList_.size();
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    public FeelSensorReq getAmbientTemperatureList(int index) {
+      return ambientTemperatureList_.get(index);
+    }
+    /**
+     * <pre>
+     * 温度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+     */
+    public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
+        int index) {
+      return ambientTemperatureList_.get(index);
+    }
+
+    public static final int LIGHTLIST_FIELD_NUMBER = 10;
+    private java.util.List<FeelSensorReq> lightList_;
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    public java.util.List<FeelSensorReq> getLightListList() {
+      return lightList_;
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    public java.util.List<? extends FeelSensorReqOrBuilder>
+        getLightListOrBuilderList() {
+      return lightList_;
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    public int getLightListCount() {
+      return lightList_.size();
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    public FeelSensorReq getLightList(int index) {
+      return lightList_.get(index);
+    }
+    /**
+     * <pre>
+     * 亮度
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq lightList = 10;</code>
+     */
+    public FeelSensorReqOrBuilder getLightListOrBuilder(
+        int index) {
+      return lightList_.get(index);
+    }
+
+    public static final int PRESSURELIST_FIELD_NUMBER = 11;
+    private java.util.List<FeelSensorReq> pressureList_;
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    public java.util.List<FeelSensorReq> getPressureListList() {
+      return pressureList_;
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    public java.util.List<? extends FeelSensorReqOrBuilder>
+        getPressureListOrBuilderList() {
+      return pressureList_;
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    public int getPressureListCount() {
+      return pressureList_.size();
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    public FeelSensorReq getPressureList(int index) {
+      return pressureList_.get(index);
+    }
+    /**
+     * <pre>
+     * 压力
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq pressureList = 11;</code>
+     */
+    public FeelSensorReqOrBuilder getPressureListOrBuilder(
+        int index) {
+      return pressureList_.get(index);
+    }
+
+    public static final int PROXIMITYLIST_FIELD_NUMBER = 12;
+    private java.util.List<FeelSensorReq> proximityList_;
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    public java.util.List<FeelSensorReq> getProximityListList() {
+      return proximityList_;
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    public java.util.List<? extends FeelSensorReqOrBuilder>
+        getProximityListOrBuilderList() {
+      return proximityList_;
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    public int getProximityListCount() {
+      return proximityList_.size();
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    public FeelSensorReq getProximityList(int index) {
+      return proximityList_.get(index);
+    }
+    /**
+     * <pre>
+     * 近距离
+     * </pre>
+     *
+     * <code>repeated .FeelSensorReq proximityList = 12;</code>
+     */
+    public FeelSensorReqOrBuilder getProximityListOrBuilder(
+        int index) {
+      return proximityList_.get(index);
+    }
+
+    public static final int WIFILIST_FIELD_NUMBER = 13;
+    private java.util.List<Integer> wifiList_;
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    public java.util.List<Integer>
+        getWifiListList() {
+      return wifiList_;
+    }
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    public int getWifiListCount() {
+      return wifiList_.size();
+    }
+    /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
+     * <code>repeated int32 wifiList = 13;</code>
+     */
+    public int getWifiList(int index) {
+      return wifiList_.get(index);
+    }
+
+    public static final int ID_FIELD_NUMBER = 14;
+    private volatile Object id_;
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public String getId() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getMagneticListCount(); i++) {
+        if (!getMagneticList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAccelerometerListCount(); i++) {
+        if (!getAccelerometerList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getOrientationListCount(); i++) {
+        if (!getOrientationList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getGyroscopeListCount(); i++) {
+        if (!getGyroscopeList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getGravityListCount(); i++) {
+        if (!getGravityList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getLinearAccelerationListCount(); i++) {
+        if (!getLinearAccelerationList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
+        if (!getAmbientTemperatureList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getLightListCount(); i++) {
+        if (!getLightList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getPressureListCount(); i++) {
+        if (!getPressureList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getProximityListCount(); i++) {
+        if (!getProximityList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, image_);
+      }
+      for (int i = 0; i < magneticList_.size(); i++) {
+        output.writeMessage(3, magneticList_.get(i));
+      }
+      for (int i = 0; i < accelerometerList_.size(); i++) {
+        output.writeMessage(4, accelerometerList_.get(i));
+      }
+      for (int i = 0; i < orientationList_.size(); i++) {
+        output.writeMessage(5, orientationList_.get(i));
+      }
+      for (int i = 0; i < gyroscopeList_.size(); i++) {
+        output.writeMessage(6, gyroscopeList_.get(i));
+      }
+      for (int i = 0; i < gravityList_.size(); i++) {
+        output.writeMessage(7, gravityList_.get(i));
+      }
+      for (int i = 0; i < linearAccelerationList_.size(); i++) {
+        output.writeMessage(8, linearAccelerationList_.get(i));
+      }
+      for (int i = 0; i < ambientTemperatureList_.size(); i++) {
+        output.writeMessage(9, ambientTemperatureList_.get(i));
+      }
+      for (int i = 0; i < lightList_.size(); i++) {
+        output.writeMessage(10, lightList_.get(i));
+      }
+      for (int i = 0; i < pressureList_.size(); i++) {
+        output.writeMessage(11, pressureList_.get(i));
+      }
+      for (int i = 0; i < proximityList_.size(); i++) {
+        output.writeMessage(12, proximityList_.get(i));
+      }
+      for (int i = 0; i < wifiList_.size(); i++) {
+        output.writeInt32(13, wifiList_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, image_);
+      }
+      for (int i = 0; i < magneticList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, magneticList_.get(i));
+      }
+      for (int i = 0; i < accelerometerList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, accelerometerList_.get(i));
+      }
+      for (int i = 0; i < orientationList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, orientationList_.get(i));
+      }
+      for (int i = 0; i < gyroscopeList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, gyroscopeList_.get(i));
+      }
+      for (int i = 0; i < gravityList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, gravityList_.get(i));
+      }
+      for (int i = 0; i < linearAccelerationList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, linearAccelerationList_.get(i));
+      }
+      for (int i = 0; i < ambientTemperatureList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, ambientTemperatureList_.get(i));
+      }
+      for (int i = 0; i < lightList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, lightList_.get(i));
+      }
+      for (int i = 0; i < pressureList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, pressureList_.get(i));
+      }
+      for (int i = 0; i < proximityList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, proximityList_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < wifiList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(wifiList_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getWifiListList().size();
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof DeepNaviReq)) {
+        return super.equals(obj);
+      }
+      DeepNaviReq other = (DeepNaviReq) obj;
+
+      boolean result = true;
+      result = result && (hasTime() == other.hasTime());
+      if (hasTime()) {
+        result = result && (getTime()
+            == other.getTime());
+      }
+      result = result && (hasImage() == other.hasImage());
+      if (hasImage()) {
+        result = result && getImage()
+            .equals(other.getImage());
+      }
+      result = result && getMagneticListList()
+          .equals(other.getMagneticListList());
+      result = result && getAccelerometerListList()
+          .equals(other.getAccelerometerListList());
+      result = result && getOrientationListList()
+          .equals(other.getOrientationListList());
+      result = result && getGyroscopeListList()
+          .equals(other.getGyroscopeListList());
+      result = result && getGravityListList()
+          .equals(other.getGravityListList());
+      result = result && getLinearAccelerationListList()
+          .equals(other.getLinearAccelerationListList());
+      result = result && getAmbientTemperatureListList()
+          .equals(other.getAmbientTemperatureListList());
+      result = result && getLightListList()
+          .equals(other.getLightListList());
+      result = result && getPressureListList()
+          .equals(other.getPressureListList());
+      result = result && getProximityListList()
+          .equals(other.getProximityListList());
+      result = result && getWifiListList()
+          .equals(other.getWifiListList());
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && getId()
+            .equals(other.getId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTime()) {
+        hash = (37 * hash) + TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTime());
+      }
+      if (hasImage()) {
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
+      }
+      if (getMagneticListCount() > 0) {
+        hash = (37 * hash) + MAGNETICLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getMagneticListList().hashCode();
+      }
+      if (getAccelerometerListCount() > 0) {
+        hash = (37 * hash) + ACCELEROMETERLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAccelerometerListList().hashCode();
+      }
+      if (getOrientationListCount() > 0) {
+        hash = (37 * hash) + ORIENTATIONLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getOrientationListList().hashCode();
+      }
+      if (getGyroscopeListCount() > 0) {
+        hash = (37 * hash) + GYROSCOPELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getGyroscopeListList().hashCode();
+      }
+      if (getGravityListCount() > 0) {
+        hash = (37 * hash) + GRAVITYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getGravityListList().hashCode();
+      }
+      if (getLinearAccelerationListCount() > 0) {
+        hash = (37 * hash) + LINEARACCELERATIONLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getLinearAccelerationListList().hashCode();
+      }
+      if (getAmbientTemperatureListCount() > 0) {
+        hash = (37 * hash) + AMBIENTTEMPERATURELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAmbientTemperatureListList().hashCode();
+      }
+      if (getLightListCount() > 0) {
+        hash = (37 * hash) + LIGHTLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getLightListList().hashCode();
+      }
+      if (getPressureListCount() > 0) {
+        hash = (37 * hash) + PRESSURELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getPressureListList().hashCode();
+      }
+      if (getProximityListCount() > 0) {
+        hash = (37 * hash) + PROXIMITYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getProximityListList().hashCode();
+      }
+      if (getWifiListCount() > 0) {
+        hash = (37 * hash) + WIFILIST_FIELD_NUMBER;
+        hash = (53 * hash) + getWifiListList().hashCode();
+      }
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static DeepNaviReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static DeepNaviReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static DeepNaviReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static DeepNaviReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static DeepNaviReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static DeepNaviReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(DeepNaviReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code DeepNaviReq}
      */
-    public static final class DeepNaviReq extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:DeepNaviReq)
-            DeepNaviReqOrBuilder {
-        private static final long serialVersionUID = 0L;
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:DeepNaviReq)
+        DeepNaviReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Basic.internal_static_DeepNaviReq_descriptor;
+      }
 
-        // Use DeepNaviReq.newBuilder() to construct.
-        private DeepNaviReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Basic.internal_static_DeepNaviReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                DeepNaviReq.class, Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMagneticListFieldBuilder();
+          getAccelerometerListFieldBuilder();
+          getOrientationListFieldBuilder();
+          getGyroscopeListFieldBuilder();
+          getGravityListFieldBuilder();
+          getLinearAccelerationListFieldBuilder();
+          getAmbientTemperatureListFieldBuilder();
+          getLightListFieldBuilder();
+          getPressureListFieldBuilder();
+          getProximityListFieldBuilder();
         }
-
-        private DeepNaviReq() {
-            time_ = 0L;
-            image_ = com.google.protobuf.ByteString.EMPTY;
-            magneticList_ = java.util.Collections.emptyList();
-            accelerometerList_ = java.util.Collections.emptyList();
-            orientationList_ = java.util.Collections.emptyList();
-            gyroscopeList_ = java.util.Collections.emptyList();
-            gravityList_ = java.util.Collections.emptyList();
-            linearAccelerationList_ = java.util.Collections.emptyList();
-            ambientTemperatureList_ = java.util.Collections.emptyList();
-            lightList_ = java.util.Collections.emptyList();
-            pressureList_ = java.util.Collections.emptyList();
-            proximityList_ = java.util.Collections.emptyList();
-            wifiList_ = java.util.Collections.emptyList();
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        image_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (magneticListBuilder_ == null) {
+          magneticList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          magneticListBuilder_.clear();
         }
-
-        @Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
+        if (accelerometerListBuilder_ == null) {
+          accelerometerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          accelerometerListBuilder_.clear();
         }
+        if (orientationListBuilder_ == null) {
+          orientationList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          orientationListBuilder_.clear();
+        }
+        if (gyroscopeListBuilder_ == null) {
+          gyroscopeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          gyroscopeListBuilder_.clear();
+        }
+        if (gravityListBuilder_ == null) {
+          gravityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          gravityListBuilder_.clear();
+        }
+        if (linearAccelerationListBuilder_ == null) {
+          linearAccelerationList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          linearAccelerationListBuilder_.clear();
+        }
+        if (ambientTemperatureListBuilder_ == null) {
+          ambientTemperatureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ambientTemperatureListBuilder_.clear();
+        }
+        if (lightListBuilder_ == null) {
+          lightList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          lightListBuilder_.clear();
+        }
+        if (pressureListBuilder_ == null) {
+          pressureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          pressureListBuilder_.clear();
+        }
+        if (proximityListBuilder_ == null) {
+          proximityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          proximityListBuilder_.clear();
+        }
+        wifiList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        id_ = "";
+        bitField0_ = (bitField0_ & ~0x00002000);
+        return this;
+      }
 
-        private DeepNaviReq(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new NullPointerException();
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Basic.internal_static_DeepNaviReq_descriptor;
+      }
+
+      @Override
+      public DeepNaviReq getDefaultInstanceForType() {
+        return DeepNaviReq.getDefaultInstance();
+      }
+
+      @Override
+      public DeepNaviReq build() {
+        DeepNaviReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public DeepNaviReq buildPartial() {
+        DeepNaviReq result = new DeepNaviReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.image_ = image_;
+        if (magneticListBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.magneticList_ = magneticList_;
+        } else {
+          result.magneticList_ = magneticListBuilder_.build();
+        }
+        if (accelerometerListBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.accelerometerList_ = accelerometerList_;
+        } else {
+          result.accelerometerList_ = accelerometerListBuilder_.build();
+        }
+        if (orientationListBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.orientationList_ = orientationList_;
+        } else {
+          result.orientationList_ = orientationListBuilder_.build();
+        }
+        if (gyroscopeListBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.gyroscopeList_ = gyroscopeList_;
+        } else {
+          result.gyroscopeList_ = gyroscopeListBuilder_.build();
+        }
+        if (gravityListBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.gravityList_ = gravityList_;
+        } else {
+          result.gravityList_ = gravityListBuilder_.build();
+        }
+        if (linearAccelerationListBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+            linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.linearAccelerationList_ = linearAccelerationList_;
+        } else {
+          result.linearAccelerationList_ = linearAccelerationListBuilder_.build();
+        }
+        if (ambientTemperatureListBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.ambientTemperatureList_ = ambientTemperatureList_;
+        } else {
+          result.ambientTemperatureList_ = ambientTemperatureListBuilder_.build();
+        }
+        if (lightListBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            lightList_ = java.util.Collections.unmodifiableList(lightList_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.lightList_ = lightList_;
+        } else {
+          result.lightList_ = lightListBuilder_.build();
+        }
+        if (pressureListBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.pressureList_ = pressureList_;
+        } else {
+          result.pressureList_ = pressureListBuilder_.build();
+        }
+        if (proximityListBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+            proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.proximityList_ = proximityList_;
+        } else {
+          result.proximityList_ = proximityListBuilder_.build();
+        }
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.wifiList_ = wifiList_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.id_ = id_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof DeepNaviReq) {
+          return mergeFrom((DeepNaviReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(DeepNaviReq other) {
+        if (other == DeepNaviReq.getDefaultInstance()) return this;
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasImage()) {
+          setImage(other.getImage());
+        }
+        if (magneticListBuilder_ == null) {
+          if (!other.magneticList_.isEmpty()) {
+            if (magneticList_.isEmpty()) {
+              magneticList_ = other.magneticList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureMagneticListIsMutable();
+              magneticList_.addAll(other.magneticList_);
             }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8: {
-                            bitField0_ |= 0x00000001;
-                            time_ = input.readInt64();
-                            break;
-                        }
-                        case 18: {
-                            bitField0_ |= 0x00000002;
-                            image_ = input.readBytes();
-                            break;
-                        }
-                        case 26: {
-                            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                                magneticList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000004;
-                            }
-                            magneticList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 34: {
-                            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                                accelerometerList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000008;
-                            }
-                            accelerometerList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 42: {
-                            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                                orientationList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000010;
-                            }
-                            orientationList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 50: {
-                            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                                gyroscopeList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000020;
-                            }
-                            gyroscopeList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 58: {
-                            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                                gravityList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000040;
-                            }
-                            gravityList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 66: {
-                            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                                linearAccelerationList_ = new java.util.ArrayList<CoorSensorReq>();
-                                mutable_bitField0_ |= 0x00000080;
-                            }
-                            linearAccelerationList_.add(
-                                    input.readMessage(CoorSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 74: {
-                            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                                ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>();
-                                mutable_bitField0_ |= 0x00000100;
-                            }
-                            ambientTemperatureList_.add(
-                                    input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 82: {
-                            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                                lightList_ = new java.util.ArrayList<FeelSensorReq>();
-                                mutable_bitField0_ |= 0x00000200;
-                            }
-                            lightList_.add(
-                                    input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 90: {
-                            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                                pressureList_ = new java.util.ArrayList<FeelSensorReq>();
-                                mutable_bitField0_ |= 0x00000400;
-                            }
-                            pressureList_.add(
-                                    input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 98: {
-                            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                                proximityList_ = new java.util.ArrayList<FeelSensorReq>();
-                                mutable_bitField0_ |= 0x00000800;
-                            }
-                            proximityList_.add(
-                                    input.readMessage(FeelSensorReq.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 104: {
-                            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
-                                wifiList_ = new java.util.ArrayList<Integer>();
-                                mutable_bitField0_ |= 0x00001000;
-                            }
-                            wifiList_.add(input.readInt32());
-                            break;
-                        }
-                        case 106: {
-                            int length = input.readRawVarint32();
-                            int limit = input.pushLimit(length);
-                            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000) && input.getBytesUntilLimit() > 0) {
-                                wifiList_ = new java.util.ArrayList<Integer>();
-                                mutable_bitField0_ |= 0x00001000;
-                            }
-                            while (input.getBytesUntilLimit() > 0) {
-                                wifiList_.add(input.readInt32());
-                            }
-                            input.popLimit(limit);
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                    magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
-                }
-                if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                    accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
-                }
-                if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                    orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
-                }
-                if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                    gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
-                }
-                if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                    gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
-                }
-                if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                    linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
-                }
-                if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                    ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
-                }
-                if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                    lightList_ = java.util.Collections.unmodifiableList(lightList_);
-                }
-                if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                    pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
-                }
-                if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                    proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
-                }
-                if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
-                    wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
+            onChanged();
+          }
+        } else {
+          if (!other.magneticList_.isEmpty()) {
+            if (magneticListBuilder_.isEmpty()) {
+              magneticListBuilder_.dispose();
+              magneticListBuilder_ = null;
+              magneticList_ = other.magneticList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              magneticListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMagneticListFieldBuilder() : null;
+            } else {
+              magneticListBuilder_.addAllMessages(other.magneticList_);
             }
+          }
         }
+        if (accelerometerListBuilder_ == null) {
+          if (!other.accelerometerList_.isEmpty()) {
+            if (accelerometerList_.isEmpty()) {
+              accelerometerList_ = other.accelerometerList_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureAccelerometerListIsMutable();
+              accelerometerList_.addAll(other.accelerometerList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.accelerometerList_.isEmpty()) {
+            if (accelerometerListBuilder_.isEmpty()) {
+              accelerometerListBuilder_.dispose();
+              accelerometerListBuilder_ = null;
+              accelerometerList_ = other.accelerometerList_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              accelerometerListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAccelerometerListFieldBuilder() : null;
+            } else {
+              accelerometerListBuilder_.addAllMessages(other.accelerometerList_);
+            }
+          }
+        }
+        if (orientationListBuilder_ == null) {
+          if (!other.orientationList_.isEmpty()) {
+            if (orientationList_.isEmpty()) {
+              orientationList_ = other.orientationList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureOrientationListIsMutable();
+              orientationList_.addAll(other.orientationList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.orientationList_.isEmpty()) {
+            if (orientationListBuilder_.isEmpty()) {
+              orientationListBuilder_.dispose();
+              orientationListBuilder_ = null;
+              orientationList_ = other.orientationList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              orientationListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOrientationListFieldBuilder() : null;
+            } else {
+              orientationListBuilder_.addAllMessages(other.orientationList_);
+            }
+          }
+        }
+        if (gyroscopeListBuilder_ == null) {
+          if (!other.gyroscopeList_.isEmpty()) {
+            if (gyroscopeList_.isEmpty()) {
+              gyroscopeList_ = other.gyroscopeList_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureGyroscopeListIsMutable();
+              gyroscopeList_.addAll(other.gyroscopeList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.gyroscopeList_.isEmpty()) {
+            if (gyroscopeListBuilder_.isEmpty()) {
+              gyroscopeListBuilder_.dispose();
+              gyroscopeListBuilder_ = null;
+              gyroscopeList_ = other.gyroscopeList_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              gyroscopeListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGyroscopeListFieldBuilder() : null;
+            } else {
+              gyroscopeListBuilder_.addAllMessages(other.gyroscopeList_);
+            }
+          }
+        }
+        if (gravityListBuilder_ == null) {
+          if (!other.gravityList_.isEmpty()) {
+            if (gravityList_.isEmpty()) {
+              gravityList_ = other.gravityList_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureGravityListIsMutable();
+              gravityList_.addAll(other.gravityList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.gravityList_.isEmpty()) {
+            if (gravityListBuilder_.isEmpty()) {
+              gravityListBuilder_.dispose();
+              gravityListBuilder_ = null;
+              gravityList_ = other.gravityList_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              gravityListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGravityListFieldBuilder() : null;
+            } else {
+              gravityListBuilder_.addAllMessages(other.gravityList_);
+            }
+          }
+        }
+        if (linearAccelerationListBuilder_ == null) {
+          if (!other.linearAccelerationList_.isEmpty()) {
+            if (linearAccelerationList_.isEmpty()) {
+              linearAccelerationList_ = other.linearAccelerationList_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureLinearAccelerationListIsMutable();
+              linearAccelerationList_.addAll(other.linearAccelerationList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.linearAccelerationList_.isEmpty()) {
+            if (linearAccelerationListBuilder_.isEmpty()) {
+              linearAccelerationListBuilder_.dispose();
+              linearAccelerationListBuilder_ = null;
+              linearAccelerationList_ = other.linearAccelerationList_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              linearAccelerationListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLinearAccelerationListFieldBuilder() : null;
+            } else {
+              linearAccelerationListBuilder_.addAllMessages(other.linearAccelerationList_);
+            }
+          }
+        }
+        if (ambientTemperatureListBuilder_ == null) {
+          if (!other.ambientTemperatureList_.isEmpty()) {
+            if (ambientTemperatureList_.isEmpty()) {
+              ambientTemperatureList_ = other.ambientTemperatureList_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureAmbientTemperatureListIsMutable();
+              ambientTemperatureList_.addAll(other.ambientTemperatureList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ambientTemperatureList_.isEmpty()) {
+            if (ambientTemperatureListBuilder_.isEmpty()) {
+              ambientTemperatureListBuilder_.dispose();
+              ambientTemperatureListBuilder_ = null;
+              ambientTemperatureList_ = other.ambientTemperatureList_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              ambientTemperatureListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAmbientTemperatureListFieldBuilder() : null;
+            } else {
+              ambientTemperatureListBuilder_.addAllMessages(other.ambientTemperatureList_);
+            }
+          }
+        }
+        if (lightListBuilder_ == null) {
+          if (!other.lightList_.isEmpty()) {
+            if (lightList_.isEmpty()) {
+              lightList_ = other.lightList_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureLightListIsMutable();
+              lightList_.addAll(other.lightList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.lightList_.isEmpty()) {
+            if (lightListBuilder_.isEmpty()) {
+              lightListBuilder_.dispose();
+              lightListBuilder_ = null;
+              lightList_ = other.lightList_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              lightListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLightListFieldBuilder() : null;
+            } else {
+              lightListBuilder_.addAllMessages(other.lightList_);
+            }
+          }
+        }
+        if (pressureListBuilder_ == null) {
+          if (!other.pressureList_.isEmpty()) {
+            if (pressureList_.isEmpty()) {
+              pressureList_ = other.pressureList_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensurePressureListIsMutable();
+              pressureList_.addAll(other.pressureList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pressureList_.isEmpty()) {
+            if (pressureListBuilder_.isEmpty()) {
+              pressureListBuilder_.dispose();
+              pressureListBuilder_ = null;
+              pressureList_ = other.pressureList_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              pressureListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPressureListFieldBuilder() : null;
+            } else {
+              pressureListBuilder_.addAllMessages(other.pressureList_);
+            }
+          }
+        }
+        if (proximityListBuilder_ == null) {
+          if (!other.proximityList_.isEmpty()) {
+            if (proximityList_.isEmpty()) {
+              proximityList_ = other.proximityList_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureProximityListIsMutable();
+              proximityList_.addAll(other.proximityList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.proximityList_.isEmpty()) {
+            if (proximityListBuilder_.isEmpty()) {
+              proximityListBuilder_.dispose();
+              proximityListBuilder_ = null;
+              proximityList_ = other.proximityList_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              proximityListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProximityListFieldBuilder() : null;
+            } else {
+              proximityListBuilder_.addAllMessages(other.proximityList_);
+            }
+          }
+        }
+        if (!other.wifiList_.isEmpty()) {
+          if (wifiList_.isEmpty()) {
+            wifiList_ = other.wifiList_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureWifiListIsMutable();
+            wifiList_.addAll(other.wifiList_);
+          }
+          onChanged();
+        }
+        if (other.hasId()) {
+          bitField0_ |= 0x00002000;
+          id_ = other.id_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor
+      @Override
+      public final boolean isInitialized() {
+        if (!hasTime()) {
+          return false;
+        }
+        for (int i = 0; i < getMagneticListCount(); i++) {
+          if (!getMagneticList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAccelerometerListCount(); i++) {
+          if (!getAccelerometerList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getOrientationListCount(); i++) {
+          if (!getOrientationList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getGyroscopeListCount(); i++) {
+          if (!getGyroscopeList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getGravityListCount(); i++) {
+          if (!getGravityList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getLinearAccelerationListCount(); i++) {
+          if (!getLinearAccelerationList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
+          if (!getAmbientTemperatureList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getLightListCount(); i++) {
+          if (!getLightList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getPressureListCount(); i++) {
+          if (!getPressureList(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getProximityListCount(); i++) {
+          if (!getProximityList(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        DeepNaviReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (DeepNaviReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long time_ ;
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000001;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public boolean hasImage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public com.google.protobuf.ByteString getImage() {
+        return image_;
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public Builder setImage(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * audio
+       * </pre>
+       *
+       * <code>optional bytes image = 2;</code>
+       */
+      public Builder clearImage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<Coor> magneticList_ =
+        java.util.Collections.emptyList();
+      private void ensureMagneticListIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          magneticList_ = new java.util.ArrayList<Coor>(magneticList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> magneticListBuilder_;
+
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public java.util.List<Coor> getMagneticListList() {
+        if (magneticListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(magneticList_);
+        } else {
+          return magneticListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public int getMagneticListCount() {
+        if (magneticListBuilder_ == null) {
+          return magneticList_.size();
+        } else {
+          return magneticListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Coor getMagneticList(int index) {
+        if (magneticListBuilder_ == null) {
+          return magneticList_.get(index);
+        } else {
+          return magneticListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder setMagneticList(
+          int index, Coor value) {
+        if (magneticListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticListIsMutable();
+          magneticList_.set(index, value);
+          onChanged();
+        } else {
+          magneticListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder setMagneticList(
+          int index, Coor.Builder builderForValue) {
+        if (magneticListBuilder_ == null) {
+          ensureMagneticListIsMutable();
+          magneticList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          magneticListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder addMagneticList(Coor value) {
+        if (magneticListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticListIsMutable();
+          magneticList_.add(value);
+          onChanged();
+        } else {
+          magneticListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder addMagneticList(
+          int index, Coor value) {
+        if (magneticListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMagneticListIsMutable();
+          magneticList_.add(index, value);
+          onChanged();
+        } else {
+          magneticListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder addMagneticList(
+          Coor.Builder builderForValue) {
+        if (magneticListBuilder_ == null) {
+          ensureMagneticListIsMutable();
+          magneticList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          magneticListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder addMagneticList(
+          int index, Coor.Builder builderForValue) {
+        if (magneticListBuilder_ == null) {
+          ensureMagneticListIsMutable();
+          magneticList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          magneticListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder addAllMagneticList(
+          Iterable<? extends Coor> values) {
+        if (magneticListBuilder_ == null) {
+          ensureMagneticListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, magneticList_);
+          onChanged();
+        } else {
+          magneticListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder clearMagneticList() {
+        if (magneticListBuilder_ == null) {
+          magneticList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          magneticListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Builder removeMagneticList(int index) {
+        if (magneticListBuilder_ == null) {
+          ensureMagneticListIsMutable();
+          magneticList_.remove(index);
+          onChanged();
+        } else {
+          magneticListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Coor.Builder getMagneticListBuilder(
+          int index) {
+        return getMagneticListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public CoorOrBuilder getMagneticListOrBuilder(
+          int index) {
+        if (magneticListBuilder_ == null) {
+          return magneticList_.get(index);  } else {
+          return magneticListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getMagneticListOrBuilderList() {
+        if (magneticListBuilder_ != null) {
+          return magneticListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(magneticList_);
+        }
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Coor.Builder addMagneticListBuilder() {
+        return getMagneticListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public Coor.Builder addMagneticListBuilder(
+          int index) {
+        return getMagneticListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 磁场
+       * </pre>
+       *
+       * <code>repeated .Coor magneticList = 3;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getMagneticListBuilderList() {
+        return getMagneticListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getMagneticListFieldBuilder() {
+        if (magneticListBuilder_ == null) {
+          magneticListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  magneticList_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          magneticList_ = null;
+        }
+        return magneticListBuilder_;
+      }
+
+      private java.util.List<Coor> accelerometerList_ =
+        java.util.Collections.emptyList();
+      private void ensureAccelerometerListIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          accelerometerList_ = new java.util.ArrayList<Coor>(accelerometerList_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> accelerometerListBuilder_;
+
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public java.util.List<Coor> getAccelerometerListList() {
+        if (accelerometerListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(accelerometerList_);
+        } else {
+          return accelerometerListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public int getAccelerometerListCount() {
+        if (accelerometerListBuilder_ == null) {
+          return accelerometerList_.size();
+        } else {
+          return accelerometerListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Coor getAccelerometerList(int index) {
+        if (accelerometerListBuilder_ == null) {
+          return accelerometerList_.get(index);
+        } else {
+          return accelerometerListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder setAccelerometerList(
+          int index, Coor value) {
+        if (accelerometerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.set(index, value);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder setAccelerometerList(
+          int index, Coor.Builder builderForValue) {
+        if (accelerometerListBuilder_ == null) {
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder addAccelerometerList(Coor value) {
+        if (accelerometerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.add(value);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder addAccelerometerList(
+          int index, Coor value) {
+        if (accelerometerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.add(index, value);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder addAccelerometerList(
+          Coor.Builder builderForValue) {
+        if (accelerometerListBuilder_ == null) {
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder addAccelerometerList(
+          int index, Coor.Builder builderForValue) {
+        if (accelerometerListBuilder_ == null) {
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          accelerometerListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder addAllAccelerometerList(
+          Iterable<? extends Coor> values) {
+        if (accelerometerListBuilder_ == null) {
+          ensureAccelerometerListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, accelerometerList_);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder clearAccelerometerList() {
+        if (accelerometerListBuilder_ == null) {
+          accelerometerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Builder removeAccelerometerList(int index) {
+        if (accelerometerListBuilder_ == null) {
+          ensureAccelerometerListIsMutable();
+          accelerometerList_.remove(index);
+          onChanged();
+        } else {
+          accelerometerListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Coor.Builder getAccelerometerListBuilder(
+          int index) {
+        return getAccelerometerListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public CoorOrBuilder getAccelerometerListOrBuilder(
+          int index) {
+        if (accelerometerListBuilder_ == null) {
+          return accelerometerList_.get(index);  } else {
+          return accelerometerListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getAccelerometerListOrBuilderList() {
+        if (accelerometerListBuilder_ != null) {
+          return accelerometerListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(accelerometerList_);
+        }
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Coor.Builder addAccelerometerListBuilder() {
+        return getAccelerometerListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public Coor.Builder addAccelerometerListBuilder(
+          int index) {
+        return getAccelerometerListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 加速度
+       * </pre>
+       *
+       * <code>repeated .Coor accelerometerList = 4;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getAccelerometerListBuilderList() {
+        return getAccelerometerListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getAccelerometerListFieldBuilder() {
+        if (accelerometerListBuilder_ == null) {
+          accelerometerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  accelerometerList_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          accelerometerList_ = null;
+        }
+        return accelerometerListBuilder_;
+      }
+
+      private java.util.List<Coor> orientationList_ =
+        java.util.Collections.emptyList();
+      private void ensureOrientationListIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          orientationList_ = new java.util.ArrayList<Coor>(orientationList_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> orientationListBuilder_;
+
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public java.util.List<Coor> getOrientationListList() {
+        if (orientationListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(orientationList_);
+        } else {
+          return orientationListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public int getOrientationListCount() {
+        if (orientationListBuilder_ == null) {
+          return orientationList_.size();
+        } else {
+          return orientationListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Coor getOrientationList(int index) {
+        if (orientationListBuilder_ == null) {
+          return orientationList_.get(index);
+        } else {
+          return orientationListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder setOrientationList(
+          int index, Coor value) {
+        if (orientationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationListIsMutable();
+          orientationList_.set(index, value);
+          onChanged();
+        } else {
+          orientationListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder setOrientationList(
+          int index, Coor.Builder builderForValue) {
+        if (orientationListBuilder_ == null) {
+          ensureOrientationListIsMutable();
+          orientationList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          orientationListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder addOrientationList(Coor value) {
+        if (orientationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationListIsMutable();
+          orientationList_.add(value);
+          onChanged();
+        } else {
+          orientationListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder addOrientationList(
+          int index, Coor value) {
+        if (orientationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrientationListIsMutable();
+          orientationList_.add(index, value);
+          onChanged();
+        } else {
+          orientationListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder addOrientationList(
+          Coor.Builder builderForValue) {
+        if (orientationListBuilder_ == null) {
+          ensureOrientationListIsMutable();
+          orientationList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          orientationListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder addOrientationList(
+          int index, Coor.Builder builderForValue) {
+        if (orientationListBuilder_ == null) {
+          ensureOrientationListIsMutable();
+          orientationList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          orientationListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder addAllOrientationList(
+          Iterable<? extends Coor> values) {
+        if (orientationListBuilder_ == null) {
+          ensureOrientationListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, orientationList_);
+          onChanged();
+        } else {
+          orientationListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder clearOrientationList() {
+        if (orientationListBuilder_ == null) {
+          orientationList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          orientationListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Builder removeOrientationList(int index) {
+        if (orientationListBuilder_ == null) {
+          ensureOrientationListIsMutable();
+          orientationList_.remove(index);
+          onChanged();
+        } else {
+          orientationListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Coor.Builder getOrientationListBuilder(
+          int index) {
+        return getOrientationListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public CoorOrBuilder getOrientationListOrBuilder(
+          int index) {
+        if (orientationListBuilder_ == null) {
+          return orientationList_.get(index);  } else {
+          return orientationListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getOrientationListOrBuilderList() {
+        if (orientationListBuilder_ != null) {
+          return orientationListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(orientationList_);
+        }
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Coor.Builder addOrientationListBuilder() {
+        return getOrientationListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public Coor.Builder addOrientationListBuilder(
+          int index) {
+        return getOrientationListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 方向
+       * </pre>
+       *
+       * <code>repeated .Coor orientationList = 5;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getOrientationListBuilderList() {
+        return getOrientationListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getOrientationListFieldBuilder() {
+        if (orientationListBuilder_ == null) {
+          orientationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  orientationList_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          orientationList_ = null;
+        }
+        return orientationListBuilder_;
+      }
+
+      private java.util.List<Coor> gyroscopeList_ =
+        java.util.Collections.emptyList();
+      private void ensureGyroscopeListIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          gyroscopeList_ = new java.util.ArrayList<Coor>(gyroscopeList_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> gyroscopeListBuilder_;
+
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public java.util.List<Coor> getGyroscopeListList() {
+        if (gyroscopeListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gyroscopeList_);
+        } else {
+          return gyroscopeListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public int getGyroscopeListCount() {
+        if (gyroscopeListBuilder_ == null) {
+          return gyroscopeList_.size();
+        } else {
+          return gyroscopeListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Coor getGyroscopeList(int index) {
+        if (gyroscopeListBuilder_ == null) {
+          return gyroscopeList_.get(index);
+        } else {
+          return gyroscopeListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder setGyroscopeList(
+          int index, Coor value) {
+        if (gyroscopeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.set(index, value);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder setGyroscopeList(
+          int index, Coor.Builder builderForValue) {
+        if (gyroscopeListBuilder_ == null) {
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder addGyroscopeList(Coor value) {
+        if (gyroscopeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.add(value);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder addGyroscopeList(
+          int index, Coor value) {
+        if (gyroscopeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.add(index, value);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder addGyroscopeList(
+          Coor.Builder builderForValue) {
+        if (gyroscopeListBuilder_ == null) {
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder addGyroscopeList(
+          int index, Coor.Builder builderForValue) {
+        if (gyroscopeListBuilder_ == null) {
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder addAllGyroscopeList(
+          Iterable<? extends Coor> values) {
+        if (gyroscopeListBuilder_ == null) {
+          ensureGyroscopeListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, gyroscopeList_);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder clearGyroscopeList() {
+        if (gyroscopeListBuilder_ == null) {
+          gyroscopeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Builder removeGyroscopeList(int index) {
+        if (gyroscopeListBuilder_ == null) {
+          ensureGyroscopeListIsMutable();
+          gyroscopeList_.remove(index);
+          onChanged();
+        } else {
+          gyroscopeListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Coor.Builder getGyroscopeListBuilder(
+          int index) {
+        return getGyroscopeListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public CoorOrBuilder getGyroscopeListOrBuilder(
+          int index) {
+        if (gyroscopeListBuilder_ == null) {
+          return gyroscopeList_.get(index);  } else {
+          return gyroscopeListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getGyroscopeListOrBuilderList() {
+        if (gyroscopeListBuilder_ != null) {
+          return gyroscopeListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(gyroscopeList_);
+        }
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Coor.Builder addGyroscopeListBuilder() {
+        return getGyroscopeListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public Coor.Builder addGyroscopeListBuilder(
+          int index) {
+        return getGyroscopeListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 陀螺仪
+       * </pre>
+       *
+       * <code>repeated .Coor gyroscopeList = 6;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getGyroscopeListBuilderList() {
+        return getGyroscopeListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getGyroscopeListFieldBuilder() {
+        if (gyroscopeListBuilder_ == null) {
+          gyroscopeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  gyroscopeList_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          gyroscopeList_ = null;
+        }
+        return gyroscopeListBuilder_;
+      }
+
+      private java.util.List<Coor> gravityList_ =
+        java.util.Collections.emptyList();
+      private void ensureGravityListIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          gravityList_ = new java.util.ArrayList<Coor>(gravityList_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> gravityListBuilder_;
+
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public java.util.List<Coor> getGravityListList() {
+        if (gravityListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gravityList_);
+        } else {
+          return gravityListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public int getGravityListCount() {
+        if (gravityListBuilder_ == null) {
+          return gravityList_.size();
+        } else {
+          return gravityListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Coor getGravityList(int index) {
+        if (gravityListBuilder_ == null) {
+          return gravityList_.get(index);
+        } else {
+          return gravityListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder setGravityList(
+          int index, Coor value) {
+        if (gravityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityListIsMutable();
+          gravityList_.set(index, value);
+          onChanged();
+        } else {
+          gravityListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder setGravityList(
+          int index, Coor.Builder builderForValue) {
+        if (gravityListBuilder_ == null) {
+          ensureGravityListIsMutable();
+          gravityList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          gravityListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder addGravityList(Coor value) {
+        if (gravityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityListIsMutable();
+          gravityList_.add(value);
+          onChanged();
+        } else {
+          gravityListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder addGravityList(
+          int index, Coor value) {
+        if (gravityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGravityListIsMutable();
+          gravityList_.add(index, value);
+          onChanged();
+        } else {
+          gravityListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder addGravityList(
+          Coor.Builder builderForValue) {
+        if (gravityListBuilder_ == null) {
+          ensureGravityListIsMutable();
+          gravityList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          gravityListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder addGravityList(
+          int index, Coor.Builder builderForValue) {
+        if (gravityListBuilder_ == null) {
+          ensureGravityListIsMutable();
+          gravityList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          gravityListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder addAllGravityList(
+          Iterable<? extends Coor> values) {
+        if (gravityListBuilder_ == null) {
+          ensureGravityListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, gravityList_);
+          onChanged();
+        } else {
+          gravityListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder clearGravityList() {
+        if (gravityListBuilder_ == null) {
+          gravityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          gravityListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Builder removeGravityList(int index) {
+        if (gravityListBuilder_ == null) {
+          ensureGravityListIsMutable();
+          gravityList_.remove(index);
+          onChanged();
+        } else {
+          gravityListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Coor.Builder getGravityListBuilder(
+          int index) {
+        return getGravityListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public CoorOrBuilder getGravityListOrBuilder(
+          int index) {
+        if (gravityListBuilder_ == null) {
+          return gravityList_.get(index);  } else {
+          return gravityListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getGravityListOrBuilderList() {
+        if (gravityListBuilder_ != null) {
+          return gravityListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(gravityList_);
+        }
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Coor.Builder addGravityListBuilder() {
+        return getGravityListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public Coor.Builder addGravityListBuilder(
+          int index) {
+        return getGravityListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 重力
+       * </pre>
+       *
+       * <code>repeated .Coor gravityList = 7;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getGravityListBuilderList() {
+        return getGravityListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getGravityListFieldBuilder() {
+        if (gravityListBuilder_ == null) {
+          gravityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  gravityList_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          gravityList_ = null;
+        }
+        return gravityListBuilder_;
+      }
+
+      private java.util.List<Coor> linearAccelerationList_ =
+        java.util.Collections.emptyList();
+      private void ensureLinearAccelerationListIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          linearAccelerationList_ = new java.util.ArrayList<Coor>(linearAccelerationList_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> linearAccelerationListBuilder_;
+
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public java.util.List<Coor> getLinearAccelerationListList() {
+        if (linearAccelerationListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(linearAccelerationList_);
+        } else {
+          return linearAccelerationListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public int getLinearAccelerationListCount() {
+        if (linearAccelerationListBuilder_ == null) {
+          return linearAccelerationList_.size();
+        } else {
+          return linearAccelerationListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Coor getLinearAccelerationList(int index) {
+        if (linearAccelerationListBuilder_ == null) {
+          return linearAccelerationList_.get(index);
+        } else {
+          return linearAccelerationListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder setLinearAccelerationList(
+          int index, Coor value) {
+        if (linearAccelerationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.set(index, value);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder setLinearAccelerationList(
+          int index, Coor.Builder builderForValue) {
+        if (linearAccelerationListBuilder_ == null) {
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder addLinearAccelerationList(Coor value) {
+        if (linearAccelerationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.add(value);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder addLinearAccelerationList(
+          int index, Coor value) {
+        if (linearAccelerationListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.add(index, value);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder addLinearAccelerationList(
+          Coor.Builder builderForValue) {
+        if (linearAccelerationListBuilder_ == null) {
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder addLinearAccelerationList(
+          int index, Coor.Builder builderForValue) {
+        if (linearAccelerationListBuilder_ == null) {
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder addAllLinearAccelerationList(
+          Iterable<? extends Coor> values) {
+        if (linearAccelerationListBuilder_ == null) {
+          ensureLinearAccelerationListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, linearAccelerationList_);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder clearLinearAccelerationList() {
+        if (linearAccelerationListBuilder_ == null) {
+          linearAccelerationList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Builder removeLinearAccelerationList(int index) {
+        if (linearAccelerationListBuilder_ == null) {
+          ensureLinearAccelerationListIsMutable();
+          linearAccelerationList_.remove(index);
+          onChanged();
+        } else {
+          linearAccelerationListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Coor.Builder getLinearAccelerationListBuilder(
+          int index) {
+        return getLinearAccelerationListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public CoorOrBuilder getLinearAccelerationListOrBuilder(
+          int index) {
+        if (linearAccelerationListBuilder_ == null) {
+          return linearAccelerationList_.get(index);  } else {
+          return linearAccelerationListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public java.util.List<? extends CoorOrBuilder>
+           getLinearAccelerationListOrBuilderList() {
+        if (linearAccelerationListBuilder_ != null) {
+          return linearAccelerationListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(linearAccelerationList_);
+        }
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Coor.Builder addLinearAccelerationListBuilder() {
+        return getLinearAccelerationListFieldBuilder().addBuilder(
+            Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public Coor.Builder addLinearAccelerationListBuilder(
+          int index) {
+        return getLinearAccelerationListFieldBuilder().addBuilder(
+            index, Coor.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 线性加速度
+       * </pre>
+       *
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
+       */
+      public java.util.List<Coor.Builder>
+           getLinearAccelerationListBuilderList() {
+        return getLinearAccelerationListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getLinearAccelerationListFieldBuilder() {
+        if (linearAccelerationListBuilder_ == null) {
+          linearAccelerationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  linearAccelerationList_,
+                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  getParentForChildren(),
+                  isClean());
+          linearAccelerationList_ = null;
+        }
+        return linearAccelerationListBuilder_;
+      }
+
+      private java.util.List<FeelSensorReq> ambientTemperatureList_ =
+        java.util.Collections.emptyList();
+      private void ensureAmbientTemperatureListIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>(ambientTemperatureList_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> ambientTemperatureListBuilder_;
+
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
+        if (ambientTemperatureListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ambientTemperatureList_);
+        } else {
+          return ambientTemperatureListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public int getAmbientTemperatureListCount() {
+        if (ambientTemperatureListBuilder_ == null) {
+          return ambientTemperatureList_.size();
+        } else {
+          return ambientTemperatureListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public FeelSensorReq getAmbientTemperatureList(int index) {
+        if (ambientTemperatureListBuilder_ == null) {
+          return ambientTemperatureList_.get(index);
+        } else {
+          return ambientTemperatureListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder setAmbientTemperatureList(
+          int index, FeelSensorReq value) {
+        if (ambientTemperatureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.set(index, value);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder setAmbientTemperatureList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureListBuilder_ == null) {
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder addAmbientTemperatureList(FeelSensorReq value) {
+        if (ambientTemperatureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.add(value);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder addAmbientTemperatureList(
+          int index, FeelSensorReq value) {
+        if (ambientTemperatureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.add(index, value);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder addAmbientTemperatureList(
+          FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureListBuilder_ == null) {
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder addAmbientTemperatureList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (ambientTemperatureListBuilder_ == null) {
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder addAllAmbientTemperatureList(
+          Iterable<? extends FeelSensorReq> values) {
+        if (ambientTemperatureListBuilder_ == null) {
+          ensureAmbientTemperatureListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ambientTemperatureList_);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder clearAmbientTemperatureList() {
+        if (ambientTemperatureListBuilder_ == null) {
+          ambientTemperatureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public Builder removeAmbientTemperatureList(int index) {
+        if (ambientTemperatureListBuilder_ == null) {
+          ensureAmbientTemperatureListIsMutable();
+          ambientTemperatureList_.remove(index);
+          onChanged();
+        } else {
+          ambientTemperatureListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public FeelSensorReq.Builder getAmbientTemperatureListBuilder(
+          int index) {
+        return getAmbientTemperatureListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
+          int index) {
+        if (ambientTemperatureListBuilder_ == null) {
+          return ambientTemperatureList_.get(index);  } else {
+          return ambientTemperatureListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public java.util.List<? extends FeelSensorReqOrBuilder>
+           getAmbientTemperatureListOrBuilderList() {
+        if (ambientTemperatureListBuilder_ != null) {
+          return ambientTemperatureListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ambientTemperatureList_);
+        }
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public FeelSensorReq.Builder addAmbientTemperatureListBuilder() {
+        return getAmbientTemperatureListFieldBuilder().addBuilder(
+            FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public FeelSensorReq.Builder addAmbientTemperatureListBuilder(
+          int index) {
+        return getAmbientTemperatureListFieldBuilder().addBuilder(
+            index, FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 温度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
+       */
+      public java.util.List<FeelSensorReq.Builder>
+           getAmbientTemperatureListBuilderList() {
+        return getAmbientTemperatureListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
+          getAmbientTemperatureListFieldBuilder() {
+        if (ambientTemperatureListBuilder_ == null) {
+          ambientTemperatureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
+                  ambientTemperatureList_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  getParentForChildren(),
+                  isClean());
+          ambientTemperatureList_ = null;
+        }
+        return ambientTemperatureListBuilder_;
+      }
+
+      private java.util.List<FeelSensorReq> lightList_ =
+        java.util.Collections.emptyList();
+      private void ensureLightListIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          lightList_ = new java.util.ArrayList<FeelSensorReq>(lightList_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> lightListBuilder_;
+
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public java.util.List<FeelSensorReq> getLightListList() {
+        if (lightListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(lightList_);
+        } else {
+          return lightListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public int getLightListCount() {
+        if (lightListBuilder_ == null) {
+          return lightList_.size();
+        } else {
+          return lightListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public FeelSensorReq getLightList(int index) {
+        if (lightListBuilder_ == null) {
+          return lightList_.get(index);
+        } else {
+          return lightListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder setLightList(
+          int index, FeelSensorReq value) {
+        if (lightListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightListIsMutable();
+          lightList_.set(index, value);
+          onChanged();
+        } else {
+          lightListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder setLightList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (lightListBuilder_ == null) {
+          ensureLightListIsMutable();
+          lightList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          lightListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder addLightList(FeelSensorReq value) {
+        if (lightListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightListIsMutable();
+          lightList_.add(value);
+          onChanged();
+        } else {
+          lightListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder addLightList(
+          int index, FeelSensorReq value) {
+        if (lightListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLightListIsMutable();
+          lightList_.add(index, value);
+          onChanged();
+        } else {
+          lightListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder addLightList(
+          FeelSensorReq.Builder builderForValue) {
+        if (lightListBuilder_ == null) {
+          ensureLightListIsMutable();
+          lightList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          lightListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder addLightList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (lightListBuilder_ == null) {
+          ensureLightListIsMutable();
+          lightList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          lightListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder addAllLightList(
+          Iterable<? extends FeelSensorReq> values) {
+        if (lightListBuilder_ == null) {
+          ensureLightListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, lightList_);
+          onChanged();
+        } else {
+          lightListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder clearLightList() {
+        if (lightListBuilder_ == null) {
+          lightList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          lightListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public Builder removeLightList(int index) {
+        if (lightListBuilder_ == null) {
+          ensureLightListIsMutable();
+          lightList_.remove(index);
+          onChanged();
+        } else {
+          lightListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public FeelSensorReq.Builder getLightListBuilder(
+          int index) {
+        return getLightListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public FeelSensorReqOrBuilder getLightListOrBuilder(
+          int index) {
+        if (lightListBuilder_ == null) {
+          return lightList_.get(index);  } else {
+          return lightListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public java.util.List<? extends FeelSensorReqOrBuilder>
+           getLightListOrBuilderList() {
+        if (lightListBuilder_ != null) {
+          return lightListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(lightList_);
+        }
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public FeelSensorReq.Builder addLightListBuilder() {
+        return getLightListFieldBuilder().addBuilder(
+            FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public FeelSensorReq.Builder addLightListBuilder(
+          int index) {
+        return getLightListFieldBuilder().addBuilder(
+            index, FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 亮度
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq lightList = 10;</code>
+       */
+      public java.util.List<FeelSensorReq.Builder>
+           getLightListBuilderList() {
+        return getLightListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
+          getLightListFieldBuilder() {
+        if (lightListBuilder_ == null) {
+          lightListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
+                  lightList_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          lightList_ = null;
+        }
+        return lightListBuilder_;
+      }
+
+      private java.util.List<FeelSensorReq> pressureList_ =
+        java.util.Collections.emptyList();
+      private void ensurePressureListIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          pressureList_ = new java.util.ArrayList<FeelSensorReq>(pressureList_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> pressureListBuilder_;
+
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public java.util.List<FeelSensorReq> getPressureListList() {
+        if (pressureListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pressureList_);
+        } else {
+          return pressureListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public int getPressureListCount() {
+        if (pressureListBuilder_ == null) {
+          return pressureList_.size();
+        } else {
+          return pressureListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public FeelSensorReq getPressureList(int index) {
+        if (pressureListBuilder_ == null) {
+          return pressureList_.get(index);
+        } else {
+          return pressureListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder setPressureList(
+          int index, FeelSensorReq value) {
+        if (pressureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureListIsMutable();
+          pressureList_.set(index, value);
+          onChanged();
+        } else {
+          pressureListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder setPressureList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (pressureListBuilder_ == null) {
+          ensurePressureListIsMutable();
+          pressureList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pressureListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder addPressureList(FeelSensorReq value) {
+        if (pressureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureListIsMutable();
+          pressureList_.add(value);
+          onChanged();
+        } else {
+          pressureListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder addPressureList(
+          int index, FeelSensorReq value) {
+        if (pressureListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePressureListIsMutable();
+          pressureList_.add(index, value);
+          onChanged();
+        } else {
+          pressureListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder addPressureList(
+          FeelSensorReq.Builder builderForValue) {
+        if (pressureListBuilder_ == null) {
+          ensurePressureListIsMutable();
+          pressureList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pressureListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder addPressureList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (pressureListBuilder_ == null) {
+          ensurePressureListIsMutable();
+          pressureList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pressureListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder addAllPressureList(
+          Iterable<? extends FeelSensorReq> values) {
+        if (pressureListBuilder_ == null) {
+          ensurePressureListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pressureList_);
+          onChanged();
+        } else {
+          pressureListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder clearPressureList() {
+        if (pressureListBuilder_ == null) {
+          pressureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          pressureListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public Builder removePressureList(int index) {
+        if (pressureListBuilder_ == null) {
+          ensurePressureListIsMutable();
+          pressureList_.remove(index);
+          onChanged();
+        } else {
+          pressureListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public FeelSensorReq.Builder getPressureListBuilder(
+          int index) {
+        return getPressureListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public FeelSensorReqOrBuilder getPressureListOrBuilder(
+          int index) {
+        if (pressureListBuilder_ == null) {
+          return pressureList_.get(index);  } else {
+          return pressureListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public java.util.List<? extends FeelSensorReqOrBuilder>
+           getPressureListOrBuilderList() {
+        if (pressureListBuilder_ != null) {
+          return pressureListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pressureList_);
+        }
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public FeelSensorReq.Builder addPressureListBuilder() {
+        return getPressureListFieldBuilder().addBuilder(
+            FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public FeelSensorReq.Builder addPressureListBuilder(
+          int index) {
+        return getPressureListFieldBuilder().addBuilder(
+            index, FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 压力
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq pressureList = 11;</code>
+       */
+      public java.util.List<FeelSensorReq.Builder>
+           getPressureListBuilderList() {
+        return getPressureListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
+          getPressureListFieldBuilder() {
+        if (pressureListBuilder_ == null) {
+          pressureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
+                  pressureList_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          pressureList_ = null;
+        }
+        return pressureListBuilder_;
+      }
+
+      private java.util.List<FeelSensorReq> proximityList_ =
+        java.util.Collections.emptyList();
+      private void ensureProximityListIsMutable() {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+          proximityList_ = new java.util.ArrayList<FeelSensorReq>(proximityList_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> proximityListBuilder_;
+
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public java.util.List<FeelSensorReq> getProximityListList() {
+        if (proximityListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(proximityList_);
+        } else {
+          return proximityListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public int getProximityListCount() {
+        if (proximityListBuilder_ == null) {
+          return proximityList_.size();
+        } else {
+          return proximityListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public FeelSensorReq getProximityList(int index) {
+        if (proximityListBuilder_ == null) {
+          return proximityList_.get(index);
+        } else {
+          return proximityListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder setProximityList(
+          int index, FeelSensorReq value) {
+        if (proximityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityListIsMutable();
+          proximityList_.set(index, value);
+          onChanged();
+        } else {
+          proximityListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder setProximityList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (proximityListBuilder_ == null) {
+          ensureProximityListIsMutable();
+          proximityList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          proximityListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder addProximityList(FeelSensorReq value) {
+        if (proximityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityListIsMutable();
+          proximityList_.add(value);
+          onChanged();
+        } else {
+          proximityListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder addProximityList(
+          int index, FeelSensorReq value) {
+        if (proximityListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProximityListIsMutable();
+          proximityList_.add(index, value);
+          onChanged();
+        } else {
+          proximityListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder addProximityList(
+          FeelSensorReq.Builder builderForValue) {
+        if (proximityListBuilder_ == null) {
+          ensureProximityListIsMutable();
+          proximityList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          proximityListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder addProximityList(
+          int index, FeelSensorReq.Builder builderForValue) {
+        if (proximityListBuilder_ == null) {
+          ensureProximityListIsMutable();
+          proximityList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          proximityListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder addAllProximityList(
+          Iterable<? extends FeelSensorReq> values) {
+        if (proximityListBuilder_ == null) {
+          ensureProximityListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, proximityList_);
+          onChanged();
+        } else {
+          proximityListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder clearProximityList() {
+        if (proximityListBuilder_ == null) {
+          proximityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          proximityListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public Builder removeProximityList(int index) {
+        if (proximityListBuilder_ == null) {
+          ensureProximityListIsMutable();
+          proximityList_.remove(index);
+          onChanged();
+        } else {
+          proximityListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public FeelSensorReq.Builder getProximityListBuilder(
+          int index) {
+        return getProximityListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public FeelSensorReqOrBuilder getProximityListOrBuilder(
+          int index) {
+        if (proximityListBuilder_ == null) {
+          return proximityList_.get(index);  } else {
+          return proximityListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public java.util.List<? extends FeelSensorReqOrBuilder>
+           getProximityListOrBuilderList() {
+        if (proximityListBuilder_ != null) {
+          return proximityListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(proximityList_);
+        }
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public FeelSensorReq.Builder addProximityListBuilder() {
+        return getProximityListFieldBuilder().addBuilder(
+            FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public FeelSensorReq.Builder addProximityListBuilder(
+          int index) {
+        return getProximityListFieldBuilder().addBuilder(
+            index, FeelSensorReq.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 近距离
+       * </pre>
+       *
+       * <code>repeated .FeelSensorReq proximityList = 12;</code>
+       */
+      public java.util.List<FeelSensorReq.Builder>
+           getProximityListBuilderList() {
+        return getProximityListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
+          getProximityListFieldBuilder() {
+        if (proximityListBuilder_ == null) {
+          proximityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
+                  proximityList_,
+                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  getParentForChildren(),
+                  isClean());
+          proximityList_ = null;
+        }
+        return proximityListBuilder_;
+      }
+
+      private java.util.List<Integer> wifiList_ = java.util.Collections.emptyList();
+      private void ensureWifiListIsMutable() {
+        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+          wifiList_ = new java.util.ArrayList<Integer>(wifiList_);
+          bitField0_ |= 0x00001000;
+         }
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public java.util.List<Integer>
+          getWifiListList() {
+        return java.util.Collections.unmodifiableList(wifiList_);
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public int getWifiListCount() {
+        return wifiList_.size();
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public int getWifiList(int index) {
+        return wifiList_.get(index);
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public Builder setWifiList(
+          int index, int value) {
+        ensureWifiListIsMutable();
+        wifiList_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public Builder addWifiList(int value) {
+        ensureWifiListIsMutable();
+        wifiList_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public Builder addAllWifiList(
+          Iterable<? extends Integer> values) {
+        ensureWifiListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, wifiList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
+       * <code>repeated int32 wifiList = 13;</code>
+       */
+      public Builder clearWifiList() {
+        wifiList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+
+      private Object id_ = "";
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public String getId() {
+        Object ref = id_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder setId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:DeepNaviReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:DeepNaviReq)
+    private static final DeepNaviReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new DeepNaviReq();
+    }
+
+    public static DeepNaviReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<DeepNaviReq>
+        PARSER = new com.google.protobuf.AbstractParser<DeepNaviReq>() {
+      @Override
+      public DeepNaviReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeepNaviReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeepNaviReq> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<DeepNaviReq> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public DeepNaviReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeepNaviResOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DeepNaviRes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    boolean hasCoor();
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    Coor getCoor();
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    CoorOrBuilder getCoorOrBuilder();
+
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    boolean hasRotation();
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    float getRotation();
+  }
+  /**
+   * Protobuf type {@code DeepNaviRes}
+   */
+  public  static final class DeepNaviRes extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:DeepNaviRes)
+      DeepNaviResOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeepNaviRes.newBuilder() to construct.
+    private DeepNaviRes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeepNaviRes() {
+      rotation_ = 0F;
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeepNaviRes(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              Coor.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = coor_.toBuilder();
+              }
+              coor_ = input.readMessage(Coor.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(coor_);
+                coor_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              rotation_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return Basic.internal_static_DeepNaviReq_descriptor;
-        }
+      return Basic.internal_static_DeepNaviRes_descriptor;
+    }
 
-        @Override
-        protected FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-            return Basic.internal_static_DeepNaviReq_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            DeepNaviReq.class, Builder.class);
-        }
-
-        private int bitField0_;
-        public static final int TIME_FIELD_NUMBER = 1;
-        private long time_;
-
-        /**
-         * <code>required int64 time = 1;</code>
-         */
-        public boolean hasTime() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required int64 time = 1;</code>
-         */
-        public long getTime() {
-            return time_;
-        }
-
-        public static final int IMAGE_FIELD_NUMBER = 2;
-        private com.google.protobuf.ByteString image_;
-
-        /**
-         * <pre>
-         * audio
-         * </pre>
-         *
-         * <code>optional bytes image = 2;</code>
-         */
-        public boolean hasImage() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <pre>
-         * audio
-         * </pre>
-         *
-         * <code>optional bytes image = 2;</code>
-         */
-        public com.google.protobuf.ByteString getImage() {
-            return image_;
-        }
-
-        public static final int MAGNETICLIST_FIELD_NUMBER = 3;
-        private java.util.List<CoorSensorReq> magneticList_;
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        public java.util.List<CoorSensorReq> getMagneticListList() {
-            return magneticList_;
-        }
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getMagneticListOrBuilderList() {
-            return magneticList_;
-        }
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        public int getMagneticListCount() {
-            return magneticList_.size();
-        }
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        public CoorSensorReq getMagneticList(int index) {
-            return magneticList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 磁场
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq magneticList = 3;</code>
-         */
-        public CoorSensorReqOrBuilder getMagneticListOrBuilder(
-                int index) {
-            return magneticList_.get(index);
-        }
-
-        public static final int ACCELEROMETERLIST_FIELD_NUMBER = 4;
-        private java.util.List<CoorSensorReq> accelerometerList_;
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        public java.util.List<CoorSensorReq> getAccelerometerListList() {
-            return accelerometerList_;
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getAccelerometerListOrBuilderList() {
-            return accelerometerList_;
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        public int getAccelerometerListCount() {
-            return accelerometerList_.size();
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        public CoorSensorReq getAccelerometerList(int index) {
-            return accelerometerList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-         */
-        public CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
-                int index) {
-            return accelerometerList_.get(index);
-        }
-
-        public static final int ORIENTATIONLIST_FIELD_NUMBER = 5;
-        private java.util.List<CoorSensorReq> orientationList_;
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        public java.util.List<CoorSensorReq> getOrientationListList() {
-            return orientationList_;
-        }
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getOrientationListOrBuilderList() {
-            return orientationList_;
-        }
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        public int getOrientationListCount() {
-            return orientationList_.size();
-        }
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        public CoorSensorReq getOrientationList(int index) {
-            return orientationList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 方向
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq orientationList = 5;</code>
-         */
-        public CoorSensorReqOrBuilder getOrientationListOrBuilder(
-                int index) {
-            return orientationList_.get(index);
-        }
-
-        public static final int GYROSCOPELIST_FIELD_NUMBER = 6;
-        private java.util.List<CoorSensorReq> gyroscopeList_;
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        public java.util.List<CoorSensorReq> getGyroscopeListList() {
-            return gyroscopeList_;
-        }
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getGyroscopeListOrBuilderList() {
-            return gyroscopeList_;
-        }
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        public int getGyroscopeListCount() {
-            return gyroscopeList_.size();
-        }
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        public CoorSensorReq getGyroscopeList(int index) {
-            return gyroscopeList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 陀螺仪
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-         */
-        public CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
-                int index) {
-            return gyroscopeList_.get(index);
-        }
-
-        public static final int GRAVITYLIST_FIELD_NUMBER = 7;
-        private java.util.List<CoorSensorReq> gravityList_;
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        public java.util.List<CoorSensorReq> getGravityListList() {
-            return gravityList_;
-        }
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getGravityListOrBuilderList() {
-            return gravityList_;
-        }
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        public int getGravityListCount() {
-            return gravityList_.size();
-        }
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        public CoorSensorReq getGravityList(int index) {
-            return gravityList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 重力
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq gravityList = 7;</code>
-         */
-        public CoorSensorReqOrBuilder getGravityListOrBuilder(
-                int index) {
-            return gravityList_.get(index);
-        }
-
-        public static final int LINEARACCELERATIONLIST_FIELD_NUMBER = 8;
-        private java.util.List<CoorSensorReq> linearAccelerationList_;
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
-            return linearAccelerationList_;
-        }
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        public java.util.List<? extends CoorSensorReqOrBuilder>
-        getLinearAccelerationListOrBuilderList() {
-            return linearAccelerationList_;
-        }
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        public int getLinearAccelerationListCount() {
-            return linearAccelerationList_.size();
-        }
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        public CoorSensorReq getLinearAccelerationList(int index) {
-            return linearAccelerationList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 线性加速度
-         * </pre>
-         *
-         * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-         */
-        public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
-                int index) {
-            return linearAccelerationList_.get(index);
-        }
-
-        public static final int AMBIENTTEMPERATURELIST_FIELD_NUMBER = 9;
-        private java.util.List<FeelSensorReq> ambientTemperatureList_;
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
-            return ambientTemperatureList_;
-        }
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        public java.util.List<? extends FeelSensorReqOrBuilder>
-        getAmbientTemperatureListOrBuilderList() {
-            return ambientTemperatureList_;
-        }
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        public int getAmbientTemperatureListCount() {
-            return ambientTemperatureList_.size();
-        }
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        public FeelSensorReq getAmbientTemperatureList(int index) {
-            return ambientTemperatureList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 温度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-         */
-        public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
-                int index) {
-            return ambientTemperatureList_.get(index);
-        }
-
-        public static final int LIGHTLIST_FIELD_NUMBER = 10;
-        private java.util.List<FeelSensorReq> lightList_;
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        public java.util.List<FeelSensorReq> getLightListList() {
-            return lightList_;
-        }
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        public java.util.List<? extends FeelSensorReqOrBuilder>
-        getLightListOrBuilderList() {
-            return lightList_;
-        }
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        public int getLightListCount() {
-            return lightList_.size();
-        }
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        public FeelSensorReq getLightList(int index) {
-            return lightList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 亮度
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq lightList = 10;</code>
-         */
-        public FeelSensorReqOrBuilder getLightListOrBuilder(
-                int index) {
-            return lightList_.get(index);
-        }
-
-        public static final int PRESSURELIST_FIELD_NUMBER = 11;
-        private java.util.List<FeelSensorReq> pressureList_;
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        public java.util.List<FeelSensorReq> getPressureListList() {
-            return pressureList_;
-        }
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        public java.util.List<? extends FeelSensorReqOrBuilder>
-        getPressureListOrBuilderList() {
-            return pressureList_;
-        }
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        public int getPressureListCount() {
-            return pressureList_.size();
-        }
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        public FeelSensorReq getPressureList(int index) {
-            return pressureList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 压力
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq pressureList = 11;</code>
-         */
-        public FeelSensorReqOrBuilder getPressureListOrBuilder(
-                int index) {
-            return pressureList_.get(index);
-        }
-
-        public static final int PROXIMITYLIST_FIELD_NUMBER = 12;
-        private java.util.List<FeelSensorReq> proximityList_;
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        public java.util.List<FeelSensorReq> getProximityListList() {
-            return proximityList_;
-        }
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        public java.util.List<? extends FeelSensorReqOrBuilder>
-        getProximityListOrBuilderList() {
-            return proximityList_;
-        }
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        public int getProximityListCount() {
-            return proximityList_.size();
-        }
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        public FeelSensorReq getProximityList(int index) {
-            return proximityList_.get(index);
-        }
-
-        /**
-         * <pre>
-         * 近距离
-         * </pre>
-         *
-         * <code>repeated .FeelSensorReq proximityList = 12;</code>
-         */
-        public FeelSensorReqOrBuilder getProximityListOrBuilder(
-                int index) {
-            return proximityList_.get(index);
-        }
-
-        public static final int WIFILIST_FIELD_NUMBER = 13;
-        private java.util.List<Integer> wifiList_;
-
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        public java.util.List<Integer>
-        getWifiListList() {
-            return wifiList_;
-        }
-
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        public int getWifiListCount() {
-            return wifiList_.size();
-        }
-
-        /**
-         * <code>repeated int32 wifiList = 13;</code>
-         */
-        public int getWifiList(int index) {
-            return wifiList_.get(index);
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            if (!hasTime()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            for (int i = 0; i < getMagneticListCount(); i++) {
-                if (!getMagneticList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getAccelerometerListCount(); i++) {
-                if (!getAccelerometerList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getOrientationListCount(); i++) {
-                if (!getOrientationList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getGyroscopeListCount(); i++) {
-                if (!getGyroscopeList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getGravityListCount(); i++) {
-                if (!getGravityList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getLinearAccelerationListCount(); i++) {
-                if (!getLinearAccelerationList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
-                if (!getAmbientTemperatureList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getLightListCount(); i++) {
-                if (!getLightList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getPressureListCount(); i++) {
-                if (!getPressureList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getProximityListCount(); i++) {
-                if (!getProximityList(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeInt64(1, time_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeBytes(2, image_);
-            }
-            for (int i = 0; i < magneticList_.size(); i++) {
-                output.writeMessage(3, magneticList_.get(i));
-            }
-            for (int i = 0; i < accelerometerList_.size(); i++) {
-                output.writeMessage(4, accelerometerList_.get(i));
-            }
-            for (int i = 0; i < orientationList_.size(); i++) {
-                output.writeMessage(5, orientationList_.get(i));
-            }
-            for (int i = 0; i < gyroscopeList_.size(); i++) {
-                output.writeMessage(6, gyroscopeList_.get(i));
-            }
-            for (int i = 0; i < gravityList_.size(); i++) {
-                output.writeMessage(7, gravityList_.get(i));
-            }
-            for (int i = 0; i < linearAccelerationList_.size(); i++) {
-                output.writeMessage(8, linearAccelerationList_.get(i));
-            }
-            for (int i = 0; i < ambientTemperatureList_.size(); i++) {
-                output.writeMessage(9, ambientTemperatureList_.get(i));
-            }
-            for (int i = 0; i < lightList_.size(); i++) {
-                output.writeMessage(10, lightList_.get(i));
-            }
-            for (int i = 0; i < pressureList_.size(); i++) {
-                output.writeMessage(11, pressureList_.get(i));
-            }
-            for (int i = 0; i < proximityList_.size(); i++) {
-                output.writeMessage(12, proximityList_.get(i));
-            }
-            for (int i = 0; i < wifiList_.size(); i++) {
-                output.writeInt32(13, wifiList_.get(i));
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(1, time_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeBytesSize(2, image_);
-            }
-            for (int i = 0; i < magneticList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, magneticList_.get(i));
-            }
-            for (int i = 0; i < accelerometerList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(4, accelerometerList_.get(i));
-            }
-            for (int i = 0; i < orientationList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(5, orientationList_.get(i));
-            }
-            for (int i = 0; i < gyroscopeList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(6, gyroscopeList_.get(i));
-            }
-            for (int i = 0; i < gravityList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(7, gravityList_.get(i));
-            }
-            for (int i = 0; i < linearAccelerationList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(8, linearAccelerationList_.get(i));
-            }
-            for (int i = 0; i < ambientTemperatureList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(9, ambientTemperatureList_.get(i));
-            }
-            for (int i = 0; i < lightList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(10, lightList_.get(i));
-            }
-            for (int i = 0; i < pressureList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(11, pressureList_.get(i));
-            }
-            for (int i = 0; i < proximityList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(12, proximityList_.get(i));
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < wifiList_.size(); i++) {
-                    dataSize += com.google.protobuf.CodedOutputStream
-                            .computeInt32SizeNoTag(wifiList_.get(i));
-                }
-                size += dataSize;
-                size += 1 * getWifiListList().size();
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @Override
-        public boolean equals(final Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof DeepNaviReq)) {
-                return super.equals(obj);
-            }
-            DeepNaviReq other = (DeepNaviReq) obj;
-
-            boolean result = true;
-            result = result && (hasTime() == other.hasTime());
-            if (hasTime()) {
-                result = result && (getTime()
-                        == other.getTime());
-            }
-            result = result && (hasImage() == other.hasImage());
-            if (hasImage()) {
-                result = result && getImage()
-                        .equals(other.getImage());
-            }
-            result = result && getMagneticListList()
-                    .equals(other.getMagneticListList());
-            result = result && getAccelerometerListList()
-                    .equals(other.getAccelerometerListList());
-            result = result && getOrientationListList()
-                    .equals(other.getOrientationListList());
-            result = result && getGyroscopeListList()
-                    .equals(other.getGyroscopeListList());
-            result = result && getGravityListList()
-                    .equals(other.getGravityListList());
-            result = result && getLinearAccelerationListList()
-                    .equals(other.getLinearAccelerationListList());
-            result = result && getAmbientTemperatureListList()
-                    .equals(other.getAmbientTemperatureListList());
-            result = result && getLightListList()
-                    .equals(other.getLightListList());
-            result = result && getPressureListList()
-                    .equals(other.getPressureListList());
-            result = result && getProximityListList()
-                    .equals(other.getProximityListList());
-            result = result && getWifiListList()
-                    .equals(other.getWifiListList());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasTime()) {
-                hash = (37 * hash) + TIME_FIELD_NUMBER;
-                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                        getTime());
-            }
-            if (hasImage()) {
-                hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-                hash = (53 * hash) + getImage().hashCode();
-            }
-            if (getMagneticListCount() > 0) {
-                hash = (37 * hash) + MAGNETICLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getMagneticListList().hashCode();
-            }
-            if (getAccelerometerListCount() > 0) {
-                hash = (37 * hash) + ACCELEROMETERLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getAccelerometerListList().hashCode();
-            }
-            if (getOrientationListCount() > 0) {
-                hash = (37 * hash) + ORIENTATIONLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getOrientationListList().hashCode();
-            }
-            if (getGyroscopeListCount() > 0) {
-                hash = (37 * hash) + GYROSCOPELIST_FIELD_NUMBER;
-                hash = (53 * hash) + getGyroscopeListList().hashCode();
-            }
-            if (getGravityListCount() > 0) {
-                hash = (37 * hash) + GRAVITYLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getGravityListList().hashCode();
-            }
-            if (getLinearAccelerationListCount() > 0) {
-                hash = (37 * hash) + LINEARACCELERATIONLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getLinearAccelerationListList().hashCode();
-            }
-            if (getAmbientTemperatureListCount() > 0) {
-                hash = (37 * hash) + AMBIENTTEMPERATURELIST_FIELD_NUMBER;
-                hash = (53 * hash) + getAmbientTemperatureListList().hashCode();
-            }
-            if (getLightListCount() > 0) {
-                hash = (37 * hash) + LIGHTLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getLightListList().hashCode();
-            }
-            if (getPressureListCount() > 0) {
-                hash = (37 * hash) + PRESSURELIST_FIELD_NUMBER;
-                hash = (53 * hash) + getPressureListList().hashCode();
-            }
-            if (getProximityListCount() > 0) {
-                hash = (37 * hash) + PROXIMITYLIST_FIELD_NUMBER;
-                hash = (53 * hash) + getProximityListList().hashCode();
-            }
-            if (getWifiListCount() > 0) {
-                hash = (37 * hash) + WIFILIST_FIELD_NUMBER;
-                hash = (53 * hash) + getWifiListList().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static DeepNaviReq parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static DeepNaviReq parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static DeepNaviReq parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static DeepNaviReq parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static DeepNaviReq parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static DeepNaviReq parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static DeepNaviReq parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static DeepNaviReq parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static DeepNaviReq parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static DeepNaviReq parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static DeepNaviReq parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static DeepNaviReq parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(DeepNaviReq prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @Override
-        protected Builder newBuilderForType(
-                BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code DeepNaviReq}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:DeepNaviReq)
-                DeepNaviReqOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return Basic.internal_static_DeepNaviReq_descriptor;
-            }
-
-            @Override
-            protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return Basic.internal_static_DeepNaviReq_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                DeepNaviReq.class, Builder.class);
-            }
-
-            // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviReq.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                    getMagneticListFieldBuilder();
-                    getAccelerometerListFieldBuilder();
-                    getOrientationListFieldBuilder();
-                    getGyroscopeListFieldBuilder();
-                    getGravityListFieldBuilder();
-                    getLinearAccelerationListFieldBuilder();
-                    getAmbientTemperatureListFieldBuilder();
-                    getLightListFieldBuilder();
-                    getPressureListFieldBuilder();
-                    getProximityListFieldBuilder();
-                }
-            }
-
-            @Override
-            public Builder clear() {
-                super.clear();
-                time_ = 0L;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                image_ = com.google.protobuf.ByteString.EMPTY;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                if (magneticListBuilder_ == null) {
-                    magneticList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000004);
-                } else {
-                    magneticListBuilder_.clear();
-                }
-                if (accelerometerListBuilder_ == null) {
-                    accelerometerList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000008);
-                } else {
-                    accelerometerListBuilder_.clear();
-                }
-                if (orientationListBuilder_ == null) {
-                    orientationList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000010);
-                } else {
-                    orientationListBuilder_.clear();
-                }
-                if (gyroscopeListBuilder_ == null) {
-                    gyroscopeList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000020);
-                } else {
-                    gyroscopeListBuilder_.clear();
-                }
-                if (gravityListBuilder_ == null) {
-                    gravityList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000040);
-                } else {
-                    gravityListBuilder_.clear();
-                }
-                if (linearAccelerationListBuilder_ == null) {
-                    linearAccelerationList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000080);
-                } else {
-                    linearAccelerationListBuilder_.clear();
-                }
-                if (ambientTemperatureListBuilder_ == null) {
-                    ambientTemperatureList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000100);
-                } else {
-                    ambientTemperatureListBuilder_.clear();
-                }
-                if (lightListBuilder_ == null) {
-                    lightList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000200);
-                } else {
-                    lightListBuilder_.clear();
-                }
-                if (pressureListBuilder_ == null) {
-                    pressureList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000400);
-                } else {
-                    pressureListBuilder_.clear();
-                }
-                if (proximityListBuilder_ == null) {
-                    proximityList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000800);
-                } else {
-                    proximityListBuilder_.clear();
-                }
-                wifiList_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00001000);
-                return this;
-            }
-
-            @Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return Basic.internal_static_DeepNaviReq_descriptor;
-            }
-
-            @Override
-            public DeepNaviReq getDefaultInstanceForType() {
-                return DeepNaviReq.getDefaultInstance();
-            }
-
-            @Override
-            public DeepNaviReq build() {
-                DeepNaviReq result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @Override
-            public DeepNaviReq buildPartial() {
-                DeepNaviReq result = new DeepNaviReq(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.time_ = time_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.image_ = image_;
-                if (magneticListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                        magneticList_ = java.util.Collections.unmodifiableList(magneticList_);
-                        bitField0_ = (bitField0_ & ~0x00000004);
-                    }
-                    result.magneticList_ = magneticList_;
-                } else {
-                    result.magneticList_ = magneticListBuilder_.build();
-                }
-                if (accelerometerListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                        accelerometerList_ = java.util.Collections.unmodifiableList(accelerometerList_);
-                        bitField0_ = (bitField0_ & ~0x00000008);
-                    }
-                    result.accelerometerList_ = accelerometerList_;
-                } else {
-                    result.accelerometerList_ = accelerometerListBuilder_.build();
-                }
-                if (orientationListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                        orientationList_ = java.util.Collections.unmodifiableList(orientationList_);
-                        bitField0_ = (bitField0_ & ~0x00000010);
-                    }
-                    result.orientationList_ = orientationList_;
-                } else {
-                    result.orientationList_ = orientationListBuilder_.build();
-                }
-                if (gyroscopeListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                        gyroscopeList_ = java.util.Collections.unmodifiableList(gyroscopeList_);
-                        bitField0_ = (bitField0_ & ~0x00000020);
-                    }
-                    result.gyroscopeList_ = gyroscopeList_;
-                } else {
-                    result.gyroscopeList_ = gyroscopeListBuilder_.build();
-                }
-                if (gravityListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                        gravityList_ = java.util.Collections.unmodifiableList(gravityList_);
-                        bitField0_ = (bitField0_ & ~0x00000040);
-                    }
-                    result.gravityList_ = gravityList_;
-                } else {
-                    result.gravityList_ = gravityListBuilder_.build();
-                }
-                if (linearAccelerationListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000080) == 0x00000080)) {
-                        linearAccelerationList_ = java.util.Collections.unmodifiableList(linearAccelerationList_);
-                        bitField0_ = (bitField0_ & ~0x00000080);
-                    }
-                    result.linearAccelerationList_ = linearAccelerationList_;
-                } else {
-                    result.linearAccelerationList_ = linearAccelerationListBuilder_.build();
-                }
-                if (ambientTemperatureListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000100) == 0x00000100)) {
-                        ambientTemperatureList_ = java.util.Collections.unmodifiableList(ambientTemperatureList_);
-                        bitField0_ = (bitField0_ & ~0x00000100);
-                    }
-                    result.ambientTemperatureList_ = ambientTemperatureList_;
-                } else {
-                    result.ambientTemperatureList_ = ambientTemperatureListBuilder_.build();
-                }
-                if (lightListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000200) == 0x00000200)) {
-                        lightList_ = java.util.Collections.unmodifiableList(lightList_);
-                        bitField0_ = (bitField0_ & ~0x00000200);
-                    }
-                    result.lightList_ = lightList_;
-                } else {
-                    result.lightList_ = lightListBuilder_.build();
-                }
-                if (pressureListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000400) == 0x00000400)) {
-                        pressureList_ = java.util.Collections.unmodifiableList(pressureList_);
-                        bitField0_ = (bitField0_ & ~0x00000400);
-                    }
-                    result.pressureList_ = pressureList_;
-                } else {
-                    result.pressureList_ = pressureListBuilder_.build();
-                }
-                if (proximityListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000800) == 0x00000800)) {
-                        proximityList_ = java.util.Collections.unmodifiableList(proximityList_);
-                        bitField0_ = (bitField0_ & ~0x00000800);
-                    }
-                    result.proximityList_ = proximityList_;
-                } else {
-                    result.proximityList_ = proximityListBuilder_.build();
-                }
-                if (((bitField0_ & 0x00001000) == 0x00001000)) {
-                    wifiList_ = java.util.Collections.unmodifiableList(wifiList_);
-                    bitField0_ = (bitField0_ & ~0x00001000);
-                }
-                result.wifiList_ = wifiList_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @Override
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            @Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            @Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            @Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            @Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            @Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            @Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof DeepNaviReq) {
-                    return mergeFrom((DeepNaviReq) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(DeepNaviReq other) {
-                if (other == DeepNaviReq.getDefaultInstance()) return this;
-                if (other.hasTime()) {
-                    setTime(other.getTime());
-                }
-                if (other.hasImage()) {
-                    setImage(other.getImage());
-                }
-                if (magneticListBuilder_ == null) {
-                    if (!other.magneticList_.isEmpty()) {
-                        if (magneticList_.isEmpty()) {
-                            magneticList_ = other.magneticList_;
-                            bitField0_ = (bitField0_ & ~0x00000004);
-                        } else {
-                            ensureMagneticListIsMutable();
-                            magneticList_.addAll(other.magneticList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.magneticList_.isEmpty()) {
-                        if (magneticListBuilder_.isEmpty()) {
-                            magneticListBuilder_.dispose();
-                            magneticListBuilder_ = null;
-                            magneticList_ = other.magneticList_;
-                            bitField0_ = (bitField0_ & ~0x00000004);
-                            magneticListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getMagneticListFieldBuilder() : null;
-                        } else {
-                            magneticListBuilder_.addAllMessages(other.magneticList_);
-                        }
-                    }
-                }
-                if (accelerometerListBuilder_ == null) {
-                    if (!other.accelerometerList_.isEmpty()) {
-                        if (accelerometerList_.isEmpty()) {
-                            accelerometerList_ = other.accelerometerList_;
-                            bitField0_ = (bitField0_ & ~0x00000008);
-                        } else {
-                            ensureAccelerometerListIsMutable();
-                            accelerometerList_.addAll(other.accelerometerList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.accelerometerList_.isEmpty()) {
-                        if (accelerometerListBuilder_.isEmpty()) {
-                            accelerometerListBuilder_.dispose();
-                            accelerometerListBuilder_ = null;
-                            accelerometerList_ = other.accelerometerList_;
-                            bitField0_ = (bitField0_ & ~0x00000008);
-                            accelerometerListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getAccelerometerListFieldBuilder() : null;
-                        } else {
-                            accelerometerListBuilder_.addAllMessages(other.accelerometerList_);
-                        }
-                    }
-                }
-                if (orientationListBuilder_ == null) {
-                    if (!other.orientationList_.isEmpty()) {
-                        if (orientationList_.isEmpty()) {
-                            orientationList_ = other.orientationList_;
-                            bitField0_ = (bitField0_ & ~0x00000010);
-                        } else {
-                            ensureOrientationListIsMutable();
-                            orientationList_.addAll(other.orientationList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.orientationList_.isEmpty()) {
-                        if (orientationListBuilder_.isEmpty()) {
-                            orientationListBuilder_.dispose();
-                            orientationListBuilder_ = null;
-                            orientationList_ = other.orientationList_;
-                            bitField0_ = (bitField0_ & ~0x00000010);
-                            orientationListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getOrientationListFieldBuilder() : null;
-                        } else {
-                            orientationListBuilder_.addAllMessages(other.orientationList_);
-                        }
-                    }
-                }
-                if (gyroscopeListBuilder_ == null) {
-                    if (!other.gyroscopeList_.isEmpty()) {
-                        if (gyroscopeList_.isEmpty()) {
-                            gyroscopeList_ = other.gyroscopeList_;
-                            bitField0_ = (bitField0_ & ~0x00000020);
-                        } else {
-                            ensureGyroscopeListIsMutable();
-                            gyroscopeList_.addAll(other.gyroscopeList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.gyroscopeList_.isEmpty()) {
-                        if (gyroscopeListBuilder_.isEmpty()) {
-                            gyroscopeListBuilder_.dispose();
-                            gyroscopeListBuilder_ = null;
-                            gyroscopeList_ = other.gyroscopeList_;
-                            bitField0_ = (bitField0_ & ~0x00000020);
-                            gyroscopeListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getGyroscopeListFieldBuilder() : null;
-                        } else {
-                            gyroscopeListBuilder_.addAllMessages(other.gyroscopeList_);
-                        }
-                    }
-                }
-                if (gravityListBuilder_ == null) {
-                    if (!other.gravityList_.isEmpty()) {
-                        if (gravityList_.isEmpty()) {
-                            gravityList_ = other.gravityList_;
-                            bitField0_ = (bitField0_ & ~0x00000040);
-                        } else {
-                            ensureGravityListIsMutable();
-                            gravityList_.addAll(other.gravityList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.gravityList_.isEmpty()) {
-                        if (gravityListBuilder_.isEmpty()) {
-                            gravityListBuilder_.dispose();
-                            gravityListBuilder_ = null;
-                            gravityList_ = other.gravityList_;
-                            bitField0_ = (bitField0_ & ~0x00000040);
-                            gravityListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getGravityListFieldBuilder() : null;
-                        } else {
-                            gravityListBuilder_.addAllMessages(other.gravityList_);
-                        }
-                    }
-                }
-                if (linearAccelerationListBuilder_ == null) {
-                    if (!other.linearAccelerationList_.isEmpty()) {
-                        if (linearAccelerationList_.isEmpty()) {
-                            linearAccelerationList_ = other.linearAccelerationList_;
-                            bitField0_ = (bitField0_ & ~0x00000080);
-                        } else {
-                            ensureLinearAccelerationListIsMutable();
-                            linearAccelerationList_.addAll(other.linearAccelerationList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.linearAccelerationList_.isEmpty()) {
-                        if (linearAccelerationListBuilder_.isEmpty()) {
-                            linearAccelerationListBuilder_.dispose();
-                            linearAccelerationListBuilder_ = null;
-                            linearAccelerationList_ = other.linearAccelerationList_;
-                            bitField0_ = (bitField0_ & ~0x00000080);
-                            linearAccelerationListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getLinearAccelerationListFieldBuilder() : null;
-                        } else {
-                            linearAccelerationListBuilder_.addAllMessages(other.linearAccelerationList_);
-                        }
-                    }
-                }
-                if (ambientTemperatureListBuilder_ == null) {
-                    if (!other.ambientTemperatureList_.isEmpty()) {
-                        if (ambientTemperatureList_.isEmpty()) {
-                            ambientTemperatureList_ = other.ambientTemperatureList_;
-                            bitField0_ = (bitField0_ & ~0x00000100);
-                        } else {
-                            ensureAmbientTemperatureListIsMutable();
-                            ambientTemperatureList_.addAll(other.ambientTemperatureList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.ambientTemperatureList_.isEmpty()) {
-                        if (ambientTemperatureListBuilder_.isEmpty()) {
-                            ambientTemperatureListBuilder_.dispose();
-                            ambientTemperatureListBuilder_ = null;
-                            ambientTemperatureList_ = other.ambientTemperatureList_;
-                            bitField0_ = (bitField0_ & ~0x00000100);
-                            ambientTemperatureListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getAmbientTemperatureListFieldBuilder() : null;
-                        } else {
-                            ambientTemperatureListBuilder_.addAllMessages(other.ambientTemperatureList_);
-                        }
-                    }
-                }
-                if (lightListBuilder_ == null) {
-                    if (!other.lightList_.isEmpty()) {
-                        if (lightList_.isEmpty()) {
-                            lightList_ = other.lightList_;
-                            bitField0_ = (bitField0_ & ~0x00000200);
-                        } else {
-                            ensureLightListIsMutable();
-                            lightList_.addAll(other.lightList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.lightList_.isEmpty()) {
-                        if (lightListBuilder_.isEmpty()) {
-                            lightListBuilder_.dispose();
-                            lightListBuilder_ = null;
-                            lightList_ = other.lightList_;
-                            bitField0_ = (bitField0_ & ~0x00000200);
-                            lightListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getLightListFieldBuilder() : null;
-                        } else {
-                            lightListBuilder_.addAllMessages(other.lightList_);
-                        }
-                    }
-                }
-                if (pressureListBuilder_ == null) {
-                    if (!other.pressureList_.isEmpty()) {
-                        if (pressureList_.isEmpty()) {
-                            pressureList_ = other.pressureList_;
-                            bitField0_ = (bitField0_ & ~0x00000400);
-                        } else {
-                            ensurePressureListIsMutable();
-                            pressureList_.addAll(other.pressureList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.pressureList_.isEmpty()) {
-                        if (pressureListBuilder_.isEmpty()) {
-                            pressureListBuilder_.dispose();
-                            pressureListBuilder_ = null;
-                            pressureList_ = other.pressureList_;
-                            bitField0_ = (bitField0_ & ~0x00000400);
-                            pressureListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getPressureListFieldBuilder() : null;
-                        } else {
-                            pressureListBuilder_.addAllMessages(other.pressureList_);
-                        }
-                    }
-                }
-                if (proximityListBuilder_ == null) {
-                    if (!other.proximityList_.isEmpty()) {
-                        if (proximityList_.isEmpty()) {
-                            proximityList_ = other.proximityList_;
-                            bitField0_ = (bitField0_ & ~0x00000800);
-                        } else {
-                            ensureProximityListIsMutable();
-                            proximityList_.addAll(other.proximityList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.proximityList_.isEmpty()) {
-                        if (proximityListBuilder_.isEmpty()) {
-                            proximityListBuilder_.dispose();
-                            proximityListBuilder_ = null;
-                            proximityList_ = other.proximityList_;
-                            bitField0_ = (bitField0_ & ~0x00000800);
-                            proximityListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getProximityListFieldBuilder() : null;
-                        } else {
-                            proximityListBuilder_.addAllMessages(other.proximityList_);
-                        }
-                    }
-                }
-                if (!other.wifiList_.isEmpty()) {
-                    if (wifiList_.isEmpty()) {
-                        wifiList_ = other.wifiList_;
-                        bitField0_ = (bitField0_ & ~0x00001000);
-                    } else {
-                        ensureWifiListIsMutable();
-                        wifiList_.addAll(other.wifiList_);
-                    }
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final boolean isInitialized() {
-                if (!hasTime()) {
-                    return false;
-                }
-                for (int i = 0; i < getMagneticListCount(); i++) {
-                    if (!getMagneticList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getAccelerometerListCount(); i++) {
-                    if (!getAccelerometerList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getOrientationListCount(); i++) {
-                    if (!getOrientationList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getGyroscopeListCount(); i++) {
-                    if (!getGyroscopeList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getGravityListCount(); i++) {
-                    if (!getGravityList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getLinearAccelerationListCount(); i++) {
-                    if (!getLinearAccelerationList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getAmbientTemperatureListCount(); i++) {
-                    if (!getAmbientTemperatureList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getLightListCount(); i++) {
-                    if (!getLightList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getPressureListCount(); i++) {
-                    if (!getPressureList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getProximityListCount(); i++) {
-                    if (!getProximityList(i).isInitialized()) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            @Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                DeepNaviReq parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (DeepNaviReq) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private long time_;
-
-            /**
-             * <code>required int64 time = 1;</code>
-             */
-            public boolean hasTime() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required int64 time = 1;</code>
-             */
-            public long getTime() {
-                return time_;
-            }
-
-            /**
-             * <code>required int64 time = 1;</code>
-             */
-            public Builder setTime(long value) {
-                bitField0_ |= 0x00000001;
-                time_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required int64 time = 1;</code>
-             */
-            public Builder clearTime() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                time_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
-
-            /**
-             * <pre>
-             * audio
-             * </pre>
-             *
-             * <code>optional bytes image = 2;</code>
-             */
-            public boolean hasImage() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <pre>
-             * audio
-             * </pre>
-             *
-             * <code>optional bytes image = 2;</code>
-             */
-            public com.google.protobuf.ByteString getImage() {
-                return image_;
-            }
-
-            /**
-             * <pre>
-             * audio
-             * </pre>
-             *
-             * <code>optional bytes image = 2;</code>
-             */
-            public Builder setImage(com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000002;
-                image_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * audio
-             * </pre>
-             *
-             * <code>optional bytes image = 2;</code>
-             */
-            public Builder clearImage() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                image_ = getDefaultInstance().getImage();
-                onChanged();
-                return this;
-            }
-
-            private java.util.List<CoorSensorReq> magneticList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureMagneticListIsMutable() {
-                if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-                    magneticList_ = new java.util.ArrayList<CoorSensorReq>(magneticList_);
-                    bitField0_ |= 0x00000004;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> magneticListBuilder_;
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public java.util.List<CoorSensorReq> getMagneticListList() {
-                if (magneticListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(magneticList_);
-                } else {
-                    return magneticListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public int getMagneticListCount() {
-                if (magneticListBuilder_ == null) {
-                    return magneticList_.size();
-                } else {
-                    return magneticListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public CoorSensorReq getMagneticList(int index) {
-                if (magneticListBuilder_ == null) {
-                    return magneticList_.get(index);
-                } else {
-                    return magneticListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder setMagneticList(
-                    int index, CoorSensorReq value) {
-                if (magneticListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureMagneticListIsMutable();
-                    magneticList_.set(index, value);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder setMagneticList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (magneticListBuilder_ == null) {
-                    ensureMagneticListIsMutable();
-                    magneticList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    magneticListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder addMagneticList(CoorSensorReq value) {
-                if (magneticListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureMagneticListIsMutable();
-                    magneticList_.add(value);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder addMagneticList(
-                    int index, CoorSensorReq value) {
-                if (magneticListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureMagneticListIsMutable();
-                    magneticList_.add(index, value);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder addMagneticList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (magneticListBuilder_ == null) {
-                    ensureMagneticListIsMutable();
-                    magneticList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    magneticListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder addMagneticList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (magneticListBuilder_ == null) {
-                    ensureMagneticListIsMutable();
-                    magneticList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    magneticListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder addAllMagneticList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (magneticListBuilder_ == null) {
-                    ensureMagneticListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, magneticList_);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder clearMagneticList() {
-                if (magneticListBuilder_ == null) {
-                    magneticList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000004);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public Builder removeMagneticList(int index) {
-                if (magneticListBuilder_ == null) {
-                    ensureMagneticListIsMutable();
-                    magneticList_.remove(index);
-                    onChanged();
-                } else {
-                    magneticListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public CoorSensorReq.Builder getMagneticListBuilder(
-                    int index) {
-                return getMagneticListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public CoorSensorReqOrBuilder getMagneticListOrBuilder(
-                    int index) {
-                if (magneticListBuilder_ == null) {
-                    return magneticList_.get(index);
-                } else {
-                    return magneticListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getMagneticListOrBuilderList() {
-                if (magneticListBuilder_ != null) {
-                    return magneticListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(magneticList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public CoorSensorReq.Builder addMagneticListBuilder() {
-                return getMagneticListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public CoorSensorReq.Builder addMagneticListBuilder(
-                    int index) {
-                return getMagneticListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 磁场
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq magneticList = 3;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getMagneticListBuilderList() {
-                return getMagneticListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getMagneticListFieldBuilder() {
-                if (magneticListBuilder_ == null) {
-                    magneticListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            magneticList_,
-                            ((bitField0_ & 0x00000004) == 0x00000004),
-                            getParentForChildren(),
-                            isClean());
-                    magneticList_ = null;
-                }
-                return magneticListBuilder_;
-            }
-
-            private java.util.List<CoorSensorReq> accelerometerList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureAccelerometerListIsMutable() {
-                if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-                    accelerometerList_ = new java.util.ArrayList<CoorSensorReq>(accelerometerList_);
-                    bitField0_ |= 0x00000008;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> accelerometerListBuilder_;
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public java.util.List<CoorSensorReq> getAccelerometerListList() {
-                if (accelerometerListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(accelerometerList_);
-                } else {
-                    return accelerometerListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public int getAccelerometerListCount() {
-                if (accelerometerListBuilder_ == null) {
-                    return accelerometerList_.size();
-                } else {
-                    return accelerometerListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public CoorSensorReq getAccelerometerList(int index) {
-                if (accelerometerListBuilder_ == null) {
-                    return accelerometerList_.get(index);
-                } else {
-                    return accelerometerListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder setAccelerometerList(
-                    int index, CoorSensorReq value) {
-                if (accelerometerListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.set(index, value);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder setAccelerometerList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (accelerometerListBuilder_ == null) {
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder addAccelerometerList(CoorSensorReq value) {
-                if (accelerometerListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.add(value);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder addAccelerometerList(
-                    int index, CoorSensorReq value) {
-                if (accelerometerListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.add(index, value);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder addAccelerometerList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (accelerometerListBuilder_ == null) {
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder addAccelerometerList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (accelerometerListBuilder_ == null) {
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder addAllAccelerometerList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (accelerometerListBuilder_ == null) {
-                    ensureAccelerometerListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, accelerometerList_);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder clearAccelerometerList() {
-                if (accelerometerListBuilder_ == null) {
-                    accelerometerList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000008);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public Builder removeAccelerometerList(int index) {
-                if (accelerometerListBuilder_ == null) {
-                    ensureAccelerometerListIsMutable();
-                    accelerometerList_.remove(index);
-                    onChanged();
-                } else {
-                    accelerometerListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public CoorSensorReq.Builder getAccelerometerListBuilder(
-                    int index) {
-                return getAccelerometerListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
-                    int index) {
-                if (accelerometerListBuilder_ == null) {
-                    return accelerometerList_.get(index);
-                } else {
-                    return accelerometerListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getAccelerometerListOrBuilderList() {
-                if (accelerometerListBuilder_ != null) {
-                    return accelerometerListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(accelerometerList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public CoorSensorReq.Builder addAccelerometerListBuilder() {
-                return getAccelerometerListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public CoorSensorReq.Builder addAccelerometerListBuilder(
-                    int index) {
-                return getAccelerometerListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getAccelerometerListBuilderList() {
-                return getAccelerometerListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getAccelerometerListFieldBuilder() {
-                if (accelerometerListBuilder_ == null) {
-                    accelerometerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            accelerometerList_,
-                            ((bitField0_ & 0x00000008) == 0x00000008),
-                            getParentForChildren(),
-                            isClean());
-                    accelerometerList_ = null;
-                }
-                return accelerometerListBuilder_;
-            }
-
-            private java.util.List<CoorSensorReq> orientationList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureOrientationListIsMutable() {
-                if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-                    orientationList_ = new java.util.ArrayList<CoorSensorReq>(orientationList_);
-                    bitField0_ |= 0x00000010;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> orientationListBuilder_;
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public java.util.List<CoorSensorReq> getOrientationListList() {
-                if (orientationListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(orientationList_);
-                } else {
-                    return orientationListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public int getOrientationListCount() {
-                if (orientationListBuilder_ == null) {
-                    return orientationList_.size();
-                } else {
-                    return orientationListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public CoorSensorReq getOrientationList(int index) {
-                if (orientationListBuilder_ == null) {
-                    return orientationList_.get(index);
-                } else {
-                    return orientationListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder setOrientationList(
-                    int index, CoorSensorReq value) {
-                if (orientationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureOrientationListIsMutable();
-                    orientationList_.set(index, value);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder setOrientationList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (orientationListBuilder_ == null) {
-                    ensureOrientationListIsMutable();
-                    orientationList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    orientationListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder addOrientationList(CoorSensorReq value) {
-                if (orientationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureOrientationListIsMutable();
-                    orientationList_.add(value);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder addOrientationList(
-                    int index, CoorSensorReq value) {
-                if (orientationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureOrientationListIsMutable();
-                    orientationList_.add(index, value);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder addOrientationList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (orientationListBuilder_ == null) {
-                    ensureOrientationListIsMutable();
-                    orientationList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    orientationListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder addOrientationList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (orientationListBuilder_ == null) {
-                    ensureOrientationListIsMutable();
-                    orientationList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    orientationListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder addAllOrientationList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (orientationListBuilder_ == null) {
-                    ensureOrientationListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, orientationList_);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder clearOrientationList() {
-                if (orientationListBuilder_ == null) {
-                    orientationList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000010);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public Builder removeOrientationList(int index) {
-                if (orientationListBuilder_ == null) {
-                    ensureOrientationListIsMutable();
-                    orientationList_.remove(index);
-                    onChanged();
-                } else {
-                    orientationListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public CoorSensorReq.Builder getOrientationListBuilder(
-                    int index) {
-                return getOrientationListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public CoorSensorReqOrBuilder getOrientationListOrBuilder(
-                    int index) {
-                if (orientationListBuilder_ == null) {
-                    return orientationList_.get(index);
-                } else {
-                    return orientationListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getOrientationListOrBuilderList() {
-                if (orientationListBuilder_ != null) {
-                    return orientationListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(orientationList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public CoorSensorReq.Builder addOrientationListBuilder() {
-                return getOrientationListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public CoorSensorReq.Builder addOrientationListBuilder(
-                    int index) {
-                return getOrientationListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 方向
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq orientationList = 5;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getOrientationListBuilderList() {
-                return getOrientationListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getOrientationListFieldBuilder() {
-                if (orientationListBuilder_ == null) {
-                    orientationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            orientationList_,
-                            ((bitField0_ & 0x00000010) == 0x00000010),
-                            getParentForChildren(),
-                            isClean());
-                    orientationList_ = null;
-                }
-                return orientationListBuilder_;
-            }
-
-            private java.util.List<CoorSensorReq> gyroscopeList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureGyroscopeListIsMutable() {
-                if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-                    gyroscopeList_ = new java.util.ArrayList<CoorSensorReq>(gyroscopeList_);
-                    bitField0_ |= 0x00000020;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gyroscopeListBuilder_;
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public java.util.List<CoorSensorReq> getGyroscopeListList() {
-                if (gyroscopeListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(gyroscopeList_);
-                } else {
-                    return gyroscopeListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public int getGyroscopeListCount() {
-                if (gyroscopeListBuilder_ == null) {
-                    return gyroscopeList_.size();
-                } else {
-                    return gyroscopeListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public CoorSensorReq getGyroscopeList(int index) {
-                if (gyroscopeListBuilder_ == null) {
-                    return gyroscopeList_.get(index);
-                } else {
-                    return gyroscopeListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder setGyroscopeList(
-                    int index, CoorSensorReq value) {
-                if (gyroscopeListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.set(index, value);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder setGyroscopeList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeListBuilder_ == null) {
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder addGyroscopeList(CoorSensorReq value) {
-                if (gyroscopeListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.add(value);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder addGyroscopeList(
-                    int index, CoorSensorReq value) {
-                if (gyroscopeListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.add(index, value);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder addGyroscopeList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeListBuilder_ == null) {
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder addGyroscopeList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (gyroscopeListBuilder_ == null) {
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder addAllGyroscopeList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (gyroscopeListBuilder_ == null) {
-                    ensureGyroscopeListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, gyroscopeList_);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder clearGyroscopeList() {
-                if (gyroscopeListBuilder_ == null) {
-                    gyroscopeList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000020);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public Builder removeGyroscopeList(int index) {
-                if (gyroscopeListBuilder_ == null) {
-                    ensureGyroscopeListIsMutable();
-                    gyroscopeList_.remove(index);
-                    onChanged();
-                } else {
-                    gyroscopeListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public CoorSensorReq.Builder getGyroscopeListBuilder(
-                    int index) {
-                return getGyroscopeListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
-                    int index) {
-                if (gyroscopeListBuilder_ == null) {
-                    return gyroscopeList_.get(index);
-                } else {
-                    return gyroscopeListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getGyroscopeListOrBuilderList() {
-                if (gyroscopeListBuilder_ != null) {
-                    return gyroscopeListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(gyroscopeList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public CoorSensorReq.Builder addGyroscopeListBuilder() {
-                return getGyroscopeListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public CoorSensorReq.Builder addGyroscopeListBuilder(
-                    int index) {
-                return getGyroscopeListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 陀螺仪
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getGyroscopeListBuilderList() {
-                return getGyroscopeListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getGyroscopeListFieldBuilder() {
-                if (gyroscopeListBuilder_ == null) {
-                    gyroscopeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            gyroscopeList_,
-                            ((bitField0_ & 0x00000020) == 0x00000020),
-                            getParentForChildren(),
-                            isClean());
-                    gyroscopeList_ = null;
-                }
-                return gyroscopeListBuilder_;
-            }
-
-            private java.util.List<CoorSensorReq> gravityList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureGravityListIsMutable() {
-                if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-                    gravityList_ = new java.util.ArrayList<CoorSensorReq>(gravityList_);
-                    bitField0_ |= 0x00000040;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> gravityListBuilder_;
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public java.util.List<CoorSensorReq> getGravityListList() {
-                if (gravityListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(gravityList_);
-                } else {
-                    return gravityListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public int getGravityListCount() {
-                if (gravityListBuilder_ == null) {
-                    return gravityList_.size();
-                } else {
-                    return gravityListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public CoorSensorReq getGravityList(int index) {
-                if (gravityListBuilder_ == null) {
-                    return gravityList_.get(index);
-                } else {
-                    return gravityListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder setGravityList(
-                    int index, CoorSensorReq value) {
-                if (gravityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGravityListIsMutable();
-                    gravityList_.set(index, value);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder setGravityList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (gravityListBuilder_ == null) {
-                    ensureGravityListIsMutable();
-                    gravityList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    gravityListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder addGravityList(CoorSensorReq value) {
-                if (gravityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGravityListIsMutable();
-                    gravityList_.add(value);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder addGravityList(
-                    int index, CoorSensorReq value) {
-                if (gravityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureGravityListIsMutable();
-                    gravityList_.add(index, value);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder addGravityList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (gravityListBuilder_ == null) {
-                    ensureGravityListIsMutable();
-                    gravityList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    gravityListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder addGravityList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (gravityListBuilder_ == null) {
-                    ensureGravityListIsMutable();
-                    gravityList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    gravityListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder addAllGravityList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (gravityListBuilder_ == null) {
-                    ensureGravityListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, gravityList_);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder clearGravityList() {
-                if (gravityListBuilder_ == null) {
-                    gravityList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000040);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public Builder removeGravityList(int index) {
-                if (gravityListBuilder_ == null) {
-                    ensureGravityListIsMutable();
-                    gravityList_.remove(index);
-                    onChanged();
-                } else {
-                    gravityListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public CoorSensorReq.Builder getGravityListBuilder(
-                    int index) {
-                return getGravityListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public CoorSensorReqOrBuilder getGravityListOrBuilder(
-                    int index) {
-                if (gravityListBuilder_ == null) {
-                    return gravityList_.get(index);
-                } else {
-                    return gravityListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getGravityListOrBuilderList() {
-                if (gravityListBuilder_ != null) {
-                    return gravityListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(gravityList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public CoorSensorReq.Builder addGravityListBuilder() {
-                return getGravityListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public CoorSensorReq.Builder addGravityListBuilder(
-                    int index) {
-                return getGravityListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 重力
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq gravityList = 7;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getGravityListBuilderList() {
-                return getGravityListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getGravityListFieldBuilder() {
-                if (gravityListBuilder_ == null) {
-                    gravityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            gravityList_,
-                            ((bitField0_ & 0x00000040) == 0x00000040),
-                            getParentForChildren(),
-                            isClean());
-                    gravityList_ = null;
-                }
-                return gravityListBuilder_;
-            }
-
-            private java.util.List<CoorSensorReq> linearAccelerationList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureLinearAccelerationListIsMutable() {
-                if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-                    linearAccelerationList_ = new java.util.ArrayList<CoorSensorReq>(linearAccelerationList_);
-                    bitField0_ |= 0x00000080;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder> linearAccelerationListBuilder_;
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public java.util.List<CoorSensorReq> getLinearAccelerationListList() {
-                if (linearAccelerationListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(linearAccelerationList_);
-                } else {
-                    return linearAccelerationListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public int getLinearAccelerationListCount() {
-                if (linearAccelerationListBuilder_ == null) {
-                    return linearAccelerationList_.size();
-                } else {
-                    return linearAccelerationListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public CoorSensorReq getLinearAccelerationList(int index) {
-                if (linearAccelerationListBuilder_ == null) {
-                    return linearAccelerationList_.get(index);
-                } else {
-                    return linearAccelerationListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder setLinearAccelerationList(
-                    int index, CoorSensorReq value) {
-                if (linearAccelerationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.set(index, value);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder setLinearAccelerationList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationListBuilder_ == null) {
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder addLinearAccelerationList(CoorSensorReq value) {
-                if (linearAccelerationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.add(value);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder addLinearAccelerationList(
-                    int index, CoorSensorReq value) {
-                if (linearAccelerationListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.add(index, value);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder addLinearAccelerationList(
-                    CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationListBuilder_ == null) {
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder addLinearAccelerationList(
-                    int index, CoorSensorReq.Builder builderForValue) {
-                if (linearAccelerationListBuilder_ == null) {
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder addAllLinearAccelerationList(
-                    Iterable<? extends CoorSensorReq> values) {
-                if (linearAccelerationListBuilder_ == null) {
-                    ensureLinearAccelerationListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, linearAccelerationList_);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder clearLinearAccelerationList() {
-                if (linearAccelerationListBuilder_ == null) {
-                    linearAccelerationList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000080);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public Builder removeLinearAccelerationList(int index) {
-                if (linearAccelerationListBuilder_ == null) {
-                    ensureLinearAccelerationListIsMutable();
-                    linearAccelerationList_.remove(index);
-                    onChanged();
-                } else {
-                    linearAccelerationListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public CoorSensorReq.Builder getLinearAccelerationListBuilder(
-                    int index) {
-                return getLinearAccelerationListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
-                    int index) {
-                if (linearAccelerationListBuilder_ == null) {
-                    return linearAccelerationList_.get(index);
-                } else {
-                    return linearAccelerationListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public java.util.List<? extends CoorSensorReqOrBuilder>
-            getLinearAccelerationListOrBuilderList() {
-                if (linearAccelerationListBuilder_ != null) {
-                    return linearAccelerationListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(linearAccelerationList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public CoorSensorReq.Builder addLinearAccelerationListBuilder() {
-                return getLinearAccelerationListFieldBuilder().addBuilder(
-                        CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public CoorSensorReq.Builder addLinearAccelerationListBuilder(
-                    int index) {
-                return getLinearAccelerationListFieldBuilder().addBuilder(
-                        index, CoorSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 线性加速度
-             * </pre>
-             *
-             * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
-             */
-            public java.util.List<CoorSensorReq.Builder>
-            getLinearAccelerationListBuilderList() {
-                return getLinearAccelerationListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>
-            getLinearAccelerationListFieldBuilder() {
-                if (linearAccelerationListBuilder_ == null) {
-                    linearAccelerationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            CoorSensorReq, CoorSensorReq.Builder, CoorSensorReqOrBuilder>(
-                            linearAccelerationList_,
-                            ((bitField0_ & 0x00000080) == 0x00000080),
-                            getParentForChildren(),
-                            isClean());
-                    linearAccelerationList_ = null;
-                }
-                return linearAccelerationListBuilder_;
-            }
-
-            private java.util.List<FeelSensorReq> ambientTemperatureList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureAmbientTemperatureListIsMutable() {
-                if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-                    ambientTemperatureList_ = new java.util.ArrayList<FeelSensorReq>(ambientTemperatureList_);
-                    bitField0_ |= 0x00000100;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> ambientTemperatureListBuilder_;
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public java.util.List<FeelSensorReq> getAmbientTemperatureListList() {
-                if (ambientTemperatureListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(ambientTemperatureList_);
-                } else {
-                    return ambientTemperatureListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public int getAmbientTemperatureListCount() {
-                if (ambientTemperatureListBuilder_ == null) {
-                    return ambientTemperatureList_.size();
-                } else {
-                    return ambientTemperatureListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public FeelSensorReq getAmbientTemperatureList(int index) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    return ambientTemperatureList_.get(index);
-                } else {
-                    return ambientTemperatureListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder setAmbientTemperatureList(
-                    int index, FeelSensorReq value) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.set(index, value);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder setAmbientTemperatureList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder addAmbientTemperatureList(FeelSensorReq value) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.add(value);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder addAmbientTemperatureList(
-                    int index, FeelSensorReq value) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.add(index, value);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder addAmbientTemperatureList(
-                    FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder addAmbientTemperatureList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder addAllAmbientTemperatureList(
-                    Iterable<? extends FeelSensorReq> values) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ensureAmbientTemperatureListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, ambientTemperatureList_);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder clearAmbientTemperatureList() {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ambientTemperatureList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000100);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public Builder removeAmbientTemperatureList(int index) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ensureAmbientTemperatureListIsMutable();
-                    ambientTemperatureList_.remove(index);
-                    onChanged();
-                } else {
-                    ambientTemperatureListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public FeelSensorReq.Builder getAmbientTemperatureListBuilder(
-                    int index) {
-                return getAmbientTemperatureListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public FeelSensorReqOrBuilder getAmbientTemperatureListOrBuilder(
-                    int index) {
-                if (ambientTemperatureListBuilder_ == null) {
-                    return ambientTemperatureList_.get(index);
-                } else {
-                    return ambientTemperatureListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public java.util.List<? extends FeelSensorReqOrBuilder>
-            getAmbientTemperatureListOrBuilderList() {
-                if (ambientTemperatureListBuilder_ != null) {
-                    return ambientTemperatureListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(ambientTemperatureList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public FeelSensorReq.Builder addAmbientTemperatureListBuilder() {
-                return getAmbientTemperatureListFieldBuilder().addBuilder(
-                        FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public FeelSensorReq.Builder addAmbientTemperatureListBuilder(
-                    int index) {
-                return getAmbientTemperatureListFieldBuilder().addBuilder(
-                        index, FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 温度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq ambientTemperatureList = 9;</code>
-             */
-            public java.util.List<FeelSensorReq.Builder>
-            getAmbientTemperatureListBuilderList() {
-                return getAmbientTemperatureListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getAmbientTemperatureListFieldBuilder() {
-                if (ambientTemperatureListBuilder_ == null) {
-                    ambientTemperatureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            ambientTemperatureList_,
-                            ((bitField0_ & 0x00000100) == 0x00000100),
-                            getParentForChildren(),
-                            isClean());
-                    ambientTemperatureList_ = null;
-                }
-                return ambientTemperatureListBuilder_;
-            }
-
-            private java.util.List<FeelSensorReq> lightList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureLightListIsMutable() {
-                if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-                    lightList_ = new java.util.ArrayList<FeelSensorReq>(lightList_);
-                    bitField0_ |= 0x00000200;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> lightListBuilder_;
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public java.util.List<FeelSensorReq> getLightListList() {
-                if (lightListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(lightList_);
-                } else {
-                    return lightListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public int getLightListCount() {
-                if (lightListBuilder_ == null) {
-                    return lightList_.size();
-                } else {
-                    return lightListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public FeelSensorReq getLightList(int index) {
-                if (lightListBuilder_ == null) {
-                    return lightList_.get(index);
-                } else {
-                    return lightListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder setLightList(
-                    int index, FeelSensorReq value) {
-                if (lightListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLightListIsMutable();
-                    lightList_.set(index, value);
-                    onChanged();
-                } else {
-                    lightListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder setLightList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (lightListBuilder_ == null) {
-                    ensureLightListIsMutable();
-                    lightList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    lightListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder addLightList(FeelSensorReq value) {
-                if (lightListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLightListIsMutable();
-                    lightList_.add(value);
-                    onChanged();
-                } else {
-                    lightListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder addLightList(
-                    int index, FeelSensorReq value) {
-                if (lightListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureLightListIsMutable();
-                    lightList_.add(index, value);
-                    onChanged();
-                } else {
-                    lightListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder addLightList(
-                    FeelSensorReq.Builder builderForValue) {
-                if (lightListBuilder_ == null) {
-                    ensureLightListIsMutable();
-                    lightList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    lightListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder addLightList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (lightListBuilder_ == null) {
-                    ensureLightListIsMutable();
-                    lightList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    lightListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder addAllLightList(
-                    Iterable<? extends FeelSensorReq> values) {
-                if (lightListBuilder_ == null) {
-                    ensureLightListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, lightList_);
-                    onChanged();
-                } else {
-                    lightListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder clearLightList() {
-                if (lightListBuilder_ == null) {
-                    lightList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000200);
-                    onChanged();
-                } else {
-                    lightListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public Builder removeLightList(int index) {
-                if (lightListBuilder_ == null) {
-                    ensureLightListIsMutable();
-                    lightList_.remove(index);
-                    onChanged();
-                } else {
-                    lightListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public FeelSensorReq.Builder getLightListBuilder(
-                    int index) {
-                return getLightListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public FeelSensorReqOrBuilder getLightListOrBuilder(
-                    int index) {
-                if (lightListBuilder_ == null) {
-                    return lightList_.get(index);
-                } else {
-                    return lightListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public java.util.List<? extends FeelSensorReqOrBuilder>
-            getLightListOrBuilderList() {
-                if (lightListBuilder_ != null) {
-                    return lightListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(lightList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public FeelSensorReq.Builder addLightListBuilder() {
-                return getLightListFieldBuilder().addBuilder(
-                        FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public FeelSensorReq.Builder addLightListBuilder(
-                    int index) {
-                return getLightListFieldBuilder().addBuilder(
-                        index, FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 亮度
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq lightList = 10;</code>
-             */
-            public java.util.List<FeelSensorReq.Builder>
-            getLightListBuilderList() {
-                return getLightListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getLightListFieldBuilder() {
-                if (lightListBuilder_ == null) {
-                    lightListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            lightList_,
-                            ((bitField0_ & 0x00000200) == 0x00000200),
-                            getParentForChildren(),
-                            isClean());
-                    lightList_ = null;
-                }
-                return lightListBuilder_;
-            }
-
-            private java.util.List<FeelSensorReq> pressureList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensurePressureListIsMutable() {
-                if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-                    pressureList_ = new java.util.ArrayList<FeelSensorReq>(pressureList_);
-                    bitField0_ |= 0x00000400;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> pressureListBuilder_;
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public java.util.List<FeelSensorReq> getPressureListList() {
-                if (pressureListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(pressureList_);
-                } else {
-                    return pressureListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public int getPressureListCount() {
-                if (pressureListBuilder_ == null) {
-                    return pressureList_.size();
-                } else {
-                    return pressureListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public FeelSensorReq getPressureList(int index) {
-                if (pressureListBuilder_ == null) {
-                    return pressureList_.get(index);
-                } else {
-                    return pressureListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder setPressureList(
-                    int index, FeelSensorReq value) {
-                if (pressureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePressureListIsMutable();
-                    pressureList_.set(index, value);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder setPressureList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (pressureListBuilder_ == null) {
-                    ensurePressureListIsMutable();
-                    pressureList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    pressureListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder addPressureList(FeelSensorReq value) {
-                if (pressureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePressureListIsMutable();
-                    pressureList_.add(value);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder addPressureList(
-                    int index, FeelSensorReq value) {
-                if (pressureListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePressureListIsMutable();
-                    pressureList_.add(index, value);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder addPressureList(
-                    FeelSensorReq.Builder builderForValue) {
-                if (pressureListBuilder_ == null) {
-                    ensurePressureListIsMutable();
-                    pressureList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    pressureListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder addPressureList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (pressureListBuilder_ == null) {
-                    ensurePressureListIsMutable();
-                    pressureList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    pressureListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder addAllPressureList(
-                    Iterable<? extends FeelSensorReq> values) {
-                if (pressureListBuilder_ == null) {
-                    ensurePressureListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, pressureList_);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder clearPressureList() {
-                if (pressureListBuilder_ == null) {
-                    pressureList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000400);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public Builder removePressureList(int index) {
-                if (pressureListBuilder_ == null) {
-                    ensurePressureListIsMutable();
-                    pressureList_.remove(index);
-                    onChanged();
-                } else {
-                    pressureListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public FeelSensorReq.Builder getPressureListBuilder(
-                    int index) {
-                return getPressureListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public FeelSensorReqOrBuilder getPressureListOrBuilder(
-                    int index) {
-                if (pressureListBuilder_ == null) {
-                    return pressureList_.get(index);
-                } else {
-                    return pressureListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public java.util.List<? extends FeelSensorReqOrBuilder>
-            getPressureListOrBuilderList() {
-                if (pressureListBuilder_ != null) {
-                    return pressureListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(pressureList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public FeelSensorReq.Builder addPressureListBuilder() {
-                return getPressureListFieldBuilder().addBuilder(
-                        FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public FeelSensorReq.Builder addPressureListBuilder(
-                    int index) {
-                return getPressureListFieldBuilder().addBuilder(
-                        index, FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 压力
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq pressureList = 11;</code>
-             */
-            public java.util.List<FeelSensorReq.Builder>
-            getPressureListBuilderList() {
-                return getPressureListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getPressureListFieldBuilder() {
-                if (pressureListBuilder_ == null) {
-                    pressureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            pressureList_,
-                            ((bitField0_ & 0x00000400) == 0x00000400),
-                            getParentForChildren(),
-                            isClean());
-                    pressureList_ = null;
-                }
-                return pressureListBuilder_;
-            }
-
-            private java.util.List<FeelSensorReq> proximityList_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureProximityListIsMutable() {
-                if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-                    proximityList_ = new java.util.ArrayList<FeelSensorReq>(proximityList_);
-                    bitField0_ |= 0x00000800;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder> proximityListBuilder_;
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public java.util.List<FeelSensorReq> getProximityListList() {
-                if (proximityListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(proximityList_);
-                } else {
-                    return proximityListBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public int getProximityListCount() {
-                if (proximityListBuilder_ == null) {
-                    return proximityList_.size();
-                } else {
-                    return proximityListBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public FeelSensorReq getProximityList(int index) {
-                if (proximityListBuilder_ == null) {
-                    return proximityList_.get(index);
-                } else {
-                    return proximityListBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder setProximityList(
-                    int index, FeelSensorReq value) {
-                if (proximityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureProximityListIsMutable();
-                    proximityList_.set(index, value);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder setProximityList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (proximityListBuilder_ == null) {
-                    ensureProximityListIsMutable();
-                    proximityList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    proximityListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder addProximityList(FeelSensorReq value) {
-                if (proximityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureProximityListIsMutable();
-                    proximityList_.add(value);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder addProximityList(
-                    int index, FeelSensorReq value) {
-                if (proximityListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureProximityListIsMutable();
-                    proximityList_.add(index, value);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder addProximityList(
-                    FeelSensorReq.Builder builderForValue) {
-                if (proximityListBuilder_ == null) {
-                    ensureProximityListIsMutable();
-                    proximityList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    proximityListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder addProximityList(
-                    int index, FeelSensorReq.Builder builderForValue) {
-                if (proximityListBuilder_ == null) {
-                    ensureProximityListIsMutable();
-                    proximityList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    proximityListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder addAllProximityList(
-                    Iterable<? extends FeelSensorReq> values) {
-                if (proximityListBuilder_ == null) {
-                    ensureProximityListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, proximityList_);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder clearProximityList() {
-                if (proximityListBuilder_ == null) {
-                    proximityList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000800);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public Builder removeProximityList(int index) {
-                if (proximityListBuilder_ == null) {
-                    ensureProximityListIsMutable();
-                    proximityList_.remove(index);
-                    onChanged();
-                } else {
-                    proximityListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public FeelSensorReq.Builder getProximityListBuilder(
-                    int index) {
-                return getProximityListFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public FeelSensorReqOrBuilder getProximityListOrBuilder(
-                    int index) {
-                if (proximityListBuilder_ == null) {
-                    return proximityList_.get(index);
-                } else {
-                    return proximityListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public java.util.List<? extends FeelSensorReqOrBuilder>
-            getProximityListOrBuilderList() {
-                if (proximityListBuilder_ != null) {
-                    return proximityListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(proximityList_);
-                }
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public FeelSensorReq.Builder addProximityListBuilder() {
-                return getProximityListFieldBuilder().addBuilder(
-                        FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public FeelSensorReq.Builder addProximityListBuilder(
-                    int index) {
-                return getProximityListFieldBuilder().addBuilder(
-                        index, FeelSensorReq.getDefaultInstance());
-            }
-
-            /**
-             * <pre>
-             * 近距离
-             * </pre>
-             *
-             * <code>repeated .FeelSensorReq proximityList = 12;</code>
-             */
-            public java.util.List<FeelSensorReq.Builder>
-            getProximityListBuilderList() {
-                return getProximityListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>
-            getProximityListFieldBuilder() {
-                if (proximityListBuilder_ == null) {
-                    proximityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            FeelSensorReq, FeelSensorReq.Builder, FeelSensorReqOrBuilder>(
-                            proximityList_,
-                            ((bitField0_ & 0x00000800) == 0x00000800),
-                            getParentForChildren(),
-                            isClean());
-                    proximityList_ = null;
-                }
-                return proximityListBuilder_;
-            }
-
-            private java.util.List<Integer> wifiList_ = java.util.Collections.emptyList();
-
-            private void ensureWifiListIsMutable() {
-                if (!((bitField0_ & 0x00001000) == 0x00001000)) {
-                    wifiList_ = new java.util.ArrayList<Integer>(wifiList_);
-                    bitField0_ |= 0x00001000;
-                }
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public java.util.List<Integer>
-            getWifiListList() {
-                return java.util.Collections.unmodifiableList(wifiList_);
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public int getWifiListCount() {
-                return wifiList_.size();
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public int getWifiList(int index) {
-                return wifiList_.get(index);
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public Builder setWifiList(
-                    int index, int value) {
-                ensureWifiListIsMutable();
-                wifiList_.set(index, value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public Builder addWifiList(int value) {
-                ensureWifiListIsMutable();
-                wifiList_.add(value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public Builder addAllWifiList(
-                    Iterable<? extends Integer> values) {
-                ensureWifiListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                        values, wifiList_);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 wifiList = 13;</code>
-             */
-            public Builder clearWifiList() {
-                wifiList_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00001000);
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:DeepNaviReq)
-        }
-
-        // @@protoc_insertion_point(class_scope:DeepNaviReq)
-        private static final DeepNaviReq DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new DeepNaviReq();
-        }
-
-        public static DeepNaviReq getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        @Deprecated
-        public static final com.google.protobuf.Parser<DeepNaviReq>
-                PARSER = new com.google.protobuf.AbstractParser<DeepNaviReq>() {
-            @Override
-            public DeepNaviReq parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new DeepNaviReq(input, extensionRegistry);
-            }
-        };
-
-        public static com.google.protobuf.Parser<DeepNaviReq> parser() {
-            return PARSER;
-        }
-
-        @Override
-        public com.google.protobuf.Parser<DeepNaviReq> getParserForType() {
-            return PARSER;
-        }
-
-        @Override
-        public DeepNaviReq getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
+      return Basic.internal_static_DeepNaviRes_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              DeepNaviRes.class, Builder.class);
     }
 
-    public interface DeepNaviResOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:DeepNaviRes)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>required string result = 1;</code>
-         */
-        boolean hasResult();
-
-        /**
-         * <code>required string result = 1;</code>
-         */
-        String getResult();
-
-        /**
-         * <code>required string result = 1;</code>
-         */
-        com.google.protobuf.ByteString
-        getResultBytes();
+    private int bitField0_;
+    public static final int COOR_FIELD_NUMBER = 1;
+    private Coor coor_;
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    public boolean hasCoor() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    public Coor getCoor() {
+      return coor_ == null ? Coor.getDefaultInstance() : coor_;
+    }
+    /**
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
+     */
+    public CoorOrBuilder getCoorOrBuilder() {
+      return coor_ == null ? Coor.getDefaultInstance() : coor_;
     }
 
+    public static final int ROTATION_FIELD_NUMBER = 2;
+    private float rotation_;
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    public boolean hasRotation() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    public float getRotation() {
+      return rotation_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasCoor()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRotation()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getCoor().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getCoor());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, rotation_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCoor());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, rotation_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof DeepNaviRes)) {
+        return super.equals(obj);
+      }
+      DeepNaviRes other = (DeepNaviRes) obj;
+
+      boolean result = true;
+      result = result && (hasCoor() == other.hasCoor());
+      if (hasCoor()) {
+        result = result && getCoor()
+            .equals(other.getCoor());
+      }
+      result = result && (hasRotation() == other.hasRotation());
+      if (hasRotation()) {
+        result = result && (
+            Float.floatToIntBits(getRotation())
+            == Float.floatToIntBits(
+                other.getRotation()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCoor()) {
+        hash = (37 * hash) + COOR_FIELD_NUMBER;
+        hash = (53 * hash) + getCoor().hashCode();
+      }
+      if (hasRotation()) {
+        hash = (37 * hash) + ROTATION_FIELD_NUMBER;
+        hash = (53 * hash) + Float.floatToIntBits(
+            getRotation());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static DeepNaviRes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviRes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviRes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviRes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviRes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static DeepNaviRes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static DeepNaviRes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static DeepNaviRes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static DeepNaviRes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static DeepNaviRes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static DeepNaviRes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static DeepNaviRes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(DeepNaviRes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code DeepNaviRes}
      */
-    public static final class DeepNaviRes extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:DeepNaviRes)
-            DeepNaviResOrBuilder {
-        private static final long serialVersionUID = 0L;
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:DeepNaviRes)
+        DeepNaviResOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Basic.internal_static_DeepNaviRes_descriptor;
+      }
 
-        // Use DeepNaviRes.newBuilder() to construct.
-        private DeepNaviRes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Basic.internal_static_DeepNaviRes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                DeepNaviRes.class, Builder.class);
+      }
+
+      // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviRes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCoorFieldBuilder();
         }
-
-        private DeepNaviRes() {
-            result_ = "";
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        if (coorBuilder_ == null) {
+          coor_ = null;
+        } else {
+          coorBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rotation_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
 
-        @Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Basic.internal_static_DeepNaviRes_descriptor;
+      }
+
+      @Override
+      public DeepNaviRes getDefaultInstanceForType() {
+        return DeepNaviRes.getDefaultInstance();
+      }
+
+      @Override
+      public DeepNaviRes build() {
+        DeepNaviRes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private DeepNaviRes(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            com.google.protobuf.ByteString bs = input.readBytes();
-                            bitField0_ |= 0x00000001;
-                            result_ = bs;
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      @Override
+      public DeepNaviRes buildPartial() {
+        DeepNaviRes result = new DeepNaviRes(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return Basic.internal_static_DeepNaviRes_descriptor;
+        if (coorBuilder_ == null) {
+          result.coor_ = coor_;
+        } else {
+          result.coor_ = coorBuilder_.build();
         }
-
-        @Override
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return Basic.internal_static_DeepNaviRes_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            DeepNaviRes.class, Builder.class);
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
+        result.rotation_ = rotation_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
 
-        private int bitField0_;
-        public static final int RESULT_FIELD_NUMBER = 1;
-        private volatile Object result_;
-
-        /**
-         * <code>required string result = 1;</code>
-         */
-        public boolean hasResult() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
+      @Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof DeepNaviRes) {
+          return mergeFrom((DeepNaviRes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        /**
-         * <code>required string result = 1;</code>
-         */
-        public String getResult() {
-            Object ref = result_;
-            if (ref instanceof String) {
-                return (String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (bs.isValidUtf8()) {
-                    result_ = s;
-                }
-                return s;
-            }
+      public Builder mergeFrom(DeepNaviRes other) {
+        if (other == DeepNaviRes.getDefaultInstance()) return this;
+        if (other.hasCoor()) {
+          mergeCoor(other.getCoor());
         }
-
-        /**
-         * <code>required string result = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getResultBytes() {
-            Object ref = result_;
-            if (ref instanceof String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (String) ref);
-                result_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
+        if (other.hasRotation()) {
+          setRotation(other.getRotation());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        private byte memoizedIsInitialized = -1;
-
-        @Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            if (!hasResult()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
+      @Override
+      public final boolean isInitialized() {
+        if (!hasCoor()) {
+          return false;
         }
-
-        @Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
-            }
-            unknownFields.writeTo(output);
+        if (!hasRotation()) {
+          return false;
         }
-
-        @Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
+        if (!getCoor().isInitialized()) {
+          return false;
         }
+        return true;
+      }
 
-        @Override
-        public boolean equals(final Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof DeepNaviRes)) {
-                return super.equals(obj);
-            }
-            DeepNaviRes other = (DeepNaviRes) obj;
-
-            boolean result = true;
-            result = result && (hasResult() == other.hasResult());
-            if (hasResult()) {
-                result = result && getResult()
-                        .equals(other.getResult());
-            }
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        DeepNaviRes parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (DeepNaviRes) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+      private int bitField0_;
 
-        @Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasResult()) {
-                hash = (37 * hash) + RESULT_FIELD_NUMBER;
-                hash = (53 * hash) + getResult().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
+      private Coor coor_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder> coorBuilder_;
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public boolean hasCoor() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Coor getCoor() {
+        if (coorBuilder_ == null) {
+          return coor_ == null ? Coor.getDefaultInstance() : coor_;
+        } else {
+          return coorBuilder_.getMessage();
         }
-
-        public static DeepNaviRes parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder setCoor(Coor value) {
+        if (coorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          coor_ = value;
+          onChanged();
+        } else {
+          coorBuilder_.setMessage(value);
         }
-
-        public static DeepNaviRes parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder setCoor(
+          Coor.Builder builderForValue) {
+        if (coorBuilder_ == null) {
+          coor_ = builderForValue.build();
+          onChanged();
+        } else {
+          coorBuilder_.setMessage(builderForValue.build());
         }
-
-        public static DeepNaviRes parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder mergeCoor(Coor value) {
+        if (coorBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              coor_ != null &&
+              coor_ != Coor.getDefaultInstance()) {
+            coor_ =
+              Coor.newBuilder(coor_).mergeFrom(value).buildPartial();
+          } else {
+            coor_ = value;
+          }
+          onChanged();
+        } else {
+          coorBuilder_.mergeFrom(value);
         }
-
-        public static DeepNaviRes parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder clearCoor() {
+        if (coorBuilder_ == null) {
+          coor_ = null;
+          onChanged();
+        } else {
+          coorBuilder_.clear();
         }
-
-        public static DeepNaviRes parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Coor.Builder getCoorBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getCoorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public CoorOrBuilder getCoorOrBuilder() {
+        if (coorBuilder_ != null) {
+          return coorBuilder_.getMessageOrBuilder();
+        } else {
+          return coor_ == null ?
+              Coor.getDefaultInstance() : coor_;
         }
-
-        public static DeepNaviRes parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Coor, Coor.Builder, CoorOrBuilder>
+          getCoorFieldBuilder() {
+        if (coorBuilder_ == null) {
+          coorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Coor, Coor.Builder, CoorOrBuilder>(
+                  getCoor(),
+                  getParentForChildren(),
+                  isClean());
+          coor_ = null;
         }
+        return coorBuilder_;
+      }
 
-        public static DeepNaviRes parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
+      private float rotation_ ;
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public boolean hasRotation() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public float getRotation() {
+        return rotation_;
+      }
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public Builder setRotation(float value) {
+        bitField0_ |= 0x00000002;
+        rotation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public Builder clearRotation() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rotation_ = 0F;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
 
-        public static DeepNaviRes parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static DeepNaviRes parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static DeepNaviRes parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static DeepNaviRes parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static DeepNaviRes parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(DeepNaviRes prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @Override
-        protected Builder newBuilderForType(
-                BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code DeepNaviRes}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:DeepNaviRes)
-                DeepNaviResOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return Basic.internal_static_DeepNaviRes_descriptor;
-            }
-
-            @Override
-            protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return Basic.internal_static_DeepNaviRes_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                DeepNaviRes.class, Builder.class);
-            }
-
-            // Construct using com.sysu.deepnavi.bean.Basic.DeepNaviRes.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @Override
-            public Builder clear() {
-                super.clear();
-                result_ = "";
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            @Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return Basic.internal_static_DeepNaviRes_descriptor;
-            }
-
-            @Override
-            public DeepNaviRes getDefaultInstanceForType() {
-                return DeepNaviRes.getDefaultInstance();
-            }
-
-            @Override
-            public DeepNaviRes build() {
-                DeepNaviRes result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @Override
-            public DeepNaviRes buildPartial() {
-                DeepNaviRes result = new DeepNaviRes(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.result_ = result_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @Override
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            @Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            @Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            @Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            @Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            @Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            @Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof DeepNaviRes) {
-                    return mergeFrom((DeepNaviRes) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(DeepNaviRes other) {
-                if (other == DeepNaviRes.getDefaultInstance()) return this;
-                if (other.hasResult()) {
-                    bitField0_ |= 0x00000001;
-                    result_ = other.result_;
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final boolean isInitialized() {
-                if (!hasResult()) {
-                    return false;
-                }
-                return true;
-            }
-
-            @Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                DeepNaviRes parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (DeepNaviRes) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private Object result_ = "";
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public boolean hasResult() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public String getResult() {
-                Object ref = result_;
-                if (!(ref instanceof String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        result_ = s;
-                    }
-                    return s;
-                } else {
-                    return (String) ref;
-                }
-            }
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getResultBytes() {
-                Object ref = result_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (String) ref);
-                    result_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public Builder setResult(
-                    String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                result_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public Builder clearResult() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                result_ = getDefaultInstance().getResult();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required string result = 1;</code>
-             */
-            public Builder setResultBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                result_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
 
 
-            // @@protoc_insertion_point(builder_scope:DeepNaviRes)
-        }
-
-        // @@protoc_insertion_point(class_scope:DeepNaviRes)
-        private static final DeepNaviRes DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new DeepNaviRes();
-        }
-
-        public static DeepNaviRes getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        @Deprecated
-        public static final com.google.protobuf.Parser<DeepNaviRes>
-                PARSER = new com.google.protobuf.AbstractParser<DeepNaviRes>() {
-            @Override
-            public DeepNaviRes parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new DeepNaviRes(input, extensionRegistry);
-            }
-        };
-
-        public static com.google.protobuf.Parser<DeepNaviRes> parser() {
-            return PARSER;
-        }
-
-        @Override
-        public com.google.protobuf.Parser<DeepNaviRes> getParserForType() {
-            return PARSER;
-        }
-
-        @Override
-        public DeepNaviRes getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
+      // @@protoc_insertion_point(builder_scope:DeepNaviRes)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_FeelSensorReq_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_FeelSensorReq_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_CoorSensorReq_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_CoorSensorReq_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_DeepNaviReq_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_DeepNaviReq_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_DeepNaviRes_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_DeepNaviRes_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
-
+    // @@protoc_insertion_point(class_scope:DeepNaviRes)
+    private static final DeepNaviRes DEFAULT_INSTANCE;
     static {
-        String[] descriptorData = {
-                "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
-                        "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-                        " \002(\002\022\t\n\001z\030\003 \002(\002\"\322\003\n\013DeepNaviReq\022\014\n\004time\030" +
-                        "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022$\n\014magneticList\030\003 \003" +
-                        "(\0132\016.CoorSensorReq\022)\n\021accelerometerList\030" +
-                        "\004 \003(\0132\016.CoorSensorReq\022\'\n\017orientationList" +
-                        "\030\005 \003(\0132\016.CoorSensorReq\022%\n\rgyroscopeList\030" +
-                        "\006 \003(\0132\016.CoorSensorReq\022#\n\013gravityList\030\007 \003" +
-                        "(\0132\016.CoorSensorReq\022.\n\026linearAcceleration" +
-                        "List\030\010 \003(\0132\016.CoorSensorReq\022.\n\026ambientTem" +
-                        "peratureList\030\t \003(\0132\016.FeelSensorReq\022!\n\tli" +
-                        "ghtList\030\n \003(\0132\016.FeelSensorReq\022$\n\014pressur" +
-                        "eList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximity" +
-                        "List\030\014 \003(\0132\016.FeelSensorReq\022\020\n\010wifiList\030\r" +
-                        " \003(\005\"\035\n\013DeepNaviRes\022\016\n\006result\030\001 \002(\tB\037\n\026c" +
-                        "om.sysu.deepnavi.beanB\005Basic"
-        };
-        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                            com.google.protobuf.Descriptors.FileDescriptor root) {
-                        descriptor = root;
-                        return null;
-                    }
-                };
-        com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        }, assigner);
-        internal_static_FeelSensorReq_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_FeelSensorReq_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_FeelSensorReq_descriptor,
-                new String[]{"Value",});
-        internal_static_CoorSensorReq_descriptor =
-                getDescriptor().getMessageTypes().get(1);
-        internal_static_CoorSensorReq_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_CoorSensorReq_descriptor,
-                new String[]{"X", "Y", "Z",});
-        internal_static_DeepNaviReq_descriptor =
-                getDescriptor().getMessageTypes().get(2);
-        internal_static_DeepNaviReq_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_DeepNaviReq_descriptor,
-                new String[]{"Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList", "WifiList",});
-        internal_static_DeepNaviRes_descriptor =
-                getDescriptor().getMessageTypes().get(3);
-        internal_static_DeepNaviRes_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_DeepNaviRes_descriptor,
-                new String[]{"Result",});
+      DEFAULT_INSTANCE = new DeepNaviRes();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static DeepNaviRes getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<DeepNaviRes>
+        PARSER = new com.google.protobuf.AbstractParser<DeepNaviRes>() {
+      @Override
+      public DeepNaviRes parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeepNaviRes(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeepNaviRes> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<DeepNaviRes> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public DeepNaviRes getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FeelSensorReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FeelSensorReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Coor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Coor_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeepNaviReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeepNaviReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeepNaviRes_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeepNaviRes_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    String[] descriptorData = {
+      "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
+      "\001 \002(\002\"\'\n\004Coor\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\022\t\n\001z" +
+      "\030\003 \002(\002\"\250\003\n\013DeepNaviReq\022\014\n\004time\030\001 \002(\003\022\r\n\005" +
+      "image\030\002 \001(\014\022\033\n\014magneticList\030\003 \003(\0132\005.Coor" +
+      "\022 \n\021accelerometerList\030\004 \003(\0132\005.Coor\022\036\n\017or" +
+      "ientationList\030\005 \003(\0132\005.Coor\022\034\n\rgyroscopeL" +
+      "ist\030\006 \003(\0132\005.Coor\022\032\n\013gravityList\030\007 \003(\0132\005." +
+      "Coor\022%\n\026linearAccelerationList\030\010 \003(\0132\005.C" +
+      "oor\022.\n\026ambientTemperatureList\030\t \003(\0132\016.Fe" +
+      "elSensorReq\022!\n\tlightList\030\n \003(\0132\016.FeelSen" +
+      "sorReq\022$\n\014pressureList\030\013 \003(\0132\016.FeelSenso" +
+      "rReq\022%\n\rproximityList\030\014 \003(\0132\016.FeelSensor" +
+      "Req\022\020\n\010wifiList\030\r \003(\005\022\n\n\002id\030\016 \001(\t\"4\n\013Dee" +
+      "pNaviRes\022\023\n\004coor\030\001 \002(\0132\005.Coor\022\020\n\010rotatio" +
+      "n\030\002 \002(\002B\037\n\026com.sysu.deepnavi.beanB\005Basic"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
+    internal_static_FeelSensorReq_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_FeelSensorReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FeelSensorReq_descriptor,
+        new String[] { "Value", });
+    internal_static_Coor_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_Coor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Coor_descriptor,
+        new String[] { "X", "Y", "Z", });
+    internal_static_DeepNaviReq_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_DeepNaviReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeepNaviReq_descriptor,
+        new String[] { "Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList", "WifiList", "Id", });
+    internal_static_DeepNaviRes_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_DeepNaviRes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeepNaviRes_descriptor,
+        new String[] { "Coor", "Rotation", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

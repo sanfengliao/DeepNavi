@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <path
+        android:name="down"
+        android:pathData="
+        m80, 50 h40 v30 h-40 v-30
+        m0, 40 h40 v30 h-40 v-30
+        m0, 40 h40 v20 h20 l-40, 30 l-40, -30 h20 v-20"
+        android:strokeWidth="4"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

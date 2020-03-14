@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/half_white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/upload_map"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/select_map_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/select_map_image"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <EditText
+            android:id="@+id/map_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_map_s_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/select_map_drawable" />
+
+        <EditText
+            android:id="@+id/map_bitmap_size_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_bitmap_width"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_name" />
+
+        <EditText
+            android:id="@+id/map_bitmap_size_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_bitmap_height"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_x" />
+
+        <EditText
+            android:id="@+id/map_bitmap_size_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_bitmap_s_depth"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_y" />
+
+        <EditText
+            android:id="@+id/map_actual_size_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_map_s_actual_width"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_z" />
+
+        <EditText
+            android:id="@+id/map_actual_size_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_map_s_actual_height"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_actual_size_x" />
+
+        <EditText
+            android:id="@+id/map_actual_size_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_map_s_actual_depth"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/map_actual_size_y" />
+
+        <Button
+            android:id="@+id/set_origin_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/set_origin_point"
+            app:layout_constraintTop_toBottomOf="@id/map_actual_size_z" />
+
+        <Button
+            android:id="@+id/cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@android:string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ok"
+            app:layout_constraintTop_toBottomOf="@id/set_origin_point" />
+
+        <Button
+            android:id="@+id/ok"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/cancel"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -2,4 +2,6 @@
 <resources>
     <item name="test_surfaceview" type="id" />
     <item name="test_textureview" type="id" />
+    <item name="is_marker" type="id" />
+    <item name="position_tag" type="id" />
 </resources>

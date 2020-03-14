@@ -529,8 +529,8 @@ public final class Basic {
 
   }
 
-  public interface CoorSensorReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CoorSensorReq)
+  public interface CoorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Coor)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -561,18 +561,18 @@ public final class Basic {
     float getZ();
   }
   /**
-   * Protobuf type {@code CoorSensorReq}
+   * Protobuf type {@code Coor}
    */
-  public  static final class CoorSensorReq extends
+  public  static final class Coor extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CoorSensorReq)
-      CoorSensorReqOrBuilder {
+      // @@protoc_insertion_point(message_implements:Coor)
+      CoorOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CoorSensorReq.newBuilder() to construct.
-    private CoorSensorReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Coor.newBuilder() to construct.
+    private Coor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CoorSensorReq() {
+    private Coor() {
       x_ = 0F;
       y_ = 0F;
       z_ = 0F;
@@ -583,7 +583,7 @@ public final class Basic {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoorSensorReq(
+    private Coor(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -638,15 +638,15 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+      return com.sysu.deepnavi.bean.Basic.internal_static_Coor_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_fieldAccessorTable
+      return com.sysu.deepnavi.bean.Basic.internal_static_Coor_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq.class, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder.class);
+              com.sysu.deepnavi.bean.Basic.Coor.class, com.sysu.deepnavi.bean.Basic.Coor.Builder.class);
     }
 
     private int bitField0_;
@@ -761,10 +761,10 @@ public final class Basic {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.CoorSensorReq)) {
+      if (!(obj instanceof com.sysu.deepnavi.bean.Basic.Coor)) {
         return super.equals(obj);
       }
-      com.sysu.deepnavi.bean.Basic.CoorSensorReq other = (com.sysu.deepnavi.bean.Basic.CoorSensorReq) obj;
+      com.sysu.deepnavi.bean.Basic.Coor other = (com.sysu.deepnavi.bean.Basic.Coor) obj;
 
       boolean result = true;
       result = result && (hasX() == other.hasX());
@@ -819,69 +819,69 @@ public final class Basic {
       return hash;
     }
 
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(byte[] data)
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseDelimitedFrom(java.io.InputStream input)
+    public static com.sysu.deepnavi.bean.Basic.Coor parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseDelimitedFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq parseFrom(
+    public static com.sysu.deepnavi.bean.Basic.Coor parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -894,7 +894,7 @@ public final class Basic {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.CoorSensorReq prototype) {
+    public static Builder newBuilder(com.sysu.deepnavi.bean.Basic.Coor prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -910,26 +910,26 @@ public final class Basic {
       return builder;
     }
     /**
-     * Protobuf type {@code CoorSensorReq}
+     * Protobuf type {@code Coor}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CoorSensorReq)
-        com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Coor)
+        com.sysu.deepnavi.bean.Basic.CoorOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_Coor_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_fieldAccessorTable
+        return com.sysu.deepnavi.bean.Basic.internal_static_Coor_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sysu.deepnavi.bean.Basic.CoorSensorReq.class, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder.class);
+                com.sysu.deepnavi.bean.Basic.Coor.class, com.sysu.deepnavi.bean.Basic.Coor.Builder.class);
       }
 
-      // Construct using com.sysu.deepnavi.bean.Basic.CoorSensorReq.newBuilder()
+      // Construct using com.sysu.deepnavi.bean.Basic.Coor.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -959,17 +959,17 @@ public final class Basic {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sysu.deepnavi.bean.Basic.internal_static_CoorSensorReq_descriptor;
+        return com.sysu.deepnavi.bean.Basic.internal_static_Coor_descriptor;
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstanceForType() {
-        return com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance();
+      public com.sysu.deepnavi.bean.Basic.Coor getDefaultInstanceForType() {
+        return com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq build() {
-        com.sysu.deepnavi.bean.Basic.CoorSensorReq result = buildPartial();
+      public com.sysu.deepnavi.bean.Basic.Coor build() {
+        com.sysu.deepnavi.bean.Basic.Coor result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -977,8 +977,8 @@ public final class Basic {
       }
 
       @java.lang.Override
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq buildPartial() {
-        com.sysu.deepnavi.bean.Basic.CoorSensorReq result = new com.sysu.deepnavi.bean.Basic.CoorSensorReq(this);
+      public com.sysu.deepnavi.bean.Basic.Coor buildPartial() {
+        com.sysu.deepnavi.bean.Basic.Coor result = new com.sysu.deepnavi.bean.Basic.Coor(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1032,16 +1032,16 @@ public final class Basic {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sysu.deepnavi.bean.Basic.CoorSensorReq) {
-          return mergeFrom((com.sysu.deepnavi.bean.Basic.CoorSensorReq)other);
+        if (other instanceof com.sysu.deepnavi.bean.Basic.Coor) {
+          return mergeFrom((com.sysu.deepnavi.bean.Basic.Coor)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.CoorSensorReq other) {
-        if (other == com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.Coor other) {
+        if (other == com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance()) return this;
         if (other.hasX()) {
           setX(other.getX());
         }
@@ -1075,11 +1075,11 @@ public final class Basic {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sysu.deepnavi.bean.Basic.CoorSensorReq parsedMessage = null;
+        com.sysu.deepnavi.bean.Basic.Coor parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sysu.deepnavi.bean.Basic.CoorSensorReq) e.getUnfinishedMessage();
+          parsedMessage = (com.sysu.deepnavi.bean.Basic.Coor) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1198,41 +1198,41 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:CoorSensorReq)
+      // @@protoc_insertion_point(builder_scope:Coor)
     }
 
-    // @@protoc_insertion_point(class_scope:CoorSensorReq)
-    private static final com.sysu.deepnavi.bean.Basic.CoorSensorReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Coor)
+    private static final com.sysu.deepnavi.bean.Basic.Coor DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.CoorSensorReq();
+      DEFAULT_INSTANCE = new com.sysu.deepnavi.bean.Basic.Coor();
     }
 
-    public static com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstance() {
+    public static com.sysu.deepnavi.bean.Basic.Coor getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CoorSensorReq>
-        PARSER = new com.google.protobuf.AbstractParser<CoorSensorReq>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Coor>
+        PARSER = new com.google.protobuf.AbstractParser<Coor>() {
       @java.lang.Override
-      public CoorSensorReq parsePartialFrom(
+      public Coor parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoorSensorReq(input, extensionRegistry);
+        return new Coor(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CoorSensorReq> parser() {
+    public static com.google.protobuf.Parser<Coor> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CoorSensorReq> getParserForType() {
+    public com.google.protobuf.Parser<Coor> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getDefaultInstanceForType() {
+    public com.sysu.deepnavi.bean.Basic.Coor getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1273,24 +1273,24 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getMagneticListList();
     /**
      * <pre>
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagneticList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getMagneticList(int index);
     /**
      * <pre>
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
     int getMagneticListCount();
     /**
@@ -1298,18 +1298,18 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getMagneticListOrBuilderList();
     /**
      * <pre>
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getMagneticListOrBuilder(
         int index);
 
     /**
@@ -1317,24 +1317,24 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getAccelerometerListList();
     /**
      * <pre>
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometerList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getAccelerometerList(int index);
     /**
      * <pre>
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
     int getAccelerometerListCount();
     /**
@@ -1342,18 +1342,18 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getAccelerometerListOrBuilderList();
     /**
      * <pre>
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getAccelerometerListOrBuilder(
         int index);
 
     /**
@@ -1361,24 +1361,24 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getOrientationListList();
     /**
      * <pre>
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientationList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getOrientationList(int index);
     /**
      * <pre>
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
     int getOrientationListCount();
     /**
@@ -1386,18 +1386,18 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getOrientationListOrBuilderList();
     /**
      * <pre>
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getOrientationListOrBuilder(
         int index);
 
     /**
@@ -1405,24 +1405,24 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getGyroscopeListList();
     /**
      * <pre>
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscopeList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getGyroscopeList(int index);
     /**
      * <pre>
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
     int getGyroscopeListCount();
     /**
@@ -1430,18 +1430,18 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getGyroscopeListOrBuilderList();
     /**
      * <pre>
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGyroscopeListOrBuilder(
         int index);
 
     /**
@@ -1449,24 +1449,24 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getGravityListList();
     /**
      * <pre>
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravityList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getGravityList(int index);
     /**
      * <pre>
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
     int getGravityListCount();
     /**
@@ -1474,18 +1474,18 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getGravityListOrBuilderList();
     /**
      * <pre>
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGravityListOrBuilder(
         int index);
 
     /**
@@ -1493,24 +1493,24 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> 
+    java.util.List<com.sysu.deepnavi.bean.Basic.Coor> 
         getLinearAccelerationListList();
     /**
      * <pre>
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAccelerationList(int index);
+    com.sysu.deepnavi.bean.Basic.Coor getLinearAccelerationList(int index);
     /**
      * <pre>
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
     int getLinearAccelerationListCount();
     /**
@@ -1518,18 +1518,18 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getLinearAccelerationListOrBuilderList();
     /**
      * <pre>
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getLinearAccelerationListOrBuilder(
         int index);
 
     /**
@@ -1709,17 +1709,43 @@ public final class Basic {
         int index);
 
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     java.util.List<java.lang.Integer> getWifiListList();
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     int getWifiListCount();
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     int getWifiList(int index);
+
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
   }
   /**
    * Protobuf type {@code DeepNaviReq}
@@ -1747,6 +1773,7 @@ public final class Basic {
       pressureList_ = java.util.Collections.emptyList();
       proximityList_ = java.util.Collections.emptyList();
       wifiList_ = java.util.Collections.emptyList();
+      id_ = "";
     }
 
     @java.lang.Override
@@ -1785,56 +1812,56 @@ public final class Basic {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                magneticList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                magneticList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000004;
               }
               magneticList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                accelerometerList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                accelerometerList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000008;
               }
               accelerometerList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                orientationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                orientationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000010;
               }
               orientationList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                gyroscopeList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                gyroscopeList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000020;
               }
               gyroscopeList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                gravityList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                gravityList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000040;
               }
               gravityList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                linearAccelerationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>();
+                linearAccelerationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>();
                 mutable_bitField0_ |= 0x00000080;
               }
               linearAccelerationList_.add(
-                  input.readMessage(com.sysu.deepnavi.bean.Basic.CoorSensorReq.PARSER, extensionRegistry));
+                  input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry));
               break;
             }
             case 74: {
@@ -1892,6 +1919,12 @@ public final class Basic {
                 wifiList_.add(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 114: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              id_ = bs;
               break;
             }
             default: {
@@ -1999,15 +2032,15 @@ public final class Basic {
     }
 
     public static final int MAGNETICLIST_FIELD_NUMBER = 3;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> magneticList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> magneticList_;
     /**
      * <pre>
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getMagneticListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getMagneticListList() {
       return magneticList_;
     }
     /**
@@ -2015,9 +2048,9 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getMagneticListOrBuilderList() {
       return magneticList_;
     }
@@ -2026,7 +2059,7 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
     public int getMagneticListCount() {
       return magneticList_.size();
@@ -2036,9 +2069,9 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagneticList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getMagneticList(int index) {
       return magneticList_.get(index);
     }
     /**
@@ -2046,23 +2079,23 @@ public final class Basic {
      * 磁场
      * </pre>
      *
-     * <code>repeated .CoorSensorReq magneticList = 3;</code>
+     * <code>repeated .Coor magneticList = 3;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getMagneticListOrBuilder(
         int index) {
       return magneticList_.get(index);
     }
 
     public static final int ACCELEROMETERLIST_FIELD_NUMBER = 4;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> accelerometerList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> accelerometerList_;
     /**
      * <pre>
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getAccelerometerListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getAccelerometerListList() {
       return accelerometerList_;
     }
     /**
@@ -2070,9 +2103,9 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getAccelerometerListOrBuilderList() {
       return accelerometerList_;
     }
@@ -2081,7 +2114,7 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
     public int getAccelerometerListCount() {
       return accelerometerList_.size();
@@ -2091,9 +2124,9 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometerList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getAccelerometerList(int index) {
       return accelerometerList_.get(index);
     }
     /**
@@ -2101,23 +2134,23 @@ public final class Basic {
      * 加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+     * <code>repeated .Coor accelerometerList = 4;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getAccelerometerListOrBuilder(
         int index) {
       return accelerometerList_.get(index);
     }
 
     public static final int ORIENTATIONLIST_FIELD_NUMBER = 5;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> orientationList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> orientationList_;
     /**
      * <pre>
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getOrientationListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getOrientationListList() {
       return orientationList_;
     }
     /**
@@ -2125,9 +2158,9 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getOrientationListOrBuilderList() {
       return orientationList_;
     }
@@ -2136,7 +2169,7 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
     public int getOrientationListCount() {
       return orientationList_.size();
@@ -2146,9 +2179,9 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientationList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getOrientationList(int index) {
       return orientationList_.get(index);
     }
     /**
@@ -2156,23 +2189,23 @@ public final class Basic {
      * 方向
      * </pre>
      *
-     * <code>repeated .CoorSensorReq orientationList = 5;</code>
+     * <code>repeated .Coor orientationList = 5;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getOrientationListOrBuilder(
         int index) {
       return orientationList_.get(index);
     }
 
     public static final int GYROSCOPELIST_FIELD_NUMBER = 6;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gyroscopeList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> gyroscopeList_;
     /**
      * <pre>
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGyroscopeListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getGyroscopeListList() {
       return gyroscopeList_;
     }
     /**
@@ -2180,9 +2213,9 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getGyroscopeListOrBuilderList() {
       return gyroscopeList_;
     }
@@ -2191,7 +2224,7 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
     public int getGyroscopeListCount() {
       return gyroscopeList_.size();
@@ -2201,9 +2234,9 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscopeList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getGyroscopeList(int index) {
       return gyroscopeList_.get(index);
     }
     /**
@@ -2211,23 +2244,23 @@ public final class Basic {
      * 陀螺仪
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+     * <code>repeated .Coor gyroscopeList = 6;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGyroscopeListOrBuilder(
         int index) {
       return gyroscopeList_.get(index);
     }
 
     public static final int GRAVITYLIST_FIELD_NUMBER = 7;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gravityList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> gravityList_;
     /**
      * <pre>
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGravityListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getGravityListList() {
       return gravityList_;
     }
     /**
@@ -2235,9 +2268,9 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getGravityListOrBuilderList() {
       return gravityList_;
     }
@@ -2246,7 +2279,7 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
     public int getGravityListCount() {
       return gravityList_.size();
@@ -2256,9 +2289,9 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravityList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getGravityList(int index) {
       return gravityList_.get(index);
     }
     /**
@@ -2266,23 +2299,23 @@ public final class Basic {
      * 重力
      * </pre>
      *
-     * <code>repeated .CoorSensorReq gravityList = 7;</code>
+     * <code>repeated .Coor gravityList = 7;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGravityListOrBuilder(
         int index) {
       return gravityList_.get(index);
     }
 
     public static final int LINEARACCELERATIONLIST_FIELD_NUMBER = 8;
-    private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> linearAccelerationList_;
+    private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> linearAccelerationList_;
     /**
      * <pre>
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getLinearAccelerationListList() {
+    public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getLinearAccelerationListList() {
       return linearAccelerationList_;
     }
     /**
@@ -2290,9 +2323,9 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+    public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
         getLinearAccelerationListOrBuilderList() {
       return linearAccelerationList_;
     }
@@ -2301,7 +2334,7 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
     public int getLinearAccelerationListCount() {
       return linearAccelerationList_.size();
@@ -2311,9 +2344,9 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAccelerationList(int index) {
+    public com.sysu.deepnavi.bean.Basic.Coor getLinearAccelerationList(int index) {
       return linearAccelerationList_.get(index);
     }
     /**
@@ -2321,9 +2354,9 @@ public final class Basic {
      * 线性加速度
      * </pre>
      *
-     * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+     * <code>repeated .Coor linearAccelerationList = 8;</code>
      */
-    public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getLinearAccelerationListOrBuilder(
         int index) {
       return linearAccelerationList_.get(index);
     }
@@ -2551,6 +2584,10 @@ public final class Basic {
     public static final int WIFILIST_FIELD_NUMBER = 13;
     private java.util.List<java.lang.Integer> wifiList_;
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     public java.util.List<java.lang.Integer>
@@ -2558,16 +2595,66 @@ public final class Basic {
       return wifiList_;
     }
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     public int getWifiListCount() {
       return wifiList_.size();
     }
     /**
+     * <pre>
+     * wifi
+     * </pre>
+     *
      * <code>repeated int32 wifiList = 13;</code>
      */
     public int getWifiList(int index) {
       return wifiList_.get(index);
+    }
+
+    public static final int ID_FIELD_NUMBER = 14;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string id = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2687,6 +2774,9 @@ public final class Basic {
       for (int i = 0; i < wifiList_.size(); i++) {
         output.writeInt32(13, wifiList_.get(i));
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, id_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2753,6 +2843,9 @@ public final class Basic {
         size += dataSize;
         size += 1 * getWifiListList().size();
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, id_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2801,6 +2894,11 @@ public final class Basic {
           .equals(other.getProximityListList());
       result = result && getWifiListList()
           .equals(other.getWifiListList());
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && getId()
+            .equals(other.getId());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2864,6 +2962,10 @@ public final class Basic {
       if (getWifiListCount() > 0) {
         hash = (37 * hash) + WIFILIST_FIELD_NUMBER;
         hash = (53 * hash) + getWifiListList().hashCode();
+      }
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3074,6 +3176,8 @@ public final class Basic {
         }
         wifiList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00001000);
+        id_ = "";
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
 
@@ -3205,6 +3309,10 @@ public final class Basic {
           bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.wifiList_ = wifiList_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.id_ = id_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3530,6 +3638,11 @@ public final class Basic {
           }
           onChanged();
         }
+        if (other.hasId()) {
+          bitField0_ |= 0x00002000;
+          id_ = other.id_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3696,26 +3809,26 @@ public final class Basic {
         return this;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> magneticList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> magneticList_ =
         java.util.Collections.emptyList();
       private void ensureMagneticListIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          magneticList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(magneticList_);
+          magneticList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(magneticList_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> magneticListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> magneticListBuilder_;
 
       /**
        * <pre>
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getMagneticListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getMagneticListList() {
         if (magneticListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(magneticList_);
         } else {
@@ -3727,7 +3840,7 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public int getMagneticListCount() {
         if (magneticListBuilder_ == null) {
@@ -3741,9 +3854,9 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getMagneticList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getMagneticList(int index) {
         if (magneticListBuilder_ == null) {
           return magneticList_.get(index);
         } else {
@@ -3755,10 +3868,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder setMagneticList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (magneticListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3776,10 +3889,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder setMagneticList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (magneticListBuilder_ == null) {
           ensureMagneticListIsMutable();
           magneticList_.set(index, builderForValue.build());
@@ -3794,9 +3907,9 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public Builder addMagneticList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addMagneticList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (magneticListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3814,10 +3927,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder addMagneticList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (magneticListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3835,10 +3948,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder addMagneticList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (magneticListBuilder_ == null) {
           ensureMagneticListIsMutable();
           magneticList_.add(builderForValue.build());
@@ -3853,10 +3966,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder addMagneticList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (magneticListBuilder_ == null) {
           ensureMagneticListIsMutable();
           magneticList_.add(index, builderForValue.build());
@@ -3871,10 +3984,10 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder addAllMagneticList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (magneticListBuilder_ == null) {
           ensureMagneticListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3890,7 +4003,7 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder clearMagneticList() {
         if (magneticListBuilder_ == null) {
@@ -3907,7 +4020,7 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
       public Builder removeMagneticList(int index) {
         if (magneticListBuilder_ == null) {
@@ -3924,9 +4037,9 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getMagneticListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getMagneticListBuilder(
           int index) {
         return getMagneticListFieldBuilder().getBuilder(index);
       }
@@ -3935,9 +4048,9 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getMagneticListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getMagneticListOrBuilder(
           int index) {
         if (magneticListBuilder_ == null) {
           return magneticList_.get(index);  } else {
@@ -3949,9 +4062,9 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getMagneticListOrBuilderList() {
         if (magneticListBuilder_ != null) {
           return magneticListBuilder_.getMessageOrBuilderList();
@@ -3964,41 +4077,41 @@ public final class Basic {
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addMagneticListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addMagneticListBuilder() {
         return getMagneticListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addMagneticListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addMagneticListBuilder(
           int index) {
         return getMagneticListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 磁场
        * </pre>
        *
-       * <code>repeated .CoorSensorReq magneticList = 3;</code>
+       * <code>repeated .Coor magneticList = 3;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getMagneticListBuilderList() {
         return getMagneticListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getMagneticListFieldBuilder() {
         if (magneticListBuilder_ == null) {
           magneticListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   magneticList_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -4008,26 +4121,26 @@ public final class Basic {
         return magneticListBuilder_;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> accelerometerList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> accelerometerList_ =
         java.util.Collections.emptyList();
       private void ensureAccelerometerListIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          accelerometerList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(accelerometerList_);
+          accelerometerList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(accelerometerList_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> accelerometerListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> accelerometerListBuilder_;
 
       /**
        * <pre>
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getAccelerometerListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getAccelerometerListList() {
         if (accelerometerListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(accelerometerList_);
         } else {
@@ -4039,7 +4152,7 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public int getAccelerometerListCount() {
         if (accelerometerListBuilder_ == null) {
@@ -4053,9 +4166,9 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getAccelerometerList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getAccelerometerList(int index) {
         if (accelerometerListBuilder_ == null) {
           return accelerometerList_.get(index);
         } else {
@@ -4067,10 +4180,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder setAccelerometerList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (accelerometerListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4088,10 +4201,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder setAccelerometerList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (accelerometerListBuilder_ == null) {
           ensureAccelerometerListIsMutable();
           accelerometerList_.set(index, builderForValue.build());
@@ -4106,9 +4219,9 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public Builder addAccelerometerList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addAccelerometerList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (accelerometerListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4126,10 +4239,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder addAccelerometerList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (accelerometerListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4147,10 +4260,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder addAccelerometerList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (accelerometerListBuilder_ == null) {
           ensureAccelerometerListIsMutable();
           accelerometerList_.add(builderForValue.build());
@@ -4165,10 +4278,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder addAccelerometerList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (accelerometerListBuilder_ == null) {
           ensureAccelerometerListIsMutable();
           accelerometerList_.add(index, builderForValue.build());
@@ -4183,10 +4296,10 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder addAllAccelerometerList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (accelerometerListBuilder_ == null) {
           ensureAccelerometerListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4202,7 +4315,7 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder clearAccelerometerList() {
         if (accelerometerListBuilder_ == null) {
@@ -4219,7 +4332,7 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
       public Builder removeAccelerometerList(int index) {
         if (accelerometerListBuilder_ == null) {
@@ -4236,9 +4349,9 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getAccelerometerListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getAccelerometerListBuilder(
           int index) {
         return getAccelerometerListFieldBuilder().getBuilder(index);
       }
@@ -4247,9 +4360,9 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getAccelerometerListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getAccelerometerListOrBuilder(
           int index) {
         if (accelerometerListBuilder_ == null) {
           return accelerometerList_.get(index);  } else {
@@ -4261,9 +4374,9 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getAccelerometerListOrBuilderList() {
         if (accelerometerListBuilder_ != null) {
           return accelerometerListBuilder_.getMessageOrBuilderList();
@@ -4276,41 +4389,41 @@ public final class Basic {
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addAccelerometerListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addAccelerometerListBuilder() {
         return getAccelerometerListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addAccelerometerListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addAccelerometerListBuilder(
           int index) {
         return getAccelerometerListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq accelerometerList = 4;</code>
+       * <code>repeated .Coor accelerometerList = 4;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getAccelerometerListBuilderList() {
         return getAccelerometerListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getAccelerometerListFieldBuilder() {
         if (accelerometerListBuilder_ == null) {
           accelerometerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   accelerometerList_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -4320,26 +4433,26 @@ public final class Basic {
         return accelerometerListBuilder_;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> orientationList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> orientationList_ =
         java.util.Collections.emptyList();
       private void ensureOrientationListIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          orientationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(orientationList_);
+          orientationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(orientationList_);
           bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> orientationListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> orientationListBuilder_;
 
       /**
        * <pre>
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getOrientationListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getOrientationListList() {
         if (orientationListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(orientationList_);
         } else {
@@ -4351,7 +4464,7 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public int getOrientationListCount() {
         if (orientationListBuilder_ == null) {
@@ -4365,9 +4478,9 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getOrientationList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getOrientationList(int index) {
         if (orientationListBuilder_ == null) {
           return orientationList_.get(index);
         } else {
@@ -4379,10 +4492,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder setOrientationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (orientationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4400,10 +4513,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder setOrientationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (orientationListBuilder_ == null) {
           ensureOrientationListIsMutable();
           orientationList_.set(index, builderForValue.build());
@@ -4418,9 +4531,9 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public Builder addOrientationList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addOrientationList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (orientationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4438,10 +4551,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder addOrientationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (orientationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4459,10 +4572,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder addOrientationList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (orientationListBuilder_ == null) {
           ensureOrientationListIsMutable();
           orientationList_.add(builderForValue.build());
@@ -4477,10 +4590,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder addOrientationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (orientationListBuilder_ == null) {
           ensureOrientationListIsMutable();
           orientationList_.add(index, builderForValue.build());
@@ -4495,10 +4608,10 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder addAllOrientationList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (orientationListBuilder_ == null) {
           ensureOrientationListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4514,7 +4627,7 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder clearOrientationList() {
         if (orientationListBuilder_ == null) {
@@ -4531,7 +4644,7 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
       public Builder removeOrientationList(int index) {
         if (orientationListBuilder_ == null) {
@@ -4548,9 +4661,9 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getOrientationListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getOrientationListBuilder(
           int index) {
         return getOrientationListFieldBuilder().getBuilder(index);
       }
@@ -4559,9 +4672,9 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getOrientationListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getOrientationListOrBuilder(
           int index) {
         if (orientationListBuilder_ == null) {
           return orientationList_.get(index);  } else {
@@ -4573,9 +4686,9 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getOrientationListOrBuilderList() {
         if (orientationListBuilder_ != null) {
           return orientationListBuilder_.getMessageOrBuilderList();
@@ -4588,41 +4701,41 @@ public final class Basic {
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addOrientationListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addOrientationListBuilder() {
         return getOrientationListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addOrientationListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addOrientationListBuilder(
           int index) {
         return getOrientationListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 方向
        * </pre>
        *
-       * <code>repeated .CoorSensorReq orientationList = 5;</code>
+       * <code>repeated .Coor orientationList = 5;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getOrientationListBuilderList() {
         return getOrientationListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getOrientationListFieldBuilder() {
         if (orientationListBuilder_ == null) {
           orientationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   orientationList_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -4632,26 +4745,26 @@ public final class Basic {
         return orientationListBuilder_;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gyroscopeList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> gyroscopeList_ =
         java.util.Collections.emptyList();
       private void ensureGyroscopeListIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          gyroscopeList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(gyroscopeList_);
+          gyroscopeList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(gyroscopeList_);
           bitField0_ |= 0x00000020;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> gyroscopeListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> gyroscopeListBuilder_;
 
       /**
        * <pre>
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGyroscopeListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getGyroscopeListList() {
         if (gyroscopeListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(gyroscopeList_);
         } else {
@@ -4663,7 +4776,7 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public int getGyroscopeListCount() {
         if (gyroscopeListBuilder_ == null) {
@@ -4677,9 +4790,9 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGyroscopeList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getGyroscopeList(int index) {
         if (gyroscopeListBuilder_ == null) {
           return gyroscopeList_.get(index);
         } else {
@@ -4691,10 +4804,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder setGyroscopeList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gyroscopeListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4712,10 +4825,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder setGyroscopeList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gyroscopeListBuilder_ == null) {
           ensureGyroscopeListIsMutable();
           gyroscopeList_.set(index, builderForValue.build());
@@ -4730,9 +4843,9 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public Builder addGyroscopeList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addGyroscopeList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gyroscopeListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4750,10 +4863,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder addGyroscopeList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gyroscopeListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4771,10 +4884,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder addGyroscopeList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gyroscopeListBuilder_ == null) {
           ensureGyroscopeListIsMutable();
           gyroscopeList_.add(builderForValue.build());
@@ -4789,10 +4902,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder addGyroscopeList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gyroscopeListBuilder_ == null) {
           ensureGyroscopeListIsMutable();
           gyroscopeList_.add(index, builderForValue.build());
@@ -4807,10 +4920,10 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder addAllGyroscopeList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (gyroscopeListBuilder_ == null) {
           ensureGyroscopeListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4826,7 +4939,7 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder clearGyroscopeList() {
         if (gyroscopeListBuilder_ == null) {
@@ -4843,7 +4956,7 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
       public Builder removeGyroscopeList(int index) {
         if (gyroscopeListBuilder_ == null) {
@@ -4860,9 +4973,9 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getGyroscopeListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getGyroscopeListBuilder(
           int index) {
         return getGyroscopeListFieldBuilder().getBuilder(index);
       }
@@ -4871,9 +4984,9 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGyroscopeListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGyroscopeListOrBuilder(
           int index) {
         if (gyroscopeListBuilder_ == null) {
           return gyroscopeList_.get(index);  } else {
@@ -4885,9 +4998,9 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getGyroscopeListOrBuilderList() {
         if (gyroscopeListBuilder_ != null) {
           return gyroscopeListBuilder_.getMessageOrBuilderList();
@@ -4900,41 +5013,41 @@ public final class Basic {
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGyroscopeListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addGyroscopeListBuilder() {
         return getGyroscopeListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGyroscopeListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addGyroscopeListBuilder(
           int index) {
         return getGyroscopeListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 陀螺仪
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gyroscopeList = 6;</code>
+       * <code>repeated .Coor gyroscopeList = 6;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getGyroscopeListBuilderList() {
         return getGyroscopeListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getGyroscopeListFieldBuilder() {
         if (gyroscopeListBuilder_ == null) {
           gyroscopeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   gyroscopeList_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -4944,26 +5057,26 @@ public final class Basic {
         return gyroscopeListBuilder_;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> gravityList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> gravityList_ =
         java.util.Collections.emptyList();
       private void ensureGravityListIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          gravityList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(gravityList_);
+          gravityList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(gravityList_);
           bitField0_ |= 0x00000040;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> gravityListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> gravityListBuilder_;
 
       /**
        * <pre>
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getGravityListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getGravityListList() {
         if (gravityListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(gravityList_);
         } else {
@@ -4975,7 +5088,7 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public int getGravityListCount() {
         if (gravityListBuilder_ == null) {
@@ -4989,9 +5102,9 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getGravityList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getGravityList(int index) {
         if (gravityListBuilder_ == null) {
           return gravityList_.get(index);
         } else {
@@ -5003,10 +5116,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder setGravityList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gravityListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5024,10 +5137,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder setGravityList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gravityListBuilder_ == null) {
           ensureGravityListIsMutable();
           gravityList_.set(index, builderForValue.build());
@@ -5042,9 +5155,9 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public Builder addGravityList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addGravityList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gravityListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5062,10 +5175,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder addGravityList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (gravityListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5083,10 +5196,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder addGravityList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gravityListBuilder_ == null) {
           ensureGravityListIsMutable();
           gravityList_.add(builderForValue.build());
@@ -5101,10 +5214,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder addGravityList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (gravityListBuilder_ == null) {
           ensureGravityListIsMutable();
           gravityList_.add(index, builderForValue.build());
@@ -5119,10 +5232,10 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder addAllGravityList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (gravityListBuilder_ == null) {
           ensureGravityListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5138,7 +5251,7 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder clearGravityList() {
         if (gravityListBuilder_ == null) {
@@ -5155,7 +5268,7 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
       public Builder removeGravityList(int index) {
         if (gravityListBuilder_ == null) {
@@ -5172,9 +5285,9 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getGravityListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getGravityListBuilder(
           int index) {
         return getGravityListFieldBuilder().getBuilder(index);
       }
@@ -5183,9 +5296,9 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getGravityListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getGravityListOrBuilder(
           int index) {
         if (gravityListBuilder_ == null) {
           return gravityList_.get(index);  } else {
@@ -5197,9 +5310,9 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getGravityListOrBuilderList() {
         if (gravityListBuilder_ != null) {
           return gravityListBuilder_.getMessageOrBuilderList();
@@ -5212,41 +5325,41 @@ public final class Basic {
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGravityListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addGravityListBuilder() {
         return getGravityListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addGravityListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addGravityListBuilder(
           int index) {
         return getGravityListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 重力
        * </pre>
        *
-       * <code>repeated .CoorSensorReq gravityList = 7;</code>
+       * <code>repeated .Coor gravityList = 7;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getGravityListBuilderList() {
         return getGravityListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getGravityListFieldBuilder() {
         if (gravityListBuilder_ == null) {
           gravityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   gravityList_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -5256,26 +5369,26 @@ public final class Basic {
         return gravityListBuilder_;
       }
 
-      private java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> linearAccelerationList_ =
+      private java.util.List<com.sysu.deepnavi.bean.Basic.Coor> linearAccelerationList_ =
         java.util.Collections.emptyList();
       private void ensureLinearAccelerationListIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          linearAccelerationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.CoorSensorReq>(linearAccelerationList_);
+          linearAccelerationList_ = new java.util.ArrayList<com.sysu.deepnavi.bean.Basic.Coor>(linearAccelerationList_);
           bitField0_ |= 0x00000080;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> linearAccelerationListBuilder_;
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> linearAccelerationListBuilder_;
 
       /**
        * <pre>
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq> getLinearAccelerationListList() {
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor> getLinearAccelerationListList() {
         if (linearAccelerationListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(linearAccelerationList_);
         } else {
@@ -5287,7 +5400,7 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public int getLinearAccelerationListCount() {
         if (linearAccelerationListBuilder_ == null) {
@@ -5301,9 +5414,9 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq getLinearAccelerationList(int index) {
+      public com.sysu.deepnavi.bean.Basic.Coor getLinearAccelerationList(int index) {
         if (linearAccelerationListBuilder_ == null) {
           return linearAccelerationList_.get(index);
         } else {
@@ -5315,10 +5428,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder setLinearAccelerationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (linearAccelerationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5336,10 +5449,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder setLinearAccelerationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (linearAccelerationListBuilder_ == null) {
           ensureLinearAccelerationListIsMutable();
           linearAccelerationList_.set(index, builderForValue.build());
@@ -5354,9 +5467,9 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public Builder addLinearAccelerationList(com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+      public Builder addLinearAccelerationList(com.sysu.deepnavi.bean.Basic.Coor value) {
         if (linearAccelerationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5374,10 +5487,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder addLinearAccelerationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq value) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor value) {
         if (linearAccelerationListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5395,10 +5508,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder addLinearAccelerationList(
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (linearAccelerationListBuilder_ == null) {
           ensureLinearAccelerationListIsMutable();
           linearAccelerationList_.add(builderForValue.build());
@@ -5413,10 +5526,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder addLinearAccelerationList(
-          int index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder builderForValue) {
+          int index, com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
         if (linearAccelerationListBuilder_ == null) {
           ensureLinearAccelerationListIsMutable();
           linearAccelerationList_.add(index, builderForValue.build());
@@ -5431,10 +5544,10 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder addAllLinearAccelerationList(
-          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReq> values) {
+          java.lang.Iterable<? extends com.sysu.deepnavi.bean.Basic.Coor> values) {
         if (linearAccelerationListBuilder_ == null) {
           ensureLinearAccelerationListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5450,7 +5563,7 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder clearLinearAccelerationList() {
         if (linearAccelerationListBuilder_ == null) {
@@ -5467,7 +5580,7 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
       public Builder removeLinearAccelerationList(int index) {
         if (linearAccelerationListBuilder_ == null) {
@@ -5484,9 +5597,9 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder getLinearAccelerationListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getLinearAccelerationListBuilder(
           int index) {
         return getLinearAccelerationListFieldBuilder().getBuilder(index);
       }
@@ -5495,9 +5608,9 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder getLinearAccelerationListOrBuilder(
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getLinearAccelerationListOrBuilder(
           int index) {
         if (linearAccelerationListBuilder_ == null) {
           return linearAccelerationList_.get(index);  } else {
@@ -5509,9 +5622,9 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+      public java.util.List<? extends com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
            getLinearAccelerationListOrBuilderList() {
         if (linearAccelerationListBuilder_ != null) {
           return linearAccelerationListBuilder_.getMessageOrBuilderList();
@@ -5524,41 +5637,41 @@ public final class Basic {
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addLinearAccelerationListBuilder() {
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addLinearAccelerationListBuilder() {
         return getLinearAccelerationListFieldBuilder().addBuilder(
-            com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder addLinearAccelerationListBuilder(
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder addLinearAccelerationListBuilder(
           int index) {
         return getLinearAccelerationListFieldBuilder().addBuilder(
-            index, com.sysu.deepnavi.bean.Basic.CoorSensorReq.getDefaultInstance());
+            index, com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance());
       }
       /**
        * <pre>
        * 线性加速度
        * </pre>
        *
-       * <code>repeated .CoorSensorReq linearAccelerationList = 8;</code>
+       * <code>repeated .Coor linearAccelerationList = 8;</code>
        */
-      public java.util.List<com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder> 
+      public java.util.List<com.sysu.deepnavi.bean.Basic.Coor.Builder> 
            getLinearAccelerationListBuilderList() {
         return getLinearAccelerationListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder> 
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
           getLinearAccelerationListFieldBuilder() {
         if (linearAccelerationListBuilder_ == null) {
           linearAccelerationListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sysu.deepnavi.bean.Basic.CoorSensorReq, com.sysu.deepnavi.bean.Basic.CoorSensorReq.Builder, com.sysu.deepnavi.bean.Basic.CoorSensorReqOrBuilder>(
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
                   linearAccelerationList_,
                   ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
@@ -6824,6 +6937,10 @@ public final class Basic {
          }
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public java.util.List<java.lang.Integer>
@@ -6831,18 +6948,30 @@ public final class Basic {
         return java.util.Collections.unmodifiableList(wifiList_);
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public int getWifiListCount() {
         return wifiList_.size();
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public int getWifiList(int index) {
         return wifiList_.get(index);
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public Builder setWifiList(
@@ -6853,6 +6982,10 @@ public final class Basic {
         return this;
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public Builder addWifiList(int value) {
@@ -6862,6 +6995,10 @@ public final class Basic {
         return this;
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public Builder addAllWifiList(
@@ -6873,11 +7010,91 @@ public final class Basic {
         return this;
       }
       /**
+       * <pre>
+       * wifi
+       * </pre>
+       *
        * <code>repeated int32 wifiList = 13;</code>
        */
       public Builder clearWifiList() {
         wifiList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 14;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -6939,18 +7156,38 @@ public final class Basic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    boolean hasResult();
+    boolean hasCoor();
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    java.lang.String getResult();
+    com.sysu.deepnavi.bean.Basic.Coor getCoor();
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getResultBytes();
+    com.sysu.deepnavi.bean.Basic.CoorOrBuilder getCoorOrBuilder();
+
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    boolean hasRotation();
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    float getRotation();
   }
   /**
    * Protobuf type {@code DeepNaviRes}
@@ -6965,7 +7202,7 @@ public final class Basic {
       super(builder);
     }
     private DeepNaviRes() {
-      result_ = "";
+      rotation_ = 0F;
     }
 
     @java.lang.Override
@@ -6993,9 +7230,21 @@ public final class Basic {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+              com.sysu.deepnavi.bean.Basic.Coor.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = coor_.toBuilder();
+              }
+              coor_ = input.readMessage(com.sysu.deepnavi.bean.Basic.Coor.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(coor_);
+                coor_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000001;
-              result_ = bs;
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              rotation_ = input.readFloat();
               break;
             }
             default: {
@@ -7031,46 +7280,52 @@ public final class Basic {
     }
 
     private int bitField0_;
-    public static final int RESULT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object result_;
+    public static final int COOR_FIELD_NUMBER = 1;
+    private com.sysu.deepnavi.bean.Basic.Coor coor_;
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    public boolean hasResult() {
+    public boolean hasCoor() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    public java.lang.String getResult() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          result_ = s;
-        }
-        return s;
-      }
+    public com.sysu.deepnavi.bean.Basic.Coor getCoor() {
+      return coor_ == null ? com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance() : coor_;
     }
     /**
-     * <code>required string result = 1;</code>
+     * <pre>
+     * required string result = 1;
+     * </pre>
+     *
+     * <code>required .Coor coor = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getResultBytes() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        result_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getCoorOrBuilder() {
+      return coor_ == null ? com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance() : coor_;
+    }
+
+    public static final int ROTATION_FIELD_NUMBER = 2;
+    private float rotation_;
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    public boolean hasRotation() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required float rotation = 2;</code>
+     */
+    public float getRotation() {
+      return rotation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7080,7 +7335,15 @@ public final class Basic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasResult()) {
+      if (!hasCoor()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRotation()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getCoor().isInitialized()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7092,7 +7355,10 @@ public final class Basic {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
+        output.writeMessage(1, getCoor());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, rotation_);
       }
       unknownFields.writeTo(output);
     }
@@ -7104,7 +7370,12 @@ public final class Basic {
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCoor());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, rotation_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7122,10 +7393,17 @@ public final class Basic {
       com.sysu.deepnavi.bean.Basic.DeepNaviRes other = (com.sysu.deepnavi.bean.Basic.DeepNaviRes) obj;
 
       boolean result = true;
-      result = result && (hasResult() == other.hasResult());
-      if (hasResult()) {
-        result = result && getResult()
-            .equals(other.getResult());
+      result = result && (hasCoor() == other.hasCoor());
+      if (hasCoor()) {
+        result = result && getCoor()
+            .equals(other.getCoor());
+      }
+      result = result && (hasRotation() == other.hasRotation());
+      if (hasRotation()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getRotation())
+            == java.lang.Float.floatToIntBits(
+                other.getRotation()));
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -7138,9 +7416,14 @@ public final class Basic {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasResult()) {
-        hash = (37 * hash) + RESULT_FIELD_NUMBER;
-        hash = (53 * hash) + getResult().hashCode();
+      if (hasCoor()) {
+        hash = (37 * hash) + COOR_FIELD_NUMBER;
+        hash = (53 * hash) + getCoor().hashCode();
+      }
+      if (hasRotation()) {
+        hash = (37 * hash) + ROTATION_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getRotation());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7270,13 +7553,20 @@ public final class Basic {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getCoorFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        result_ = "";
+        if (coorBuilder_ == null) {
+          coor_ = null;
+        } else {
+          coorBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        rotation_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7308,7 +7598,15 @@ public final class Basic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.result_ = result_;
+        if (coorBuilder_ == null) {
+          result.coor_ = coor_;
+        } else {
+          result.coor_ = coorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.rotation_ = rotation_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7358,10 +7656,11 @@ public final class Basic {
 
       public Builder mergeFrom(com.sysu.deepnavi.bean.Basic.DeepNaviRes other) {
         if (other == com.sysu.deepnavi.bean.Basic.DeepNaviRes.getDefaultInstance()) return this;
-        if (other.hasResult()) {
-          bitField0_ |= 0x00000001;
-          result_ = other.result_;
-          onChanged();
+        if (other.hasCoor()) {
+          mergeCoor(other.getCoor());
+        }
+        if (other.hasRotation()) {
+          setRotation(other.getRotation());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7370,7 +7669,13 @@ public final class Basic {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasResult()) {
+        if (!hasCoor()) {
+          return false;
+        }
+        if (!hasRotation()) {
+          return false;
+        }
+        if (!getCoor().isInitialized()) {
           return false;
         }
         return true;
@@ -7396,78 +7701,188 @@ public final class Basic {
       }
       private int bitField0_;
 
-      private java.lang.Object result_ = "";
+      private com.sysu.deepnavi.bean.Basic.Coor coor_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> coorBuilder_;
       /**
-       * <code>required string result = 1;</code>
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
        */
-      public boolean hasResult() {
+      public boolean hasCoor() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string result = 1;</code>
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
        */
-      public java.lang.String getResult() {
-        java.lang.Object ref = result_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            result_ = s;
+      public com.sysu.deepnavi.bean.Basic.Coor getCoor() {
+        if (coorBuilder_ == null) {
+          return coor_ == null ? com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance() : coor_;
+        } else {
+          return coorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder setCoor(com.sysu.deepnavi.bean.Basic.Coor value) {
+        if (coorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
-          return s;
+          coor_ = value;
+          onChanged();
         } else {
-          return (java.lang.String) ref;
+          coorBuilder_.setMessage(value);
         }
-      }
-      /**
-       * <code>required string result = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getResultBytes() {
-        java.lang.Object ref = result_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          result_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string result = 1;</code>
-       */
-      public Builder setResult(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        result_ = value;
-        onChanged();
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>required string result = 1;</code>
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
        */
-      public Builder clearResult() {
+      public Builder setCoor(
+          com.sysu.deepnavi.bean.Basic.Coor.Builder builderForValue) {
+        if (coorBuilder_ == null) {
+          coor_ = builderForValue.build();
+          onChanged();
+        } else {
+          coorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder mergeCoor(com.sysu.deepnavi.bean.Basic.Coor value) {
+        if (coorBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              coor_ != null &&
+              coor_ != com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance()) {
+            coor_ =
+              com.sysu.deepnavi.bean.Basic.Coor.newBuilder(coor_).mergeFrom(value).buildPartial();
+          } else {
+            coor_ = value;
+          }
+          onChanged();
+        } else {
+          coorBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public Builder clearCoor() {
+        if (coorBuilder_ == null) {
+          coor_ = null;
+          onChanged();
+        } else {
+          coorBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
-        result_ = getDefaultInstance().getResult();
+        return this;
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.Coor.Builder getCoorBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getCoorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      public com.sysu.deepnavi.bean.Basic.CoorOrBuilder getCoorOrBuilder() {
+        if (coorBuilder_ != null) {
+          return coorBuilder_.getMessageOrBuilder();
+        } else {
+          return coor_ == null ?
+              com.sysu.deepnavi.bean.Basic.Coor.getDefaultInstance() : coor_;
+        }
+      }
+      /**
+       * <pre>
+       * required string result = 1;
+       * </pre>
+       *
+       * <code>required .Coor coor = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder> 
+          getCoorFieldBuilder() {
+        if (coorBuilder_ == null) {
+          coorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.sysu.deepnavi.bean.Basic.Coor, com.sysu.deepnavi.bean.Basic.Coor.Builder, com.sysu.deepnavi.bean.Basic.CoorOrBuilder>(
+                  getCoor(),
+                  getParentForChildren(),
+                  isClean());
+          coor_ = null;
+        }
+        return coorBuilder_;
+      }
+
+      private float rotation_ ;
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public boolean hasRotation() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public float getRotation() {
+        return rotation_;
+      }
+      /**
+       * <code>required float rotation = 2;</code>
+       */
+      public Builder setRotation(float value) {
+        bitField0_ |= 0x00000002;
+        rotation_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string result = 1;</code>
+       * <code>required float rotation = 2;</code>
        */
-      public Builder setResultBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        result_ = value;
+      public Builder clearRotation() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rotation_ = 0F;
         onChanged();
         return this;
       }
@@ -7530,10 +7945,10 @@ public final class Basic {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_FeelSensorReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CoorSensorReq_descriptor;
+    internal_static_Coor_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CoorSensorReq_fieldAccessorTable;
+      internal_static_Coor_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DeepNaviReq_descriptor;
   private static final 
@@ -7554,21 +7969,20 @@ public final class Basic {
   static {
     java.lang.String[] descriptorData = {
       "\n\013basic.proto\"\036\n\rFeelSensorReq\022\r\n\005value\030" +
-      "\001 \002(\002\"0\n\rCoorSensorReq\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002" +
-      " \002(\002\022\t\n\001z\030\003 \002(\002\"\322\003\n\013DeepNaviReq\022\014\n\004time\030" +
-      "\001 \002(\003\022\r\n\005image\030\002 \001(\014\022$\n\014magneticList\030\003 \003" +
-      "(\0132\016.CoorSensorReq\022)\n\021accelerometerList\030" +
-      "\004 \003(\0132\016.CoorSensorReq\022\'\n\017orientationList" +
-      "\030\005 \003(\0132\016.CoorSensorReq\022%\n\rgyroscopeList\030" +
-      "\006 \003(\0132\016.CoorSensorReq\022#\n\013gravityList\030\007 \003" +
-      "(\0132\016.CoorSensorReq\022.\n\026linearAcceleration" +
-      "List\030\010 \003(\0132\016.CoorSensorReq\022.\n\026ambientTem" +
-      "peratureList\030\t \003(\0132\016.FeelSensorReq\022!\n\tli" +
-      "ghtList\030\n \003(\0132\016.FeelSensorReq\022$\n\014pressur" +
-      "eList\030\013 \003(\0132\016.FeelSensorReq\022%\n\rproximity" +
-      "List\030\014 \003(\0132\016.FeelSensorReq\022\020\n\010wifiList\030\r" +
-      " \003(\005\"\035\n\013DeepNaviRes\022\016\n\006result\030\001 \002(\tB\037\n\026c" +
-      "om.sysu.deepnavi.beanB\005Basic"
+      "\001 \002(\002\"\'\n\004Coor\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\022\t\n\001z" +
+      "\030\003 \002(\002\"\250\003\n\013DeepNaviReq\022\014\n\004time\030\001 \002(\003\022\r\n\005" +
+      "image\030\002 \001(\014\022\033\n\014magneticList\030\003 \003(\0132\005.Coor" +
+      "\022 \n\021accelerometerList\030\004 \003(\0132\005.Coor\022\036\n\017or" +
+      "ientationList\030\005 \003(\0132\005.Coor\022\034\n\rgyroscopeL" +
+      "ist\030\006 \003(\0132\005.Coor\022\032\n\013gravityList\030\007 \003(\0132\005." +
+      "Coor\022%\n\026linearAccelerationList\030\010 \003(\0132\005.C" +
+      "oor\022.\n\026ambientTemperatureList\030\t \003(\0132\016.Fe" +
+      "elSensorReq\022!\n\tlightList\030\n \003(\0132\016.FeelSen" +
+      "sorReq\022$\n\014pressureList\030\013 \003(\0132\016.FeelSenso" +
+      "rReq\022%\n\rproximityList\030\014 \003(\0132\016.FeelSensor" +
+      "Req\022\020\n\010wifiList\030\r \003(\005\022\n\n\002id\030\016 \001(\t\"4\n\013Dee" +
+      "pNaviRes\022\023\n\004coor\030\001 \002(\0132\005.Coor\022\020\n\010rotatio" +
+      "n\030\002 \002(\002B\037\n\026com.sysu.deepnavi.beanB\005Basic"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7588,24 +8002,24 @@ public final class Basic {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FeelSensorReq_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_CoorSensorReq_descriptor =
+    internal_static_Coor_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_CoorSensorReq_fieldAccessorTable = new
+    internal_static_Coor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CoorSensorReq_descriptor,
+        internal_static_Coor_descriptor,
         new java.lang.String[] { "X", "Y", "Z", });
     internal_static_DeepNaviReq_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_DeepNaviReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeepNaviReq_descriptor,
-        new java.lang.String[] { "Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList", "WifiList", });
+        new java.lang.String[] { "Time", "Image", "MagneticList", "AccelerometerList", "OrientationList", "GyroscopeList", "GravityList", "LinearAccelerationList", "AmbientTemperatureList", "LightList", "PressureList", "ProximityList", "WifiList", "Id", });
     internal_static_DeepNaviRes_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_DeepNaviRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeepNaviRes_descriptor,
-        new java.lang.String[] { "Result", });
+        new java.lang.String[] { "Coor", "Rotation", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

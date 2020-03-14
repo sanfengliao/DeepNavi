@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".ConfigActivity">
+        <activity android:name=".activity.ConfigActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,8 +21,9 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity2" />
+        <activity android:name=".activity.MapActivity" />
     </application>
 
     <uses-permission

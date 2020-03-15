@@ -1,6 +1,7 @@
 package com.sysu.example.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Size
@@ -44,64 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun useJavaWebSocket() {
-        if (DeepNaviManager.logger == null) {
-            DeepNaviManager.logger = AndroidLogLogger()
-        }
-        deepNaviManager = DeepNaviManager.get()
-
-        deepNaviManager.forceInit(this, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
-            var socket: WebSocketClient? = null
-
-            override fun connect() {
-                val url = "ws://" + (ConfigProperty.DEEPNAVI_URL.getValue2())
-                socket = object : WebSocketClient(URI.create(url)) {
-                    override fun onOpen(handshakedata: ServerHandshake?) {
-                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
-                    }
-
-                    override fun onClose(code: Int, reason: String?, remote: Boolean) {
-                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_DISCONNECT, code:$code, reason: $reason, remote: $remote")
-                    }
-
-                    override fun onMessage(bytes: ByteBuffer?) {
-                        DeepNaviManager.logger?.d(
-                            "MainActivity",
-                            "socket.receive('deepNavi' -- %s) -- onMessage(msg: ByteBuffer)",
-                            String(bytes?.array() ?: byteArrayOf())
-                        )
-                        if (bytes != null) onMessage(Basic.DeepNaviRes.parseFrom(bytes.array()))
-                    }
-
-                    override fun onMessage(message: String?) {
-                        DeepNaviManager.logger?.d("MainActivity", "socket.receive('deepNavi' -- %s) -- onMessage(msg: String)", message)
-                        if (message != null) onMessage(Basic.DeepNaviRes.parseFrom(message.toByteArray()))
-                    }
-
-                    override fun onError(ex: Exception?) {
-                        DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_ERROR")
-                    }
-                }
-                DeepNaviManager.logger?.d("MainActivity", "socket.constructor -- url: %s", url)
-                socket?.connect()
-            }
-
-            override fun close() {
-                socket?.close()
-                socket = null
-            }
-
-            override fun send(req: Basic.DeepNaviReq) {
-                DeepNaviManager.logger?.d(DEFAULT_TAG, "socket.state: ${socket?.readyState}, req_len: ${req.toByteArray().size}")
-                if (socket?.readyState == ReadyState.OPEN) socket?.send(req.toByteArray())
-            }
-
-            override fun onMessage(res: Basic.DeepNaviRes) {
-                deepNaviManager.onMessage(res)
-            }
-
-            override val isConnected: Boolean
-                get() = socket?.isOpen ?: false
-        }, 1000 / ConfigProperty.DEEPNAVI_FREQUENCY.getValue2())
+        deepNaviManager = initDeepNaviManagerByWS(this)
 
         val configDataSet = ConfigProperty.SIGNAL_CONFIG_SET.value?.split(',')?.toSet() ?: emptySet()
         val previewView: View = findViewById(R.id.test_textureview) ?: findViewById(R.id.test_surfaceview)
@@ -224,5 +168,75 @@ class MainActivity : AppCompatActivity() {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    companion object {
+        fun initDeepNaviManagerByWS(activity: Activity, callback: ((Basic.DeepNaviRes) -> Unit)? = null): DeepNaviManager {
+            if (DeepNaviManager.logger == null) {
+                DeepNaviManager.logger = AndroidLogLogger()
+            }
+            val deepNaviManager = DeepNaviManager.get()
+            if (!deepNaviManager.isInited) {
+                deepNaviManager.forceInit(activity, object : SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes> {
+                    var socket: WebSocketClient? = null
+
+                    override fun connect() {
+                        val url = "ws://" + (ConfigProperty.DEEPNAVI_URL.getValue2())
+                        socket = object : WebSocketClient(URI.create(url)) {
+                            override fun onOpen(handshakedata: ServerHandshake?) {
+                                DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_CONNECT")
+                            }
+
+                            override fun onClose(code: Int, reason: String?, remote: Boolean) {
+                                DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_DISCONNECT, code:$code, reason: $reason, remote: $remote")
+                            }
+
+                            override fun onMessage(bytes: ByteBuffer?) {
+                                DeepNaviManager.logger?.d(
+                                    "MainActivity",
+                                    "socket.receive('deepNavi' -- %s) -- onMessage(msg: ByteBuffer)",
+                                    String(bytes?.array() ?: byteArrayOf())
+                                )
+                                if (bytes != null) {
+                                    onMessage(Basic.DeepNaviRes.parseFrom(bytes.array()))
+                                }
+                            }
+
+                            override fun onMessage(message: String?) {
+                                DeepNaviManager.logger?.d("MainActivity", "socket.receive('deepNavi' -- %s) -- onMessage(msg: String)", message)
+                                if (message != null) {
+                                    onMessage(Basic.DeepNaviRes.parseFrom(message.toByteArray()))
+                                }
+                            }
+
+                            override fun onError(ex: Exception?) {
+                                DeepNaviManager.logger?.d(DEFAULT_TAG, "EVENT_ERROR")
+                            }
+                        }
+                        DeepNaviManager.logger?.d("MainActivity", "socket.constructor -- url: %s", url)
+                        socket?.connect()
+                    }
+
+                    override fun close() {
+                        socket?.close()
+                        socket = null
+                    }
+
+                    override fun send(req: Basic.DeepNaviReq) {
+                        DeepNaviManager.logger?.d(DEFAULT_TAG, "socket.state: ${socket?.readyState}, req_len: ${req.toByteArray().size}")
+                        if (socket?.readyState == ReadyState.OPEN) socket?.send(req.toByteArray())
+                    }
+
+                    override fun onMessage(res: Basic.DeepNaviRes) {
+                        deepNaviManager.onMessage(res)
+                        callback?.invoke(res)
+                    }
+
+                    override val isConnected: Boolean
+                        get() = socket?.isOpen ?: false
+                }, 1000 / ConfigProperty.DEEPNAVI_FREQUENCY.getValue2())
+            }
+            return deepNaviManager
+        }
     }
 }

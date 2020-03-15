@@ -21,7 +21,7 @@ import android.view.*
 @Deprecated(message = "Please use CameraUtil2")
 open class CameraUtil1(
     private val activity: Activity,
-    private val previewView: View,
+    private val previewView: View?,
     private val previewCallback: (data: ByteArray, camera: Camera, width: Int, height: Int) -> Unit,
     private val frameRate: Int = 50,
     private val pictureSize: Size = Size(1080, 1920),

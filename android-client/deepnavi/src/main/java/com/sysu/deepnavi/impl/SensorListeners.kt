@@ -9,9 +9,9 @@ import com.sysu.deepnavi.bean.Basic
 object SensorListeners {
     val DEFAULT_VALUE_SENSOR_CONFIG = Basic.DeepNaviReq.getDescriptor().fields.filter { it != null && it.name != "time" }.map { it.name }.toHashSet()
 
-    private fun createCoorSensorReq(event: SensorEvent, xIndex: Int = 0, yIndex: Int = 1, zIndex: Int = 2): Basic.CoorSensorReq {
+    private fun createCoorSensorReq(event: SensorEvent, xIndex: Int = 0, yIndex: Int = 1, zIndex: Int = 2): Basic.Coor {
         val values = event.values
-        return Basic.CoorSensorReq.newBuilder()
+        return Basic.Coor.newBuilder()
             .setX(values[xIndex])
             .setY(values[yIndex])
             .setZ(values[zIndex])

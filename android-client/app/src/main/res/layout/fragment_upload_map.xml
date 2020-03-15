@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/half_white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="20dp">
 
         <TextView
@@ -16,16 +16,14 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/upload_map"
-            android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/select_map_drawable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/select_map_image"
-            app:layout_constraintTop_toBottomOf="@id/title" />
+            android:text="@string/select_map_image" />
 
         <EditText
             android:id="@+id/map_name"
@@ -35,8 +33,7 @@
             android:hint="@string/please_input_map_s_name"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/select_map_drawable" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_bitmap_size_x"
@@ -46,8 +43,7 @@
             android:hint="@string/please_input_bitmap_width"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_name" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_bitmap_size_y"
@@ -57,8 +53,7 @@
             android:hint="@string/please_input_bitmap_height"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_x" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_bitmap_size_z"
@@ -68,8 +63,7 @@
             android:hint="@string/please_input_bitmap_s_depth"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_y" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_actual_size_x"
@@ -79,8 +73,7 @@
             android:hint="@string/please_input_map_s_actual_width"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_bitmap_size_z" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_actual_size_y"
@@ -90,8 +83,7 @@
             android:hint="@string/please_input_map_s_actual_height"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_actual_size_x" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/map_actual_size_z"
@@ -101,16 +93,44 @@
             android:hint="@string/please_input_map_s_actual_depth"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/map_actual_size_y" />
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/map_rotation_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/angle_of_rotation_about_the_x_axis"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/map_rotation_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/angle_of_rotation_about_the_y_axis"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/map_rotation_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/angle_of_rotation_about_the_z_axis"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/set_origin_point"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/set_origin_point"
-            app:layout_constraintTop_toBottomOf="@id/map_actual_size_z" />
+            android:text="@string/set_origin_point" />
 
         <Button
             android:id="@+id/cancel"
@@ -118,20 +138,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@android:string/cancel"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/ok"
-            app:layout_constraintTop_toBottomOf="@id/set_origin_point" />
+            android:text="@android:string/cancel" />
 
         <Button
             android:id="@+id/ok"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@android:string/ok"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/cancel"
-            app:layout_constraintRight_toRightOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@android:string/ok" />
+    </LinearLayout>
 </ScrollView>

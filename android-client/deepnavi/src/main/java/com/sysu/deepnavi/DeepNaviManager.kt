@@ -28,16 +28,16 @@ enum class Orientation {
     LEFT,
     FORWARD,
     RIGHT,
-    TOP,
-    BOTTOM,
+    UP,
+    DOWN,
     BACKWARD;
 
     override fun toString(): String = when (this) {
         LEFT -> "1"
         FORWARD -> "2"
         RIGHT -> "4"
-        TOP -> "8"
-        BOTTOM -> "16"
+        UP -> "8"
+        DOWN -> "16"
         BACKWARD -> "32"
     }
 
@@ -45,8 +45,8 @@ enum class Orientation {
         LEFT -> 1
         FORWARD -> 2
         RIGHT -> 4
-        TOP -> 8
-        BOTTOM -> 16
+        UP -> 8
+        DOWN -> 16
         BACKWARD -> 32
     }
 
@@ -55,10 +55,24 @@ enum class Orientation {
             "1" -> LEFT
             "2" -> FORWARD
             "4" -> RIGHT
-            "8" -> TOP
-            "16" -> BOTTOM
+            "8" -> UP
+            "16" -> DOWN
             "32" -> BACKWARD
             else -> FORWARD
+        }
+
+        fun fromXRotation(r: Float) = when {
+            r == 180f -> BACKWARD
+            r == 0f -> FORWARD
+            r > 0f -> RIGHT
+            else -> LEFT
+        }
+
+        fun fromYRotation(r: Float) = when {
+            r == 180f -> BACKWARD
+            r == 0f -> FORWARD
+            r > 0f -> UP
+            else -> DOWN
         }
     }
 }
@@ -73,6 +87,8 @@ class DeepNaviManager private constructor() : SensorEventListener {
     private var sensorManager: SensorManager? = null
     private var socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>? = null
     private var interval: Long = defaultInterval
+
+    var pathId: String? = null
 
     companion object {
         private const val defaultInterval: Long = 1000 / 3
@@ -89,6 +105,10 @@ class DeepNaviManager private constructor() : SensorEventListener {
     }
 
     private var hasInited = false
+
+    val isInited: Boolean
+        get() = hasInited
+
     fun init(context: Context, socket: SocketInter<Basic.DeepNaviReq, Basic.DeepNaviRes>, interval: Long = defaultInterval): DeepNaviManager {
         if (hasInited) {
             return this
@@ -153,6 +173,9 @@ class DeepNaviManager private constructor() : SensorEventListener {
                 logger?.d(DEFAULT_TAG, "DeepNaviManager.send{time: %d}, field: %s, size: 1", reqBuilder.time, field.name)
             }
         }
+        if (pathId != null) {
+            reqBuilder.id = pathId
+        }
         if (running) {
             try {
                 socket!!.send(reqBuilder.build())
@@ -186,12 +209,12 @@ class DeepNaviManager private constructor() : SensorEventListener {
 
     fun onMessage(res: Basic.DeepNaviRes) {
         val v = view ?: return
-        val resId = when (Orientation.fromString(res.result)) {
+        val resId = when (Orientation.fromXRotation(res.rotation)) {
             Orientation.LEFT -> R.drawable.go_left
             Orientation.FORWARD -> R.drawable.go_forward
             Orientation.RIGHT -> R.drawable.go_right
-            Orientation.TOP -> R.drawable.go_up
-            Orientation.BOTTOM -> R.drawable.go_down
+            Orientation.UP -> R.drawable.go_up
+            Orientation.DOWN -> R.drawable.go_down
             Orientation.BACKWARD -> R.drawable.go_backward
         }
         if (v is ImageView) {

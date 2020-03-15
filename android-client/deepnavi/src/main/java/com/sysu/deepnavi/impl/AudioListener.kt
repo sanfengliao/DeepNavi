@@ -21,7 +21,7 @@ import java.util.LinkedList
 
 class AudioListener(
     activity: Activity,
-    view: View,
+    view: View?,
     private val frameRate: Int = 50,
     private val pictureSize: Size = Size(1080, 1920),
     autoFocus: Boolean = true

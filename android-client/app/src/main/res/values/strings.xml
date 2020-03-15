@@ -59,4 +59,8 @@
     <string name="point_index">point index</string>
     <string name="as_start_point">as start point</string>
     <string name="as_end_point">as end point</string>
+    <string name="point_and_location">point and location</string>
+    <string name="angle_of_rotation_about_the_x_axis">angle of rotation about the x-axis</string>
+    <string name="angle_of_rotation_about_the_y_axis">angle of rotation about the y-axis</string>
+    <string name="angle_of_rotation_about_the_z_axis">angle of rotation about the z-axis</string>
 </resources>

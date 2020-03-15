@@ -43,6 +43,18 @@
             tools:ignore="RtlSymmetry" />
 
         <Switch
+            android:id="@+id/is_point_and_loc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:text="@string/point_and_location"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:ignore="RtlSymmetry" />
+
+        <Switch
             android:id="@+id/is_percentage_mode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

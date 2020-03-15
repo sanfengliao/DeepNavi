@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -279,18 +280,20 @@ fun rotateYUV420Degree270(data: ByteArray, imageWidth: Int, imageHeight: Int): B
  * 获取 相机权限
  * @param activity 开启权限必要的activity
  */
-fun requestCameraPermissions(activity: Activity) {
-    if (checkCameraPermission(activity)) {
-        ActivityCompat.requestPermissions(
-            activity,
-            arrayOf(
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA
-            ),
-            PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
-        )
-        Log.d(TAG, "requestPermissions")
+fun requestCameraPermissions(contextWrapper: ContextWrapper) {
+    if (checkCameraPermission(contextWrapper)) {
+        if (contextWrapper is Activity) {
+            ActivityCompat.requestPermissions(
+                contextWrapper,
+                arrayOf(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA
+                ),
+                PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE
+            )
+            Log.d(TAG, "requestPermissions")
+        }
     }
 }
 

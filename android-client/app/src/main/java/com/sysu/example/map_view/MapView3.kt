@@ -1,4 +1,4 @@
-package com.sysu.example.map
+package com.sysu.example.map_view
 
 // 坐标系形式
 

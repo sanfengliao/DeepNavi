@@ -1,6 +1,6 @@
 @file:Suppress("unused", "LeakingThis")
 
-package com.sysu.example.map
+package com.sysu.example.map_view
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -732,7 +732,7 @@ open class MapContainer : ViewGroup, MapView2.OnMapStateChangedListener {
                 val child = getChildAt(it)
                 child.layout(0, 0, child.measuredWidth, child.measuredHeight)
             }
-            isFirstLayout = false
+            // isFirstLayout = false
         }
     }
 }

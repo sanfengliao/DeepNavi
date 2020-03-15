@@ -36,7 +36,7 @@ void setTorchMode(String cameraId, boolean enabled)*/
 
 open class CameraUtil2(
     open val activity: Activity,
-    open val previewView: View,
+    open val previewView: View?,
     open val pictureSize: Size = Size(1080, 1920),
     open val previewCallback: (data: ByteArray, imageReader: ImageReader, width: Int, height: Int) -> Unit
 ) {
@@ -127,9 +127,11 @@ open class CameraUtil2(
                         surface = Surface(mView.surfaceTexture)
                         surface!!
                     }
-                    else -> return
-                } ?: return
-                previewRequestBuilder.addTarget(workingSurface)
+                    else -> null
+                }
+                if (workingSurface != null) {
+                    previewRequestBuilder.addTarget(workingSurface)
+                }
 
                 val streamConfigurationMap = cameraCharacteristics!!.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
                         as StreamConfigurationMap
@@ -158,8 +160,10 @@ open class CameraUtil2(
 
                 camera.createCaptureSession(
                     when {
-                        imageReader != null -> listOf(workingSurface, imageReader!!.surface)
-                        else -> listOf(workingSurface)
+                        imageReader != null && workingSurface != null -> listOf(workingSurface, imageReader!!.surface)
+                        workingSurface != null -> listOf(workingSurface)
+                        imageReader != null -> listOf(imageReader!!.surface)
+                        else -> return
                     }, captureSessionStateCallback, backgroundHandler
                 )
             }
@@ -251,6 +255,7 @@ open class CameraUtil2(
             return
         }
         val ids: Array<String> = cameraManager.cameraIdList
+        val previewView = this.previewView
         for (id in ids) {
             val characteristics: CameraCharacteristics = cameraManager.getCameraCharacteristics(id)
             val orientation = characteristics.get(CameraCharacteristics.LENS_FACING)!!
@@ -262,9 +267,15 @@ open class CameraUtil2(
                     if (!streamConfigurationMap.isOutputSupportedFor(ImageFormat.JPEG)) {
                         return
                     }
-                    val supportedSizes = streamConfigurationMap.getOutputSizes(previewView::class.java)
-                        ?: streamConfigurationMap.getOutputSizes(ImageFormat.JPEG) ?: continue
-                    selectPreviewSize(supportedSizes.toList(), previewView.width, previewView.height)?.first ?: continue
+                    if (previewView != null) {
+                        val supportedSizes = streamConfigurationMap.getOutputSizes(previewView.javaClass)
+                            ?: streamConfigurationMap.getOutputSizes(ImageFormat.JPEG) ?: continue
+                        selectPreviewSize(supportedSizes.toList(), previewView.width, previewView.height)?.first ?: continue
+                    } else {
+                        val supportedSizes = streamConfigurationMap.getOutputSizes(ImageReader::class.java)
+                            ?: streamConfigurationMap.getOutputSizes(ImageFormat.JPEG) ?: continue
+                        selectPreviewSize(supportedSizes.toList(), pictureSize.width, pictureSize.height)?.first ?: continue
+                    }
                     cameraId = id
                     sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION) ?: 0
                     cameraCharacteristics = characteristics

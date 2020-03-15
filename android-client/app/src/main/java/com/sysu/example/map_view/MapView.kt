@@ -1,6 +1,6 @@
 @file:Suppress("unused", "LeakingThis")
 
-package com.sysu.example.map
+package com.sysu.example.map_view
 
 import android.content.Context
 import android.graphics.Bitmap

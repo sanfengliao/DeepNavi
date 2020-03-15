@@ -73,8 +73,16 @@ private fun httpSync(
     } catch (e: Exception) {
         HttpResult(con, null, resCode, e)
     } finally {
-        con.inputStream?.close()
-        con.errorStream?.close()
+        try {
+            con.inputStream?.close()
+        } catch (e: Exception) {
+            return HttpResult(con, null, -1, e)
+        }
+        try {
+            con.errorStream?.close()
+        } catch (e: Exception) {
+            return HttpResult(con, null, -1, e)
+        }
     }
 }
 

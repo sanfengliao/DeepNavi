@@ -181,6 +181,9 @@ class BaseRecyclerAdapter<T>(
     }
 
     fun clear() {
+        if (dataSet.isEmpty()) {
+            return
+        }
         val itemCount = dataSet.size
         dataSet.clear()
         notifyItemRangeRemoved(0, itemCount)

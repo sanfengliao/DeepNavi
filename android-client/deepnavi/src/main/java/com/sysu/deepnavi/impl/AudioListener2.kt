@@ -12,7 +12,7 @@ import java.util.LinkedList
 
 open class AudioListener2(
     activity: Activity,
-    view: View,
+    view: View?,
     private val frameRate: Int = 50,
     private val pictureSize: Size = Size(1080, 1920),
     autoFocus: Boolean = true
@@ -22,7 +22,7 @@ open class AudioListener2(
     private var data: ByteString? = null
     private val dataList: LinkedList<ByteString> = LinkedList()
 
-    val cameraUtil = CameraUtil2(activity, view, pictureSize) { data, imageReader, width, height ->
+    val cameraUtil = CameraUtil2(activity, view, pictureSize) { data, _, width, height ->
         var jpegData = data
         if (width != pictureSize.width || height != pictureSize.height) {
             jpegData = bitmapToByteArray(createScaledBitmap(jpegData, pictureSize.width, pictureSize.height))

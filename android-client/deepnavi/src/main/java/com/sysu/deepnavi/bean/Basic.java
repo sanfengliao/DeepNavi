@@ -7188,6 +7188,15 @@ public final class Basic {
      * <code>required float rotation = 2;</code>
      */
     float getRotation();
+
+    /**
+     * <code>required int32 flag = 3;</code>
+     */
+    boolean hasFlag();
+    /**
+     * <code>required int32 flag = 3;</code>
+     */
+    int getFlag();
   }
   /**
    * Protobuf type {@code DeepNaviRes}
@@ -7203,6 +7212,7 @@ public final class Basic {
     }
     private DeepNaviRes() {
       rotation_ = 0F;
+      flag_ = 0;
     }
 
     @Override
@@ -7245,6 +7255,11 @@ public final class Basic {
             case 21: {
               bitField0_ |= 0x00000002;
               rotation_ = input.readFloat();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              flag_ = input.readInt32();
               break;
             }
             default: {
@@ -7328,6 +7343,21 @@ public final class Basic {
       return rotation_;
     }
 
+    public static final int FLAG_FIELD_NUMBER = 3;
+    private int flag_;
+    /**
+     * <code>required int32 flag = 3;</code>
+     */
+    public boolean hasFlag() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 flag = 3;</code>
+     */
+    public int getFlag() {
+      return flag_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @Override
     public final boolean isInitialized() {
@@ -7340,6 +7370,10 @@ public final class Basic {
         return false;
       }
       if (!hasRotation()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFlag()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7360,6 +7394,9 @@ public final class Basic {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, rotation_);
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, flag_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7376,6 +7413,10 @@ public final class Basic {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, rotation_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, flag_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7405,6 +7446,11 @@ public final class Basic {
             == Float.floatToIntBits(
                 other.getRotation()));
       }
+      result = result && (hasFlag() == other.hasFlag());
+      if (hasFlag()) {
+        result = result && (getFlag()
+            == other.getFlag());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7424,6 +7470,10 @@ public final class Basic {
         hash = (37 * hash) + ROTATION_FIELD_NUMBER;
         hash = (53 * hash) + Float.floatToIntBits(
             getRotation());
+      }
+      if (hasFlag()) {
+        hash = (37 * hash) + FLAG_FIELD_NUMBER;
+        hash = (53 * hash) + getFlag();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7567,6 +7617,8 @@ public final class Basic {
         bitField0_ = (bitField0_ & ~0x00000001);
         rotation_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
+        flag_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -7607,6 +7659,10 @@ public final class Basic {
           to_bitField0_ |= 0x00000002;
         }
         result.rotation_ = rotation_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.flag_ = flag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7662,6 +7718,9 @@ public final class Basic {
         if (other.hasRotation()) {
           setRotation(other.getRotation());
         }
+        if (other.hasFlag()) {
+          setFlag(other.getFlag());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7673,6 +7732,9 @@ public final class Basic {
           return false;
         }
         if (!hasRotation()) {
+          return false;
+        }
+        if (!hasFlag()) {
           return false;
         }
         if (!getCoor().isInitialized()) {
@@ -7886,6 +7948,38 @@ public final class Basic {
         onChanged();
         return this;
       }
+
+      private int flag_ ;
+      /**
+       * <code>required int32 flag = 3;</code>
+       */
+      public boolean hasFlag() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 flag = 3;</code>
+       */
+      public int getFlag() {
+        return flag_;
+      }
+      /**
+       * <code>required int32 flag = 3;</code>
+       */
+      public Builder setFlag(int value) {
+        bitField0_ |= 0x00000004;
+        flag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 flag = 3;</code>
+       */
+      public Builder clearFlag() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        flag_ = 0;
+        onChanged();
+        return this;
+      }
       @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7980,9 +8074,10 @@ public final class Basic {
       "elSensorReq\022!\n\tlightList\030\n \003(\0132\016.FeelSen" +
       "sorReq\022$\n\014pressureList\030\013 \003(\0132\016.FeelSenso" +
       "rReq\022%\n\rproximityList\030\014 \003(\0132\016.FeelSensor" +
-      "Req\022\020\n\010wifiList\030\r \003(\005\022\n\n\002id\030\016 \001(\t\"4\n\013Dee" +
+      "Req\022\020\n\010wifiList\030\r \003(\005\022\n\n\002id\030\016 \001(\t\"B\n\013Dee" +
       "pNaviRes\022\023\n\004coor\030\001 \002(\0132\005.Coor\022\020\n\010rotatio" +
-      "n\030\002 \002(\002B\037\n\026com.sysu.deepnavi.beanB\005Basic"
+      "n\030\002 \002(\002\022\014\n\004flag\030\003 \002(\005B\037\n\026com.sysu.deepna" +
+      "vi.beanB\005Basic"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8019,7 +8114,7 @@ public final class Basic {
     internal_static_DeepNaviRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeepNaviRes_descriptor,
-        new String[] { "Coor", "Rotation", });
+        new String[] { "Coor", "Rotation", "Flag", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

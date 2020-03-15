@@ -34,4 +34,5 @@ message DeepNaviRes {
 	// required string result = 1;
 	required Coor coor = 1;
 	required float rotation = 2;
+	required int32 flag = 3;
 }

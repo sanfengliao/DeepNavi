@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <HorizontalScrollView
+            android:id="@+id/config_map_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -55,7 +56,39 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <com.sysu.example.map.MapContainer
+        <LinearLayout
+            android:id="@+id/navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/cancel_navigation"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@android:string/cancel" />
+
+            <Button
+                android:id="@+id/stop_navigation"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/stop" />
+
+            <Button
+                android:id="@+id/start_navigation"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/start" />
+        </LinearLayout>
+
+        <com.sysu.example.map_view.MapContainer
             android:id="@+id/map_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"

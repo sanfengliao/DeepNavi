@@ -33,6 +33,9 @@ open class DeepNaviMap {
     open var originInPlan = INVALID_FLOAT_ARRAY
     open var originInActual = INVALID_FLOAT_ARRAY
     open var rotationAngle = INVALID_FLOAT_ARRAY
+    open var isClockWise: Boolean = false
+    open var standardVector = "0,1"
+    open var offsetAngle = 0f
 
     open var planPath: String? = null
     open var modelPath: String? = null
@@ -67,6 +70,16 @@ open class DeepNaviMap {
     // 从手机坐标系到模型坐标系
     open fun worldToModel(coordinate: DeepNaviCoordinator, actual: Boolean = false): DeepNaviCoordinator =
         DeepNaviCoordinator(worldToModel(listOf(coordinate.x, coordinate.y, coordinate.z), actual))
+
+    open fun percentagePoint(x: Float, y: Float, z: Float = 0f): DeepNaviPoint {
+        val point = DeepNaviPoint()
+        if (id != null) {
+            point.mapId = id!!
+        }
+        point.planCoordinate = DeepNaviCoordinator(x * planSize[0], y * planSize[1], z * planSize[2])
+        point.actualCoordinate = DeepNaviCoordinator(x * actualSize[0], y * actualSize[1], z * actualSize[2])
+        return point
+    }
 }
 
 /**

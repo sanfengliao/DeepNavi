@@ -25,6 +25,7 @@ import com.sysu.example.utils.ContextApi
 import com.sysu.example.utils.returnToast2
 import com.sysu.example.utils.returnToast3
 import com.sysu.example.utils.sendMultiPart
+import kotlinx.android.synthetic.main.fragment_upload_map.is_clock_wise
 import kotlinx.android.synthetic.main.fragment_upload_map.map_actual_size_x
 import kotlinx.android.synthetic.main.fragment_upload_map.map_actual_size_y
 import kotlinx.android.synthetic.main.fragment_upload_map.map_actual_size_z
@@ -32,6 +33,7 @@ import kotlinx.android.synthetic.main.fragment_upload_map.map_bitmap_size_x
 import kotlinx.android.synthetic.main.fragment_upload_map.map_bitmap_size_y
 import kotlinx.android.synthetic.main.fragment_upload_map.map_bitmap_size_z
 import kotlinx.android.synthetic.main.fragment_upload_map.map_name
+import kotlinx.android.synthetic.main.fragment_upload_map.map_offset_angle
 import kotlinx.android.synthetic.main.fragment_upload_map.map_rotation_x
 import kotlinx.android.synthetic.main.fragment_upload_map.map_rotation_y
 import kotlinx.android.synthetic.main.fragment_upload_map.map_rotation_z
@@ -52,6 +54,9 @@ open class UploadMapDialogFragment(
             startActivityForResult(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI), IMAGE_RESULT_CODE)
         }
         setOriginPoint()
+        map_offset_angle.setText("0")
+        map_bitmap_size_z.setText("0")
+        map_actual_size_z.setText("0")
         view.findViewById<Button>(R.id.ok).setOnClickListener ok@{
             val bitmap = this.bitmap ?: return@ok returnToast3("map's bitmap should be select")
             mapInfo.name = map_name.text?.toString()?.trim() ?: return@ok returnToast3("map's name should not be empty")
@@ -61,6 +66,8 @@ open class UploadMapDialogFragment(
             if (mapInfo.originInPlan === INVALID_FLOAT_ARRAY) {
                 return@ok returnToast3("you should select the origin point")
             }
+            mapInfo.isClockWise = is_clock_wise.isChecked
+            mapInfo.offsetAngle = map_offset_angle.text?.toString()?.toFloatOrNull() ?: 0f
             uploadMap(bitmap, mapInfo, mapInfoUpdater)
         }
         view.findViewById<Button>(R.id.cancel)?.setOnClickListener {

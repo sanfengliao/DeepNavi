@@ -13,7 +13,7 @@ import androidx.fragment.app.DialogFragment
 
 // [DialogFragment使用小结](https://www.jianshu.com/p/0861ee5b9028)
 
-open class BaseDialogFragment(
+abstract class BaseDialogFragment(
     @LayoutRes open val layoutResId: Int,
     open var fullScreen: Boolean = true
 ) : DialogFragment() {

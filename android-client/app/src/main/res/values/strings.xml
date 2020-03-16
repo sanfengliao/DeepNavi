@@ -63,4 +63,6 @@
     <string name="angle_of_rotation_about_the_x_axis">angle of rotation about the x-axis</string>
     <string name="angle_of_rotation_about_the_y_axis">angle of rotation about the y-axis</string>
     <string name="angle_of_rotation_about_the_z_axis">angle of rotation about the z-axis</string>
+    <string name="is_clock_wise">is clock wise</string>
+    <string name="please_input_offset_angle">please input offset angle</string>
 </resources>

@@ -125,6 +125,24 @@
             android:inputType="number"
             android:textSize="16sp" />
 
+        <Switch
+            android:id="@+id/is_clock_wise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:text="@string/is_clock_wise" />
+
+        <EditText
+            android:id="@+id/map_offset_angle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/please_input_offset_angle"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="16sp" />
+
         <Button
             android:id="@+id/set_origin_point"
             android:layout_width="match_parent"
@@ -132,19 +150,27 @@
             android:layout_marginTop="10dp"
             android:text="@string/set_origin_point" />
 
-        <Button
-            android:id="@+id/cancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@android:string/cancel" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/ok"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@android:string/ok" />
+            <Button
+                android:id="@+id/cancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@android:string/cancel" />
+
+            <Button
+                android:id="@+id/ok"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@android:string/ok" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

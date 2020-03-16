@@ -79,6 +79,7 @@ open class AddPointDialogFragment(
                 addPoint.actualCoordinate = DeepNaviCoordinator(xF, yF, zF)
             }
             if (mapInfo.id != null) {
+                addPoint.worldToModel(mapInfo)
                 addPoint.mapId = mapInfo.id!!
                 if (addPoint(addPoint, mapInfo)) {
                     return@ok returnToast3("error occurred while parse AddPoint object to json")
@@ -109,7 +110,6 @@ open class AddPointDialogFragment(
             }, null, ReflectJsonApi.toJsonOrNull(addPoint)?.toByteArray()
                 ?: return true
         ) addPointRes@{
-            addPoint.worldToModel(mapInfo)
             val content = it?.content ?: return@addPointRes returnToast3("no response while add point: $it")
             val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
                 ?: return@addPointRes returnToast3("jsonObj parse error occurred while add point: $it")
@@ -120,7 +120,7 @@ open class AddPointDialogFragment(
                     ?: return@addPointRes returnToast3("no point id")
                 if (flag) {
                     updatePoint(2, pointId)
-                } else {
+                } else if (!is_point_and_loc.isChecked) {
                     updatePoint(1)
                 }
                 dismiss()

@@ -712,6 +712,7 @@ open class MapContainer : ViewGroup, MapView2.OnMapStateChangedListener {
             onChanged(mMapView.getMatrixRect())
         }, markerAnimDuration.toLong() + 200)
         isAnimStarted = true
+        isAnimFinished = true
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

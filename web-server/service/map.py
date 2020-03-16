@@ -13,13 +13,13 @@ redisDao = RedisDao()
 def calDis(src: dict, dist: dict) -> float:
     return math.sqrt((src['x'] - dist['x']) * (src['x'] - dist['x']) + (src['y'] - dist['y']) * (src['y'] - dist['y']))
 
-def calAngle(v1: dict, v2: dict) -> float:
+def calAngle(v1: dict, v2: dict, isClockWise:bool=False) -> float:
     a = v1['x'] * v2['x'] + v1['y'] * v2['y']
     v1l = math.sqrt(v1['x'] * v1['x'] + v1['y'] * v1['y'])
     v2l = math.sqrt(v2['x'] * v2['x'] + v2['y'] * v2['y'])
     v1fv2 = v2['x'] * v1['y'] - v1['x']*v2['y']
     angle = math.acos(a / (v1l * v2l)) * 180 / math.pi
-    if v1fv2 < 0:
+    if v1fv2 < 0 and isClockWise:
         angle = -angle
     return angle
 
@@ -46,7 +46,7 @@ class MapService:
             return 1
         return 0
 
-    def calAngles(self, pathResult: typing.List[dict], standardVector: dict) -> typing.List[float]:
+    def calAngles(self, pathResult: typing.List[dict], standardVector: dict, isClockWise:bool) -> typing.List[float]:
         i = 0
         angles = []
         while i < len(pathResult) - 1:
@@ -56,7 +56,7 @@ class MapService:
                 'x': point2['x'] - point1['x'],
                 'y': point2['y'] - point1['y']
             }
-            angles.append(calAngle(v1, standardVector))
+            angles.append(calAngle(v1, standardVector, isClockWise))
             i += 1
         return angles
     def navi(self, src:dict, dst:dict, mid:str) -> typing.Dict[str, dict]:
@@ -108,7 +108,7 @@ class MapService:
             'x': m.standardVector[0],
             'y': m.standardVector[1]
         }
-        angles = self.calAngles(pathResult, standardVector)
+        angles = self.calAngles(pathResult, standardVector, m.isClockwise)
         saveResult = {
             'mapId': mid,
             'index': 0,

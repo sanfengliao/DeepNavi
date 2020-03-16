@@ -54,10 +54,11 @@ def generateReq():
     pressure.value = 20
     proximity = req.proximityList.add()
     proximity.value = 20
-    req.id = '52aeb9c0672f11eab7b6001e64cce6eb'
+    req.id = '0b43d7b4673c11eab552001e64cce6eb'
     return req
 
 class TestNavi(unittest.TestCase):
     def testLoc(self):
         req = generateReq()
-        print(service.predict(req))
+        for i in range(50):
+            print(service.predict(req))

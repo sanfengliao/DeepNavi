@@ -19,4 +19,4 @@ class TestService(unittest.TestCase):
         # print(mapService.navi({'x': 0, 'y': 60}, {'x': -50, 'y': 70}, '5e68ca6e148277137d1c62b1'))
         # print(mapService.navi({'x': 0, 'y': 10}, {'x': -50, 'y': 70}, '5e68ca6e148277137d1c62b1'))
         # print(mapService.navi({'x': -50, 'y': 10}, {'x': 0, 'y': 10}, '5e68ca6e148277137d1c62b1'))
-        print(mapService.navi({'x': 0, 'y': 00}, {'x': 0, 'y': 70}, '5e68ca6e148277137d1c62b1'))
+        print(mapService.navi({'x': 0, 'y': 70}, {'x': -50, 'y': 0}, '5e68ca6e148277137d1c62b1'))

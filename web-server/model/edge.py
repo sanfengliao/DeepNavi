@@ -16,7 +16,7 @@ class Edge:
 			}
 		self.id = ''
 		self.mapId = mapId
-		self.edgeWidth = 1
+		self.edgeWidth = 0.5
 		if 'id' in kwargs:
 			self.id = kwargs['id']
 		if 'mapId' in kwargs:

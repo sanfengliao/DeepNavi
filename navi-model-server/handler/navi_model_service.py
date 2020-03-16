@@ -13,5 +13,5 @@ class NaviModelServiceHandler:
         loc, angle = self.deepNaviModel.predict(model)
         result = LocationResult()
         result.coor = Coor(x=loc[0], y=loc[1], z=loc[2])
-        result.rotation = angle[0]
+        result.rotation = angle[2]
         return result

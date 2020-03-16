@@ -40,19 +40,40 @@ class MapHandler(RequestHandler):
         actualSize = self.get_body_arguments('actualSize')
         actualUnit = self.get_body_argument('actualUnit')
         originInPlan = self.get_body_arguments('originInPlan')
-        print(planSize)
+        rotationAngle = self.get_body_arguments('rotationAngle')
+        originInActual = self.get_body_arguments('originInActual')
+        isClockwise = bool(int(self.get_body_argument('isClockwise', False)))
+        
+        standardVector = self.get_body_argument('standardVector', '0,1')
+        standardVector = [float(item) for item in standardVector.split(',')]
+
         if len(planSize) > 1:
             actualSize = [float(item) for item in actualSize]
         else:
             actualSize = [float(item) for item in actualSize[0].split(',')]
+
         if len(planSize) > 1:
             planSize = [float(item) for item in planSize]
         else:
              planSize = [float(item) for item in planSize[0].split(',')]
+
         if len(originInPlan) > 1:
             originInPlan = [float(item) for item in originInPlan]
         else:
             originInPlan = [float(item) for item in originInPlan[0].split(',')]
+        
+        if len(rotationAngle) > 1:
+            rotationAngle = [float(item) for item in rotationAngle]
+        else:
+            rotationAngle = [float(item) for item in rotationAngle[0].split(',')]
+        
+        if len(originInActual) > 1:
+            originInActual = [float(item) for item in originInActual]
+        else:
+            originInActual = [float(item) for item in originInActual[0].split(',')]
+
+
+           
 
         planImage = self.request.files['planImage']
         originName = planImage[0]['filename']
@@ -67,7 +88,11 @@ class MapHandler(RequestHandler):
             'actualSize': actualSize,
             'actualUnit': actualUnit,
             'originInPlan': originInPlan,
-            'planPath': planPath
+            'planPath': planPath,
+            'originInActual': originInActual,
+            'rotationAngle': rotationAngle,
+            'isClockwise': isClockwise,
+            'standardVector': standardVector
         }
         logging.info(mapDict)
         m = Map(mapDict)

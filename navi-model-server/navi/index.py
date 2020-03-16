@@ -72,6 +72,7 @@ class DeepNaviModel:
 
             trans_output, rotation_output = model([imgs, mags])
             logging.info('trans_output: %s rotation_out: %s'%(trans_output[0], rotation_output[0]))
+            logging.info(self.quaternion_to_euler(rotation_output[0]))
             return trans_output[0], self.quaternion_to_euler(rotation_output[0])
     
     def quaternion_to_euler(self,rotation_output: torch.Tensor) -> typing.List:

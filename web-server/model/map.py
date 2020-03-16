@@ -1,7 +1,7 @@
 # 存数据库
 import copy
 class Map:
-	DB_KEY = ['name', 'planPath', 'planSize', 'planUnit', 'actualSize', 'actualUnit', 'modelPath','originInPlan']
+	DB_KEY = ['name', 'planPath', 'planSize', 'planUnit', 'actualSize', 'actualUnit', 'modelPath','originInPlan', 'rotationAngle', 'originInActual', 'isClockwise', 'standardVector']
 	def __init__(self, info:dict=None, **kwargs):
 		# id
 		self.id = ''
@@ -21,6 +21,10 @@ class Map:
 		self.modelPath = ''
 		# 原点在平面图的位置 单位 planUnit
 		self.originInPlan = [0, 0, 0]
+		self.rotationAngle = [0, 0, 0]
+		# 是否顺时针旋转为正 计算偏移量会用到
+		self.isClockwise = False
+		self.standardVector = [0, 1]
 		for k, v in kwargs.items():
 			self[k] = v
 		if isinstance(info, dict):

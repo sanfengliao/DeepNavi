@@ -19,6 +19,10 @@ String planUnit // 平面图单位 default 'px'
 float[] actualSize required // 实际大小
 String actualUnit // 实际单位 default 'm'
 float[] originInPlan //原点在平面图的位置
+float[] rotationAngle // 坐标转换用
+float[] originInActual // 坐标转换用
+int isClockwise // 是否顺时针旋转为true，default 0 false;
+string standardVector // 基准向量 default '0,1'
 ```
 
 > response

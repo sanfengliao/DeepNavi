@@ -223,6 +223,9 @@ class MapActivity : AppCompatActivity(), MapContainer.OnMarkerClickListener, Upl
         findViewById<Button>(R.id.upload).setOnClickListener {
             UploadMapDialogFragment(this, this, this).show(supportFragmentManager, "uploadMap")
         }
+        findViewById<Button>(R.id.search).setOnClickListener {
+            SearchMapDialogFragment(this, this, this).show(supportFragmentManager, "searchMap")
+        }
         findViewById<Button>(R.id.add_point).setOnClickListener {
             if (mapInfo == null) {
                 return@setOnClickListener returnToast3("map info is null, your should create a map or load a map")

@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.sysu.deepnavi.util
 
 import android.app.Activity
@@ -7,8 +9,11 @@ import android.hardware.Camera
 import android.os.Handler
 import android.os.Message
 import android.util.Log
-import android.util.Size
-import android.view.*
+import android.view.Display
+import android.view.SurfaceHolder
+import android.view.SurfaceView
+import android.view.TextureView
+import android.view.View
 
 /*[Android 摄像头预览](https://www.jianshu.com/p/cf55f42f0cb7)
 [关于Android使用Camera自定义拍照出现模糊不清的解决方案](https://blog.csdn.net/u012228009/article/details/43450609)
@@ -24,7 +29,7 @@ open class CameraUtil1(
     private val previewView: View?,
     private val previewCallback: (data: ByteArray, camera: Camera, width: Int, height: Int) -> Unit,
     private val frameRate: Int = 50,
-    private val pictureSize: Size = Size(1080, 1920),
+    private val pictureSize: MutableSize = MutableSize(1080, 1920),
     autoFocus: Boolean = true
 ) {
     companion object {
@@ -69,8 +74,6 @@ open class CameraUtil1(
         requestCameraPermissions(activity)
         if (previewView is SurfaceView) {
             previewView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
-            val width = previewView.measuredWidth
-            val height = previewView.measuredHeight
             previewView.holder.run {
                 setFormat(PixelFormat.TRANSPARENT)
                 addCallback(object : SurfaceHolder.Callback {
@@ -86,7 +89,7 @@ open class CameraUtil1(
 
                     override fun surfaceCreated(holder: SurfaceHolder?) {
                         Log.d(TAG, "SurfaceHolder -- surfaceCreated")
-                        openCamera(width, height)
+                        openCamera()
                         startPreview()
                     }
                 })
@@ -110,7 +113,7 @@ open class CameraUtil1(
 
                 override fun onSurfaceTextureAvailable(surface: SurfaceTexture?, width: Int, height: Int) {
                     Log.d(TAG, "SurfaceTexture -- onSurfaceTextureAvailable -- width: $width, height: $height")
-                    openCamera(width, height)
+                    openCamera()
                     startPreview()
                 }
             }
@@ -122,7 +125,7 @@ open class CameraUtil1(
         }
     }
 
-    open fun openCamera(width: Int, height: Int) {
+    open fun openCamera() {
         if (checkCameraPermission(activity)) {
             Log.d(TAG, "openCamera -- failed, because there are not enough permissions")
             return
@@ -151,6 +154,8 @@ open class CameraUtil1(
             }
 
             val cameraParameters = camera!!.parameters
+            val width = previewView?.measuredWidth ?: pictureSize.width
+            val height = previewView?.measuredHeight ?: pictureSize.height
             val judgeCamera = judgeOneCamera(cameraParameters, width, height, id, defaultDisplay)
             if (judgeCamera.third != 4) {  // 如果想改变策略，可以将所有的
                 closeCamera()

@@ -1,2 +1,5 @@
 include ':app', ':deepnavi'
 rootProject.name='AndroidDeepNavi'
+include ':map'
+include ':net'
+include ':json'

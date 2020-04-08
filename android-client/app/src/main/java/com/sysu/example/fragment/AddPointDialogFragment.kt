@@ -3,21 +3,16 @@ package com.sysu.example.fragment
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
-import com.liang.example.json_ktx.JsonStyle
-import com.liang.example.json_ktx.ReflectJsonApi
-import com.liang.example.json_ktx.SimpleJsonObject
-import com.liang.example.json_ktx.SimpleJsonParser
-import com.liang.example.json_ktx.SimpleJsonString
-import com.sysu.example.KeyUrls
+import com.liang.example.map.bean.DeepNaviCoordinator
+import com.liang.example.map.bean.DeepNaviMap
+import com.liang.example.map.bean.DeepNaviPoint
+import com.liang.example.map.net.PointApi.addPoint
+import com.sysu.example.KeyUrls.ADD_KEY_POINT
+import com.sysu.example.KeyUrls.ADD_POINT
 import com.sysu.example.R
-import com.sysu.example.bean.DeepNaviCoordinator
-import com.sysu.example.bean.DeepNaviMap
-import com.sysu.example.bean.DeepNaviPoint
 import com.sysu.example.utils.ContextApi
-import com.sysu.example.utils.doPostMainAsync
 import com.sysu.example.utils.returnToast3
 import kotlinx.android.synthetic.main.fragment_add_point.is_key_point
 import kotlinx.android.synthetic.main.fragment_add_point.is_percentage_mode
@@ -81,12 +76,21 @@ open class AddPointDialogFragment(
             if (mapInfo.id != null) {
                 addPoint.worldToModel(mapInfo)
                 addPoint.mapId = mapInfo.id!!
-                if (addPoint(addPoint, mapInfo)) {
+                val callback: (String, String?) -> Unit = { msg: String, pointId: String? ->
+                    if (pointId != null) {
+                        updatePoint(2, pointId)
+                        dismiss()
+                    } else {
+                        updatePoint(1)
+                    }
+                    ContextApi.toast(msg)
+                }
+                if (addPoint(if (name == null) ADD_KEY_POINT else ADD_POINT, addPoint, mapInfo, callback)) {
                     return@ok returnToast3("error occurred while parse AddPoint object to json")
                 }
                 if (flag && is_point_and_loc.isChecked) {
                     addPoint.name = null
-                    if (addPoint(addPoint, mapInfo)) {
+                    if (addPoint(ADD_POINT, addPoint, mapInfo, callback)) {
                         return@ok returnToast3("error occurred while parse AddPoint2 object to json")
                     }
                 }
@@ -98,37 +102,6 @@ open class AddPointDialogFragment(
             updatePoint(1)
             dismiss()
         }
-    }
-
-    // can be static
-    protected open fun addPoint(addPoint: DeepNaviPoint, mapInfo: DeepNaviMap): Boolean {
-        val flag = addPoint.name == null
-        doPostMainAsync(
-            when (flag) {
-                true -> KeyUrls.ADD_POINT
-                else -> KeyUrls.ADD_KEY_POINT
-            }, null, ReflectJsonApi.toJsonOrNull(addPoint)?.toByteArray()
-                ?: return true
-        ) addPointRes@{
-            val content = it?.content ?: return@addPointRes returnToast3("no response while add point: $it")
-            val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                ?: return@addPointRes returnToast3("jsonObj parse error occurred while add point: $it")
-            val text = if ("msg" in jsonObj) {
-                jsonObj["msg"]!!.string()
-            } else {
-                val pointId = ((jsonObj["data"] as? SimpleJsonObject)?.get("id") as? SimpleJsonString)?.value()
-                    ?: return@addPointRes returnToast3("no point id")
-                if (flag) {
-                    updatePoint(2, pointId)
-                } else if (!is_point_and_loc.isChecked) {
-                    updatePoint(1)
-                }
-                dismiss()
-                "Add point successfully"
-            }
-            Toast.makeText(ContextApi.appContext, text, Toast.LENGTH_LONG).show()
-        }
-        return false
     }
 
     protected open fun createPointInfoListener() {

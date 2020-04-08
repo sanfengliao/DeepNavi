@@ -1,5 +1,6 @@
 package com.sysu.deepnavi.util
 
+import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
@@ -15,10 +16,10 @@ import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CaptureRequest
 import android.hardware.camera2.params.StreamConfigurationMap
 import android.media.ImageReader
+import android.os.Build
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
-import android.util.Size
 import android.util.SparseIntArray
 import android.view.Surface
 import android.view.SurfaceHolder
@@ -34,10 +35,11 @@ void registerTorchCallback(TorchCallback callback, Handler handler)
 void unregisterTorchCallback(TorchCallback callback)
 void setTorchMode(String cameraId, boolean enabled)*/
 
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 open class CameraUtil2(
     open val activity: Activity,
     open val previewView: View?,
-    open val pictureSize: Size = Size(1080, 1920),
+    open val pictureSize: MutableSize = MutableSize(1080, 1920),
     open val previewCallback: (data: ByteArray, imageReader: ImageReader, width: Int, height: Int) -> Unit
 ) {
     companion object {
@@ -141,10 +143,11 @@ open class CameraUtil2(
                 // }
                 // imageReader = ImageReader.newInstance(largesImageSize.width, largesImageSize.height, ImageFormat.JPEG, 3)
                 val exchange = exchangeWidthAndHeight(activity.windowManager.defaultDisplay.rotation, sensorOrientation)
-                val judgePictureSize = selectPictureSize(outputSizes.toList(), when {
-                    exchange -> pictureSize
-                    else -> Size(pictureSize.height, pictureSize.width)
-                }
+                val judgePictureSize = selectPictureSize(
+                    outputSizes.map { MutableSize(it.width, it.height) }, when {
+                        exchange -> pictureSize
+                        else -> MutableSize(pictureSize.height, pictureSize.width)
+                    }
                 )
                 if (judgePictureSize == null) {
                     Log.e(TAG, "judgeOneCamera -- camera($cameraId) doesn't supported any picture size")
@@ -270,11 +273,11 @@ open class CameraUtil2(
                     if (previewView != null) {
                         val supportedSizes = streamConfigurationMap.getOutputSizes(previewView.javaClass)
                             ?: streamConfigurationMap.getOutputSizes(ImageFormat.JPEG) ?: continue
-                        selectPreviewSize(supportedSizes.toList(), previewView.width, previewView.height)?.first ?: continue
+                        selectPreviewSize(supportedSizes.map { MutableSize(it.width, it.height) }, previewView.width, previewView.height)?.first ?: continue
                     } else {
                         val supportedSizes = streamConfigurationMap.getOutputSizes(ImageReader::class.java)
                             ?: streamConfigurationMap.getOutputSizes(ImageFormat.JPEG) ?: continue
-                        selectPreviewSize(supportedSizes.toList(), pictureSize.width, pictureSize.height)?.first ?: continue
+                        selectPreviewSize(supportedSizes.map { MutableSize(it.width, it.height) }, pictureSize.width, pictureSize.height)?.first ?: continue
                     }
                     cameraId = id
                     sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION) ?: 0

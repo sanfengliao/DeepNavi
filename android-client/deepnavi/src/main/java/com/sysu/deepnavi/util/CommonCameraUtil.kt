@@ -28,8 +28,8 @@ const val PERMISSION_CAMERA_AND_STORAGE_REQUEST_CODE = 1
  * 将Camera api的Size转变为通用的Size
  * @param sizes camera.size
  */
-fun toUtilSize(sizes: List<Camera.Size?>?): List<Size> = if (sizes.isNullOrEmpty()) listOf()
-else sizes.mapNotNull { if (it == null) null else Size(it.width, it.height) }
+fun toUtilSize(sizes: List<Camera.Size?>?): List<MutableSize> = if (sizes.isNullOrEmpty()) listOf()
+else sizes.mapNotNull { if (it == null) null else MutableSize(it.width, it.height) }
 
 /**
  * 选择最佳预览size，先是根据宽高比来获取最接近的四个，然后选择面积最接近的那个
@@ -38,7 +38,7 @@ else sizes.mapNotNull { if (it == null) null else Size(it.width, it.height) }
  * @param height surfaceView或者textureView的高度(竖屏时)
  * @return 返回由选择出来的size和是否符合预期的布尔值组成
  */
-fun selectPreviewSize(sizes: List<Size?>?, width: Int, height: Int, methodName: String = "selectPreviewSize"): Pair<Size, Boolean>? {
+fun selectPreviewSize(sizes: List<MutableSize?>?, width: Int, height: Int, methodName: String = "selectPreviewSize"): Pair<MutableSize, Boolean>? {
     val msg = "$methodName -- height: $height, width: $width, sizes: " +
             (sizes?.joinToString { if (it == null) "null" else "(${it.width}, ${it.height})" } ?: "null")
     if (sizes.isNullOrEmpty()) {
@@ -73,7 +73,7 @@ fun selectPreviewSize(sizes: List<Size?>?, width: Int, height: Int, methodName: 
  * @param targetSize 目标size
  * @return 返回由size和是否符合预期的布尔值组成
  */
-fun selectPictureSize(sizes: List<Size?>?, targetSize: Size): Pair<Size, Boolean>? =
+fun selectPictureSize(sizes: List<MutableSize?>?, targetSize: MutableSize): Pair<MutableSize, Boolean>? =
     selectPreviewSize(sizes, targetSize.width, targetSize.height, "selectPictureSize")
 
 /**
@@ -305,24 +305,37 @@ fun checkCameraPermission(context: Context): Boolean = Build.VERSION.SDK_INT > B
         (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
 
+/**
+ * @return 0表示不支持；1表示支持，但性能不一定很好；2表示支持，而且是较高级别的支持
+ */
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-fun hasCamera2(context: Context): Boolean {
+fun camera2SupportInfo(context: Context): Int {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+        return 0
+    }
     try {
-        val manager = context.getSystemService(Context.CAMERA_SERVICE) as? CameraManager ?: return false
+        val manager = context.getSystemService(Context.CAMERA_SERVICE) as? CameraManager ?: return 0
         val strIds = manager.cameraIdList
         if (strIds.isNullOrEmpty()) {
-            return false
+            return 0
         }
+        var maxLevel = CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_LEGACY
         for (str in strIds) {
-            if (str == null || str.trim().isEmpty() || manager.getCameraCharacteristics(str).get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL)
-                == CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_LEGACY
-            ) {
-                return false
+            if (str == null || str.trim().isEmpty()) {
+                return 0
+            }
+            val level = manager.getCameraCharacteristics(str).get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL)
+                ?: CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_LEGACY
+            if (level > maxLevel) {
+                maxLevel = level
             }
         }
-        return true;
+        return when {
+            maxLevel >= CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_FULL -> 2
+            else -> 1
+        }
     } catch (ignore: Throwable) {
-        return false;
+        return 0
     }
 }
 

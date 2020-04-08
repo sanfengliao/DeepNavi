@@ -36,7 +36,7 @@ object SensorListeners {
     val linearAccelerationListener = SensorListener2(Sensor.TYPE_LINEAR_ACCELERATION, "linearAccelerationList")
     { event -> createCoorSensorReq(event) }
 
-    val ambientTemperatureListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_AMBIENT_TEMPERATURE, "ambientTemperatureList")
+    val ambientTemperatureListener: SensorListener2<Basic.FeelSensorReq> = SensorListener2(Sensor.TYPE_AMBIENT_TEMPERATURE, "ambientTemperatureList")
     { event -> Basic.FeelSensorReq.newBuilder().setValue(event.values[0]).build() }
 
     val lightListener = SensorListener2<Basic.FeelSensorReq>(Sensor.TYPE_LIGHT, "lightList")

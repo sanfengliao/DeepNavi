@@ -5,12 +5,13 @@ package com.sysu.example.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Looper
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
-import com.liang.example.json_ktx.JsonStyle
-import com.liang.example.json_ktx.ReflectJsonApi
-import com.liang.example.json_ktx.SimpleJsonObject
-import com.liang.example.json_ktx.SimpleJsonParser
+import com.liang.example.json.JsonStyle
+import com.liang.example.json.ReflectJsonApi
+import com.liang.example.json.SimpleJsonObject
+import com.liang.example.json.SimpleJsonParser
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.Subject
@@ -116,10 +117,10 @@ open class SpProperty<T : Any> : Property<T> {
                 if (dataSet.first() is String) {
                     spEdit.putStringSet(mSpKey, dataSet as Set<String>)
                 } else {
-                    spEdit.putString(mSpKey, ReflectJsonApi.toJson(dataSet))
+                    spEdit.putString(mSpKey, com.liang.example.json.ReflectJsonApi.toJson(dataSet))
                 }
             }
-            else -> spEdit.putString(mSpKey, ReflectJsonApi.toJson(data))
+            else -> spEdit.putString(mSpKey, com.liang.example.json.ReflectJsonApi.toJson(data))
         }
         spEdit.putString("${mSpKey}_DESC", mDesc)
         spEdit.apply()
@@ -142,13 +143,17 @@ open class SpProperty<T : Any> : Property<T> {
                     if (stringSet != null) {
                         HashSet<String>(stringSet) as? T
                     } else {
-                        ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
+                        com.liang.example.json.ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
                     }
                 }
-                else -> ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
+                else -> com.liang.example.json.ReflectJsonApi.fromJsonOrNull<T>(sp.getString(mSpKey, "") ?: "", type)
             }
             if (set) {
-                postValue(mData)
+                if (Looper.myLooper() == Looper.getMainLooper()) {
+                    value = mData
+                } else {
+                    postValue(mData)
+                }
             }
         }
     }
@@ -256,11 +261,12 @@ open class StrPropertyHelper(vararg _classes: Class<*>) {
 
         fun jsonContentHelper(content: ByteArray?, propertyFields: MutableMap<String, Field>) {
             if (content?.isNotEmpty() == true) {
-                val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject ?: return
+                val jsonObj = com.liang.example.json.SimpleJsonParser.fromJson(String(content), com.liang.example.json.JsonStyle.STANDARD) as? com.liang.example.json.SimpleJsonObject
+                    ?: return
                 for ((name, propertyField) in propertyFields) {
                     val jsonVal = jsonObj[name] ?: continue
                     val property = propertyField.get(null) as? Property<Any> ?: continue
-                    property.postValue(ReflectJsonApi.fromJsonOrNull<Any>(jsonVal, property.getType()) ?: continue)
+                    property.postValue(com.liang.example.json.ReflectJsonApi.fromJsonOrNull<Any>(jsonVal, property.getType()) ?: continue)
                 }
             }
         }
@@ -274,5 +280,5 @@ open class StrPropertyHelper(vararg _classes: Class<*>) {
         return propertyFields
     }
 
-    open fun readFromJson(url: String) = doGetAsync(url, null) { jsonContentHelper(it?.content, getPropertyFields()) }
+    open fun readFromJson(url: String) = com.liang.example.net.doGetAsync(url, null) { jsonContentHelper(it?.content, getPropertyFields()) }
 }

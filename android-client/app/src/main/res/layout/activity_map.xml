@@ -23,14 +23,6 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/search"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/search" />
-
-                <Button
                     android:id="@+id/upload"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
@@ -69,7 +61,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@android:string/cancel" />
+                android:text="@string/cancel" />
 
             <Button
                 android:id="@+id/stop_navigation"
@@ -88,7 +80,7 @@
                 android:text="@string/start" />
         </LinearLayout>
 
-        <com.sysu.example.map_view.MapContainer
+        <com.liang.example.map.map_view.MapContainer
             android:id="@+id/map_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"

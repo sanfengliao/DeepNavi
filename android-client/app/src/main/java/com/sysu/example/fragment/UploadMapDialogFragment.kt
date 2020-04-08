@@ -11,20 +11,14 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import com.liang.example.json_ktx.JsonStyle
-import com.liang.example.json_ktx.SimpleJsonObject
-import com.liang.example.json_ktx.SimpleJsonParser
-import com.liang.example.json_ktx.SimpleJsonString
-import com.sysu.deepnavi.util.bitmapToByteArray
-import com.sysu.example.KeyUrls.UPLOAD_MAP
 import com.sysu.example.R
-import com.sysu.example.bean.DeepNaviMap
-import com.sysu.example.bean.INVALID_FLOAT_ARRAY
-import com.sysu.example.bean.INVALID_STR
+import com.liang.example.map.bean.DeepNaviMap
+import com.liang.example.map.bean.INVALID_FLOAT_ARRAY
+import com.liang.example.map.net.MapApi.uploadMap
+import com.sysu.example.KeyUrls.UPLOAD_MAP
 import com.sysu.example.utils.ContextApi
 import com.sysu.example.utils.returnToast2
 import com.sysu.example.utils.returnToast3
-import com.sysu.example.utils.sendMultiPart
 import kotlinx.android.synthetic.main.fragment_upload_map.is_clock_wise
 import kotlinx.android.synthetic.main.fragment_upload_map.map_actual_size_x
 import kotlinx.android.synthetic.main.fragment_upload_map.map_actual_size_y
@@ -68,7 +62,13 @@ open class UploadMapDialogFragment(
             }
             mapInfo.isClockWise = is_clock_wise.isChecked
             mapInfo.offsetAngle = map_offset_angle.text?.toString()?.toFloatOrNull() ?: 0f
-            uploadMap(bitmap, mapInfo, mapInfoUpdater)
+            uploadMap(UPLOAD_MAP, bitmap, mapInfo) { msg, mapInfo ->
+                if (mapInfo != null) {
+                    dismiss()
+                    mapInfoUpdater.update(mapInfo)
+                }
+                ContextApi.toast(msg)
+            }
         }
         view.findViewById<Button>(R.id.cancel)?.setOnClickListener {
             dismiss()
@@ -93,8 +93,16 @@ open class UploadMapDialogFragment(
                         this@UploadMapDialogFragment.mapInfo.originInActual = INVALID_FLOAT_ARRAY
                         INVALID_FLOAT_ARRAY
                     } else if (x < 1f) {
-                        this@UploadMapDialogFragment.mapInfo.originInActual = floatArrayOf(x * this@UploadMapDialogFragment.mapInfo.actualSize[0], y * this@UploadMapDialogFragment.mapInfo.actualSize[1], z * this@UploadMapDialogFragment.mapInfo.actualSize[2])
-                        floatArrayOf(x * this@UploadMapDialogFragment.mapInfo.planSize[0], y * this@UploadMapDialogFragment.mapInfo.planSize[1], z * this@UploadMapDialogFragment.mapInfo.planSize[2])
+                        this@UploadMapDialogFragment.mapInfo.originInActual = floatArrayOf(
+                            x * this@UploadMapDialogFragment.mapInfo.actualSize[0],
+                            y * this@UploadMapDialogFragment.mapInfo.actualSize[1],
+                            z * this@UploadMapDialogFragment.mapInfo.actualSize[2]
+                        )
+                        floatArrayOf(
+                            x * this@UploadMapDialogFragment.mapInfo.planSize[0],
+                            y * this@UploadMapDialogFragment.mapInfo.planSize[1],
+                            z * this@UploadMapDialogFragment.mapInfo.planSize[2]
+                        )
                     } else {
                         this@UploadMapDialogFragment.mapInfo.originInActual = floatArrayOf(
                             x / this@UploadMapDialogFragment.mapInfo.planSize[0] * this@UploadMapDialogFragment.mapInfo.actualSize[0],
@@ -126,44 +134,6 @@ open class UploadMapDialogFragment(
             }
             addPointDialogFragment.show(childFragmentManager, "addPoint")
             dialog?.hide()
-        }
-    }
-
-    // can be static
-    protected open fun uploadMap(bitmap: Bitmap, mapInfo: DeepNaviMap, mapInfoUpdater: UpdateMapInfo) {
-        sendMultiPart(
-            UPLOAD_MAP,
-            mapOf(
-                "name" to mapInfo.name,
-                "planSize" to mapInfo.planSize.joinToString(","),
-                "planUnit" to mapInfo.planUnit,
-                "actualSize" to mapInfo.actualSize.joinToString(","),
-                "actualUnit" to mapInfo.actualUnit,
-                "originInPlan" to mapInfo.originInPlan.joinToString(",")
-            ),
-            mapOf("planImage" to bitmapToByteArray(bitmap, false))
-        ) uploadMapRes@{
-            val content = it ?: return@uploadMapRes returnToast3("no response while upload map")
-            val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                ?: return@uploadMapRes returnToast3("jsonObj parse error occurred while upload map")
-            val flag = "msg" in jsonObj
-            ContextApi.handler.post {
-                val text = when {
-                    flag -> jsonObj["msg"]!!.string()
-                    else -> {
-                        dismiss()
-                        "Create map successfully"
-                    }
-                }
-                Toast.makeText(ContextApi.appContext, text, Toast.LENGTH_LONG).show()
-                if (!flag) {
-                    val data = jsonObj["data"] as? SimpleJsonObject ?: return@post returnToast3("mapInfo cannot be updated")
-                    mapInfo.id = (data["id"] as? SimpleJsonString)?.value() ?: INVALID_STR
-                    mapInfo.planPath = (data["planPath"] as? SimpleJsonString)?.value() ?: INVALID_STR
-                    mapInfo.modelPath = (data["modelPath"] as? SimpleJsonString)?.value() ?: INVALID_STR
-                    mapInfoUpdater.update(mapInfo)
-                }
-            }
         }
     }
 

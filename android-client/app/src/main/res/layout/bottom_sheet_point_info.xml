@@ -15,7 +15,8 @@
         android:layout_alignParentTop="true"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        tools:text="point name (index: 0)" />
+        tools:text="point name (index: 0)"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/point_plan_location"
@@ -27,7 +28,9 @@
         android:drawableStart="@drawable/location"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        tools:text="show: 577px x 377px x 0px" />
+        tools:text="show: 577px x 377px x 0px"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/location" />
 
     <TextView
         android:id="@+id/point_actual_location"
@@ -38,7 +41,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
-        tools:text="actual: 70m x 40m x 0m" />
+        tools:text="actual: 70m x 40m x 0m"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp" />
 
     <TextView
         android:id="@+id/point_id"
@@ -50,7 +55,9 @@
         android:drawableStart="@drawable/id"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        tools:text="id: 5e6a401ce9c01114e5fcdecd" />
+        tools:text="id: 5e6a401ce9c01114e5fcdecd"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/id" />
 
     <TextView
         android:id="@+id/point_map_id"
@@ -61,7 +68,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
-        tools:text="mapId: 5e6a401ce9c01114e5fcdecd" />
+        tools:text="mapId: 5e6a401ce9c01114e5fcdecd"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp" />
 
     <Button
         android:id="@+id/as_start_point"
@@ -70,7 +79,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/as_start_point" />
+        android:text="@string/as_start_point"
+        android:layout_alignParentRight="true" />
 
     <Button
         android:id="@+id/as_end_point"
@@ -80,5 +90,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
-        android:text="@string/as_end_point" />
+        android:text="@string/as_end_point"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

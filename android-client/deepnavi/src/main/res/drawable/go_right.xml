@@ -12,7 +12,7 @@
         m20, -28 l15, -21 h-36 l-21, 21 h42
         m20, -28 l10, -14 h15 l-15, -20 l-45, 20 h15 l-14, 14 h34"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 </vector>

@@ -65,4 +65,9 @@
     <string name="angle_of_rotation_about_the_z_axis">angle of rotation about the z-axis</string>
     <string name="is_clock_wise">is clock wise</string>
     <string name="please_input_offset_angle">please input offset angle</string>
+    <string name="get_config_from_server">get config from server</string>
+    <string name="don_t_get_config_from_server">don\'t get config from server</string>
+    <string name="navigation">navigation</string>
+    <string name="map_modeling">map modeling</string>
+    <string name="cancel">cancel</string>
 </resources>

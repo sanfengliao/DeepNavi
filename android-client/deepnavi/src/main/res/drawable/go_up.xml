@@ -13,7 +13,7 @@
         m0, -40 h40 v-30 h-40 v30
         m0, -40 h40 v-20 h20 l-40, -30 l-40, 30 h20 v20"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 </vector>

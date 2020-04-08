@@ -13,3 +13,5 @@ inline fun <reified T> Array<T>.remove(data: T): Array<T> {
     result.remove(data)
     return result.toTypedArray()
 }
+
+fun DoubleArray.toFloatList(): List<Float> = this.map { it.toFloat() }

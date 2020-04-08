@@ -40,7 +40,9 @@
             android:text="@string/break_point"
             android:textAlignment="viewStart"
             android:textSize="16sp"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            android:paddingLeft="5dp"
+            android:gravity="start" />
 
         <Switch
             android:id="@+id/is_point_and_loc"
@@ -52,7 +54,9 @@
             android:textAlignment="viewStart"
             android:textSize="16sp"
             android:visibility="gone"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            android:paddingLeft="5dp"
+            android:gravity="start" />
 
         <Switch
             android:id="@+id/is_percentage_mode"
@@ -63,7 +67,9 @@
             android:text="@string/percentage_mode"
             android:textAlignment="viewStart"
             android:textSize="16sp"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            android:paddingLeft="5dp"
+            android:gravity="start" />
 
         <EditText
             android:id="@+id/point_x"

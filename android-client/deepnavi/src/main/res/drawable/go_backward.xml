@@ -12,7 +12,7 @@
         m3, 28 l2.25, 21 h-30.5 l2.25 -21 h26
         m3, 28 l1.5, 14 h12.5 l-30 20 l-30, -20 h12.5 l1.5, -14 h32"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 </vector>

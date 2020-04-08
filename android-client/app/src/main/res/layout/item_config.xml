@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center_vertical"
         tools:text="地磁" />
 
@@ -30,10 +31,11 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:textSize="16sp"
         android:inputType="number"
+        android:textSize="16sp"
         tools:ignore="Autofill" />
 
     <ImageView

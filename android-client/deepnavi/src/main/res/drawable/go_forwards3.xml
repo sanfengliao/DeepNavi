@@ -16,7 +16,7 @@
         m-20, -28 l-15, -21 h36 l21, 21 h-42
         m-20, -28 l-10, -14 h-15 l15, -20 l45, 20 h-15 l14, 14 h-34"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 
@@ -27,7 +27,7 @@
         m20, -28 l15, -21 h-36 l-21, 21 h42
         m20, -28 l10, -14 h15 l-15, -20 l-45, 20 h15 l-14, 14 h34"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 
@@ -38,7 +38,7 @@
         m6, -28 l4.5, -21 h29 l4.5, 21 h-38
         m6, -28 l3, -14 h-15 l25, -20 l25, 20 h-15 l3, 14 h-26"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 
@@ -49,7 +49,7 @@
         m3, 28 l2.25, 21 h-30.5 l2.25 -21 h26
         m3, 28 l1.5, 14 h12.5 l-30 20 l-30, -20 h12.5 l1.5, -14 h32"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 
@@ -60,7 +60,7 @@
         m0, -40 h40 v-30 h-40 v30
         m0, -40 h40 v-20 h20 l-40, -30 l-40, 30 h20 v20"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 
@@ -71,7 +71,7 @@
         m0, 40 h40 v30 h-40 v-30
         m0, 40 h40 v20 h20 l-40, 30 l-40, -30 h20 v-20"
         android:strokeWidth="4"
-        android:strokeColor="@android:color/white"
+        android:strokeColor="#fff"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 </vector>

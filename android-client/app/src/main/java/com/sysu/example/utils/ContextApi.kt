@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -23,7 +24,7 @@ object ContextApi {
     fun init(application: Application) {
         this.app = application
         this.appContext = application
-        handler = Handler()
+        handler = Handler(Looper.getMainLooper())
         this.app.registerActivityLifecycleCallbacks(object : LogActivityLifecycleCallbacks() {
             private val fragmentLifecycleCallbacks = object : LogFragmentLifecycleCallbacks() {
                 // TODO()
@@ -52,8 +53,9 @@ object ContextApi {
             }
         })
     }
-}
 
+    fun toast(msg: String) = ContextApi.handler.post { Toast.makeText(ContextApi.appContext, msg, Toast.LENGTH_LONG).show() }
+}
 
 fun <T> returnToast(text: String, result: T? = null, duration: Int = Toast.LENGTH_LONG): T? {
     Toast.makeText(ContextApi.appContext, text, duration).show()

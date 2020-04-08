@@ -5,13 +5,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import com.liang.example.json_ktx.JsonStyle
-import com.liang.example.json_ktx.SimpleJsonObject
-import com.liang.example.json_ktx.SimpleJsonParser
+import com.liang.example.map.bean.DeepNaviPoint
 import com.sysu.example.KeyUrls
 import com.sysu.example.R
-import com.sysu.example.bean.DeepNaviPoint
 import com.sysu.example.utils.ContextApi
+import com.liang.example.map.net.EdgeApi.addEdge
+import com.sysu.example.KeyUrls.ADD_EDGE
 import com.sysu.example.utils.doPostMainAsync
 import com.sysu.example.utils.returnToast3
 import kotlinx.android.synthetic.main.fragment_add_edge.add_end_point
@@ -59,25 +58,12 @@ open class AddEdgeDialogFragment(
             if (pId1 == null || pId2 == null) {
                 return@ok returnToast3("start point's id and end point's id should not be empty")
             }
-            // val addEdge = AddEdge()
-            // addEdge.mapId = mapId
-            // addEdge.pointAId = pId1
-            // addEdge.pointBId = pId2
-            // val params = ReflectJsonApi.toJsonOrNull(addEdge) ?: return@ok returnToast3("error occurred while parse AddEdge object to json")
-            val params = "mapId=$mapId&pointAId=$pId1&pointBId=$pId2"
-            doPostMainAsync(KeyUrls.ADD_EDGE, null, params.toByteArray()) addEdge@{
-                val content = it?.content ?: return@addEdge returnToast3("no response for adding edge")
-                val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                    ?: return@addEdge returnToast3("jsonObj parse error occurred while adding edge")
-                Toast.makeText(
-                    ContextApi.appContext, if ("msg" in jsonObj) {
-                        jsonObj["msg"]!!.string()
-                    } else {
-                        edgeUpdater.update(pId1, pId2, 2)
-                        dismiss()
-                        "Add edge successfully"
-                    }, Toast.LENGTH_LONG
-                ).show()
+            addEdge(ADD_EDGE, mapId, pId1!!, pId2!!) { msg, flag ->
+                ContextApi.toast(msg)
+                if (flag) {
+                    edgeUpdater.update(pId1, pId2, 2)
+                    dismiss()
+                }
             }
         }
         view.findViewById<Button>(R.id.cancel)?.setOnClickListener {

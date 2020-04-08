@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.sysu.example.utils
 
 import android.graphics.drawable.Drawable
@@ -7,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.atomic.AtomicInteger
 
 fun View.setPaddingLeft(p: Int) = this.setPadding(p, this.paddingTop, this.paddingRight, this.paddingBottom)
 fun View.setPaddingRight(p: Int) = this.setPadding(this.paddingLeft, this.paddingTop, p, this.paddingBottom)
@@ -73,10 +76,10 @@ fun View.setMarginVertical(m: Int) {
     }
 }
 
-fun TextView.setDrawableLeft(@DrawableRes d: Int) = setDrawableLeft(ContextApi.appContext.resources.getDrawable(d, null))
-fun TextView.setDrawableRight(@DrawableRes d: Int) = setDrawableRight(ContextApi.appContext.resources.getDrawable(d, null))
-fun TextView.setDrawableTop(@DrawableRes d: Int) = setDrawableTop(ContextApi.appContext.resources.getDrawable(d, null))
-fun TextView.setDrawableBottom(@DrawableRes d: Int) = setDrawableBottom(ContextApi.appContext.resources.getDrawable(d, null))
+fun TextView.setDrawableLeft(@DrawableRes d: Int) = setDrawableLeft(ContextApi.appContext.resources.getDrawable(d))
+fun TextView.setDrawableRight(@DrawableRes d: Int) = setDrawableRight(ContextApi.appContext.resources.getDrawable(d))
+fun TextView.setDrawableTop(@DrawableRes d: Int) = setDrawableTop(ContextApi.appContext.resources.getDrawable(d))
+fun TextView.setDrawableBottom(@DrawableRes d: Int) = setDrawableBottom(ContextApi.appContext.resources.getDrawable(d))
 
 fun TextView.setDrawableLeft(d: Drawable) = setDrawableByIndex(d, 0)
 fun TextView.setDrawableRight(d: Drawable) = setDrawableByIndex(d, 2)
@@ -89,13 +92,13 @@ fun TextView.setDrawableByIndex(d: Drawable, index: Int) {
     setCompoundDrawables(drawables[0], drawables[1], drawables[2], drawables[3])  // left, top, right, bottom
 }
 
-fun TextView.setDrawableHorizontal(@DrawableRes d: Int) = setDrawableHorizontal(ContextApi.appContext.resources.getDrawable(d, null))
+fun TextView.setDrawableHorizontal(@DrawableRes d: Int) = setDrawableHorizontal(ContextApi.appContext.resources.getDrawable(d))
 fun TextView.setDrawableHorizontal(d: Drawable) {
     val drawables = compoundDrawables
     setCompoundDrawables(d, drawables[1], d, drawables[3])
 }
 
-fun TextView.setDrawableVertical(@DrawableRes d: Int) = setDrawableVertical(ContextApi.appContext.resources.getDrawable(d, null))
+fun TextView.setDrawableVertical(@DrawableRes d: Int) = setDrawableVertical(ContextApi.appContext.resources.getDrawable(d))
 fun TextView.setDrawableVertical(d: Drawable) {
     val drawables = compoundDrawables
     setCompoundDrawables(drawables[0], d, drawables[2], d)
@@ -106,6 +109,20 @@ val id2StrMap = ConcurrentHashMap<Int, String>()
 
 const val EMPTY_VIEW_STR_ID = "EMPTY_VIEW_STR_ID"
 
+val sNextGeneratedId = AtomicInteger(1)
+
+fun generateViewId(): Int {
+    while (true) {
+        val result: Int = sNextGeneratedId.get()
+        // aapt-generated IDs have the high byte nonzero; clamp to the range under that.
+        var newValue = result + 1
+        if (newValue > 0x00FFFFFF) newValue = 1 // Roll over to 1, not 0.
+        if (sNextGeneratedId.compareAndSet(result, newValue)) {
+            return result
+        }
+    }
+}
+
 var View.strId: String
     set(value) {
         if (value == EMPTY_VIEW_STR_ID) {
@@ -115,7 +132,7 @@ var View.strId: String
                 id2StrMap.remove(id)
             }
         } else if (!str2IdMap.containsKey(value)) {
-            val id = View.generateViewId()
+            val id = generateViewId()
             str2IdMap[value] = id
             id2StrMap[id] = value
             this.id = id

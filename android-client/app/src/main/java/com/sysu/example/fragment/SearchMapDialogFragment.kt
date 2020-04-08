@@ -5,28 +5,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.liang.example.json_ktx.JsonStyle
-import com.liang.example.json_ktx.ReflectJsonApi
-import com.liang.example.json_ktx.SimpleJsonArray
-import com.liang.example.json_ktx.SimpleJsonObject
-import com.liang.example.json_ktx.SimpleJsonParser
-import com.liang.example.json_ktx.SimpleJsonString
-import com.liang.example.json_ktx.SimpleJsonValue
+import com.liang.example.map.bean.DeepNaviMap
+import com.liang.example.map.bean.DeepNaviPoint
+import com.liang.example.map.bean.GetPath
+import com.liang.example.map.bean.INVALID_DEEPNAVI_POINT
+import com.liang.example.map.net.MapApi.searchMapByMapId
+import com.liang.example.map.net.MapApi.searchMapsByPoint
+import com.liang.example.map.net.MapApi.searchPath
 import com.sysu.example.App
 import com.sysu.example.BaseRecyclerAdapter
 import com.sysu.example.BaseRecyclerViewHolder
 import com.sysu.example.KeyUrls
 import com.sysu.example.KeyUrls.GET_PATH
+import com.sysu.example.KeyUrls.LOAD_MAP
 import com.sysu.example.R
-import com.sysu.example.bean.DeepNaviMap
-import com.sysu.example.bean.DeepNaviPoint
-import com.sysu.example.bean.GetPath
-import com.sysu.example.bean.INVALID_DEEPNAVI_POINT
 import com.sysu.example.utils.ContextApi
 import com.sysu.example.utils.doGetMainAsync
-import com.sysu.example.utils.doPostMainAsync
 import com.sysu.example.utils.returnToast2
 import com.sysu.example.utils.returnToast3
 import com.sysu.example.utils.setOnCompoundDrawableClickListener
@@ -76,9 +71,22 @@ open class SearchMapDialogFragment(
             when (searchChoice) {
                 0, 1 -> {
                     adapter.clear()
-                    searchMapsByPoint("${KeyUrls.SEARCH_BY_START_POINT}?name=${startPointName!!}") { adapter.setDataSet(it) }
+                    searchMapsByPoint("${KeyUrls.SEARCH_BY_START_POINT}?name=${startPointName!!}") { msg, dataList ->
+                        if (dataList != null) {
+                            adapter.setDataSet(dataList)
+                        }
+                        ContextApi.toast(msg)
+                    }
                 }
-                2 -> searchMapByMapId(startPointName!!, include_points.isChecked.toInt(), include_edges.isChecked.toInt(), pointsUpdater, mapInfoUpdater)
+                2 -> searchMapByMapId(LOAD_MAP, startPointName!!, include_points.isChecked.toInt(), include_edges.isChecked.toInt()) { msg, mapInfo, points ->
+                    if (mapInfo != null) {
+                        updateMap(mapInfo, mapInfoUpdater)
+                    }
+                    if (points != null) {
+                        pointsUpdater.onAllPointsGot(points)
+                    }
+                    ContextApi.toast(msg)
+                }
                 3 -> Unit // TODO("not implemented")
             }
             true
@@ -88,8 +96,11 @@ open class SearchMapDialogFragment(
             endPoint = INVALID_DEEPNAVI_POINT
             val mapId = mapInfo?.id ?: return@ep returnToast2("your should input start point's name", true)
             endPointName = t.text?.toString()?.trim() ?: return@ep returnToast2("end point's name should not be empty", false)
-            searchMapsByPoint("${KeyUrls.SEARCH_BY_END_POINT}?name=$endPointName&mapId=$mapId") searchMapsByPointRes@{
-                adapter.setDataSet(it)
+            searchMapsByPoint("${KeyUrls.SEARCH_BY_END_POINT}?name=$endPointName&mapId=$mapId") searchMapsByPointRes@{ msg, dataList ->
+                if (dataList != null) {
+                    adapter.setDataSet(dataList)
+                }
+                ContextApi.toast(msg)
             }
             true
         }
@@ -102,149 +113,46 @@ open class SearchMapDialogFragment(
             getPath.mapId = startPoint.mapId
             getPath.src.actualCoordinate = startPoint.actualCoordinate
             getPath.dst.actualCoordinate = endPoint.actualCoordinate
-            if (searchPath(getPath)) return@ok returnToast3("error occurred while parse GetPath object to json")
+            val mapInfo = mapInfo ?: return@ok returnToast3("mapInfo is null, and search path before search map is impossible")
+            if (searchPath(GET_PATH, getPath, mapInfo) { msg, pathId, points ->
+                    if (pathId != null && points != null) {
+                        dismiss()
+                        pointsUpdater.onAllPointsGot(points, pathId)
+                    }
+                    ContextApi.toast(msg)
+                }) return@ok returnToast3("error occurred while parse GetPath object to json")
         }
         view.findViewById<Button>(R.id.cancel)?.setOnClickListener { dismiss() }
     }
 
-    protected open fun searchPath(getPath: GetPath): Boolean {
-        doPostMainAsync(
-            GET_PATH, null,
-            ReflectJsonApi.toJsonOrNull(getPath)?.toByteArray()
-                ?: return true
-        ) getPath@{
-            val content = it?.content ?: return@getPath returnToast3("no response")
-            val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                ?: return@getPath returnToast3("parse json failed")
-            val text = if ("msg" in jsonObj) {
-                jsonObj["msg"]!!.string()
-            } else {
-                val data = jsonObj["data"] as? SimpleJsonObject ?: return@getPath returnToast3("no data")
-                val pathId = ((data["pathId"]) as? SimpleJsonString)?.value() ?: return@getPath returnToast3("no pathId")
-                updatePoints((data["path"] as? SimpleJsonArray)?.iterator(), pathId)
-                dismiss()
-                "Get path successfully"
+    protected open fun searchChoiceChangedListener() = search_choice.setOnCheckedChangeListener { _, checkedId ->
+        end_point.visibility = View.GONE
+        include_points.visibility = View.VISIBLE
+        include_edges.visibility = View.VISIBLE
+        mapInfo = null
+        adapter.clear()
+        startPoint = INVALID_DEEPNAVI_POINT
+        endPoint = INVALID_DEEPNAVI_POINT
+        when (checkedId) {
+            R.id.is_search_map_by_point -> {
+                searchChoice = 0
+                start_point.hint = resources.getString(R.string.please_input_key_point)
             }
-            Toast.makeText(ContextApi.appContext, text, Toast.LENGTH_LONG).show()
-        }
-        return false
-    }
-
-    protected open fun updatePoints(iterator: MutableIterator<SimpleJsonValue<*>?>?, pathId: String?) {
-        if (iterator != null && iterator.hasNext()) {
-            val points = mutableListOf<DeepNaviPoint>()
-            while (iterator.hasNext()) {
-                val next = iterator.next() ?: continue
-                val point = ReflectJsonApi.fromJsonOrNull<DeepNaviPoint>(next, DeepNaviPoint::class.java) ?: continue
-                point.modelToWorld(mapInfo!!)
-                points.add(point)
+            R.id.is_search_path -> {
+                searchChoice = 1
+                end_point.visibility = View.VISIBLE
+                start_point.hint = resources.getString(R.string.please_input_starting_point)
+                include_points.visibility = View.GONE
+                include_edges.visibility = View.GONE
             }
-            pointsUpdater.onAllPointsGot(points, pathId)
-        }
-    }
-
-    protected open fun searchChoiceChangedListener() {
-        search_choice.setOnCheckedChangeListener { _, checkedId ->
-            end_point.visibility = View.GONE
-            include_points.visibility = View.VISIBLE
-            include_edges.visibility = View.VISIBLE
-            mapInfo = null
-            adapter.clear()
-            startPoint = INVALID_DEEPNAVI_POINT
-            endPoint = INVALID_DEEPNAVI_POINT
-            when (checkedId) {
-                R.id.is_search_map_by_point -> {
-                    searchChoice = 0
-                    start_point.hint = resources.getString(R.string.please_input_key_point)
-                }
-                R.id.is_search_path -> {
-                    searchChoice = 1
-                    end_point.visibility = View.VISIBLE
-                    start_point.hint = resources.getString(R.string.please_input_starting_point)
-                    include_points.visibility = View.GONE
-                    include_edges.visibility = View.GONE
-                }
-                R.id.is_search_map_by_id -> {
-                    searchChoice = 2
-                    start_point.hint = resources.getString(R.string.please_input_map_id)
-                }
-                R.id.is_search_map_by_name -> {
-                    searchChoice = 3
-                    start_point.hint = resources.getString(R.string.please_input_map_name)
-                }
+            R.id.is_search_map_by_id -> {
+                searchChoice = 2
+                start_point.hint = resources.getString(R.string.please_input_map_id)
             }
-        }
-    }
-
-    protected open fun searchMapsByPoint(url: String, callback: (MutableList<Pair<DeepNaviPoint, DeepNaviMap>>) -> Unit) {
-        doGetMainAsync(url) searchMapsByPointRes@{
-            val content = it?.content ?: return@searchMapsByPointRes returnToast3("no response for searching map")
-            val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                ?: return@searchMapsByPointRes returnToast3("jsonObj parse error occurred while searching map")
-            val flag = "msg" in jsonObj
-            val text = when {
-                flag -> jsonObj["msg"]!!.string()
-                else -> "search map list successfully"
+            R.id.is_search_map_by_name -> {
+                searchChoice = 3
+                start_point.hint = resources.getString(R.string.please_input_map_name)
             }
-            Toast.makeText(ContextApi.appContext, text, Toast.LENGTH_LONG).show()
-            val result = mutableListOf<Pair<DeepNaviPoint, DeepNaviMap>>()
-            if (!flag) {
-                val iterator = (jsonObj["data"] as? SimpleJsonArray)?.iterator()
-                    ?: return@searchMapsByPointRes returnToast3("get map list error occurred while searching map by start point's name")
-                while (iterator.hasNext()) {
-                    val next = iterator.next() as? SimpleJsonObject ?: continue
-                    val loc = ReflectJsonApi.fromJsonOrNull<DeepNaviPoint>(
-                        next["loc"] as? SimpleJsonObject ?: continue, DeepNaviPoint::class.java
-                    ) ?: continue
-                    val map = ReflectJsonApi.fromJsonOrNull<DeepNaviMap>(
-                        next["map"] as? SimpleJsonObject ?: continue, DeepNaviMap::class.java
-                    ) ?: continue
-                    result.add(loc to map)
-                }
-            }
-            callback(result)
-        }
-    }
-
-    protected open fun searchMapByMapId(
-        mapId: String, includePoints: Int, includeEdges: Int,
-        pointsUpdater: GetAllPoints, mapInfoUpdater: UploadMapDialogFragment.UpdateMapInfo
-    ) {
-        doGetMainAsync(
-            "${KeyUrls.LOAD_MAP}?mapId=${mapId}&includePoint=${includePoints}&includeEdge=${includeEdges}"
-        ) searchMapByMapIdRes@{
-            val content = it?.content ?: return@searchMapByMapIdRes returnToast3("no response for searching map by id")
-            val jsonObj = SimpleJsonParser.fromJson(String(content), JsonStyle.STANDARD) as? SimpleJsonObject
-                ?: return@searchMapByMapIdRes returnToast3("jsonObj parse error occurred while searching map by id")
-            val flag = "msg" in jsonObj
-            val text = if (flag) {
-                jsonObj["msg"]!!.string()
-            } else {
-                dismiss()
-                "search map successfully"
-            }
-            Toast.makeText(ContextApi.appContext, text, Toast.LENGTH_LONG).show()
-            if (!flag) {
-                val data = jsonObj["data"] as? SimpleJsonObject
-                    ?: return@searchMapByMapIdRes returnToast3("map info cannot be updated while searching map by id")
-                val mapInfo = ReflectJsonApi.fromJsonOrNull<DeepNaviMap>(
-                    data["map"] as? SimpleJsonObject
-                        ?: return@searchMapByMapIdRes returnToast3("json error: no map item in data, while updating map info searched by id"),
-                    DeepNaviMap::class.java
-                ) ?: return@searchMapByMapIdRes returnToast3("jsonObj parse error occurred while updating map info searched by id")
-                updateMap(mapInfo, mapInfoUpdater)
-                updatePoints((data["points"] as? SimpleJsonArray)?.iterator(), null)
-                // if ("edges" in jsonObj || "edge" in jsonObj) {}
-            }
-        }
-    }
-
-    protected open fun updateMap(mapInfo: DeepNaviMap, mapInfoUpdater: UploadMapDialogFragment.UpdateMapInfo) {
-        mapInfoUpdater.update(mapInfo)
-        val imagePath = mapInfo.planPath?.replace("http://127.0.0.1:5000", App.BASE_URL) ?: return returnToast3("no planPath")
-        doGetMainAsync(imagePath) getBitmap@{ res ->
-            val bytes = res?.content ?: return@getBitmap returnToast3("getBitmap failed after searching map by id: $imagePath")
-            bitmapUpdater.update(BitmapFactory.decodeByteArray(bytes, 0, bytes.size), true)
         }
     }
 
@@ -305,6 +213,15 @@ open class SearchMapDialogFragment(
         search_result.adapter = adapter
         search_result.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         return false
+    }
+
+    protected open fun updateMap(mapInfo: DeepNaviMap, mapInfoUpdater: UploadMapDialogFragment.UpdateMapInfo) {
+        mapInfoUpdater.update(mapInfo)
+        val imagePath = mapInfo.planPath?.replace("http://127.0.0.1:5000", App.BASE_URL) ?: return returnToast3("no planPath")
+        doGetMainAsync(imagePath) getBitmap@{ res ->
+            val bytes = res?.content ?: return@getBitmap returnToast3("getBitmap failed after searching map by id: $imagePath")
+            bitmapUpdater.update(BitmapFactory.decodeByteArray(bytes, 0, bytes.size), true)
+        }
     }
 
     interface GetAllPoints {

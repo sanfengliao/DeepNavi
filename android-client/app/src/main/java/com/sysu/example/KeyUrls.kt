@@ -3,6 +3,8 @@ package com.sysu.example
 import com.sysu.example.App.Companion.BASE_URL
 
 object KeyUrls {
+    // 拉取配置
+    const val CONFIG = "$BASE_URL/config"
     // 新建一个地图
     const val UPLOAD_MAP = "$BASE_URL/map"
     // 添加点
